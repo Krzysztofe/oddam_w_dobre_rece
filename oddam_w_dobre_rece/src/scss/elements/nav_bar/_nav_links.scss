@@ -1,0 +1,29 @@
+
+.listItems {
+  padding: 0.5em;
+  @include media {
+    display: flex;
+  }
+  .listItem {
+
+  }
+
+  .listItem:hover {
+    color: green;
+  }
+}
+
+.logListItems {
+  padding: 0.5em;
+  border-top: 1px solid black;
+  width: 50%;
+  @include media {
+    display: flex;
+    border-top: none;
+    flex-direction: row-reverse;
+  }
+
+  .logListItem {
+
+  }
+}

@@ -1,0 +1,35 @@
+:root{
+  font-family: $font-family-Open-Sans;
+}
+
+h1{
+  font-weight: $font-family-Open-Sans;
+}
+
+h2{
+  font-weight: $font-family-Open-Sans;
+}
+
+button{
+  font-weight: $light;
+  padding: 1em 3em;
+}
+.btn_big{
+font-size: 3rem;
+}
+
+.btn_middle{
+  font-size: 2rem;
+}
+
+.btn_small{
+  font-size: 1.5rem;
+}
+
+.underline{
+  width: 100px;
+  height: 100px;
+  background-color: red;
+  background: url("/asets/Decoration@2x.png") no-repeat center;
+  background-size: 100px 20px;
+}
