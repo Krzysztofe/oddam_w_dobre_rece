@@ -7,7 +7,8 @@
 @import "settings/mixins";
 
 @import 'elements/base';
-@import 'elements/nav_bar/nav_bar';
-@import 'elements/header';
-
-@import 'elements/section';
+@import 'elements/header/nav_bar/nav_bar';
+@import 'elements/header/header';
+@import "elements/simple_steps";
+@import "elements/who_we_help";
+@import "elements/contact";

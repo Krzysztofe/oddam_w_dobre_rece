@@ -6,28 +6,46 @@ const NavLinks = ({handleCloseMenue}) => {
     return (
         <>
             <ul className='listItems'>
-                <li className='listItem'>start</li>
 
-                <Link smooth to='#aboutUs'
+                <Link smooth to='#start'
+                      className='link'
+                      activeclassname={{color: 'red'}}>
+                    <li className='listItem'
+                        onClick={handleCloseMenue}>start</li>
+                </Link>
+
+                <Link smooth to='#simpleSteps'
                       className='link'
                       activeclassname={{color: 'red'}}>
                     <li className='listItem'
                         onClick={handleCloseMenue}>o co chodzi</li>
                 </Link>
 
-                <li className='listItem'
-                    onClick={handleCloseMenue}>o nas</li>
+                <Link smooth to='#aboutUs'
+                      className='link'
+                      activeclassname={{color: 'red'}}>
+                    <li className='listItem'
+                        onClick={handleCloseMenue}>o nas</li>
+                </Link>
 
-                <li className='listItem'
-                    onClick={handleCloseMenue}>fundacja i organizacje</li>
+                <Link smooth to='#whoWeHelp'
+                      className='link'
+                      activeclassname={{color: 'red'}}>
+                    <li className='listItem'
+                        onClick={handleCloseMenue}>fundacja i organizacje</li>
+                </Link>
 
-                <li className='listItem'
-                    onClick={handleCloseMenue}>kontakt</li>
+                <Link smooth to='#contact'
+                      className='link'
+                      activeclassname={{color: 'red'}}>
+                    <li className='listItem'
+                        onClick={handleCloseMenue}>kontakt</li>
+                </Link>
             </ul>
 
             <ul className='logListItems'>
-                <li className='logListItem'>zaloguj</li>
-                <li className='logListItem'>załuż konto</li>
+                <li className='listItem logListItem'>zaloguj</li>
+                <li className='listItem logListItem'>załuż konto</li>
             </ul>
 
         </>

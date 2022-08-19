@@ -1,0 +1,51 @@
+@import 'nav_links';
+//
+//.navBar {
+//  position: fixed;
+//  top: 0;
+//  width: 100%;
+//  background-color: #b3d4fc;
+//  padding: 1em 1.5rem;
+//}
+
+.navigation {
+  display: none;
+  line-height: 2;
+}
+
+.navigationMobile {
+
+  background-color: #b3d4fc;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  line-height: 1.5;
+  padding: 1rem;
+}
+.navigationMobile__logo {
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  background: #ffffff url("/asets/IconTshirt.png") no-repeat center;
+  background-size: 40px 40px;
+}
+
+.iconHamburger {
+  position: absolute;
+  right: 12%;
+  top: 25px;
+  font-size: 2rem;
+  cursor: pointer;
+}
+
+@include media {
+  .navigation {
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: end;
+  }
+  .navigationMobile {
+    display: none;
+  }
+}
+

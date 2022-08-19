@@ -1,0 +1,43 @@
+
+.wrapper--contact {
+  background: #b3d4fc;
+}
+
+.contact__container {
+  padding: 1rem;
+}
+
+.t-shirt {
+  width: 3em;
+  background-color: white;
+  border-radius: 50%;
+  padding: 2px;
+  outline: 2px solid white;
+}
+
+.contact__containerInfo {
+  display: flex;
+  align-items: center;
+  width: 70%;
+  gap: 0.4em;
+  padding-top: 0.5em;
+}
+
+.contact__h2 {
+  flex-grow: 0.5;
+  font-size: 0.9em;
+  font-weight: $semiBold;
+
+  &::first-letter {
+    text-transform: uppercase;
+  }
+}
+
+.contact__logo {
+  width: 1.4em;
+}
+
+
+
+
+

@@ -1,0 +1,48 @@
+.whoWeHelp {
+
+  .wrapper--whoWeHelp {
+    display: flex;
+    flex-direction: column;
+
+    h2 {
+      align-self: center;
+      font-weight: $semiBold;
+      &::first-letter{
+        text-transform: uppercase;
+      }
+    }
+
+    .whoWeHelp__columnsContainer {
+margin: 2em 0;
+      .whoWeHelp__columnContainer {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        .whoWeHelp__header {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          background-color: #b3d4fc;
+          border-radius: 50%;
+          height: 115px;
+          width: 115px;
+          line-height: 1.4;
+          border: 2px solid salmon;
+          text-align: center;
+          font-weight: $semiBold;
+      &::first-letter{
+        text-transform: uppercase;
+      }
+        }
+
+        .whoWeHelp__paragraph {
+          text-align: center;
+          margin: 1em 0 2em;
+          line-height: 1.4;
+          width: 90%;
+        }
+      }
+    }
+  }
+}

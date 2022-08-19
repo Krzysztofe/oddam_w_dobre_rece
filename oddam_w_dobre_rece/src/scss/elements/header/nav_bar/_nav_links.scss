@@ -1,22 +1,36 @@
-
 .listItems {
   padding: 0.5em;
   @include media {
     display: flex;
   }
-  .listItem {
+}
 
+.link {
+  text-decoration: none;
+}
+
+
+.listItem {
+  cursor: pointer;
+  text-decoration: none;
+  color: black;
+  font-weight: $semiBold;
+
+  &:hover {
+    color: #5E5322;
   }
 
-  .listItem:hover {
-    color: green;
+  &::first-letter {
+    text-transform: uppercase;
   }
 }
+
 
 .logListItems {
   padding: 0.5em;
   border-top: 1px solid black;
   width: 50%;
+
   @include media {
     display: flex;
     border-top: none;

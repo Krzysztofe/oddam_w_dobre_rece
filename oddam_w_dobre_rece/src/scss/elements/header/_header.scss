@@ -1,0 +1,48 @@
+@import "three_columns";
+
+.empty {
+  height: 60px;
+}
+
+.wrapper--header {
+  margin: 0 auto;
+}
+
+.header__right {
+  padding: 0 1em;
+  font-weight: $semiBold;
+}
+
+.header__h1 {
+  text-align: center;
+  line-height: 1.2;
+  padding: 2em 0 0;
+
+  &::first-letter {
+    text-transform: uppercase;
+  }
+}
+
+.underline {
+  display: none;
+  width: 100px;
+  height: 10px;
+  background: url("/asets/Decoration@2x.png") no-repeat center;
+  background-size: 100px 20px;
+}
+
+.btn_container {
+  display: flex;
+  justify-content: space-between;
+  padding: 2em 0;
+}
+
+.btnBig {
+  font-size: clamp(1.2rem, 2vw, 2rem);
+  flex-basis: 35%;
+}
+
+
+
+
+
