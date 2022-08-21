@@ -1,13 +1,14 @@
 
 .wrapper--contact {
   background: #b3d4fc;
+  width: 100%;
 }
 
 .contact__container {
   padding: 1rem;
 }
 
-.t-shirt {
+.contact__t-shirt {
   width: 3em;
   background-color: white;
   border-radius: 50%;
@@ -24,7 +25,7 @@
 }
 
 .contact__h2 {
-  flex-grow: 0.5;
+  flex-grow: 0.3;
   font-size: 0.9em;
   font-weight: $semiBold;
 

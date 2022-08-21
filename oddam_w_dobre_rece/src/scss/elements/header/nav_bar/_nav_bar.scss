@@ -14,20 +14,20 @@
 }
 
 .navigationMobile {
-
   background-color: #b3d4fc;
   position: fixed;
   top: 0;
   width: 100%;
   line-height: 1.5;
   padding: 1rem;
+  border-left: 10px solid #b3d4fc;
 }
-.navigationMobile__logo {
+.navigationMobile__tshirt {
+  width: 3em;
+  background-color: white;
   border-radius: 50%;
-  width: 50px;
-  height: 50px;
-  background: #ffffff url("/asets/IconTshirt.png") no-repeat center;
-  background-size: 40px 40px;
+  padding: 2px;
+  outline: 2px solid white;
 }
 
 .iconHamburger {
@@ -40,12 +40,17 @@
 
 @include media {
   .navigation {
+    width: 90%;
+    max-width: inherit;
+    background-color: #ffffff;
+    position: fixed;
+    top: 0;
     display: flex;
     flex-direction: column-reverse;
     align-items: end;
+    padding: 0.5em;
   }
   .navigationMobile {
     display: none;
   }
 }
-

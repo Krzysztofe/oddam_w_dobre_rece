@@ -1,7 +1,8 @@
 import React from 'react';
 import NavLinks from "./NavLinks";
 import {RiMenuFill} from 'react-icons/ri';
-import {GrFormClose} from 'react-icons/gr'
+import {GrFormClose} from 'react-icons/gr';
+import Tshirt from '../../asets/IconTshirt.png';
 import {useState} from "react";
 
 const MobileNavigation = () => {
@@ -23,7 +24,7 @@ const handleCloseMenue = () => {
                 ?
                 <NavLinks handleCloseMenue = {handleCloseMenue}/>
             :
-            <div className= 'navigationMobile__logo '> </div>
+                <img src = {Tshirt} className= 'navigationMobile__tshirt' alt = 'T-shirt logo'/>
             }
         </nav>
     );

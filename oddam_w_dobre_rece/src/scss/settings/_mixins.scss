@@ -2,3 +2,8 @@
   @media (min-width: 426px)
   {@content}
 }
+
+@mixin media__bigSize {
+  @media (min-width: 1300px)
+  {@content}
+}

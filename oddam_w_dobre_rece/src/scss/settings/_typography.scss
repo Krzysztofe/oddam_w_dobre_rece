@@ -1,34 +1,31 @@
-:root{
+:root {
   font-family: $font-family-Open-Sans;
-  font-size: clamp(0.9rem, 2vw, 3rem );
+  font-size: clamp(0.9rem, 2vw, 1.5rem);
   line-height: 1.2;
 }
 
-h1{
-  font-size: 1.2rem;
+h1 {
+  font-size: clamp(1.3rem, 2vw, 3.5rem);
 }
 
-h2{
-  font-size: 1.2rem;
+h2 {
+  font-size: clamp(1.3rem, 2vw, 3.5rem);
 }
 
-h3{
-  font-size: 0.9rem;
+h3 {
+  font-size: clamp(1rem, 2vw, 3.5rem);
 }
 
-button{
+button {
   font-weight: $light;
-text-transform: uppercase;
+  text-transform: uppercase;
   cursor: pointer;
+  background-color: white;
+  border: none;
+  width: 100%;
+  //border: 1px solid black;
 }
 
-//.btn_middle{
-//  font-size: 2rem;
-//}
-//
-//.btn_small{
-//  font-size: 1.5rem;
-//}
 
 //.underline{
 //  width: 100px;

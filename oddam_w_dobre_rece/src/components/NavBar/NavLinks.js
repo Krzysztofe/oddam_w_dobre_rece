@@ -1,5 +1,7 @@
 import React from 'react';
-import {HashLink as Link} from "react-router-hash-link";
+import {HashLink} from "react-router-hash-link";
+import { NavHashLink } from 'react-router-hash-link';
+import { Link } from "react-router-dom";
 // import {motion} from 'framer-motion'
 
 const NavLinks = ({handleCloseMenue}) => {
@@ -7,45 +9,49 @@ const NavLinks = ({handleCloseMenue}) => {
         <>
             <ul className='listItems'>
 
-                <Link smooth to='#start'
-                      className='link'
+                <HashLink smooth to='#start'
+                      className='hashLink'
                       activeclassname={{color: 'red'}}>
                     <li className='listItem'
                         onClick={handleCloseMenue}>start</li>
-                </Link>
+                </HashLink>
 
-                <Link smooth to='#simpleSteps'
-                      className='link'
+                <HashLink smooth to='#simpleSteps'
+                      className='hashLink'
                       activeclassname={{color: 'red'}}>
                     <li className='listItem'
                         onClick={handleCloseMenue}>o co chodzi</li>
-                </Link>
+                </HashLink>
 
-                <Link smooth to='#aboutUs'
-                      className='link'
+                <HashLink smooth to='#aboutUs'
+                      className='hashLink'
                       activeclassname={{color: 'red'}}>
                     <li className='listItem'
                         onClick={handleCloseMenue}>o nas</li>
-                </Link>
+                </HashLink>
 
-                <Link smooth to='#whoWeHelp'
-                      className='link'
+                <HashLink smooth to='#whoWeHelp'
+                      className='hashLink'
                       activeclassname={{color: 'red'}}>
                     <li className='listItem'
                         onClick={handleCloseMenue}>fundacja i organizacje</li>
-                </Link>
+                </HashLink>
 
-                <Link smooth to='#contact'
-                      className='link'
-                      activeclassname={{color: 'red'}}>
+                <HashLink smooth to='#contact'
+                      className='hashLink'>
                     <li className='listItem'
                         onClick={handleCloseMenue}>kontakt</li>
-                </Link>
+                </HashLink>
             </ul>
 
             <ul className='logListItems'>
+                <NavHashLink to ="/rejestracja" className='hashLink'>
+                    <li className='listItem logListItem'>załóż konto</li>
+                </NavHashLink>
+
+                <NavHashLink to="/logowanie" className='hashLink'>
                 <li className='listItem logListItem'>zaloguj</li>
-                <li className='listItem logListItem'>załuż konto</li>
+                </NavHashLink>
             </ul>
 
         </>

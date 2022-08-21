@@ -9,7 +9,7 @@ const Contact = () => {
        <section className="contact">
            <div className="wrapper wrapper--contact" id = 'contact'>
                <div className="contact__container">
-                   <img className= 't-shirt' src = {Tshirt} alt = 't-shirt'/>
+                   <img className= 'contact__t-shirt' src = {Tshirt} alt = 't-shirt'/>
                    <div className="contact__containerInfo">
                        <h2 className='contact__h2'>skontaktuj się z nami</h2>
                        <a href='https://www.facebook.com/'>
