@@ -3,7 +3,7 @@ import Underline from "./Underline";
 
 const AboutUs = () => {
     return (
-        <section className='aboutUs' id='aboutUs'>
+        <section className='aboutUs'>
             <div className="wrapper wrapper--aboutUs">
                 <aside className="aboutUs__leftContainer">
                     <h2 className="aboutUs__h2">o nas</h2>

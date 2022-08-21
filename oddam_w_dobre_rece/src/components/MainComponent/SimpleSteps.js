@@ -39,7 +39,7 @@ const SimpleSteps = () => {
                     </div>
                 </div>
                 <HashLink to = '/logowanie' className = 'btnBig btnBig--simpleSteps'>
-                    <button id = 'whoWeHelp' >oddaj <br/> rzeczy</button>
+                    <button id='aboutUs' >oddaj <br/> rzeczy</button>
                 </HashLink>
             </div>
         </section>
