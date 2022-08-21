@@ -11,6 +11,10 @@
   }
 }
 
+.underline{
+  display: none;
+}
+
 .whoWeHelp__columnsContainer {
   margin: 2em 0;
 }
@@ -41,3 +45,9 @@
   width: 90%;
 }
 
+@include media {
+
+  .underline{
+    display: block;
+  }
+}

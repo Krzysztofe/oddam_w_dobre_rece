@@ -1,10 +1,12 @@
 import React from 'react';
+import Underline from "./Underline";
 
 const WhoWeHelp = () => {
     return (
         <section className="whoWeHelp">
             <div className="wrapper wrapper--whoWeHelp" id = 'whoWeHelp'>
                 <h2 className='whoWeHelp__h2'>Komu pomagamy?</h2>
+                <Underline/>
                 <div className="whoWeHelp__columnsContainer">
                     <div className="whoWeHelp__columnContainer">
                         <div className="whoWeHelp__header">Fundacjom</div>

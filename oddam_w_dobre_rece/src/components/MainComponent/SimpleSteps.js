@@ -4,6 +4,7 @@ import Tshirt from '../../asets/IconTshirt.png';
 import Bag from '../../asets/IconBag.png';
 import Glass from '../../asets/IconLupa.png'
 import Arrows from '../../asets/Icon.png'
+import {HashLink} from "react-router-hash-link";
 
 const SimpleSteps = () => {
     return (
@@ -37,7 +38,9 @@ const SimpleSteps = () => {
                         kurier podjedzie w zaufanym terminie</p>
                     </div>
                 </div>
-                <button id = 'whoWeHelp' className = 'btnBig btnBig--simpleSteps'>oddaj <br/> rzeczy</button>
+                <HashLink to = '/logowanie' className = 'btnBig btnBig--simpleSteps'>
+                    <button id = 'whoWeHelp' >oddaj <br/> rzeczy</button>
+                </HashLink>
             </div>
         </section>
     );

@@ -18,12 +18,6 @@
   display: none;
 }
 
-@include media{
-  .underline {
-    display: block;
-  }
-}
-
 .simpleSteps__columnsContainer {
   display: flex;
   padding: 2em 0;
@@ -34,7 +28,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-
+}
   .simpleSteps__logo {
     width: 3em;
   }
@@ -43,13 +37,15 @@
     margin-top: 1.5em;
     line-height: 1.2;
     text-align: center;
-    text-transform: uppercase;
+    &::first-letter {
+      text-transform: uppercase;
+    }
   }
 
   .simpleSteps__paragraph {
     display: none;
   }
-}
+
 
 .btnBig--simpleSteps {
   align-self: center;
@@ -57,3 +53,41 @@
   padding: 0 2em;
 }
 
+@include media{
+  .simpleSteps__h2{
+    margin-bottom: 1em;
+  }
+  .underline {
+    display: block;
+  }
+  .simpleSteps__columnsContainer{
+    margin: 1em 0;
+    background-color: $color-grey-white;
+  }
+  .simpleSteps__h3{
+    font-size: 0.6em;
+    padding-bottom: 0.3em;
+  }
+  .simpleSteps__paragraph{
+    display: block;
+    text-align: center;
+    font-size: 0.5em;
+    padding-top: 0.3em;
+    position: relative;
+    &:before{
+      content: '';
+      display: block;
+      width: 40%;
+      height: 1px;
+      background-color: black;
+      position: absolute;
+      right: 30%;
+    }
+  }
+}
+
+@include media__bigSize{
+  .underline{
+    background-image: url("/asets/Decoration@2x.png");
+  }
+}
