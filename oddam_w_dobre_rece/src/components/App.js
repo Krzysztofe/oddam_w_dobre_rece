@@ -1,14 +1,14 @@
-import NavBar from "./NavBar/NavBar";
-import Header from "./Header/Header";
-import SimpleSteps from "./SimpleSteps";
-import AboutUs from "./AboutUs";
-import WhoWeHelp from "./WhoWeHelp";
-import Contact from "./Contact";
-import ThreeColumns from "./Header/ThreeColumns";
+import NavBar from "./MainComponent/NavBar/NavBar";
+import Header from "./MainComponent/Header/Header";
+import SimpleSteps from "./MainComponent/SimpleSteps";
+import AboutUs from "./MainComponent/AboutUs";
+import WhoWeHelp from "./MainComponent/WhoWeHelp";
+import Contact from "./MainComponent/Contact";
+import ThreeColumns from "./MainComponent/ThreeColumns";
 
 import {BrowserRouter} from "react-router-dom";
 import {HashLink as Link, NavHashLink} from 'react-router-hash-link';
-import MainComponent from "./MainComponent";
+import MainComponent from "./MainComponent/MainComponent";
 import Register from "./Register";
 import {HashRouter, Routes, Route} from "react-router-dom";
 

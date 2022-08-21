@@ -1,8 +1,8 @@
 import React from 'react';
 import NavBar from "../NavBar/NavBar";
-import HeaderImage from '../../asets/Hero Image.png'
+import HeaderImage from '../../../asets/Hero Image.png'
 import Underline from "../Underline";
-import ThreeColumns from "./ThreeColumns";
+import ThreeColumns from "../ThreeColumns";
 import {NavHashLink} from "react-router-hash-link";
 
 const Header = () => {

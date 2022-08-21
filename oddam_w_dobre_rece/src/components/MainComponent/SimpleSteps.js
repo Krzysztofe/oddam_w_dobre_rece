@@ -1,9 +1,9 @@
 import React from 'react';
 import Underline from "./Underline";
-import Tshirt from '../asets/IconTshirt.png';
-import Bag from '../asets/IconBag.png';
-import Glass from '../asets/IconLupa.png'
-import Arrows from '../asets/Icon.png'
+import Tshirt from '../../asets/IconTshirt.png';
+import Bag from '../../asets/IconBag.png';
+import Glass from '../../asets/IconLupa.png'
+import Arrows from '../../asets/Icon.png'
 
 const SimpleSteps = () => {
     return (

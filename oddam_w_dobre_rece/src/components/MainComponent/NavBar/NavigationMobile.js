@@ -2,7 +2,7 @@ import React from 'react';
 import NavLinks from "./NavLinks";
 import {RiMenuFill} from 'react-icons/ri';
 import {GrFormClose} from 'react-icons/gr';
-import Tshirt from '../../asets/IconTshirt.png';
+import Tshirt from '../../../asets/IconTshirt.png';
 import {useState} from "react";
 
 const MobileNavigation = () => {

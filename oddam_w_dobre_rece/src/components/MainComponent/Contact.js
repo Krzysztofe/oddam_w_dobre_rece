@@ -1,7 +1,7 @@
 import React from 'react';
-import Tshirt from '../asets/IconTshirt.png';
-import Facebook from '../asets/Facebook.png';
-import Instagram from '../asets/Instagram.png';
+import Tshirt from '../../asets/IconTshirt.png';
+import Facebook from '../../asets/Facebook.png';
+import Instagram from '../../asets/Instagram.png';
 import {BsFillTelephoneFill} from 'react-icons/bs'
 
 const Contact = () => {
