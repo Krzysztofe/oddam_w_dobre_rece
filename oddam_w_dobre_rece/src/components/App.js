@@ -1,26 +1,24 @@
 import NavBar from "./MainComponent/NavBar/NavBar";
-import Header from "./MainComponent/Header/Header";
-import SimpleSteps from "./MainComponent/SimpleSteps";
-import AboutUs from "./MainComponent/AboutUs";
-import WhoWeHelp from "./MainComponent/WhoWeHelp";
-import Contact from "./MainComponent/Contact";
-import ThreeColumns from "./MainComponent/ThreeColumns";
-
-import {BrowserRouter} from "react-router-dom";
-import {HashLink as Link, NavHashLink} from 'react-router-hash-link';
 import MainComponent from "./MainComponent/MainComponent";
+import Login from "./Login";
 import Register from "./Register";
-import {HashRouter, Routes, Route} from "react-router-dom";
+import Logout from "./Logout";
+import OddajRzeczy from "./OddajRzeczy";
+import {BrowserRouter, Routes, Route} from "react-router-dom";
 
 
 function App() {
     return (
-        <HashRouter>
+        <BrowserRouter>
+            <NavBar/>
             <Routes>
-                <Route  path='/' element ={ <MainComponent/>}/>
-                <Route path='/rejestracja' element ={ <Register/>}/>
+                <Route path='/' element={<MainComponent/>}/>
+                <Route path='/logowanie' element={<Login/>}/>
+                <Route path='/rejestracja' element={<Register/>}/>
+                <Route path='/wylogowano' element={<Logout/>}/>
+                <Route path='/oddajRzeczy' element={<OddajRzeczy/>}/>
             </Routes>
-        </HashRouter>
+        </BrowserRouter>
 
     );
 }

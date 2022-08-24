@@ -2,13 +2,18 @@
 .wrapper--contact {
   background: #b3d4fc;
   width: 100%;
+  display: flex;
 }
-
-.contact__container {
+.contact__containerLeft{
+  width: 60%;
+  background-color: #c6ff6e;
+}
+.contact__containerRight {
   padding: 1rem;
+  width: 40%;
 }
 
-.contact__t-shirt {
+.contact__imageMobile {
   width: 3em;
   background-color: white;
   border-radius: 50%;
@@ -38,6 +43,24 @@
   width: 1.4em;
 }
 
+@include media {
+  .contact__containerRigh{
+
+  }
+  .contact__containerInfo{
+    display: flex;
+    flex-direction: column;
+  }
+  .contact__imageMobile{
+    display: none;
+  }
+  .contact__h2{
+
+  }
+  .contact__logo{
+    display: none;
+  }
+}
 
 
 

@@ -16,15 +16,18 @@ const handleCloseMenue = () => {
         <nav className='navigationMobile'>
             {open
                 ?
-                <GrFormClose className='iconHamburger' onClick={() => setOpen(!open)}/>
+                <GrFormClose className='iconHamburger'
+                             onClick={() => setOpen(!open)}/>
                 :
-                <RiMenuFill className='iconHamburger' onClick={() => setOpen(!open)}/>
+                <RiMenuFill className='iconHamburger'
+                            onClick={() => setOpen(!open)}/>
             }
             {open
                 ?
                 <NavLinks handleCloseMenue = {handleCloseMenue}/>
             :
-                <img src = {Tshirt} className= 'navigationMobile__tshirt' alt = 'T-shirt logo'/>
+                <img src = {Tshirt} className= 'navigationMobile__tshirt'
+                     alt = 'T-shirt logo'/>
             }
         </nav>
     );

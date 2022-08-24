@@ -7,11 +7,11 @@ import AboutUs from "./AboutUs";
 import WhoWeHelp from "./WhoWeHelp";
 import Contact from "./Contact";
 
-const Home = () => {
+const MainComponent = () => {
     return (
 
             <>
-                <NavBar/>
+                {/*<NavBar/>*/}
                 <Header/>
                 <ThreeColumns/>
                 <SimpleSteps/>
@@ -20,8 +20,7 @@ const Home = () => {
                 <Contact/>
             </>
 
-
     );
 };
 
-export default Home;
+export default MainComponent;

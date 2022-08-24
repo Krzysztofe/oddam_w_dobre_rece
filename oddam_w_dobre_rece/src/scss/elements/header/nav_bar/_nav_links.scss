@@ -7,6 +7,8 @@
   padding: 0.5em;
   border-top: 1px solid black;
   width: 50%;
+  display: flex;
+  flex-direction: column-reverse;
 }
 
 .listItems {
@@ -34,7 +36,7 @@
     flex-direction: row-reverse;
     justify-content: space-between;
     padding: 0;
-    width: clamp(80px, 12%, 170px)
+    width: 30%
   }
 
   .listItems {
