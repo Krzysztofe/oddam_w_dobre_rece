@@ -11,7 +11,6 @@ const MainComponent = () => {
     return (
 
             <>
-                {/*<NavBar/>*/}
                 <Header/>
                 <ThreeColumns/>
                 <SimpleSteps/>

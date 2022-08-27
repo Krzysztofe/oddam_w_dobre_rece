@@ -1,7 +1,7 @@
 import React from 'react';
 import {useState} from "react";
 
-const Form = () => {
+const ContactForm = () => {
 const [inputValue, setInputValue] =
     useState({name:"", email:"", textarea:""})
 const [formDatas, setFormDatas] = useState([])
@@ -14,7 +14,7 @@ const [formDatas, setFormDatas] = useState([])
     e.preventDefault()
       setFormDatas([...formDatas, inputValue])
     }
-console.log(formDatas)
+// console.log(formDatas)
 
     return (
         <form onSubmit={handleSubmit}>
@@ -35,4 +35,4 @@ console.log(formDatas)
     );
 };
 
-export default Form;
+export default ContactForm;

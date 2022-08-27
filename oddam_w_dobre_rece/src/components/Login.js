@@ -1,7 +1,8 @@
 import React, {useState} from 'react';
 import {NavHashLink} from "react-router-hash-link";
+import {Link} from 'react-router-dom'
 import {signInWithEmailAndPassword} from 'firebase/auth'
-import auth from './FirebaseConfig';
+import {auth} from './FireBaseConfig';
 import {useNavigate} from 'react-router';
 
 
@@ -53,9 +54,9 @@ const Login = () => {
             />
 
             <div className="login__containerButtons">
-                <NavHashLink to='/rejestracja'>
+                <Link to='/rejestracja'>
                     <button> załóż konto</button>
-                </NavHashLink>
+                </Link>
                 <button>zaloguj się</button>
             </div>
         </form>

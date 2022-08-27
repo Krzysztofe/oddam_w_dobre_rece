@@ -1,7 +1,8 @@
 import React, {useState} from 'react';
 import {NavHashLink} from "react-router-hash-link";
+import {Link} from 'react-router-dom'
 import {createUserWithEmailAndPassword} from 'firebase/auth'
-import auth from './FirebaseConfig'
+import {auth} from './FireBaseConfig'
 import {useNavigate} from 'react-router'
 
 const Register = () => {
@@ -31,38 +32,33 @@ const Register = () => {
     }
 
     return (
-        <form
-            onSubmit={handleRegister}
+        <form onSubmit={handleRegister}
             className='wrapper wrapper--register'
         >
             <h2>załóż konto</h2>
 
             <label> email </label>
-            <input
-                type='email' name='email'
+            <input type='email' name='email'
                 value={inputValuRregister.email}
                 onChange={handleChange}
             />
 
             <label> haslo </label>
-            <input
-                type='password' name='password'
+            <input type='password' name='password'
                 value={inputValuRregister.password}
                 onChange={handleChange}
             />
 
             <label> powtórz haslo </label>
-            <input
-                type='password' name='passwordRepited'
+            <input type='password' name='passwordRepited'
                 value={inputValuRregister.passwordRepited}
                 onChange={handleChange}
             />
 
-            <div
-                className="register__containerButtons">
-                <NavHashLink to='/logowanie'>
+            <div className="register__containerButtons">
+                <Link to='/logowanie'>
                     <button> zaloguj się</button>
-                </NavHashLink>
+                </Link>
                 <button> załóż konto</button>
             </div>
         </form>

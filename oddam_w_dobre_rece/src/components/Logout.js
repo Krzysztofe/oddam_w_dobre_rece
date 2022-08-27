@@ -1,5 +1,5 @@
 import React from 'react';
-import {NavHashLink} from "react-router-hash-link";
+import {Link} from "react-router-dom";
 
 const Logout = () => {
     return (
@@ -7,9 +7,9 @@ const Logout = () => {
             <h2 className= 'logout__h2'>
                 wylogowanie naspapiło pomyślnie
             </h2>
-            <NavHashLink to = '/'>
+            <Link to = '/'>
                 <button>strona główna</button>
-            </NavHashLink>
+            </Link>
 
         </main>
     );

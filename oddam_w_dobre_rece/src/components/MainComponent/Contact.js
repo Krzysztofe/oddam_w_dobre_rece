@@ -1,6 +1,6 @@
 import React from 'react';
 import Underline from "./Underline";
-import Form from './Form'
+import Form from './ContactForm'
 import Tshirt from '../../asets/IconTshirt.png';
 import Facebook from '../../asets/Facebook.png';
 import Instagram from '../../asets/Instagram.png';
