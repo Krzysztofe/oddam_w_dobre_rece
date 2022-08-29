@@ -1,0 +1,112 @@
+{
+  "organisations": [
+    {
+      "type": "fundacja",
+      "name": "średnia 1",
+      "goals": "eeeeeeeeeeeeeee",
+      "stuff": "ttt, ooo, uuu"
+    },
+    {
+      "type": "fundacja",
+      "name": "średnia 2",
+      "goals": "eeeeeeeeeeeeeee",
+      "stuff": "ttt, ooo, uuu"
+    },
+    {
+      "type": "fundacja",
+      "name": "średnia 3",
+      "goals": "eeeeeeeeeeeeeee",
+      "stuff": "ttt, ooo, uuu"
+    },
+    {
+      "type": "fundacja",
+      "name": "średnia 4",
+      "goals": "eeeeeeeeeeeeeee",
+      "stuff": "ttt, ooo, uuu"
+    },
+    {
+      "type": "fundacja",
+      "name": "średnia 5",
+      "goals": "eeeeeeeeeeeeeee",
+      "stuff": "ttt, ooo, uuu"
+    },
+    {
+      "type": "fundacja",
+      "name": "średnia 6",
+      "goals": "eeeeeeeeeeeeeee",
+      "stuff": "ttt, ooo, uuu"
+    },
+    {
+      "type": "fundacja",
+      "name": "średnia 7",
+      "goals": "eeeeeeeeeeeeeee",
+      "stuff": "ttt, ooo, uuu"
+    },
+    {
+      "type": "fundacja",
+      "name": "średnia 8",
+      "goals": "eeeeeeeeeeeeeee",
+      "stuff": "ttt, ooo, uuu"
+    },
+    {
+      "type": "fundacja",
+      "name": "średnia 9",
+      "goals": "eeeeeeeeeeeeeee",
+      "stuff": "ttt, ooo, uuu"
+    },
+    {
+      "type": "ngo",
+      "name": "durza 1",
+      "goals": "yyyyy",
+      "stuff": "xx, cc, ee"
+    },
+    {
+      "type": "ngo",
+      "name": "durza 2",
+      "goals": "yyyyy",
+      "stuff": "xx, cc, ee"
+    },
+    {
+      "type": "ngo",
+      "name": "durza 3",
+      "goals": "yyyyy",
+      "stuff": "xx, cc, ee"
+    },
+    {
+      "type": "ngo",
+      "name": "durza 4",
+      "goals": "yyyyy",
+      "stuff": "xx, cc, ee"
+    },
+    {
+      "type": "ngo",
+      "name": "durza 5",
+      "goals": "yyyyy",
+      "stuff": "xx, cc, ee"
+    },
+    {
+      "type": "ngo",
+      "name": "durza 6",
+      "goals": "yyyyy",
+      "stuff": "xx, cc, ee"
+    },
+    {
+      "type": "colection",
+      "name": "mała 1",
+      "goals": "yyyyy",
+      "stuff": "xx, cc, ee"
+    },
+    {
+      "type": "colection",
+      "name": "mała 2",
+      "goals": "yyyyy",
+      "stuff": "xx, cc, ee"
+    },
+    {
+      "type": "colection",
+      "name": "mała 3",
+      "goals": "yyyyy",
+      "stuff": "xx, cc, ee"
+    }
+  ]
+}

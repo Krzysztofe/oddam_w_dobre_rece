@@ -1,7 +1,7 @@
 import React from 'react';
 import {Link} from "react-router-dom";
 
-const OddajRzeczyBags = ({inputValue, handleChagne,
+const OddajRzeczyBags = ({inputsValue, handleChange,
                              handleDecrease, handleIncrease
                          }) => {
     return (
@@ -12,8 +12,8 @@ const OddajRzeczyBags = ({inputValue, handleChagne,
             <form>
                 <label>liczba 60l worków </label>
                 <select name='selectBags'
-                        value={inputValue}
-                        onChange={handleChagne}
+                        value={inputsValue.selectBags}
+                        onChange={handleChange}
                 >
                     <option value=''> wybierz</option>
                     <option value='1'> 1</option>
@@ -23,6 +23,10 @@ const OddajRzeczyBags = ({inputValue, handleChagne,
                     <option value='5'> 5</option>
                 </select>
             </form>
+
+
+
+
             <button onClick={handleDecrease}>wstecz</button>
             <button onClick={handleIncrease}>dalej</button>
         </main>

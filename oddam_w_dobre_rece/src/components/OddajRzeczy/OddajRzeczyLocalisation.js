@@ -1,16 +1,18 @@
 import React from 'react';
 
-const OddajRzeczyLocalisation = ({handleChagne, inputsValue,
-                                     handleIncrease,handleDecrease }) => {
+const OddajRzeczyLocalisation = ({handleChange, inputsValue,
+                                     handleIncrease, handleDecrease
+                                 }) => {
     return (
         <>
             <p style={{marginTop: 150}}>krok 3/4</p>
             <h2>lokalizacja:</h2>
 
             <div style={{display: 'flex', flexDirection: 'column'}}>
-                <select name='selectLocalisation'
-                        value={inputsValue.selectLocalisation}
-                        onChange={handleChagne}
+                <select
+                    name='selectLocalisation'
+                    value={inputsValue.selectLocalisation}
+                    onChange={handleChange}
                 >
                     <option value='wybierz'>wybierz</option>
                     <option value='poznań'>poznań</option>
@@ -24,7 +26,7 @@ const OddajRzeczyLocalisation = ({handleChagne, inputsValue,
                            name='dzieciom'
                            value={inputsValue.dzieciom}
                            checked={inputsValue.dzieciom}
-                           onChange={handleChagne}/>
+                           onChange={handleChange}/>
                 </label>
 
                 <label> samotnym matkom
@@ -32,7 +34,7 @@ const OddajRzeczyLocalisation = ({handleChagne, inputsValue,
                            name='matkom'
                            value={inputsValue.matkom}
                            checked={inputsValue.matkom}
-                           onChange={handleChagne}/>
+                           onChange={handleChange}/>
                 </label>
 
                 <label>bezdomnym
@@ -40,7 +42,7 @@ const OddajRzeczyLocalisation = ({handleChagne, inputsValue,
                            name='bezdomnym'
                            value={inputsValue.bezdomnym}
                            checked={inputsValue.bezdomnym}
-                           onChange={handleChagne}/>
+                           onChange={handleChange}/>
                 </label>
 
                 <label> niepełnosprawnym
@@ -48,21 +50,21 @@ const OddajRzeczyLocalisation = ({handleChagne, inputsValue,
                            name='niepelnosprawnym'
                            value={inputsValue.niepelnosprawnym}
                            checked={inputsValue.niepelnosprawnym}
-                           onChange={handleChagne}/>
+                           onChange={handleChange}/>
                 </label>
 
                 <label> osobom starszym
                     <input type='checkbox'
-                    name= 'starszym'
-                    value={inputsValue.starszym}
-                    checked={inputsValue.starszym}
-                    onChange={handleChagne}/>
-                   </label>
+                           name='starszym'
+                           value={inputsValue.starszym}
+                           checked={inputsValue.starszym}
+                           onChange={handleChange}/>
+                </label>
                 <h3>wpisz nazwę konkretnej organizacji (opcjonalnie)</h3>
                 <input type='text'
-                name = 'organisationName'
-                value = {inputsValue.organisationName}
-                onChange= {handleChagne}/>
+                       name='organisationName'
+                       value={inputsValue.organisationName}
+                       onChange={handleChange}/>
             </div>
             <button onClick={handleDecrease}>wstecz</button>
             <button onClick={handleIncrease}>dalej</button>

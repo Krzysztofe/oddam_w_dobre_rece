@@ -1,6 +1,6 @@
 import React from 'react';
 
-const OddajRzeczyAdress = ({inputsValue, handleChagne,
+const OddajRzeczyAdress = ({inputsValue, handleChange,
                                handleIncrease, handleDecrease}) => {
     return (
         <div>
@@ -16,31 +16,25 @@ const OddajRzeczyAdress = ({inputsValue, handleChagne,
                 <input type='text'
                        name='street'
                        value={inputsValue.street}
-                       onChange={handleChagne}/>
-
-
-                {/*<input type='text'*/}
-                {/*       name = 'organisationName'*/}
-                {/*       value = {inputsValue.organisationName}*/}
-                {/*       onChange= {handleChagne}/>*/}
+                       onChange={handleChange}/>
 
                 <label>miasto</label>
                 <input type='text'
                        name='city'
                        value={inputsValue.city}
-                       onChange={handleChagne}/>
+                       onChange={handleChange}/>
 
                 <label>kod pocztowy</label>
                 <input type='text'
                        name='postCode'
                        value={inputsValue.postCode}
-                       onChange={handleChagne}/>
+                       onChange={handleChange}/>
 
                 <label>nr telefonu</label>
                 <input type='number'
                        name='phone'
                        value={inputsValue.phone}
-                       onChange={handleChagne}/>
+                       onChange={handleChange}/>
 
 
                 <h3>termin odbioru:</h3>
@@ -49,20 +43,19 @@ const OddajRzeczyAdress = ({inputsValue, handleChagne,
                 <input type='number'
                        name='date'
                        value={inputsValue.date}
-                       onChange={handleChagne}/>
+                       onChange={handleChange}/>
 
                 <label>godzina</label>
                 <input type='number'
                        name='time'
                        value={inputsValue.time}
-                       onChange={handleChagne}/>
-
+                       onChange={handleChange}/>
 
                 <label>uwagi dla kuriera</label>
                 <input type='textarea'
                        name='note'
                        value={inputsValue.note}
-                       onChange={handleChagne}/>
+                       onChange={handleChange}/>
             </div>
             <button onClick={handleDecrease}>wstecz</button>
             <button onClick={handleIncrease}>dalej</button>

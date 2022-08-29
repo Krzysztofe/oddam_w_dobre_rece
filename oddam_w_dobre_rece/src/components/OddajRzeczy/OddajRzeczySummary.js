@@ -34,7 +34,7 @@ const OddajRzeczySummary = ({inputsValue, summary, createSummary,
 
                 <h3>termin odbioru</h3>
                 <p> data: {inputsValue.date}</p>
-                <p> godzina: {inputsValue.hour}</p>
+                <p> godzina: {inputsValue.time}</p>
                 <p> uwagi dla kuriera: {inputsValue.note}</p>
 
 

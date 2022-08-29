@@ -1,6 +1,6 @@
 import React from 'react';
 
-const OddajRzeczyStuff = ({inputsValue, handleChagne,
+const OddajRzeczyStuff = ({inputsValue, handleChange,
                               counter, handleDecrease, handleIncrease}) => {
     return (
         <div>
@@ -13,7 +13,7 @@ const OddajRzeczyStuff = ({inputsValue, handleChagne,
                            name='selectStuff'
                            value='ubrania które'
                            checked = {inputsValue.selectStuff === 'ubrania które'}
-                           onChange={handleChagne}
+                           onChange={handleChange}
                     />
                     ubrania, które nadają się do ponownego użycia</label>
                 <label>
@@ -21,7 +21,7 @@ const OddajRzeczyStuff = ({inputsValue, handleChagne,
                     name = 'selectStuff'
                     value = 'do wyrzucenia'
                     checked = {inputsValue.selectStuff === 'do wyrzucenia'}
-                    onChange={handleChagne}
+                    onChange={handleChange}
                     />
                     ubrania, do wyrzucenia</label>
                 <label>
@@ -29,21 +29,21 @@ const OddajRzeczyStuff = ({inputsValue, handleChagne,
                     name = 'selectStuff'
                     value = 'zabawki'
                     checked = {inputsValue.selectStuff === 'zabawki'}
-                    onChange={handleChagne}/>
+                    onChange={handleChange}/>
                     zabawki</label>
                 <label>
                     <input type='radio'
                     name = 'selectStuff'
                     value = 'książki'
                     checked={inputsValue.selectStuff === 'książki'}
-                    onChange = {handleChagne}/>
+                    onChange = {handleChange}/>
                     książki</label>
                 <label>
                     <input type='radio'
                     name = "selectStuff"
                     value = 'inne'
                     checked={inputsValue.selectStuff === 'inne'}
-                    onChange={handleChagne} />
+                    onChange={handleChange} />
                     inne</label>
             </div>
             <button onClick={handleIncrease}>dalej</button>
