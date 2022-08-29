@@ -1,12 +1,14 @@
+@import "contact_form";
+
 
 .wrapper--contact {
   background: #b3d4fc;
   width: 100%;
   display: flex;
 }
+
 .contact__containerLeft{
-  width: 60%;
-  background-color: #c6ff6e;
+  display: none;
 }
 .contact__containerRight {
   padding: 1rem;
@@ -27,6 +29,8 @@
   width: 70%;
   gap: 0.4em;
   padding-top: 0.5em;
+  position: relative;
+  z-index: 1;
 }
 
 .contact__h2 {
@@ -44,12 +48,23 @@
 }
 
 @include media {
+  .wrapper--contact{
+    //background-color: rgba(0,0,0,0);
+    background: url("../../../asets/Background Image.png") no-repeat left;
+    background-size: cover;
+    height: 80vh;
+    opacity: 0.5;
+    display: flex;
+    justify-content: right;
+  }
+
   .contact__containerRigh{
 
   }
   .contact__containerInfo{
     display: flex;
     flex-direction: column;
+    width: 40%;
   }
   .contact__imageMobile{
     display: none;
@@ -62,6 +77,11 @@
   }
 }
 
+@include media__bigSize{
+  .wrapper--contact{
+    background-image: url("../../../asets/Background Image@2x.png");
+  }
+}
 
 
 
