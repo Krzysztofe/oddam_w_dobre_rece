@@ -1,0 +1,58 @@
+.wrapper--aboutUs {
+  display: flex;
+}
+
+.aboutUs__leftContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 50%;
+  background-color: $color-grey-white;
+  padding-bottom: 3em;
+}
+
+.aboutUs__h2 {
+  margin: 1em 0 0.5em 0;
+  font-size: 1em;
+
+  &:first-letter {
+    text-transform: capitalize;
+  }
+}
+
+.aboutUs__paragraph {
+  margin-top: 1em;
+  width: 60%;
+  text-align: center;
+  line-height: 1.5;
+  font-size: 0.7em;
+}
+
+.aboutUs__signature {
+  align-self: end;
+  margin: 2% 10% 0 0;
+  background-image: url("/asets/Signature.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  height: 100%;
+  width: 30%;
+}
+
+.aboutUs__rightContainer {
+  width: 50%;
+  background-image: url("../../../asets/People.png");
+  background-size: cover;
+}
+
+@include media__bigSize{
+  .underline{
+    background-image: url("../../../asets/Decoration@2x.png");
+  }
+  .aboutUs__signature{
+    background-image: url("../../../asets/Signature@2x.png");
+  }
+  .aboutUs__rightContainer{
+    background-image: url("../../../asets/People@2x.png");
+  }
+
+}

@@ -7,13 +7,15 @@
 @import "settings/mixins";
 
 @import 'elements/base';
-@import 'elements/header/nav_bar/nav_bar';
-@import 'elements/header/header';
-@import "elements/simple_steps";
-@import "elements/about_us";
-@import "elements/who_we_help/who_we_help";
-@import "elements/contact/contact";
+@import 'elements/main/nav_bar/nav_bar';
+@import 'elements/main/header/header';
+@import "elements/main/simple_steps";
+@import "elements/main/about_us";
+@import "elements/main/who_we_help/who_we_help";
+@import "elements/main/contact/contact";
+@import "elements/oddaj/oddaj_header/oddaj_header";
+@import "elements/oddaj/oddaj_belt";
 @import "elements/register";
 @import "elements/login";
 @import "elements/logout";
-@import "elements/oddaj_rzeczy";
+@import "elements/oddaj/oddaj_main";

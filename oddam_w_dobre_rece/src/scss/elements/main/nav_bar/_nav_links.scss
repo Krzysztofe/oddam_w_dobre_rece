@@ -1,0 +1,64 @@
+
+.hashLink {
+  text-decoration: none;
+}
+
+.logListItems {
+  padding: 0.5em;
+  border-top: 1px solid black;
+  width: 50%;
+  display: flex;
+  flex-direction: column-reverse;
+}
+
+.listItems {
+  padding: 0.5em;
+}
+.listItem {
+  cursor: pointer;
+  color: black;
+  font-weight: $semiBold;
+
+  &:hover {
+    color: #5E5322;
+  }
+
+  &::first-letter {
+    text-transform: uppercase;
+  }
+}
+
+
+@include media {
+  .logListItems {
+    display: flex;
+    border-top: none;
+    flex-direction: row-reverse;
+    padding: 0;
+  }
+
+  .listItems {
+    display: flex;
+    justify-content: space-between;
+    padding: 0;
+    //width: clamp(450px, 50%, 900px)
+  }
+  .listItem{
+    font-size: clamp(0.5rem, 1.5vw, 0.7rem);
+    padding: 0 0.4em;
+
+    &:hover{
+      outline: 1px solid $color-grey-dark;
+    }
+  }
+  .logListItem {
+    font-size: clamp(0.5rem, 0.8vw, 0.6rem);
+    margin-left: 1em;
+    &:hover{
+      outline: 1px solid $color-yellow;
+    }
+  }
+}
+
+
+

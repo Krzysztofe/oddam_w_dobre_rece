@@ -1,0 +1,92 @@
+@import "../../header_underline";
+@import "three_columns";
+
+.wrapper--header {
+}
+
+.empty {
+  height: 100px;
+}
+
+.header__image{
+  display: none;
+}
+.header__right {
+  font-weight: $semiBold;
+  width: 100%;
+}
+
+.header__h2 {
+  line-height: 1.2;
+  font-size: clamp(1em, 2vw, 1.2em);
+
+  &::first-letter {
+    text-transform: uppercase;
+  }
+}
+
+
+
+.btn_container {
+  display: flex;
+  justify-content: space-between;
+  padding: 2em 0;
+}
+
+.btnBig {
+  display: inline-block;
+  font-size: clamp(0.7em, 2vw, 1em);
+  flex-basis: 35%;
+}
+
+@include media {
+
+  .wrapper--header {
+    display: flex;
+    margin-top: 1em;
+  }
+  .header__image {
+    display: block;
+    width: 50%;
+    height: 70vh;
+    background-image: url("/asets/Hero Image.png");
+    background-position: right;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+  .header__right {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .header__container {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .btn_container {
+    width: 80%;
+    align-self: center;
+  }
+  .btnBig {
+    padding: 0.2em 0.2em;
+    display: block;
+    flex-basis: 45%;
+    border: 1px solid black;
+  }
+}
+
+@include media__bigSize {
+  .underline {
+    background-image: url("/asets/Decoration@2x.png");
+  }
+  .header__image{
+    background-image: url("/asets/Hero Image@2x.png");
+  }
+}
+
+
+
+
+

@@ -1,0 +1,27 @@
+
+.belt__h2{
+padding: 1em 0 0 1em;
+  font-weight: $semiBold;
+  &:first-letter{
+    text-transform: uppercase;
+  }
+}
+
+.belt__p{
+  padding: 0.3em 0 1em 1em;
+  line-height: 1.2;
+}
+
+@include media{
+  .wrapper--belt{
+    background-color: $color-yellow;
+  }
+
+  .belt__h2{
+    padding: 1em 2em 0 2em;
+  }
+
+  .belt__p{
+    padding: 0 2em 1em 2em;
+  }
+}

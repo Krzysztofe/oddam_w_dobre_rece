@@ -41,48 +41,61 @@ const ContactForm = () => {
 
         if (_errorsName.length > 0
             || _errorsEmail.length > 0
-            || _errorsTextarea.length > 0  ) {
+            || _errorsTextarea.length > 0) {
             return
         }
         setFormDatas([...formDatas, inputValue])
         setInputValue(
-            {...inputValue,
-            name: "",
-            email: "",
-            textarea: ""})
+            {
+                ...inputValue,
+                name: "",
+                email: "",
+                textarea: ""
+            })
     }
 // console.log(formDatas)
 
     return (
 
-    <form onSubmit={handleSubmit}
+        <form onSubmit={handleSubmit}
               className='contactForm'>
 
-        {/*<h3>wiadomość została wysłana! wkrótce się skontaktujemy.</h3>*/}
+            {/*<h3>wiadomość została wysłana! wkrótce się skontaktujemy.</h3>*/}
 
-        <label className='contactForm__label'>
+            <label className='contactForm__label'>
                 Wpisz swoje imie
                 <input type='text' name='name'
-                       className='contactForm__textInput'
+                       className= {`contactForm__textInput
+                          ${errors.name.length && 'contactForm__errorUnderline'}`}
                        value={inputValue.name}
-                       onChange={handleChange}/></label>
+                       onChange={handleChange}/>
+            </label>
 
             <label className='contactForm__label'>
                 Wpisz swoj email
                 <input type='email' name='email'
-                       className='contactForm__textInput'
+                       className= {`contactForm__textInput
+                          ${errors.email.length && 'contactForm__errorUnderline'}`}
                        value={inputValue.email}
-                       onChange={handleChange}/></label>
+                       onChange={handleChange}/>
+            </label>
+
             <div className="contactForm__textInputErrors">{errors.name}</div>
             <div className="contactForm__textInputErrors"> {errors.email}</div>
-            <label>wpisz swoja wiadomość
-                <input type='textarea' name='textarea'
-                       className='contactForm__textarea'
-                       value={inputValue.textarea}
-                       onChange={handleChange}/></label>
+
+            <label className='contactForm__labelTextarea'>
+                wpisz swoja wiadomość
+                <textarea name='textarea'
+                          rows={3}
+                          className= {`contactForm__textarea
+                          ${errors.textarea.length && 'contactForm__errorUnderline'}`}
+                          value={inputValue.textarea}
+                          onChange={handleChange}/>
+            </label>
+
             <div className="contactForm__textareaErrors">{errors.textarea}</div>
-            {/*<h1>{inputValue.name} {inputValue.email} {inputValue.textarea}</h1>*/}
-            <button>wyślij</button>
+            <button className='contactForm__button'>wyślij</button>
+
         </form>
     );
 };

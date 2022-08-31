@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import Underline from "../Underline";
 import ReactPaginate from "react-paginate";
+import HeaderUnderline from "../../HeaderUnderline";
 
 const WhoWeHelp = () => {
 
@@ -28,6 +29,8 @@ const WhoWeHelp = () => {
 
         const filteredOrganisations = organisations
             .filter(item => item.type === oganisationData)
+
+
 
         const displayOrganisations = filteredOrganisations
             .slice(visitedPage, visitedPage + organisationsPerPage)
@@ -59,8 +62,12 @@ const WhoWeHelp = () => {
     return (
         <section className="whoWeHelp">
             <div className="wrapper wrapper--whoWeHelp" id='whoWeHelp'>
-                <h2 className='whoWeHelp__h2'>Komu pomagamy?</h2>
-                <Underline/>
+                <HeaderUnderline
+                    text1={'komu pomagamy?'}
+                    // classContainer = {'simpleSteps__headerUnderlineContainer'}
+                    // classH2 = {'simpleSteps__headerUnderlineH2'}
+                    classUnderline = {'whoWeHelp__headerUnderline'}
+                />
                 <div className="whoWeHelp__columnsContainer">
 
                     <div className="whoWeHelp__columnContainer">
@@ -153,8 +160,8 @@ const WhoWeHelp = () => {
                             {organisationSelection(
                                 "colection", "zbiórka")}
                             <ReactPaginate
-                                previousLabel={''}
-                                nextLabel={''}
+                                previousLabel={false}
+                                nextLabel={false}
                                 pageCount={1}
                                 onPageChange={changePage}
                                 containerClassName={'paginationButtonsContainer'}

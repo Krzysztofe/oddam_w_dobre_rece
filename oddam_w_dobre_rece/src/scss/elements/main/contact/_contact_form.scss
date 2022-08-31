@@ -1,0 +1,58 @@
+.contactForm{
+  z-index: 2;
+  display: flex;
+ justify-content: space-between;
+  flex-wrap: wrap;
+}
+.contactForm__label{
+  width: 45%;
+  font-size: clamp(0.7em, 1vw, 1em)
+}
+.contactForm__textInput{
+  width: 100%;
+  border: none;
+background-color: rgba(0,0,0,0);
+  border-bottom: 1px solid $color-grey-light;
+}
+
+.contactForm__textInputErrors{
+  width: 45%;
+  height: 2vh;
+  padding: 0.5em 0;
+  color: #FF0000FF;
+  font-size: clamp(0.4em, 0.5vw, 0.7em);
+}
+
+
+.contactForm__labelTextarea{
+  font-size: clamp(0.7em, 1vw, 1em);
+  width: 100%;
+}
+.contactForm__textarea{
+  border: none;
+  background-color: rgba(0,0,0,0);
+  border-bottom: 1px solid $color-grey-light;
+  width: 100%;
+}
+.contactForm__textareaErrors{
+  width: 100%;
+  height: 2vh;
+  color: #FF0000FF;
+  font-size: clamp(0.4em, 0.5vw, 0.7em);
+  padding: 0.5em 0;
+}
+
+.contactForm__button{
+  width: 20%;
+  margin-left: 80%;
+  padding: 0.2em 0;
+  font-size: clamp(0.7em, 1vw, 9em);
+  align-self: center;
+  background-color: rgba(0,0,0,0);
+  border: 1px solid $color-grey-light;
+  cursor: pointer;
+}
+
+.contactForm__errorUnderline{
+  border-bottom: 1px solid #FF0000FF;
+}

@@ -1,0 +1,18 @@
+@import "oddaj_forms/oddaj_1";
+
+.wrapper--OddajForms{
+height: 100vh;
+}
+@include media {
+ .wrapper--OddajForms{
+    background-image: url("../../../asets/Background-Form.png");
+   background-position: right;
+    background-size: cover;
+  }
+}
+
+@include media__bigSize{
+  .wrapper--OddajForms{
+    background-image: url("../../../asets/Background-Form@2x.png");
+  }
+}

@@ -1,0 +1,75 @@
+.oddaj1 {
+  padding: 1em 1em;
+}
+
+.oddaj__p {
+  display: none;
+  &:first-letter{
+    text-transform: uppercase;
+  }
+}
+
+.oddaj__h2 {
+  display: none;
+}
+
+.oddaj1__inputsContainer {
+  display: flex;
+  flex-wrap: wrap;
+  row-gap: 0.3em;
+  //flex-direction: column;
+}
+
+.oddaj1__label {
+  width: 90%;
+  padding: 0.5em 0;
+
+  &:first-letter {
+    text-transform: uppercase;
+  }
+}
+
+.oddaj1__radio {
+  width: 1.5em;
+  height: 1.5em;
+  border: 1px solid black;
+  margin-right: 2em;
+  -webkit-appearance: none;
+  cursor: pointer;
+
+  &:checked {
+    background-color: $color-yellow;
+  }
+}
+
+.oddaj1__button {
+  width: 30%;
+  background-color: $color-grey-light;
+  padding: 0.5em 0;
+}
+
+@include media {
+  .oddaj1 {
+padding-left: 2em;
+  }
+
+  .oddaj__p {
+display: block;
+  }
+
+  .oddaj__h2 {
+    display: block;
+    font-weight: $semiBold;
+    margin: 1em 0 0.5em 0;
+    &:first-letter{
+      text-transform: uppercase;
+    }
+  }
+
+  .oddaj1__button{
+    margin-top: 1.8em;
+    width: 15%;
+    background-color: rgba(0,0,0,0);
+    border: 1px solid black;
+  }
+}

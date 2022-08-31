@@ -1,0 +1,51 @@
+.oddajHeader__squares {
+  display: flex;
+  justify-content: space-around;
+}
+
+.square {
+  font-size: clamp(1em, 2vw, 1.2em);
+  font-weight: $semiBold;
+  background-color: white;
+  padding: 0.5em;
+}
+
+.square__p {
+  display: none;
+}
+
+@include media {
+  .oddajHeader__squares {
+    margin: 1em auto;
+    width: 90%;
+  }
+
+  .square {
+    border: 1px solid $color-grey_light;
+    color: $color-grey-light;
+    transform: rotate(45deg);
+    background-color: rgba(0, 0, 0, 0);
+    width: 50px;
+    height: 50px;
+    font-size: 0.7em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &:last-child {
+      display: none;
+    }
+  }
+  .square__h3 {
+    //width: 10px;
+    transform: rotate(315deg);
+    //text-align: center;
+    //margin-left: 0.4em;
+    align-self: flex-start;
+  }
+  .square__p {
+    display: block;
+    text-align: center;
+    transform: rotate(315deg);
+  }
+}

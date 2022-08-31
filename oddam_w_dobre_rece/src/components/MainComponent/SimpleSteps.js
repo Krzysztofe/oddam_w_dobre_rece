@@ -5,13 +5,19 @@ import Bag from '../../asets/IconBag.png';
 import Glass from '../../asets/IconLupa.png'
 import Arrows from '../../asets/Icon.png'
 import {HashLink} from "react-router-hash-link";
+import HeaderUnderline from "../HeaderUnderline";
 
 const SimpleSteps = () => {
     return (
         <section className='simpleSteps'>
             <div className='wrapper wrapper--simpleSteps'>
-                <h2 className='simpleSteps__h2'>wystarczą 4 proste kroki</h2>
-                <Underline/>
+                <HeaderUnderline
+                    text1={'wystarczą 4 proste kroki'}
+                    // classContainer = {'simpleSteps__headerUnderlineContainer'}
+                    // classH2 = {'simpleSteps__headerUnderlineH2'}
+                    classUnderline = {'simpleSteps__headerUnderline'}
+                />
+
                 <div className="simpleSteps__columnsContainer">
                     <div className="simpleSteps__columnContainer">
                         <img src={Tshirt} className="simpleSteps__logo" alt = 'Tshirt logo'/>

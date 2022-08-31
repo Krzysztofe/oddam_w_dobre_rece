@@ -1,0 +1,78 @@
+@import "oddaj_squares";
+
+
+.navSpacer {
+  height: 6rem;
+}
+
+.wrapper--oddajHeader {
+  background-color: $color-grey-white;
+  //padding: 1.5em 0.5em;
+}
+
+.oddajHeader__backgroundImage {
+  display: none;
+}
+
+.oddajHeader__rightContainer {
+  display: flex;
+  flex-direction: column;
+  row-gap: 1em;
+}
+
+.oddajHeader__headerUnderlineContainer {
+
+}
+
+.oddajHeaders__headerUnderlineH2 {
+  text-align: left;
+
+}
+
+.oddajHeader__h2 {
+  font-size: clamp(1em, 2vw, 1.2em);
+  font-weight: $semiBold;
+  padding: 1.5em 0.5em;
+}
+
+@include media {
+  .navSpacer {
+    height: 4rem;
+  }
+  .wrapper--oddajHeader {
+    display: flex;
+    flex-direction: row;
+    background-color: white;
+  }
+  .oddajHeader__backgroundImage {
+    display: block;
+    width: 50%;
+    background-image: url("../../../../asets/Header-Form-Background.png");
+    background-position: left bottom;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+
+  .oddajHeader__rightContainer {
+    width: 50%;
+    padding: 2em;
+  }
+  .oddajHeaders__headerUnderlineH2 {
+    text-align: center;
+  }
+  .oddajHeader__headerUnderline {
+  }
+  .oddajHeader__h2 {
+    text-align: center;
+
+    &:first-letter {
+      text-transform: uppercase;
+    }
+  }
+}
+
+@include media__bigSize {
+  .oddajHeader__backgroundImage {
+    background-image: url("../../../../asets/Header-Form-Background@2x.png");
+  }
+}

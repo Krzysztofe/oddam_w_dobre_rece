@@ -5,7 +5,7 @@ import MainComponent from "./MainComponent/MainComponent";
 import Login from "./Login";
 import Register from "./Register";
 import Logout from "./Logout";
-import OddajRzeczyMain from "./OddajRzeczy/OddajRzeczyMain";
+import OddajRzeczyMain from "./OddajRzeczy/OddajForms/OddajRzeczyMain";
 
 function App() {
 

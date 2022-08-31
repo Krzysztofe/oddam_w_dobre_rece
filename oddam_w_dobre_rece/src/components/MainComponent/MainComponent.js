@@ -9,7 +9,6 @@ import Contact from "./Contact/Contact";
 
 const MainComponent = () => {
     return (
-
             <>
                 <Header/>
                 <ThreeColumns/>
@@ -18,7 +17,6 @@ const MainComponent = () => {
                 <WhoWeHelp/>
                 <Contact/>
             </>
-
     );
 };
 

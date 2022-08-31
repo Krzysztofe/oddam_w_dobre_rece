@@ -5,17 +5,19 @@ import Tshirt from '../../../asets/IconTshirt.png';
 import Facebook from '../../../asets/Facebook.png';
 import Instagram from '../../../asets/Instagram.png';
 import {BsFillTelephoneFill} from 'react-icons/bs'
+import HeaderUnderline from "../../HeaderUnderline";
 
 const Contact = () => {
     return (
         <section className="contact">
             <div className="wrapper wrapper--contact" id='contact'>
+             <div className="opacityBacground">
                 <div className='contact__imageMobile'> </div>
                 <div className="contact__containerInfo">
-                    <h2 className='contact__h2'>skontaktuj się z nami</h2>
-                    <Underline/>
-                    {}
-                    {/*<h3>wiadomość została wysłana! wkrótce się skontaktujemy.</h3>*/}
+                    <HeaderUnderline
+                        text1={'skontaktuj się z nami'}
+                        classUnderline = {'contact__headerUnderline'}
+                    />
 
                     <Form/>
                     <a href='https://www.facebook.com/'>
@@ -25,6 +27,7 @@ const Contact = () => {
                         <img src={Instagram} className='contact__logo' alt='Instagram_logo'/>
                     </a>
                 </div>
+             </div>
             </div>
         </section>
     );
