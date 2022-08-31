@@ -1,0 +1,42 @@
+.oddajForm1__inputsContainer {
+  display: flex;
+  flex-wrap: wrap;
+  row-gap: 0.3em;
+}
+
+.oddajForm1__label {
+  width: 90%;
+  padding: 0.5em 0;
+
+  &:first-letter {
+    text-transform: uppercase;
+  }
+}
+
+.oddajForm1__radio {
+  width: 1.5em;
+  height: 1.5em;
+  border: 1px solid black;
+  margin-right: 2em;
+  -webkit-appearance: none;
+  cursor: pointer;
+
+  &:checked {
+    background-color: $color-yellow;
+  }
+}
+
+.oddajForm1__button {
+  width: 30%;
+  background-color: $color-grey-light;
+  padding: 0.5em 0;
+}
+
+@include media {
+  .oddajForm1__button{
+    margin: 1.8em 0;
+    width: 15%;
+    background-color: rgba(0,0,0,0);
+    border: 1px solid black;
+  }
+}

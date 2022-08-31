@@ -1,0 +1,40 @@
+.oddajForm2__container{
+
+}
+.oddajForm2__label{
+display: flex;
+  gap: 3vw;
+  font-weight:$semiBold;
+  margin-top: 1em;
+  &:first-letter{
+    text-transform: uppercase;
+  }
+}
+.oddajForm2__select{
+width: clamp(120px, 40%, 250px)
+}
+.oddajForm2__buttonsContainer{
+display: flex;
+  justify-content: space-between;
+  margin: 2em  0;
+ }
+.oddajForm2__button{
+  width: 30%;
+  padding: 0.5em 0;
+  background-color: $color-grey-white;
+}
+
+@include media{
+  .oddajForm2__label {
+    margin-top: 2em;
+  }
+  .oddajForm2__buttonsContainer{
+width: 30%;
+  }
+  .oddajForm2__button{
+    margin: 5em 0 2em 0;
+    width: 45%;
+    border: 1px solid $color-grey-light;
+    background-color: rgba(0,0,0,0);
+  }
+}

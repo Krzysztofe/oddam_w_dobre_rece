@@ -1,14 +1,11 @@
 import React from 'react';
 
-const OddajRzeczyLocalisation = ({handleChange, inputsValue,
+const OddajForm3 = ({handleChange, inputsValue,
                                      handleIncrease, handleDecrease
                                  }) => {
     return (
         <>
-            <p>krok 3/4</p>
-            <h2>lokalizacja:</h2>
-
-            <div style={{display: 'flex', flexDirection: 'column'}}>
+            <form >
                 <select
                     name='selectLocalisation'
                     value={inputsValue.selectLocalisation}
@@ -65,7 +62,7 @@ const OddajRzeczyLocalisation = ({handleChange, inputsValue,
                        name='organisationName'
                        value={inputsValue.organisationName}
                        onChange={handleChange}/>
-            </div>
+            </form>
             <button onClick={handleDecrease}>wstecz</button>
             <button onClick={handleIncrease}>dalej</button>
         </>
@@ -73,4 +70,4 @@ const OddajRzeczyLocalisation = ({handleChange, inputsValue,
     );
 };
 
-export default OddajRzeczyLocalisation;
+export default OddajForm3;

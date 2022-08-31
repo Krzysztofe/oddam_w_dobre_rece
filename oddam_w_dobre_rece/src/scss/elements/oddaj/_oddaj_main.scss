@@ -1,18 +1,29 @@
-@import "oddaj_forms/oddaj_1";
+@import "oddaj_forms/oddaj_form_top";
+@import "oddaj_forms/oddaj_form1";
+@import "oddaj_forms/oddaj_form2";
 
-.wrapper--OddajForms{
-height: 100vh;
+.wrapper--oddajMain{
 }
+.oddajMain {
+  padding-left: 1em;
+  padding-top: 1em;
+}
+
 @include media {
- .wrapper--OddajForms{
+ .wrapper--oddajMain{
     background-image: url("../../../asets/Background-Form.png");
    background-position: right;
     background-size: cover;
+   height: 80vh;
+  }
+  .oddajMain {
+    padding-left: 2em;
+
   }
 }
 
 @include media__bigSize{
-  .wrapper--OddajForms{
+  .wrapper--oddajMain{
     background-image: url("../../../asets/Background-Form@2x.png");
   }
 }

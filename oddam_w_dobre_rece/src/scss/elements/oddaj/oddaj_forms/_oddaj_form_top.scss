@@ -1,0 +1,24 @@
+.oddajFormTop__p {
+  display: none;
+  &:first-letter{
+    text-transform: uppercase;
+  }
+}
+
+.oddajFormTop__h2 {
+  display: none;
+}
+
+@include media{
+  .oddajFormTop__p {
+    display: block;
+  }
+  .oddajFormTop__h2 {
+    display: block;
+    font-weight: $semiBold;
+    margin: 1em 0 0.5em 0;
+    &:first-letter{
+      text-transform: uppercase;
+    }
+  }
+}

@@ -1,20 +1,21 @@
 import React, {useState} from 'react';
 import {useEffect} from "react";
 
-import OddajRzeczyBags from "./OddajRzeczyBags";
-import OddajRzeczyLocalization from "./OddajRzeczyLocalisation";
+import OddajForm2 from "./OddajForms/OddajForm2";
+import OddajForm1 from "./OddajForms/OddajForm1";
+import OddajForm3 from "./OddajForms/OddajForm3";
 import {collection, getDocs, addDoc} from "firebase/firestore";
-import {db} from "../../FireBaseConfig";
-import OddajRzeczyStuff from "./OddajRzeczyStuff";
-import OddajRzeczyThanx from "./OddajRzeczyThanx";
-import OddajRzeczyAdress from "./OddajRzeczyAdress";
-import OddajRzeczySummary from "./OddajRzeczySummary";
-import HeaderUnderline from "../../HeaderUnderline";
-import OddajSquare from "../Header/OddajSquare";
-import OddajHeader from "../Header/OddajHeader";
-import OddajBelt from "../OddajBelt";
-import Contact from "../../MainComponent/Contact/Contact";
-import OddajFormHeader from "./OddajFormHeader";
+import {db} from "../FireBaseConfig";
+
+import OddajRzeczyThanx from "./OddajForms/OddajRzeczyThanx";
+import OddajRzeczyAdress from "./OddajForms/OddajRzeczyAdress";
+import OddajRzeczySummary from "./OddajForms/OddajRzeczySummary";
+import HeaderUnderline from "../HeaderUnderline";
+import OddajSquare from "./Header/OddajSquare";
+import OddajHeader from "./Header/OddajHeader";
+import OddajBelt from "./OddajBelt";
+import Contact from "../MainComponent/Contact/Contact";
+import OddajFormTop from "./OddajForms/OddajFormTop";
 
 
 const OddajRzeczyMain = () => {
@@ -106,21 +107,20 @@ const OddajRzeczyMain = () => {
             <div className='navSpacer'></div>
             <OddajHeader counter = {counter}/>
 
-            {/*<div className="wrapper wrapper--OddajForms">*/}
-
             {counter === 1 &&
                 <>
                     <OddajBelt
                         text={'Uzupełnij szczegóły dotyczace twoich rzeczy. ' +
                             'Dzięki temu bedziemy wiedzieć komu najlepiej je przekazać.'}
                     />
-                    <div className="wrapper wrapper--OddajForms">
-                        <div className='oddaj1'>
-                            <OddajFormHeader
+                    <main className="wrapper wrapper--oddajMain">
+                        <div className='oddajMain'>
+
+                            <OddajFormTop
                                 step={'krok 1/4'}
                                 text={'zaznacz co chcesz oddać:'}
                             />
-                            <OddajRzeczyStuff
+                            <OddajForm1
                                 inputsValue={inputsValue}
                                 handleChange={handleChange}
                                 counter={counter}
@@ -128,23 +128,26 @@ const OddajRzeczyMain = () => {
                                 handleDecrease={handleDecrease}
                             />
                         </div>
-                    </div>
+                    </main>
                 </>
             }
 
             {counter === 2 &&
                 <>
                     <OddajBelt
-                        text={'Wszytie rzeczy do oddania zapakuj w 60l worki.' +
-                            'Dokładną instrukcję jak poprawnie spakować rzczy znajdziesz TUTAJ '}
+                        text={'Wszytie rzeczy do oddania ' +
+                            'zapakuj w 60l worki. Dokładną' +
+                            ' instrukcję jak poprawnie spakować' +
+                            ' rzczy znajdziesz TUTAJ '}
                     />
-                    <div className="wrapper wrapper--OddajForms">
-                        <div className='oddaj1'>
-                            <OddajFormHeader
-                                step={'krok 1/2'}
-                                text={'podaj liczbę 60l worków, w które spkowałeś/aś rzeczy:'}
+                    <main className="wrapper wrapper--oddajMain">
+                        <div className='oddajMain'>
+                            <OddajFormTop
+                                step={'krok 2/4'}
+                                text={'podaj liczbę 60l worków,' +
+                                    ' w które spkowałeś/aś rzeczy:'}
                             />
-                            <OddajRzeczyBags
+                            <OddajForm2
                                 inputsValue={inputsValue}
                                 handleChange={handleChange}
                                 counter={counter}
@@ -152,7 +155,7 @@ const OddajRzeczyMain = () => {
                                 handleDecrease={handleDecrease}
                             />
                         </div>
-                    </div>
+                    </main>
                 </>
                }
 
@@ -164,13 +167,13 @@ const OddajRzeczyMain = () => {
                             'filtrować organizacje po ich lokalizacji bądź ' +
                             'celu ich pomocy'}
                     />
-                    <div className="wrapper wrapper--OddajForms">
-                        <div className='oddaj1'>
-                            <OddajFormHeader
-                                step={'krok 1/3'}
+                    <main className="wrapper wrapper--oddajMain">
+                        <div className='oddajMain'>
+                            <OddajFormTop
+                                step={'krok 3/4'}
                                 text={'lokalizacja:'}
                             />
-                            <OddajRzeczyLocalization
+                            <OddajForm3
                                 inputsValue={inputsValue}
                                 handleChange={handleChange}
                                 counter={counter}
@@ -178,7 +181,7 @@ const OddajRzeczyMain = () => {
                                 handleDecrease={handleDecrease}
                             />
                         </div>
-                    </div>
+                    </main>
                 </>
             }
 
@@ -187,9 +190,9 @@ const OddajRzeczyMain = () => {
                     <OddajBelt
                         text={'Podaj adres oraz termin odbioru rzeczy'}
                     />
-                    <div className="wrapper wrapper--OddajForms">
-                        <div className='oddaj1'>
-                            <OddajFormHeader
+                    <main className="wrapper wrapper--oddajMain">
+                        <div className='oddajMain'>
+                            <OddajFormTop
                                 step={'krok 1/4'}
                                 text={'podaj adres oraz termin ' +
                                     'odbioru rzeczy przez kuriera:'}
@@ -202,16 +205,16 @@ const OddajRzeczyMain = () => {
                                 handleDecrease={handleDecrease}
                             />
                         </div>
-                    </div>
+                    </main>
                 </>
             }
 
             {counter === 5 &&
 
                 <>
-                    <div className="wrapper wrapper--OddajForms">
-                        <div className='oddaj1'>
-                            <OddajFormHeader
+                    <main className="wrapper wrapper--oddajMain">
+                        <div className='oddajMain'>
+                            <OddajFormTop
                                 text={'podsumowanie twojej darowizny'}
                             />
                             <OddajRzeczySummary
@@ -222,7 +225,7 @@ const OddajRzeczyMain = () => {
                                 handleDecrease={handleDecrease}
                             />
                         </div>
-                    </div>
+                    </main>
                 </>
             }
 

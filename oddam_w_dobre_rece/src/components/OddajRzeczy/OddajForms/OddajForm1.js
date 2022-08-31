@@ -1,25 +1,21 @@
 import React from 'react';
-import OddajFormHeader from "./OddajFormHeader";
+import OddajFormHeader from "./OddajFormTop";
 
-const OddajRzeczyStuff = ({
+const OddajForm1 = ({
                               inputsValue, handleChange,
                               counter, handleDecrease, handleIncrease
                           }) => {
     return (
-        // <section className="wrapper wrapper--OddajForms">
 <>
-
-                {/*<OddajFormHeader step={'1/4'} text={'zaznacz co chcesz oddać:'}/>*/}
-
-                <div className='oddaj1__inputsContainer'>
+                <form className = 'oddajForm1__inputsContainer'>
                     <input type='radio'
                            name='selectStuff'
                            value='ubrania które'
                            checked={inputsValue.selectStuff === 'ubrania które'}
                            onChange={handleChange}
-                           className='oddaj1__radio'
+                           className='oddajForm1__radio'
                     />
-                    <label className='oddaj1__label'> ubrania, które nadają się do ponownego użycia
+                    <label className='oddajForm1__label'> ubrania, które nadają się do ponownego użycia
                     </label>
 
 
@@ -28,9 +24,9 @@ const OddajRzeczyStuff = ({
                            value='do wyrzucenia'
                            checked={inputsValue.selectStuff === 'do wyrzucenia'}
                            onChange={handleChange}
-                           className='oddaj1__radio'
+                           className='oddajForm1__radio'
                     />
-                    <label className='oddaj1__label'> ubrania, do wyrzucenia
+                    <label className='oddajForm1__label'> ubrania, do wyrzucenia
                     </label>
 
 
@@ -39,8 +35,8 @@ const OddajRzeczyStuff = ({
                            value='zabawki'
                            checked={inputsValue.selectStuff === 'zabawki'}
                            onChange={handleChange}
-                           className='oddaj1__radio'/>
-                    <label className='oddaj1__label'> zabawki
+                           className='oddajForm1__radio'/>
+                    <label className='oddajForm1__label'> zabawki
                     </label>
 
 
@@ -49,8 +45,8 @@ const OddajRzeczyStuff = ({
                            value='książki'
                            checked={inputsValue.selectStuff === 'książki'}
                            onChange={handleChange}
-                           className='oddaj1__radio'/>
-                    <label className='oddaj1__label'> książki
+                           className='oddajForm1__radio'/>
+                    <label className='oddajForm1__label'> książki
                     </label>
 
                     <input type='radio'
@@ -58,22 +54,21 @@ const OddajRzeczyStuff = ({
                            value='inne'
                            checked={inputsValue.selectStuff === 'inne'}
                            onChange={handleChange}
-                           className='oddaj1__radio'/>
-                    <label className='oddaj1__label'>
+                           className='oddajForm1__radio'/>
+                    <label className='oddajForm1__label'>
                         inne
                     </label>
 
                     <button onClick={handleIncrease}
-                            className='oddaj1__button'
+                            className='oddajForm1__button'
                     >
                         dalej
                     </button>
-                </div>
+                </form>
 
 
 </>
-        // </section>
     );
 };
 
-export default OddajRzeczyStuff;
+export default OddajForm1;
