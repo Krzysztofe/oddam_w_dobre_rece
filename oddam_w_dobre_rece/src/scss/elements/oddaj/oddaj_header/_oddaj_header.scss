@@ -43,6 +43,7 @@
     display: flex;
     flex-direction: row;
     background-color: white;
+    //box-shadow: -40px -17px 50px 20px rgba(255,178,92,0.54);
   }
   .oddajHeader__backgroundImage {
     display: block;
@@ -56,6 +57,7 @@
   .oddajHeader__rightContainer {
     width: 50%;
     padding: 2em;
+    box-shadow: -40px -17px 50px 20px rgba(255,255,255,0.8);
   }
   .oddajHeaders__headerUnderlineH2 {
     text-align: center;

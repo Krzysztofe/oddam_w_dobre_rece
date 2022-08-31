@@ -1,6 +1,7 @@
 @import "oddaj_forms/oddaj_form_top";
 @import "oddaj_forms/oddaj_form1";
 @import "oddaj_forms/oddaj_form2";
+@import "oddaj_forms/oddaj_thnx";
 
 .wrapper--oddajMain{
 }
@@ -18,7 +19,8 @@
   }
   .oddajMain {
     padding-left: 2em;
-
+height: 100%;
+    position: relative;
   }
 }
 

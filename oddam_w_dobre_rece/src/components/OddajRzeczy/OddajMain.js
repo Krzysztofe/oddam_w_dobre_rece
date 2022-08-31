@@ -7,7 +7,7 @@ import OddajForm3 from "./OddajForms/OddajForm3";
 import {collection, getDocs, addDoc} from "firebase/firestore";
 import {db} from "../FireBaseConfig";
 
-import OddajRzeczyThanx from "./OddajForms/OddajRzeczyThanx";
+import OddajRzeczyThanx from "./OddajForms/OddajThanx";
 import OddajRzeczyAdress from "./OddajForms/OddajRzeczyAdress";
 import OddajRzeczySummary from "./OddajForms/OddajRzeczySummary";
 import HeaderUnderline from "../HeaderUnderline";
@@ -230,8 +230,19 @@ const OddajRzeczyMain = () => {
             }
 
             {counter === 6 &&
-                <OddajRzeczyThanx/>}
-            {/*</div>*/}
+                <main className="wrapper wrapper--oddajMain">
+                    <div className='oddajMain'>
+                        <HeaderUnderline
+                            text1={'dziękujemy za przesłanie formularza'}
+                            text2={'na maila prześlemy wszelkie' +
+                                'informacje o odbiorze'}
+                            classContainer = {'oddajThnx__container'}
+                            classH2 = {'oddajThnx__h2'}
+                            classUnderline = {'oddajThnx__underline'}
+                        />
+
+                    </div>
+                </main>}
             <Contact/>
         </>
     );

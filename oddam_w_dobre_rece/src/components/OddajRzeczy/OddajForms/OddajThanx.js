@@ -1,6 +1,4 @@
-import React from 'react';
-
-const OddajRzeczyThanx = () => {
+const OddajThanx = () => {
     return (
         <div>
             <h2>dziękujemy za przeszłanie formularza<br/>
@@ -10,4 +8,4 @@ const OddajRzeczyThanx = () => {
     );
 };
 
-export default OddajRzeczyThanx;
+export default OddajThanx;

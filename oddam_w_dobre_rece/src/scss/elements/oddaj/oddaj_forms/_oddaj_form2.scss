@@ -1,5 +1,8 @@
 .oddajForm2__container{
-
+  height: 80%;
+display: flex;
+  flex-direction: column;
+ justify-content: space-between;
 }
 .oddajForm2__label{
 display: flex;
@@ -11,7 +14,7 @@ display: flex;
   }
 }
 .oddajForm2__select{
-width: clamp(120px, 40%, 250px)
+width: clamp(120px, 40%, 200px)
 }
 .oddajForm2__buttonsContainer{
 display: flex;
@@ -27,12 +30,14 @@ display: flex;
 @include media{
   .oddajForm2__label {
     margin-top: 2em;
+    font-weight: $regular;
+    gap: 1vw;
   }
   .oddajForm2__buttonsContainer{
 width: 30%;
   }
   .oddajForm2__button{
-    margin: 5em 0 2em 0;
+    //margin: 5em 0 2em 0;
     width: 45%;
     border: 1px solid $color-grey-light;
     background-color: rgba(0,0,0,0);

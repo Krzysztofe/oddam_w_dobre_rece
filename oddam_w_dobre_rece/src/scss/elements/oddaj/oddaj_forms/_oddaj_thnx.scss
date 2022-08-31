@@ -1,0 +1,19 @@
+.oddajThnx__container{
+width: 40%;
+}
+.oddajThnx__h2{
+  font-weight: $light;
+  line-height: 1.5;
+}
+.oddajThnx__underline{
+
+}
+
+@include media{
+
+  .oddajThnx__container{
+       position: absolute;
+    top: 30%;
+    left: 10%;
+  }
+}
