@@ -4,11 +4,10 @@ import {useEffect} from "react";
 import OddajForm2 from "./OddajForms/OddajForm2";
 import OddajForm1 from "./OddajForms/OddajForm1";
 import OddajForm3 from "./OddajForms/OddajForm3";
+import OddajForm4 from "./OddajForms/OddajForm4";
 import {collection, getDocs, addDoc} from "firebase/firestore";
 import {db} from "../FireBaseConfig";
 
-import OddajRzeczyThanx from "./OddajForms/OddajThanx";
-import OddajRzeczyAdress from "./OddajForms/OddajRzeczyAdress";
 import OddajRzeczySummary from "./OddajForms/OddajRzeczySummary";
 import HeaderUnderline from "../HeaderUnderline";
 import OddajSquare from "./Header/OddajSquare";
@@ -16,7 +15,6 @@ import OddajHeader from "./Header/OddajHeader";
 import OddajBelt from "./OddajBelt";
 import Contact from "../MainComponent/Contact/Contact";
 import OddajFormTop from "./OddajForms/OddajFormTop";
-
 
 const OddajRzeczyMain = () => {
     const [inputsValue, setInputsValue] =
@@ -193,11 +191,11 @@ const OddajRzeczyMain = () => {
                     <main className="wrapper wrapper--oddajMain">
                         <div className='oddajMain'>
                             <OddajFormTop
-                                step={'krok 1/4'}
+                                step={'krok 4/4'}
                                 text={'podaj adres oraz termin ' +
                                     'odbioru rzeczy przez kuriera:'}
                             />
-                            <OddajRzeczyAdress
+                            <OddajForm4
                                 inputsValue={inputsValue}
                                 handleChange={handleChange}
                                 counter={counter}

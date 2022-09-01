@@ -1,0 +1,103 @@
+.form4__inputsContainer{
+}
+
+.form4__h3{
+font-weight: $semiBold;
+  margin: 1em 0 1em 0;
+  &:first-letter{
+  text-transform: uppercase;
+}
+}
+
+.form4__leftContainer{
+
+}
+
+.form4__rightContainer{
+
+}
+
+.form4__inputContainer{
+display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.5em;
+  background-color: rgba(0,0,0,0);
+}
+.form4__label{
+  text-align: right;
+  width: 35%;
+  :first-letter{
+    text-transform: uppercase;
+  }
+}
+
+.form4__input{
+  width: 60%;
+  background-color: rgba(0,0,0,0);
+  height: 1.3em;
+  border: 1px solid $color-grey-white;
+}
+.form4__textarea{
+  width: 60%;
+  background-color: rgba(0,0,0,0);
+  border: 1px solid $color-grey-dark;
+}
+
+.form4__buttonsContainer{
+  display: flex;
+  justify-content: space-between;
+}
+.form4__button{
+  background-color: $color-grey-white;
+  width: 30%;
+  padding: 0.5em 0;
+  margin: 1em 0;
+}
+
+@include media {
+  .form4__inputsContainer {
+    width: 50%;
+    height: 80%;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+
+  .form4__h3 {
+
+  }
+
+  .form4__leftContainer {
+    width: 48%;
+  }
+
+  .form4__rightContainer {
+    width: 48%;
+  }
+
+  .form4__inputContainer {
+
+  }
+
+  .form4__label {
+    text-align: right;
+
+  }
+
+
+  .form4__input {
+    border: 1px solid $color-grey-light;
+  }
+  .form4__textarea{
+    border: 1px solid $color-grey-light;
+}
+  .form4__buttonsContainer{
+width: 50%;
+  }
+  .form4__button{
+    width: 35%;
+  }
+
+
+
+}
