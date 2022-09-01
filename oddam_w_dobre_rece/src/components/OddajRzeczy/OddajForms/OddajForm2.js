@@ -7,17 +7,15 @@ const OddajForm2 = ({
                     }) => {
     return (
         <>
-            <form className='oddajForm2__container'>
-                <label
-                    className='oddajForm2__label'
-                >
+            <form className='oddajForm2__inputsContainer'>
+                <label className='oddajForm2__label'>
                     liczba 60l worków:
 
                     <select name='selectBags'
                             value={inputsValue.selectBags}
                             onChange={handleChange}
-                            className="oddajForm2__select"
-                    >
+                            className="oddajForm2__select">
+
                         <option value=''> wybierz</option>
                         <option value='1'> 1</option>
                         <option value='2'> 2</option>
@@ -28,15 +26,13 @@ const OddajForm2 = ({
                 </label>
 
                 <div className="oddajForm2__buttonsContainer">
-                    <button
-                        onClick={handleDecrease}
-                        className='oddajForm2__button'
-                    >wstecz
+                    <button onClick={handleDecrease}
+                        className='oddajForm2__button'>
+                        wstecz
                     </button>
-                    <button
-                        onClick={handleIncrease}
-                        className='oddajForm2__button'
-                    >dalej
+                    <button onClick={handleIncrease}
+                        className='oddajForm2__button'>
+                        dalej
                     </button>
                 </div>
             </form>

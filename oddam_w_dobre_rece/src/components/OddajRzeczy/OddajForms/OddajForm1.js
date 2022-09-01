@@ -8,16 +8,18 @@ const OddajForm1 = ({
     return (
 <>
                 <form className = 'oddajForm1__inputsContainer'>
-                    <input type='radio'
+
+                    <label className='oddajForm1__label'>
+                        <input type='radio'
                            name='selectStuff'
                            value='ubrania które'
                            checked={inputsValue.selectStuff === 'ubrania które'}
                            onChange={handleChange}
                            className='oddajForm1__radio'
-                    />
-                    <label className='oddajForm1__label'> ubrania, które nadają się do ponownego użycia
+                    /> ubrania, które nadają się do ponownego użycia
                     </label>
 
+                    <label className='oddajForm1__label'>
 
                     <input type='radio'
                            name='selectStuff'
@@ -25,29 +27,30 @@ const OddajForm1 = ({
                            checked={inputsValue.selectStuff === 'do wyrzucenia'}
                            onChange={handleChange}
                            className='oddajForm1__radio'
-                    />
-                    <label className='oddajForm1__label'> ubrania, do wyrzucenia
+                    />ubrania, do wyrzucenia
                     </label>
 
+                    <label className='oddajForm1__label'>
 
                     <input type='radio'
                            name='selectStuff'
                            value='zabawki'
                            checked={inputsValue.selectStuff === 'zabawki'}
                            onChange={handleChange}
-                           className='oddajForm1__radio'/>
-                    <label className='oddajForm1__label'> zabawki
+                           className='oddajForm1__radio'/>zabawki
                     </label>
 
-
+                    <label className='oddajForm1__label'>
                     <input type='radio'
                            name='selectStuff'
                            value='książki'
                            checked={inputsValue.selectStuff === 'książki'}
                            onChange={handleChange}
                            className='oddajForm1__radio'/>
-                    <label className='oddajForm1__label'> książki
+                    książki
                     </label>
+
+                    <label className='oddajForm1__label'>
 
                     <input type='radio'
                            name="selectStuff"
@@ -55,15 +58,15 @@ const OddajForm1 = ({
                            checked={inputsValue.selectStuff === 'inne'}
                            onChange={handleChange}
                            className='oddajForm1__radio'/>
-                    <label className='oddajForm1__label'>
                         inne
                     </label>
 
-                    <button onClick={handleIncrease}
-                            className='oddajForm1__button'
-                    >
-                        dalej
-                    </button>
+    <button onClick={handleIncrease}
+            className='oddajForm1__button'
+    >
+        dalej
+    </button>
+
                 </form>
 
 

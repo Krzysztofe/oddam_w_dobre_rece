@@ -1,12 +1,11 @@
 .oddajForm1__inputsContainer {
   display: flex;
-  flex-wrap: wrap;
-  row-gap: 0.3em;
+  flex-direction: column;
 }
 
 .oddajForm1__label {
-  width: 90%;
-  padding: 0.5em 0;
+  width:90%;
+ margin-top: 0.5em;
 
   &:first-letter {
     text-transform: uppercase;
@@ -20,7 +19,6 @@
   margin-right: 2em;
   -webkit-appearance: none;
   cursor: pointer;
-
   &:checked {
     background-color: $color-yellow;
   }
@@ -33,10 +31,22 @@
 }
 
 @include media {
+  .oddajForm1__inputsContainer{
+    height: 80%;
+    }
+  .oddajForm1__label{
+    padding: 0;
+  }
+.oddajForm1__radio{
+ margin-right: 1em;
+  width: 1em;
+  height: 1em;
+
+}
   .oddajForm1__button{
-    margin: 1.8em 0;
     width: 15%;
     background-color: rgba(0,0,0,0);
     border: 1px solid black;
+    margin-bottom: 2em;
   }
 }

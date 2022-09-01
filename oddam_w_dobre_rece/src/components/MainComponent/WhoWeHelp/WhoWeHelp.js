@@ -7,6 +7,7 @@ const WhoWeHelp = () => {
 
     const [printCounter, setPrintCounter] = useState(1)
     const [organisations, setOrganisations] = useState(false)
+    const [filteredOrganisations, setFilteredOrganisations] = useState(false)
     const [pageNumber, setPageNumber] = useState(0)
 
 
@@ -17,9 +18,8 @@ const WhoWeHelp = () => {
     }, [])
 
     if (organisations === false) {
-        return <h1>loading </h1>
+        return <h2>loading </h2>
     }
-    console.log(organisations)
 
     const organisationsPerPage = 3
     const visitedPage = pageNumber * organisationsPerPage
@@ -29,8 +29,6 @@ const WhoWeHelp = () => {
 
         const filteredOrganisations = organisations
             .filter(item => item.type === oganisationData)
-
-
 
         const displayOrganisations = filteredOrganisations
             .slice(visitedPage, visitedPage + organisationsPerPage)
