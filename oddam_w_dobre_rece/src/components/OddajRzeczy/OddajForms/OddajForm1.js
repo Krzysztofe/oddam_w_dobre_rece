@@ -12,8 +12,10 @@ const OddajForm1 = ({
                     <label className='oddajForm1__label'>
                         <input type='radio'
                            name='selectStuff'
-                           value='ubrania które'
-                           checked={inputsValue.selectStuff === 'ubrania które'}
+                           value='ubrania, które nadają się do ponownego użycia'
+                           checked={
+                            inputsValue.selectStuff ===
+                               'ubrania, które nadają się do ponownego użycia'}
                            onChange={handleChange}
                            className='oddajForm1__radio'
                     /> ubrania, które nadają się do ponownego użycia
@@ -23,8 +25,10 @@ const OddajForm1 = ({
 
                     <input type='radio'
                            name='selectStuff'
-                           value='do wyrzucenia'
-                           checked={inputsValue.selectStuff === 'do wyrzucenia'}
+                           value='ubrania do wyrzucenia'
+                           checked={
+                        inputsValue.selectStuff ===
+                               'ubrania do wyrzucenia'}
                            onChange={handleChange}
                            className='oddajForm1__radio'
                     />ubrania, do wyrzucenia
@@ -54,8 +58,8 @@ const OddajForm1 = ({
 
                     <input type='radio'
                            name="selectStuff"
-                           value='inne'
-                           checked={inputsValue.selectStuff === 'inne'}
+                           value='inne,'
+                           checked={inputsValue.selectStuff === 'inne,'}
                            onChange={handleChange}
                            className='oddajForm1__radio'/>
                         inne

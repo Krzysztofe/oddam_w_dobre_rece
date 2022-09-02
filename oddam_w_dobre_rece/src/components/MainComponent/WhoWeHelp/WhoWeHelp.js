@@ -33,10 +33,10 @@ const WhoWeHelp = () => {
         const displayOrganisations = filteredOrganisations
             .slice(visitedPage, visitedPage + organisationsPerPage)
             .map((item, idx) => {
-                return <table key={idx} className='table'>
-                    <tbody className='tbody'>
-                    <tr className='tr'>
-                        <td>
+                return <table key={idx} className='whoWeHelp__table'>
+                    <tbody>
+                    <tr>
+                        <td className='whoWeHelp__td'>
                             <p className='td__pBig'> {organisationType} {item.name}</p>
                             <p className='td__pSmall'>cel i misja: {item.goals}</p>
                         </td>
@@ -64,7 +64,7 @@ const WhoWeHelp = () => {
                     text1={'komu pomagamy?'}
                     // classContainer = {'simpleSteps__headerUnderlineContainer'}
                     // classH2 = {'simpleSteps__headerUnderlineH2'}
-                    classUnderline = {'whoWeHelp__headerUnderline'}
+                    classUnderline={'whoWeHelp__headerUnderline'}
                 />
                 <div className="whoWeHelp__columnsContainer">
 

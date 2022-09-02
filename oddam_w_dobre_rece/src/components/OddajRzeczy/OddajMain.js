@@ -1,20 +1,24 @@
 import React, {useState} from 'react';
 import {useEffect} from "react";
 
+import {collection, getDocs, addDoc} from "firebase/firestore";
+import {db} from "../FireBaseConfig";
+
+import OddajHeader from "./Header/OddajHeader";
+import OddajBelt from "./OddajBelt";
+
+import OddajFormTop from "./OddajForms/OddajFormTop";
 import OddajForm2 from "./OddajForms/OddajForm2";
 import OddajForm1 from "./OddajForms/OddajForm1";
 import OddajForm3 from "./OddajForms/OddajForm3";
 import OddajForm4 from "./OddajForms/OddajForm4";
-import {collection, getDocs, addDoc} from "firebase/firestore";
-import {db} from "../FireBaseConfig";
+import OddajSummary from "./OddajForms/OddajSummary";
+import Contact from "../MainComponent/Contact/Contact";
 
-import OddajRzeczySummary from "./OddajForms/OddajRzeczySummary";
 import HeaderUnderline from "../HeaderUnderline";
 import OddajSquare from "./Header/OddajSquare";
-import OddajHeader from "./Header/OddajHeader";
-import OddajBelt from "./OddajBelt";
-import Contact from "../MainComponent/Contact/Contact";
-import OddajFormTop from "./OddajForms/OddajFormTop";
+
+
 
 const OddajRzeczyMain = () => {
     const [inputsValue, setInputsValue] =
@@ -215,7 +219,7 @@ const OddajRzeczyMain = () => {
                             <OddajFormTop
                                 text={'podsumowanie twojej darowizny'}
                             />
-                            <OddajRzeczySummary
+                            <OddajSummary
                                 createSummary={createSummary}
                                 inputsValue={inputsValue}
                                 counter={counter}

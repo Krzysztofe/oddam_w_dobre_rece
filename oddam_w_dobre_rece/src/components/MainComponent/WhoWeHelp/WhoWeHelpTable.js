@@ -3,9 +3,9 @@ import React from 'react';
 const WhoWeHelpTable = () => {
     return (
 
-        <table>
+        <table className='whoWeHelp__table'>
             <tbody>
-            <tr>
+            <tr className='whoWeHelp__table'>
                 <td>
                     <p> {organisationType} {item.name}</p>
                     <p>cel {item.goals}</p>

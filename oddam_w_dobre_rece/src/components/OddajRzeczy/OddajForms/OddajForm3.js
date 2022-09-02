@@ -14,10 +14,10 @@ const OddajForm3 = ({
                     className='oddajForm3__select'
                 >
                     <option value='wybierz'>wybierz</option>
-                    <option value='poznań'>poznań</option>
-                    <option value='warszawa'>warszawa</option>
-                    <option value='kraków'>kraków</option>
-                    <option value='wrocław'>wrocław</option>
+                    <option value='Poznań'>poznań</option>
+                    <option value='Warszawa'>warszawa</option>
+                    <option value='Kraków'>kraków</option>
+                    <option value='Wrocław'>wrocław</option>
                 </select>
                 <h3 className='oddajForm3__h3'>komu chcesz pomóc?</h3>
                 <div className="oddajForm3__checkboxesContainer">

@@ -1,0 +1,117 @@
+.summary{
+}
+
+.summary__h3{
+width: 100%;
+  font-weight: $semiBold;
+  margin: 1em 0 0.5em 0;
+&:first-letter{
+  text-transform: uppercase;
+}
+}
+.summary__topContainer {
+  display: flex;
+  align-items: center;
+}
+.summary__topContainer + .summary__topContainer{
+  margin-top: 0.5em;
+}
+
+.summary__icon1{
+  background-image: url("../../../../asets/IconTshirt.png");
+  background-size: cover;
+  width: 2em;
+  height: 2em;
+}
+
+.summary__icon2{
+  background-image: url("../../../../asets/Icon.png");
+  background-size: cover;
+  width: 2em;
+  height: 2em
+}
+
+.summary__p{
+width: 85%;
+  margin-left: 1em;
+  margin-bottom:0.5em ;
+}
+
+.summary__tableLeft{
+
+}
+
+.summary__tableRight{
+}
+.summary__thead{
+  font-weight: $semiBold;
+  width: 100%;
+}
+.summary__td + .summary__td {
+padding-left: 0.5em;
+ }
+
+.summary__buttons{
+  display: flex;
+  justify-content: space-between;
+}
+
+.summary__button{
+  background-color: $color-grey-white;
+  width: 30%;
+  padding: 0.5em 0;
+  margin: 1em 0;
+}
+
+@include media{
+  .summary{
+
+  }
+
+  .summary__h3{
+
+  }
+  .summary__topContainer{
+
+  }
+
+  .summary__icon1{
+
+  }
+
+  .summary__icon2{
+
+  }
+
+  .summary__p{
+
+  }
+
+
+  .summary__tablesContainer{
+   width: 70%;
+    display: flex;
+    justify-content: space-between;
+  }
+.summary__tableLeft, .summary__tableRight{
+  width: 45%;
+}
+
+
+  .summary__buttons{
+width: 40%;
+  }
+
+  .summary__button{
+
+  }
+}
+
+@include media__bigSize{
+  .summary__icon1{
+background-image: url("../../../../asets/IconTshirt@2x.png");
+  }
+  .summary__icon2{
+background-image: url("../../../../asets/Icon@2x.png");
+  }
+}
