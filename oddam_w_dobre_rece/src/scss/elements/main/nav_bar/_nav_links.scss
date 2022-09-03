@@ -3,7 +3,7 @@
   text-decoration: none;
 }
 
-.logListItems {
+.logItems {
   padding: 0.5em;
   border-top: 1px solid black;
   width: 50%;
@@ -29,18 +29,18 @@
 }
 
 
-@include media {
-  .logListItems {
+@include media__navbar {
+  .logItems {
     display: flex;
     border-top: none;
     flex-direction: row-reverse;
-    padding: 0;
+    padding: 0 0.5em 0 0;
   }
 
   .listItems {
     display: flex;
     justify-content: space-between;
-    padding: 0;
+    //padding: 0;
   }
   .listItem{
     font-size: clamp(0.5rem, 1.5vw, 0.7rem);
@@ -50,7 +50,7 @@
       outline: 1px solid $color-grey-dark;
     }
   }
-  .logListItem {
+  .logItem {
     font-size: clamp(0.5rem, 0.8vw, 0.6rem);
     margin-left: 1em;
     &:hover{

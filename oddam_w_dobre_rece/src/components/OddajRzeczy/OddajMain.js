@@ -1,11 +1,10 @@
-import React, {useState} from 'react';
-import {useEffect} from "react";
-
+import React, {useState} from "react";
 import {collection, getDocs, addDoc} from "firebase/firestore";
-import {db} from "../FireBaseConfig";
+import {auth, db} from "../FireBaseConfig";
+import {useAuthState} from "react-firebase-hooks/auth";
 
-import OddajHeader from "./Header/OddajHeader";
-import OddajBelt from "./OddajBelt";
+import OddajHeader from "./OddajHeader/OddajHeader";
+import OddajBelt from "./Belt";
 
 import OddajFormTop from "./OddajForms/OddajFormTop";
 import OddajForm2 from "./OddajForms/OddajForm2";
@@ -15,12 +14,15 @@ import OddajForm4 from "./OddajForms/OddajForm4";
 import OddajSummary from "./OddajForms/OddajSummary";
 import Contact from "../MainComponent/Contact/Contact";
 
-import HeaderUnderline from "../HeaderUnderline";
-import OddajSquare from "./Header/OddajSquare";
+import HeaderUnderline from "../Title";
+
+
 
 
 
 const OddajRzeczyMain = () => {
+    const [user, loading, error] = useAuthState(auth);
+
     const [inputsValue, setInputsValue] =
         useState({
             selectStuff: "", selectBags: "",
@@ -29,7 +31,7 @@ const OddajRzeczyMain = () => {
             niepelnosprawnym: false, starszym: false,
             organisationName: "", street: "",
             city: "", postCode: "", phone: "",
-            date: "", time: "", note: ""
+            date: "", time: "", note: "", uid:""
         })
     // const [summary, setSummary] = useState([])
     const [counter, setCounter] = useState(1)
@@ -100,14 +102,19 @@ const OddajRzeczyMain = () => {
             phone: inputsValue.phone,
             date: inputsValue.date,
             time: inputsValue.time,
-            note: inputsValue.note
+            note: inputsValue.note,
+            uid: user?.uid
         })
     }
+// console.log(user.email)
 
     return (
+
         <>
+            {/*{user?.email &&*/}
+                <>
             <div className='navSpacer'></div>
-            <OddajHeader counter = {counter}/>
+            <OddajHeader counter={counter}/>
 
             {counter === 1 &&
                 <>
@@ -159,7 +166,7 @@ const OddajRzeczyMain = () => {
                         </div>
                     </main>
                 </>
-               }
+            }
 
             {counter === 3 &&
                 <>
@@ -238,15 +245,18 @@ const OddajRzeczyMain = () => {
                             text1={'dziękujemy za przesłanie formularza'}
                             text2={'na maila prześlemy wszelkie' +
                                 'informacje o odbiorze'}
-                            classContainer = {'oddajThnx__container'}
-                            classH2 = {'oddajThnx__h2'}
-                            classUnderline = {'oddajThnx__underline'}
+                            classContainer={'oddajThnx__container'}
+                            classH2={'oddajThnx__h2'}
+                            classUnderline={'oddajThnx__underline'}
                         />
 
                     </div>
                 </main>}
             <Contact/>
+                </>
+            {/*}*/}
         </>
+
     );
 }
 export default OddajRzeczyMain;

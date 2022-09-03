@@ -6,6 +6,8 @@ import Login from "./Login";
 import Register from "./Register";
 import Logout from "./Logout";
 import OddajRzeczyMain from "./OddajRzeczy/OddajMain";
+import {useAuthState} from "react-firebase-hooks/auth";
+import {auth} from "./FireBaseConfig";
 
 function App() {
 

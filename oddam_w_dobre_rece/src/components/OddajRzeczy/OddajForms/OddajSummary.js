@@ -2,7 +2,7 @@ const OddajSummary = ({
                           inputsValue, createSummary,
                           handleIncrease, handleDecrease
                       }) => {
-    const handleSummIncrease = () => {
+    const handleSummaryIncrease = () => {
         handleIncrease();
         createSummary()
     }
@@ -36,8 +36,6 @@ const OddajSummary = ({
                         <td className='summary__thead'>adres odbioru</td>
                     </tr>
                     </thead>
-
-
                     <tbody>
                     <tr>
                         <td className='summary__td'> ulica:</td>
@@ -88,7 +86,7 @@ const OddajSummary = ({
                         className='summary__button'>wstecz
                     </button>
                     <button
-                        onClick={handleSummIncrease}
+                        onClick={handleSummaryIncrease}
                         className='summary__button'>potwierdzam
                     </button>
                 </div>

@@ -56,7 +56,6 @@
   }
   .simpleSteps__columnsContainer {
     margin: 1em 0;
-    background-color: $color-grey-white;
   }
   .simpleSteps__h3 {
     font-size: 0.6em;
@@ -86,6 +85,6 @@
 
 @include media__bigSize {
   .underline {
-    background-image: url("/asets/Decoration@2x.png");
+    background-image: url("/./asets/Decoration@2x.png");
   }
 }

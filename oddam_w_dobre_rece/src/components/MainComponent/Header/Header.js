@@ -1,6 +1,6 @@
 import Underline from "../Underline";
 import {Link} from "react-router-dom";
-import HeaderUnderline from "../../HeaderUnderline";
+import HeaderUnderline from "../../Title";
 
 const Header = () => {
     return (

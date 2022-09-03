@@ -1,110 +1,128 @@
 {
   "organisations": [
     {
+      "id": 1,
       "type": "fundacja",
-      "name": "średnia 1",
+      "name": "1",
       "goals": "eeeeeeeeeeeeeee",
       "stuff": "ttt, ooo, uuu"
     },
     {
+      "id": 2,
       "type": "fundacja",
-      "name": "średnia 2",
+      "name": "2",
       "goals": "eeeeeeeeeeeeeee",
       "stuff": "ttt, ooo, uuu"
     },
     {
+      "id": 3,
       "type": "fundacja",
-      "name": "średnia 3",
+      "name": "3",
       "goals": "eeeeeeeeeeeeeee",
       "stuff": "ttt, ooo, uuu"
     },
     {
+      "id": 4,
       "type": "fundacja",
-      "name": "średnia 4",
+      "name": "4",
       "goals": "eeeeeeeeeeeeeee",
       "stuff": "ttt, ooo, uuu"
     },
     {
+      "id": 5,
       "type": "fundacja",
-      "name": "średnia 5",
+      "name": "5",
       "goals": "eeeeeeeeeeeeeee",
       "stuff": "ttt, ooo, uuu"
     },
     {
+      "id": 6,
       "type": "fundacja",
-      "name": "średnia 6",
+      "name": "6",
       "goals": "eeeeeeeeeeeeeee",
       "stuff": "ttt, ooo, uuu"
     },
     {
+      "id": 7,
       "type": "fundacja",
-      "name": "średnia 7",
+      "name": "7",
       "goals": "eeeeeeeeeeeeeee",
       "stuff": "ttt, ooo, uuu"
     },
     {
+      "id": 8,
       "type": "fundacja",
-      "name": "średnia 8",
+      "name": "8",
       "goals": "eeeeeeeeeeeeeee",
       "stuff": "ttt, ooo, uuu"
     },
     {
+      "id": 9,
       "type": "fundacja",
-      "name": "średnia 9",
+      "name": "9",
       "goals": "eeeeeeeeeeeeeee",
       "stuff": "ttt, ooo, uuu"
     },
     {
+      "id": 10,
       "type": "ngo",
-      "name": "durza 1",
+      "name": "1",
       "goals": "yyyyy",
       "stuff": "xx, cc, ee"
     },
     {
+      "id": 11,
       "type": "ngo",
-      "name": "durza 2",
+      "name": "2",
       "goals": "yyyyy",
       "stuff": "xx, cc, ee"
     },
     {
+      "id": 12,
       "type": "ngo",
-      "name": "durza 3",
+      "name": "3",
       "goals": "yyyyy",
       "stuff": "xx, cc, ee"
     },
     {
+      "id": 13,
       "type": "ngo",
-      "name": "durza 4",
+      "name": "4",
       "goals": "yyyyy",
       "stuff": "xx, cc, ee"
     },
     {
+      "id": 14,
       "type": "ngo",
-      "name": "durza 5",
+      "name": "5",
       "goals": "yyyyy",
       "stuff": "xx, cc, ee"
     },
     {
+      "id": 15,
       "type": "ngo",
-      "name": "durza 6",
+      "name": "6",
       "goals": "yyyyy",
       "stuff": "xx, cc, ee"
     },
     {
+      "id": 16,
       "type": "colection",
-      "name": "mała 1",
+      "name": "1",
       "goals": "yyyyy",
       "stuff": "xx, cc, ee"
     },
     {
+      "id": 17,
       "type": "colection",
-      "name": "mała 2",
+      "name": "2",
       "goals": "yyyyy",
       "stuff": "xx, cc, ee"
     },
     {
+      "id": 18,
       "type": "colection",
-      "name": "mała 3",
+      "name": "3",
       "goals": "yyyyy",
       "stuff": "xx, cc, ee"
     }

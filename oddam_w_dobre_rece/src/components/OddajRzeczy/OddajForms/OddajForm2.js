@@ -1,6 +1,3 @@
-import React from 'react';
-import {Link} from "react-router-dom";
-
 const OddajForm2 = ({
                         inputsValue, handleChange,
                         handleDecrease, handleIncrease

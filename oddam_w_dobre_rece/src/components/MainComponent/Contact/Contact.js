@@ -5,7 +5,7 @@ import Tshirt from '../../../asets/IconTshirt.png';
 import Facebook from '../../../asets/Facebook.png';
 import Instagram from '../../../asets/Instagram.png';
 import {BsFillTelephoneFill} from 'react-icons/bs'
-import HeaderUnderline from "../../HeaderUnderline";
+import HeaderUnderline from "../../Title";
 
 const Contact = () => {
     return (

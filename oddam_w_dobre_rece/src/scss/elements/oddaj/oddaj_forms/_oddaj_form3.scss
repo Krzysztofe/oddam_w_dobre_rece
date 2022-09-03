@@ -66,7 +66,7 @@ margin: 1em 0 0.5em 0;
 }
 
 .oddajForm3__button {
-  background-color: $color-grey-light;
+  background-color: $color-grey-normal;
   width: 30%;
   padding: 0.5em 0;
   margin: 1em 0;
@@ -102,7 +102,7 @@ width: 40%;
 
   .oddajForm3__emptyCheckbox {
     padding: 0.5em;
-    border: 1px solid $color-grey-light;
+    border: 1px solid $color-grey-normal;
     background-color: rgba(0,0,0,0);
   }
 
@@ -119,7 +119,7 @@ width: 40%;
 
   .oddajForm3__button {
 background-color: rgba(0,0,0,0);
-    border: 1px solid $color-grey-light;
+    border: 1px solid $color-grey-normal;
 
   }
 }

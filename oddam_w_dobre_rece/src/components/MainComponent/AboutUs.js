@@ -1,6 +1,6 @@
 import React from 'react';
 import Underline from "./Underline";
-import HeaderUnderline from "../HeaderUnderline";
+import HeaderUnderline from "../Title";
 
 const AboutUs = () => {
     return (

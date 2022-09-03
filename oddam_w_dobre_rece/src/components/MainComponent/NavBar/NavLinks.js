@@ -5,67 +5,73 @@ import {auth} from '../../FireBaseConfig';
 import {useAuthState} from 'react-firebase-hooks/auth'
 import {useNavigate} from "react-router";
 
-
-// import {motion} from 'framer-motion'
-
 const NavLinks = ({handleCloseMenue}) => {
     const [user, loading, error] = useAuthState(auth);
     const navigate = useNavigate()
 
     const handleLogout = () => {
-            auth.signOut();
-            navigate('/wylogowano');
-            handleCloseMenue();
+        auth.signOut();
+        navigate('/wylogowano');
+        handleCloseMenue();
     }
 
     return (
         <>
             <ul className='listItems'>
-                <HashLink smooth to='#start'
-                    className='hashLink'
-                >
-                    <li className='listItem'
+
+                <HashLink
+                    smooth to='#start'
+                    className='hashLink'>
+                    <li
+                        className='listItem'
                         onClick={handleCloseMenue}
                     >
                         start
                     </li>
                 </HashLink>
 
-                <HashLink smooth to='#simpleSteps'
+                <HashLink
+                    smooth to='#simpleSteps'
                     className='hashLink'
                 >
-                    <li className='listItem'
+                    <li
+                        className='listItem'
                         onClick={handleCloseMenue}
                     >
                         o co chodzi
                     </li>
                 </HashLink>
 
-                <HashLink smooth to='#aboutUs'
+                <HashLink
+                    smooth to='#aboutUs'
                     className='hashLink'
                 >
-                    <li className='listItem'
+                    <li
+                        className='listItem'
                         onClick={handleCloseMenue}
                     >
                         o nas
                     </li>
                 </HashLink>
 
-                <HashLink smooth to='#whoWeHelp'
+                <HashLink
+                    smooth to='#whoWeHelp'
                     className='hashLink'
-                    activeclassname={{color: 'red'}}
                 >
-                    <li className='listItem'
+                    <li
+                        className='listItem'
                         onClick={handleCloseMenue}
                     >
                         fundacja i organizacje
                     </li>
                 </HashLink>
 
-                <HashLink smooth to='#contact'
+                <HashLink
+                    smooth to='#contact'
                     className='hashLink'
                 >
-                    <li className='listItem'
+                    <li
+                        className='listItem'
                         onClick={handleCloseMenue}
                     >
                         kontakt
@@ -74,8 +80,9 @@ const NavLinks = ({handleCloseMenue}) => {
             </ul>
             {user?.email
                 ?
-                <ul className='logListItems'>
-                    <li className='listItem logListItem'
+                <ul className='logItems'>
+                    <li
+                        className='listItem logItem'
                         onClick={handleLogout}
                     >
                         wyloguj
@@ -83,33 +90,38 @@ const NavLinks = ({handleCloseMenue}) => {
 
                     <Link to='oddajRzeczy' className='hashLink'
                     >
-                        <li className='listItem logListItem'
+                        <li
+                            className='listItem logItem'
                             onClick={handleCloseMenue}
                         >
                             oddaj rzeczy
                         </li>
                     </Link>
-                    <li className='listItem logListItem'
+                    <li className='listItem logItem'
                     >
                         cześć {user?.email}
                     </li>
                 </ul>
                 :
-                <ul className='logListItems'>
-                    <Link to="/rejestracja"
+                <ul className='logItems'>
+                    <Link
+                        to="/rejestracja"
                         className='hashLink'
                     >
-                        <li className='listItem logListItem'
+                        <li
+                            className='listItem logItem'
                             onClick={handleCloseMenue}
                         >
                             załóż konto
                         </li>
                     </Link>
 
-                    <Link to="/logowanie"
+                    <Link
+                        to="/logowanie"
                         className='hashLink'
                     >
-                        <li className='listItem logListItem'
+                        <li
+                            className='listItem logItem'
                             onClick={handleCloseMenue}
                         >
                             zaloguj się

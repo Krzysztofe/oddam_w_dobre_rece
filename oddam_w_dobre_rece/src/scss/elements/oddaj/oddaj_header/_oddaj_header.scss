@@ -1,13 +1,11 @@
 @import "oddaj_squares";
 
-
 .navSpacer {
-  height: 6rem;
+  height: 5rem;
 }
 
 .wrapper--oddajHeader {
-  background-color: $color-grey-white;
-  //padding: 1.5em 0.5em;
+  background-color: $color-grey-normal;
 }
 
 .oddajHeader__backgroundImage {
@@ -17,33 +15,30 @@
 .oddajHeader__rightContainer {
   display: flex;
   flex-direction: column;
-  row-gap: 1em;
+  padding-top: 1em;
 }
 
-.oddajHeader__headerUnderlineContainer {
-
-}
-
-.oddajHeaders__headerUnderlineH2 {
+.oddajHeader__titleH2 {
   text-align: left;
-
 }
 
-.oddajHeader__h2 {
-  font-size: clamp(1em, 2vw, 1.2em);
+.oddajHeader__p {
   font-weight: $semiBold;
-  padding: 1.5em 0.5em;
+  padding: 0.5em 0 2em 0;
+  &:first-letter{
+    text-transform: uppercase;
+  }
 }
+
 
 @include media {
   .navSpacer {
-    height: 3rem;
+    height: 5rem;
   }
   .wrapper--oddajHeader {
     display: flex;
-    flex-direction: row;
     background-color: white;
-    //box-shadow: -40px -17px 50px 20px rgba(255,178,92,0.54);
+    height: 50vh;
   }
   .oddajHeader__backgroundImage {
     display: block;
@@ -56,15 +51,18 @@
 
   .oddajHeader__rightContainer {
     width: 50%;
-    padding: 2em;
-    box-shadow: -40px -40px 50px 20px rgba(255,255,255,0.8);
+    padding: 0 2em;
+    box-shadow: -40px -40px 50px 20px rgba(255, 255, 255, 0.8);
+  display: flex;
+    flex-direction: column;
+    justify-content: center;
   }
-  .oddajHeaders__headerUnderlineH2 {
+  .oddajHeader__titleH2 {
     text-align: center;
   }
   .oddajHeader__headerUnderline {
   }
-  .oddajHeader__h2 {
+  .oddajHeader__p {
     text-align: center;
 
     &:first-letter {
@@ -72,6 +70,13 @@
     }
   }
 }
+
+@include media__navbar{
+  .navSpacer{
+    height: 3rem;
+  }
+}
+
 
 @include media__bigSize {
   .oddajHeader__backgroundImage {

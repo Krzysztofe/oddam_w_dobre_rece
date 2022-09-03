@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from 'react';
-import Underline from "../Underline";
 import ReactPaginate from "react-paginate";
-import HeaderUnderline from "../../HeaderUnderline";
+import HeaderUnderline from "../../Title";
+// import organisations from '../../../data_json/organisations.json/organisations '
 
 const WhoWeHelp = () => {
 
@@ -12,6 +12,7 @@ const WhoWeHelp = () => {
 
 
     useEffect(() => {
+        // fetch('../data_json/organisations.json')
         fetch('http://localhost:3000/organisations')
             .then(resp => resp.json())
             .then(data => setOrganisations(data))
@@ -20,24 +21,29 @@ const WhoWeHelp = () => {
     if (organisations === false) {
         return <h2>loading </h2>
     }
+// console.log(organisations)
 
     const organisationsPerPage = 3
-    const visitedPage = pageNumber * organisationsPerPage
+    const printedPage = pageNumber * organisationsPerPage
 
 
-    const organisationSelection = (oganisationData, organisationType) => {
+    const organisationSelection = (oganisationType, organisationTypePrinted) => {
 
-        const filteredOrganisations = organisations
-            .filter(item => item.type === oganisationData)
+        const filtered = organisations
+            .filter(item => item.type === oganisationType)
 
-        const displayOrganisations = filteredOrganisations
-            .slice(visitedPage, visitedPage + organisationsPerPage)
-            .map((item, idx) => {
-                return <table key={idx} className='whoWeHelp__table'>
+        // setFilteredOrganisations(filtered)
+
+        // console.log(filteredOrganisations)
+
+        const displayOrganisations = filtered
+            .slice(printedPage, printedPage + organisationsPerPage)
+            .map((item) => {
+                return <table key={item.id} className='whoWeHelp__table'>
                     <tbody>
                     <tr>
                         <td className='whoWeHelp__td'>
-                            <p className='td__pBig'> {organisationType} {item.name}</p>
+                            <p className='td__pBig'> {organisationTypePrinted} {item.name}</p>
                             <p className='td__pSmall'>cel i misja: {item.goals}</p>
                         </td>
                         <td className='td__right td__pSmall'>{item.stuff}</td>
@@ -55,6 +61,11 @@ const WhoWeHelp = () => {
     const changePage = ({selected}) => {
         setPageNumber(selected)
     }
+const setPrintCounterPageNumber = (selected) =>{
+        setPrintCounter(selected)
+        setPageNumber(0)
+    }
+
 
 
     return (
@@ -62,28 +73,28 @@ const WhoWeHelp = () => {
             <div className="wrapper wrapper--whoWeHelp" id='whoWeHelp'>
                 <HeaderUnderline
                     text1={'komu pomagamy?'}
-                    // classContainer = {'simpleSteps__headerUnderlineContainer'}
-                    // classH2 = {'simpleSteps__headerUnderlineH2'}
+                    classContainer = {''}
+                    classH2 = {''}
                     classUnderline={'whoWeHelp__headerUnderline'}
                 />
                 <div className="whoWeHelp__columnsContainer">
 
                     <div className="whoWeHelp__columnContainer">
-                        <button onClick={() => setPrintCounter(1)}
+                        <button onClick={()=> setPrintCounterPageNumber(1)}
                                 className="whoWeHelp__button">
                             Fundacjom
                         </button>
                     </div>
 
                     <div className="whoWeHelp__columnContainer">
-                        <button onClick={() => setPrintCounter(2)}
+                        <button onClick={()=> setPrintCounterPageNumber(2)}
                                 className="whoWeHelp__button">
                             Organizacjom pozarządowym
                         </button>
                     </div>
 
                     <div className="whoWeHelp__columnContainer">
-                        <button onClick={() => setPrintCounter(3)}
+                        <button onClick={()=> setPrintCounterPageNumber(3)}
                                 className="whoWeHelp__button">
                             Lokalnym zbiórkom
                         </button>
@@ -158,8 +169,8 @@ const WhoWeHelp = () => {
                             {organisationSelection(
                                 "colection", "zbiórka")}
                             <ReactPaginate
-                                previousLabel={false}
-                                nextLabel={false}
+                                previousLabel={''}
+                                nextLabel={''}
                                 pageCount={1}
                                 onPageChange={changePage}
                                 containerClassName={'paginationButtonsContainer'}

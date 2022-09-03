@@ -1,14 +1,25 @@
-.oddajHeader__squares {
+.squares {
   display: flex;
   justify-content: space-around;
+  background-color: $color-white;
+  outline:  1em solid $color-white;
 }
 
 .square {
-  font-size: clamp(1em, 2vw, 1.2em);
+  display: flex;
+  justify-content: center;
+  align-items: center;
   font-weight: $semiBold;
-  background-color: white;
-  padding: 0.5em;
+  font-size: $font-size-small;
+  color: $color-white;
+  background-color: $color-grey-normal;
+  width: 1.5em;
+  height: 1.5em;
 }
+.square--BacgroundColor{
+  background-color: $color-yellow;
+}
+
 
 .square__p {
   display: none;
@@ -21,8 +32,8 @@
   }
 
   .square {
-    border: 1px solid $color-grey_light;
-    color: $color-grey-light;
+    border: 1px solid $color-grey_normal;
+    color: $color-grey-normal;
     transform: rotate(45deg);
     background-color: rgba(0, 0, 0, 0);
     width: 50px;

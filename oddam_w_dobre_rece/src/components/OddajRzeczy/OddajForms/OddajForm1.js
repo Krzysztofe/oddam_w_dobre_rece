@@ -2,39 +2,39 @@ import React from 'react';
 import OddajFormHeader from "./OddajFormTop";
 
 const OddajForm1 = ({
-                              inputsValue, handleChange,
-                              counter, handleDecrease, handleIncrease
-                          }) => {
+                        inputsValue, handleChange,
+                        counter, handleDecrease, handleIncrease
+                    }) => {
     return (
-<>
-                <form className = 'oddajForm1__inputsContainer'>
+        <>
+            <main className='oddajForm1__inputsContainer'>
 
-                    <label className='oddajForm1__label'>
-                        <input type='radio'
+                <label className='oddajForm1__label'>
+                    <input type='radio'
                            name='selectStuff'
                            value='ubrania, które nadają się do ponownego użycia'
                            checked={
-                            inputsValue.selectStuff ===
+                               inputsValue.selectStuff ===
                                'ubrania, które nadają się do ponownego użycia'}
                            onChange={handleChange}
                            className='oddajForm1__radio'
                     /> ubrania, które nadają się do ponownego użycia
-                    </label>
+                </label>
 
-                    <label className='oddajForm1__label'>
+                <label className='oddajForm1__label'>
 
                     <input type='radio'
                            name='selectStuff'
                            value='ubrania do wyrzucenia'
                            checked={
-                        inputsValue.selectStuff ===
+                               inputsValue.selectStuff ===
                                'ubrania do wyrzucenia'}
                            onChange={handleChange}
                            className='oddajForm1__radio'
                     />ubrania, do wyrzucenia
-                    </label>
+                </label>
 
-                    <label className='oddajForm1__label'>
+                <label className='oddajForm1__label'>
 
                     <input type='radio'
                            name='selectStuff'
@@ -42,9 +42,9 @@ const OddajForm1 = ({
                            checked={inputsValue.selectStuff === 'zabawki'}
                            onChange={handleChange}
                            className='oddajForm1__radio'/>zabawki
-                    </label>
+                </label>
 
-                    <label className='oddajForm1__label'>
+                <label className='oddajForm1__label'>
                     <input type='radio'
                            name='selectStuff'
                            value='książki'
@@ -52,9 +52,9 @@ const OddajForm1 = ({
                            onChange={handleChange}
                            className='oddajForm1__radio'/>
                     książki
-                    </label>
+                </label>
 
-                    <label className='oddajForm1__label'>
+                <label className='oddajForm1__label'>
 
                     <input type='radio'
                            name="selectStuff"
@@ -62,19 +62,19 @@ const OddajForm1 = ({
                            checked={inputsValue.selectStuff === 'inne,'}
                            onChange={handleChange}
                            className='oddajForm1__radio'/>
-                        inne
-                    </label>
+                    inne
+                </label>
 
-    <button onClick={handleIncrease}
-            className='oddajForm1__button'
-    >
-        dalej
-    </button>
+                <button onClick={handleIncrease}
+                        className='oddajForm1__button'
+                >
+                    dalej
+                </button>
 
-                </form>
+            </main>
 
 
-</>
+        </>
     );
 };
 

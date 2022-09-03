@@ -35,12 +35,12 @@ display: flex;
   width: 60%;
   background-color: rgba(0,0,0,0);
   height: 1.3em;
-  border: 1px solid $color-grey-light;
+  border: 1px solid $color-grey-normal;
 }
 .form4__textarea{
   width: 60%;
   background-color: rgba(0,0,0,0);
-  border: 1px solid $color-grey-light;
+  border: 1px solid $color-grey-normal;
 }
 
 .form4__buttonsContainer{
@@ -48,7 +48,6 @@ display: flex;
   justify-content: space-between;
 }
 .form4__button{
-  background-color: $color-grey-white;
   width: 30%;
   padding: 0.5em 0;
   margin: 1em 0;
@@ -86,10 +85,10 @@ display: flex;
 
 
   .form4__input {
-    border: 1px solid $color-grey-light;
+    border: 1px solid $color-grey-normal;
   }
   .form4__textarea{
-    border: 1px solid $color-grey-light;
+    border: 1px solid $color-grey-normal;
 }
   .form4__buttonsContainer{
 width: 50%;

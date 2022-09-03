@@ -1,0 +1,37 @@
+.wrapper--belt{
+  display: flex;
+  flex-direction: column;
+ justify-content: center;
+  height: 15vh;
+}
+
+.belt__h2, .belt__p {
+  padding-left: 2rem;
+}
+
+.belt__h2 {
+  font-weight: $semiBold;
+  &:first-letter {
+    text-transform: uppercase;
+  }
+}
+
+.belt__p {
+  padding-top: $space-small;
+  font-size: $font-size-small;
+}
+
+@include media {
+  .wrapper--belt {
+    background-color: $color-yellow;
+    height: 11vh;
+  }
+
+  .belt__h2 {
+    font-size: $font-size-small;
+  }
+
+  .belt__p {
+    font-size: $font-size-superSmall;
+  }
+}

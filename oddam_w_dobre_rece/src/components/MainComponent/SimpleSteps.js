@@ -5,7 +5,7 @@ import Bag from '../../asets/IconBag.png';
 import Glass from '../../asets/IconLupa.png'
 import Arrows from '../../asets/Icon.png'
 import {HashLink} from "react-router-hash-link";
-import HeaderUnderline from "../HeaderUnderline";
+import HeaderUnderline from "../Title";
 
 const SimpleSteps = () => {
     return (
