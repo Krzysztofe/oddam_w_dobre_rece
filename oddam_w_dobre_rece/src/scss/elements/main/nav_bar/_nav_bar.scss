@@ -9,7 +9,7 @@
   top: 0;
   width: 100%;
   line-height: 1.5;
-  padding: 1rem;
+  padding: $space-large;
   background-color: $color-white;
   z-index: 1;
 }
@@ -28,6 +28,19 @@
   top: 25px;
   font-size: 2rem;
   cursor: pointer;
+}
+
+@include media{
+  .navigationMobile{
+    padding: $space-small;
+  }
+  .navigationMobile__tshirt{
+    width: 2em;
+  }
+
+  .iconHamburger{
+    top: 15px;
+  }
 }
 
 @include media__navbar {

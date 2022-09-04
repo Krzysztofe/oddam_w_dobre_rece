@@ -1,0 +1,83 @@
+.wrapper--section-2 {
+  display: flex;
+  flex-direction: column;
+}
+
+.section-2__columns {
+  display: flex;
+  padding: $space-large 0;
+  background-color: $color-grey-normal;
+  margin: 1em 0;
+}
+
+.section-2__column {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 $space-small;
+}
+
+.section-2__logo {
+  width: 3em;
+}
+
+.section-2__h3 {
+  margin-top: 1.5em;
+  //line-height: 1.2;
+  text-align: center;
+  font-weight: $semiBold;
+  &::first-letter {
+    text-transform: uppercase;
+  }
+}
+
+.section-2__p {
+  display: none;
+}
+
+.section-2__link{
+  width: 40%;
+  margin: 0 auto
+}
+.btn--section-2 {
+width: 100%;
+}
+
+@include media {
+  .section-2__decoContainer{
+    margin-top: $space-large;
+  }
+  .section-2__decoration{
+    background-size: 15%;
+  }
+  .section-2__h3{
+    padding-bottom: 0.5em;
+    font-size: $font-size-small;
+    font-weight: $light;
+    height: 2em;
+    width: 100%;
+
+    &:after {
+      content: '';
+      display: block;
+      margin-bottom: 3%;
+      margin-left: 40%;
+      text-align: center;
+      width: 20%;
+      height: 1px;
+      background-color: black;
+      margin-top: 0.5em;
+    }
+
+  }
+  .section-2__p {
+    display: block;
+    text-align: center;
+    font-size: $font-size-superSmall;
+ padding-top: $space-small;
+  }
+  .section-2__link{
+    width: 20%
+  }
+}

@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import ReactPaginate from "react-paginate";
-import HeaderUnderline from "../../Title";
+import Title from "../../Title";
 // import organisations from '../../../data_json/organisations.json/organisations '
 
 const WhoWeHelp = () => {
@@ -61,48 +61,42 @@ const WhoWeHelp = () => {
     const changePage = ({selected}) => {
         setPageNumber(selected)
     }
-const setPrintCounterPageNumber = (selected) =>{
+    const setPrintCounterPageNumber = (selected) => {
         setPrintCounter(selected)
         setPageNumber(0)
     }
 
 
-
     return (
-        <section className="whoWeHelp">
-            <div className="wrapper wrapper--whoWeHelp" id='whoWeHelp'>
-                <HeaderUnderline
-                    text1={'komu pomagamy?'}
-                    classContainer = {''}
-                    classH2 = {''}
-                    classUnderline={'whoWeHelp__headerUnderline'}
-                />
-                <div className="whoWeHelp__columnsContainer">
 
-                    <div className="whoWeHelp__columnContainer">
-                        <button onClick={()=> setPrintCounterPageNumber(1)}
-                                className="whoWeHelp__button">
+        <div className="wrapper wrapper--section-4" id='whoWeHelp'>
+            <section className="section-4">
+                <Title
+                    text1={'komu pomagamy?'}
+                    classContainer={''}
+                    classH2={''}
+                    classUnderline={'section-4__decoration'}
+                />
+                <div className="section-4__btns">
+
+                     <button onClick={() => setPrintCounterPageNumber(1)}
+                                className="section-4__btn">
                             Fundacjom
                         </button>
-                    </div>
 
-                    <div className="whoWeHelp__columnContainer">
-                        <button onClick={()=> setPrintCounterPageNumber(2)}
-                                className="whoWeHelp__button">
+                    <button onClick={() => setPrintCounterPageNumber(2)}
+                                className="section-4__btn">
                             Organizacjom pozarządowym
                         </button>
-                    </div>
 
-                    <div className="whoWeHelp__columnContainer">
-                        <button onClick={()=> setPrintCounterPageNumber(3)}
-                                className="whoWeHelp__button">
+                        <button onClick={() => setPrintCounterPageNumber(3)}
+                                className="section-4__btn">
                             Lokalnym zbiórkom
                         </button>
-                    </div>
                 </div>
 
                 {printCounter === 1 &&
-                    <p className="whoWeHelp__paragraph">
+                    <p className="section-4__p">
                         W naszej bazie znajdziesz listę zweryfikowanych
                         Fundacji, z którymi współpracujemy. Możesz
                         sprawdzić czym się zajmują, komu pomagają i
@@ -110,7 +104,7 @@ const setPrintCounterPageNumber = (selected) =>{
                     </p>}
 
                 {printCounter === 2 &&
-                    <p className="whoWeHelp__paragraph">
+                    <p className="section-4__p">
                         Pomagamy również wszelkim organizacjom
                         pozarządowym i charytatywnym, które nie
                         są Fundacjami. Są to nasi Partnerzy, który
@@ -120,7 +114,7 @@ const setPrintCounterPageNumber = (selected) =>{
 
 
                 {printCounter === 3 &&
-                    <p className="whoWeHelp__paragraph">
+                    <p className="section-4__p">
                         Wspieramy lokalne zbiórki organizowane
                         przez indywidualne osoby, którym
                         zależy na dobru społeczności, w której żyją.
@@ -181,9 +175,10 @@ const setPrintCounterPageNumber = (selected) =>{
                             />
                         </>}
                 </div>
-            </div>
+            </section>
+        </div>
 
-        </section>
+
     );
 };
 

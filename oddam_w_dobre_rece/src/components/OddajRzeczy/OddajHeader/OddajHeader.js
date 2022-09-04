@@ -4,9 +4,10 @@ import Square from "./Square";
 
 const OddajHeader = ({counter}) => {
     return (
+        <>
+        <div className='headerSpacer'></div>
         <header className='wrapper wrapper--oddajHeader'>
             <div className="oddajHeader__backgroundImage"> </div>
-
             <aside className="oddajHeader__rightContainer">
                 <Title
                     text1={'oddaj rzeczy, których nie chcesz'}
@@ -46,6 +47,7 @@ const OddajHeader = ({counter}) => {
                 </div>
             </aside>
         </header>
+</>
     );
 };
 

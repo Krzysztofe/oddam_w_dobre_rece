@@ -1,16 +1,16 @@
-import Underline from "../Underline";
+import Underline from "./Underline";
 import {Link} from "react-router-dom";
-import HeaderUnderline from "../../Title";
+import HeaderUnderline from "../Title";
 
 const Header = () => {
     return (
         <>
+            <div className='headerSpacer' id='start'
+        > </div>
+
             <header className='header'>
                 <div className="wrapper wrapper--header">
-                    <div
-                        className='empty'
-                        id='start'
-                    ></div>
+
                     <div className="header__image"></div>
                     {/*<img className='header__image' src={HeaderImage} alt="Bambetle"/>*/}
                     <aside className='header__right'>
@@ -23,17 +23,17 @@ const Header = () => {
                                 classH2 = {'header__h2'}
                             />
 
-                            <div className='btn_container'>
-                                <Link to='logowanie'
-                                      className="btnBig">
-                                    <button>oddaj <br/>
+                            <div className='header__btns'>
+                                <Link to='logowanie' className = 'header__link'>
+                                    <button className="btnLarge header__btn">
+                                        oddaj <br/>
                                         rzeczy
                                     </button>
                                 </Link>
 
-                                <Link to='logowanie'
-                                      className="btnBig">
-                                    <button> zorganizuj <br/>
+                                <Link to ='logowanie' className = 'header__link'>
+                                    <button className="btnLarge header__btn">
+                                        zorganizuj <br/>
                                         zbiórkę
                                     </button>
                                 </Link>

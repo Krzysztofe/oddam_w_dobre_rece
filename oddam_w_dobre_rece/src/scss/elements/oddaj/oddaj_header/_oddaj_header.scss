@@ -1,9 +1,5 @@
 @import "oddaj_squares";
 
-.navSpacer {
-  height: 5rem;
-}
-
 .wrapper--oddajHeader {
   background-color: $color-grey-normal;
 }
@@ -32,13 +28,10 @@
 
 
 @include media {
-  .navSpacer {
-    height: 5rem;
-  }
   .wrapper--oddajHeader {
     display: flex;
     background-color: white;
-    height: 50vh;
+    height: 90vh;
   }
   .oddajHeader__backgroundImage {
     display: block;

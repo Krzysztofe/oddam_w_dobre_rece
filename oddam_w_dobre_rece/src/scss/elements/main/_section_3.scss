@@ -1,0 +1,71 @@
+.wrapper--section-3 {
+  display: flex;
+  margin: $space-large auto;
+}
+
+.section-3__leftContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: $color-grey-normal;
+}
+
+.section-3__p {
+  width: 60%;
+  text-align: center;
+  //line-height: 1.5;
+  margin: 0 auto;
+  padding: $space-small;
+}
+
+.section-3__signature {
+display: none;
+}
+
+
+@include media{
+  .section-3__leftContainer{
+    width: 50%;
+    height: 60vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .section-3__mainText{
+width: 60%;
+  }
+  .section-3__decoration{
+    background-size: 40%;
+  }
+  .section-3__p{
+    font-size: $font-size-small;
+    width: 100%;
+  }
+
+  .section-3__signature {
+    display: block;
+    background-image: url("/asets/Signature.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    height: clamp(50px, 30%, 100px);
+    width: clamp(80px, 35%, 100px);
+    margin-left: auto;
+  }
+  .section-3__rightContainer {
+    width: 50%;
+    background-image: url("../../../asets/People.png");
+    background-size: cover;
+    background-position: center;
+  }
+}
+
+
+
+@include media__bigSize{
+  .section-3__signature{
+    background-image: url("../../../asets/Signature@2x.png");
+  }
+  .section-3__rightContainer{
+    background-image: url("../../../asets/People@2x.png");
+  }
+}

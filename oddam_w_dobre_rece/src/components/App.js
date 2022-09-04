@@ -1,7 +1,7 @@
 
 import {BrowserRouter, Routes, Route} from "react-router-dom";
 import NavBar from "./MainComponent/NavBar/NavBar";
-import MainComponent from "./MainComponent/MainComponent";
+import Home from "./MainComponent/Home";
 import Login from "./Login";
 import Register from "./Register";
 import Logout from "./Logout";
@@ -15,7 +15,7 @@ function App() {
         <BrowserRouter>
             <NavBar/>
             <Routes>
-                <Route path='/' element={<MainComponent/>}/>
+                <Route path='/' element={<Home/>}/>
                 <Route path='/rejestracja' element={<Register/>}/>
                 <Route path='/logowanie' element={<Login/>}/>
                 <Route path='/wylogowano' element={<Logout/>}/>

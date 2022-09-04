@@ -1,11 +1,11 @@
 @import "../../title";
-@import "three_columns";
+@import "../section_1";
 
-.wrapper--header {
+.headerSpacer {
+  height: 5rem;
 }
 
-.empty {
-  height: 100px;
+.wrapper--header {
 }
 
 .header__image{
@@ -16,39 +16,32 @@
   width: 100%;
 }
 
-.header__h2 {
-  line-height: 1.2;
-  font-size: clamp(1em, 2vw, 1.2em);
-
-  &::first-letter {
-    text-transform: uppercase;
-  }
-}
-
-
-
-.btn_container {
+.header__btns {
   display: flex;
   justify-content: space-between;
-  padding: 2em 0;
+  padding: 2em $space-small;
 }
-
-.btnBig {
-  display: inline-block;
-  font-size: clamp(0.7em, 2vw, 1em);
-  flex-basis: 35%;
+.header__link{
+  width: 40%;
+}
+.header__btn{
+  width: 100%;
 }
 
 @include media {
 
+  .headerSpacer {
+    height: 3rem;
+  }
+
   .wrapper--header {
     display: flex;
-    margin-top: 1em;
+    height: 60vh;
   }
   .header__image {
     display: block;
     width: 50%;
-    height: 70vh;
+    //height: 70vh;
     background-image: url("/asets/Hero Image.png");
     background-position: right;
     background-size: cover;
@@ -65,15 +58,8 @@
     flex-direction: column;
   }
 
-  .btn_container {
-    width: 80%;
-    align-self: center;
-  }
-  .btnBig {
-    padding: 0.2em 0.2em;
-    display: block;
-    flex-basis: 45%;
-    border: 1px solid black;
+  .header__btns {
+    padding: 2em $space-large
   }
 }
 

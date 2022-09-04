@@ -113,7 +113,7 @@ const OddajRzeczyMain = () => {
         <>
             {/*{user?.email &&*/}
                 <>
-            <div className='navSpacer'></div>
+            {/*<div className='navSpacer'></div>*/}
             <OddajHeader counter={counter}/>
 
             {counter === 1 &&
