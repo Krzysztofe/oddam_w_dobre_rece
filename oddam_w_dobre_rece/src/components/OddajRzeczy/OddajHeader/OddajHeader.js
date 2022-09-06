@@ -7,7 +7,8 @@ const OddajHeader = ({counter}) => {
         <>
         <div className='headerSpacer'></div>
         <header className='wrapper wrapper--oddajHeader'>
-            <div className="oddajHeader__backgroundImage"> </div>
+            <section className='oddajHeader'>
+            <aside className="oddajHeader__backgroundImage"> </aside>
             <aside className="oddajHeader__rightContainer">
                 <Title
                     text1={'oddaj rzeczy, których nie chcesz'}
@@ -46,6 +47,7 @@ const OddajHeader = ({counter}) => {
                     />
                 </div>
             </aside>
+        </section>
         </header>
 </>
     );

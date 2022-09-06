@@ -1,12 +1,12 @@
-.oddajForm1__inputsContainer {
+.oddajForm1__inputs {
+  margin: $space-large 0;
+  height: 60vh;
   display: flex;
   flex-direction: column;
 }
 
 .oddajForm1__label {
-  width:90%;
- margin-top: 0.5em;
-
+  margin-top: 0.5em;
   &:first-letter {
     text-transform: uppercase;
   }
@@ -24,29 +24,14 @@
   }
 }
 
-.oddajForm1__button {
-  width: 30%;
-  background-color: $color-grey-normal;
-  padding: 0.5em 0;
-}
-
 @include media {
-  .oddajForm1__inputsContainer{
-    height: 80%;
-    }
-  .oddajForm1__label{
-    padding: 0;
+  .oddajForm1__inputs {
+   padding-bottom: 2rem;
+  margin: 0;
+    height: 50vh;
   }
-.oddajForm1__radio{
- margin-right: 1em;
-  width: 1em;
-  height: 1em;
-
-}
-  .oddajForm1__button{
-    width: 15%;
-    background-color: rgba(0,0,0,0);
-    border: 1px solid black;
-    margin-bottom: 2em;
+  .oddajForm1__label {
+    padding: 0;
+    margin-top: $space-large;
   }
 }

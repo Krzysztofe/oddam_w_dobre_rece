@@ -3,7 +3,9 @@
 .wrapper--oddajHeader {
   background-color: $color-grey-normal;
 }
-
+.oddajHeader{
+  padding: 0 $space-small;
+}
 .oddajHeader__backgroundImage {
   display: none;
 }
@@ -28,16 +30,18 @@
 
 
 @include media {
-  .wrapper--oddajHeader {
+  .oddajHeader{
     display: flex;
     background-color: white;
-    height: 90vh;
+    height: 60vh;
+    padding: 0;
   }
+
   .oddajHeader__backgroundImage {
     display: block;
     width: 50%;
     background-image: url("../../../../asets/Header-Form-Background.png");
-    background-position: left bottom;
+    background-position: right;
     background-size: cover;
     background-repeat: no-repeat;
   }

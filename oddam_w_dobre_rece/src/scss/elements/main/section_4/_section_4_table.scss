@@ -1,4 +1,4 @@
-.whoWeHelp__table {
+.section-4__table {
   border-bottom: 1px solid $color-grey-normal;
   width: 100%;
 
@@ -7,24 +7,27 @@
   }
 }
 
-.whoWeHelp__td {
+.section-4__td {
   font-family: $font-family-Merriweather;
   line-height: 1.3;
   padding: 0.8em 0;
 }
 
-.td__right {
+
+.section-4__pBig {
+  font-size: $font-size-small;
+
+}
+
+.section-4__pSmall {
+  font-size: $font-size-superSmall;
+  padding-top: 0.2em;
+}
+
+.td__right{
   text-align: right;
+  font-size: $font-size-superSmall;
 }
-
-.td__pBig {
-  font-size: 1em;
-}
-
-.td__pSmall {
-  font-size: 0.6em;
-}
-
 .paginationButtonsContainer {
   display: flex;
   justify-content: center;

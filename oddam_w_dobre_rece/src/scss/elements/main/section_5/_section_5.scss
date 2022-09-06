@@ -1,7 +1,7 @@
-@import "contact_form";
+@import "section_5_form";
 
-.wrapper--contact {
-  //display: flex;
+.section-5{
+
 }
 
 .contact__imageMobile {
@@ -12,53 +12,63 @@
   outline: 2px solid white;
 }
 
-.contact__containerInfo {
+.section-5__right {
   display: flex;
+  flex-direction: column;
+  justify-content: center;
   align-items: center;
-  width: 70%;
-  gap: 0.4em;
-  padding-top: 0.5em;
-  position: relative;
-  z-index: 1;
+  padding: 0 $space-small;
 }
-.contact__headerUnderline{
-  background-size: 70%;
-}
+
+//.section-5__right {
+//  display: flex;
+//  flex-direction: column;
+//  justify-content: center;
+//  align-items: center;
+//  width: 45%;
+//  padding: 0;
+//}
+
+
 
 .contact__logo {
   width: 1.4em;
 }
 
 @include media {
-  .wrapper--contact {
+  .wrapper--section-5 {
     display: flex;
     justify-content: right;
     background: url("../../../../asets/Background Image.png") no-repeat center;
     background-size: cover;
+    height: 50vh;
   }
-.opacityBacground{
+  .section-5{
   background-color: rgba(255, 255, 255, 0.8);
   width: 100%;
   display: flex;
   justify-content: right;
 }
-  .contact__containerInfo {
+  .section-5__right {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    width: 35%;
-    height: 80vh;
-    margin-right: 2em;
+    align-items: center;
+    width: 45%;
+    padding: 0;
   }
+  .section-5__decoration{
+    background-size: 100%;
+    width: 60%;
+  }
+
   .contact__imageMobile {
     display: none;
-  }
-  .contact__h2 {
-flex-grow: 0;
   }
   .contact__logo {
     display: none;
   }
+
 }
 
 @include media__bigSize {

@@ -10,11 +10,6 @@
   padding: $space-small;
 }
 
-
-.section-4__decoration{
-  background-size: 15%;
-}
-
 .section-4__btns {
   margin: 2em 0;
   display: flex;
@@ -44,10 +39,14 @@
   .section-4{
     padding: $space-large 4rem;
   }
+  .section-4__decoration{
+    background-size: 40%;
+  }
+
 
   .section-4__btns {
 align-items: center;
-    width: 70%;
+    width: 50%;
     margin: $space-large auto;
   }
   .section-4__btn {

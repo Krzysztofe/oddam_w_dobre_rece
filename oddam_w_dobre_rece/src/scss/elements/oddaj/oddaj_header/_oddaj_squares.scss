@@ -32,26 +32,22 @@
   }
 
   .square {
-    border: 1px solid $color-grey_normal;
-    color: $color-grey-normal;
+    border: 1px solid $color-black;
+    color: $color-black;
     transform: rotate(45deg);
-    background-color: rgba(0, 0, 0, 0);
+    background-color: $color-opacity;
     width: 50px;
     height: 50px;
-    font-size: 0.7em;
+    font-size: $font-size-superSmall;
     display: flex;
     justify-content: center;
     align-items: center;
-
     &:last-child {
       display: none;
     }
   }
   .square__h3 {
-    //width: 10px;
     transform: rotate(315deg);
-    //text-align: center;
-    //margin-left: 0.4em;
     align-self: flex-start;
   }
   .square__p {

@@ -10,22 +10,20 @@
 .wrapper--oddajMain{
 }
 .oddajMain {
-  padding-left: 1em;
-  padding-top: 1em;
+  padding: 0 $space-small;
 }
-
 @include media {
  .wrapper--oddajMain{
     background-image: url("../../../asets/Background-Form.png");
    background-position: center;
     background-size: cover;
    background-repeat: no-repeat;
-   height: 80vh;
+   //height: 80vh;
    padding: 0;
   }
   .oddajMain {
     padding-left: 2em;
-height: 100%;
+//height: 100%;
     position: relative;
   }
 }

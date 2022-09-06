@@ -39,19 +39,18 @@ const WhoWeHelp = () => {
         const displayOrganisations = filtered
             .slice(printedPage, printedPage + organisationsPerPage)
             .map((item) => {
-                return <table key={item.id} className='whoWeHelp__table'>
+                return <table key={item.id} className='section-4__table'>
                     <tbody>
                     <tr>
-                        <td className='whoWeHelp__td'>
-                            <p className='td__pBig'> {organisationTypePrinted} {item.name}</p>
-                            <p className='td__pSmall'>cel i misja: {item.goals}</p>
+                        <td className='section-4__td'>
+                            <p className='section-4__pBig'> {organisationTypePrinted} {item.name}</p>
+                            <p className='section-4__pSmall'>cel i misja: {item.goals}</p>
                         </td>
-                        <td className='td__right td__pSmall'>{item.stuff}</td>
+                        <td className='td__right'>{item.stuff}</td>
                     </tr>
                     </tbody>
                 </table>
 
-                // return <WhoWeHelp item = {item}/>
 
             })
         return displayOrganisations

@@ -31,7 +31,7 @@
 @include media {
 
   .headerSpacer {
-    height: 3rem;
+    height: 4rem;
   }
 
   .wrapper--header {
@@ -64,9 +64,6 @@
 }
 
 @include media__bigSize {
-  .underline {
-    background-image: url("/asets/Decoration@2x.png");
-  }
   .header__image{
     background-image: url("/asets/Hero Image@2x.png");
   }

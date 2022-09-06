@@ -1,17 +1,21 @@
-.oddajFormTop__h2{
-  display: block;
-}
 
-.oddajForm3__inputsContainer {
+.oddajForm3__inputs {
+  margin: $space-large 0;
+  height: 60vh;
   display: flex;
   flex-direction: column;
-  //row-gap: 0.8em;
+}
+
+.oddajForm3__select {
+  width: 70%;
 }
 
 .oddajForm3__h3 {
   font-weight: $semiBold;
+  font-size: $font-size-large;
   width: 100%;
-margin: 1em 0 0.5em 0;
+  margin-top: $space-large;
+
   &:first-letter {
     text-transform: uppercase;
   }
@@ -19,12 +23,12 @@ margin: 1em 0 0.5em 0;
 
 .oddajForm3__select {
   width: 70%;
-  margin-top: 0.5em;
 }
 
-.oddajForm3__checkboxesContainer {
+.oddajForm3__checkboxes {
+  margin-top: $space-large;
   display: flex;
-  flex-wrap: wrap ;
+  flex-wrap: wrap;
   row-gap: 1.5em;
   column-gap: 20%;
 }
@@ -33,49 +37,32 @@ margin: 1em 0 0.5em 0;
   width: 40%;
 }
 
-.oddajForm3__checkbox {
-  cursor: pointer;
-  display: none;
-
-  &:checked {
-    background-color: $color-yellow;
-  }
-}
-
-.oddajForm3__emptyCheckbox {
-  background-color: #b3d4fc;
+.oddajForm3__checkboxStyle {
+  background-color: $color-grey-normal;
   cursor: pointer;
   text-align: center;
   padding: 0.5em 0;
-  font-size: clamp(0.8em, 1vw, 1.5em);
-  &:checked {
+}
+.oddajForm3__checkbox {
+  display: none;}
+
+.oddajForm3__checkbox:checked + .oddajForm3__checkboxStyle {
     background-color: $color-yellow;
   }
-}
-
-
 
 
 .oddajForm3__textInput {
+  margin-top: $space-large;
   width: 70%;
 }
 
-.oddajForm3__buttonsContainer {
-  display: flex;
-  justify-content: space-between;
-}
 
-.oddajForm3__button {
-  background-color: $color-grey-normal;
-  width: 30%;
-  padding: 0.5em 0;
-  margin: 1em 0;
-}
 
-@include media{
-  .oddajForm3__inputsContainer {
-height: 80%;
-    width: 45%;
+@include media {
+  .oddajForm3__inputs {
+    padding-bottom: 2rem;
+    margin: 0;
+    height: 50vh;
   }
 
   .oddajForm3__h3 {
@@ -83,31 +70,33 @@ height: 80%;
   }
 
   .oddajForm3__select {
-width: 40%;
+    width: 40%;
+    max-width: 160px;
   }
 
-  .oddajForm3__checkboxesContainer {
+  .oddajForm3__checkboxes {
     row-gap: 0.5em;
     column-gap: 0.5em;
+    max-width: 420px;
   }
 
   .oddajForm3__label {
     width: inherit;
-    background-color: rgba(0,0,0,0);
-   }
+    background-color: rgba(0, 0, 0, 0);
+  }
 
   .oddajForm3__checkbox {
 
   }
 
-  .oddajForm3__emptyCheckbox {
+  .oddajForm3__checkboxStyle {
     padding: 0.5em;
     border: 1px solid $color-grey-normal;
-    background-color: rgba(0,0,0,0);
+    background-color: rgba(0, 0, 0, 0);
   }
 
   .oddajForm3__textInput {
-
+max-width: 400px;
   }
 
   .oddajForm3__buttonsContainer {
@@ -118,7 +107,7 @@ width: 40%;
   }
 
   .oddajForm3__button {
-background-color: rgba(0,0,0,0);
+    background-color: rgba(0, 0, 0, 0);
     border: 1px solid $color-grey-normal;
 
   }

@@ -1,20 +1,21 @@
 .summary{
+  margin: 10vh 0 $space-large 0;
+  height: 65vh;
+  display: flex;
+  flex-direction: column;
 }
 
 .summary__h3{
-width: 100%;
   font-weight: $semiBold;
-  margin: 1em 0 0.5em 0;
+  margin-top: $space-large;
 &:first-letter{
   text-transform: uppercase;
 }
 }
 .summary__topContainer {
+  margin-top: $space-large;
   display: flex;
   align-items: center;
-}
-.summary__topContainer + .summary__topContainer{
-  margin-top: 0.5em;
 }
 
 .summary__icon1{
@@ -34,24 +35,24 @@ width: 100%;
 .summary__p{
 width: 85%;
   margin-left: 1em;
-  margin-bottom:0.5em ;
 }
 
-.summary__tableLeft{
-
+.summary__tableLeft, .summary__tableRight{
+  margin-top: $space-large;
 }
 
-.summary__tableRight{
-}
 .summary__thead{
   font-weight: $semiBold;
-  width: 100%;
+
+  //width: 100%;
 }
-.summary__td + .summary__td {
-padding-left: 0.5em;
- }
+
+.summary__td{
+  padding: $space-small $space-large 0 $space-large ;
+}
 
 .summary__buttons{
+  margin-top: auto;
   display: flex;
   justify-content: space-between;
 }

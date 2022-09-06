@@ -1,12 +1,11 @@
-import React from 'react';
-
+import Buttons from "../../Buttons";
 const OddajForm3 = ({
                         handleChange, inputsValue,
                         handleIncrease, handleDecrease
                     }) => {
     return (
         <>
-            <form className='oddajForm3__inputsContainer'>
+            <main className='oddajForm3__inputs'>
                 <select
                     name='selectLocalisation'
                     value={inputsValue.selectLocalisation}
@@ -19,60 +18,58 @@ const OddajForm3 = ({
                     <option value='Kraków'>kraków</option>
                     <option value='Wrocław'>wrocław</option>
                 </select>
+
                 <h3 className='oddajForm3__h3'>komu chcesz pomóc?</h3>
-                <div className="oddajForm3__checkboxesContainer">
 
+                <div className="oddajForm3__checkboxes">
 
-                    <label className='oddajForm3__label'>
-                        <div className = 'oddajForm3__emptyCheckbox'> dzieciom</div>
+                    <label className ='oddajForm3__label'>
                         <input type='checkbox'
                                name='dzieciom'
                                value={inputsValue.dzieciom}
                                checked={inputsValue.dzieciom}
                                onChange={handleChange}
-                        className='oddajForm3__checkbox'/>
-                </label>
+                               className='oddajForm3__checkbox'/>
+                        <div className='oddajForm3__checkboxStyle'> dzieciom</div>
+                    </label>
 
                     <label className='oddajForm3__label'>
-                        <div className = 'oddajForm3__emptyCheckbox'> samotnym matkom</div>
                         <input type='checkbox'
                                name='matkom'
                                value={inputsValue.matkom}
                                checked={inputsValue.matkom}
                                onChange={handleChange}
                                className='oddajForm3__checkbox'/>
-
-                </label>
+                        <div className='oddajForm3__checkboxStyle'> samotnym matkom </div>
+                    </label>
                     <label className='oddajForm3__label'>
-                    <div className = 'oddajForm3__emptyCheckbox'> bezdomnym</div>
-
-                    <input type='checkbox'
+                        <input type='checkbox'
                                name='bezdomnym'
                                value={inputsValue.bezdomnym}
                                checked={inputsValue.bezdomnym}
                                onChange={handleChange}
                                className='oddajForm3__checkbox'/>
-                </label>
+                        <div className='oddajForm3__checkboxStyle'> bezdomnym </div>
+                    </label>
 
                     <label className='oddajForm3__label'>
-                        <div className = 'oddajForm3__emptyCheckbox'> niepełnosprawnym</div>
-
                         <input type='checkbox'
                                name='niepelnosprawnym'
                                value={inputsValue.niepelnosprawnym}
                                checked={inputsValue.niepelnosprawnym}
                                onChange={handleChange}
                                className='oddajForm3__checkbox'/>
-                </label>
+                        <div className='oddajForm3__checkboxStyle'> niepełnosprawnym </div>
+                    </label>
 
                     <label className='oddajForm3__label'>
-<div className = 'oddajForm3__emptyCheckbox'> osobom starszym</div>
                         <input type='checkbox'
                                name='starszym'
                                value={inputsValue.starszym}
                                checked={inputsValue.starszym}
                                onChange={handleChange}
                                className='oddajForm3__checkbox'/>
+                        <div className='oddajForm3__checkboxStyle'> osobom starszym </div>
                     </label>
                 </div>
                 <h3 className='oddajForm3__h3'>
@@ -84,16 +81,13 @@ const OddajForm3 = ({
                            name='organisationName'
                            value={inputsValue.organisationName}
                            onChange={handleChange}
-                    className='oddajForm3__textInput'/>
+                           className='oddajForm3__textInput'/>
                 </div>
-
-                <div className="oddajForm3__buttonsContainer">
-                    <button className='oddajForm3__button'
-                            onClick={handleDecrease}>wstecz</button>
-                    <button className='oddajForm3__button'
-                            onClick={handleIncrease}>dalej</button>
-                </div>
-            </form>
+                <Buttons
+                    handleDecrease={handleDecrease}
+                    handleIncrease = {handleIncrease}
+                    />
+            </main>
         </>
 
     );

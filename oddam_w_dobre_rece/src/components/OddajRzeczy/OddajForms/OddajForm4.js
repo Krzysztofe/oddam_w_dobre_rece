@@ -1,13 +1,13 @@
-import React from 'react';
+import Buttons from "../../Buttons";
 
 const OddajForm4 = ({
                         inputsValue, handleChange,
                         handleIncrease, handleDecrease
                     }) => {
     return (
-        <form className='form4__inputsContainer'>
+        <main className='form4__inputsContainer'>
 
-            <div className="form4__leftContainer">
+            <aside className="form4__leftContainer">
                 <h3 className='form4__h3'>adres odbioru:</h3>
 
                 <div className='form4__inputContainer'>
@@ -46,11 +46,11 @@ const OddajForm4 = ({
                            onChange={handleChange}
                            className='form4__input'/>
                 </div>
-            </div>
+            </aside>
 
 
 
-            <div className="form4__rightContainer">
+            <aside className="form4__rightContainer">
                 <h3 className='form4__h3'>termin odbioru:</h3>
 
                 <div className='form4__inputContainer'>
@@ -81,23 +81,14 @@ const OddajForm4 = ({
                         className='form4__textarea'/>
                 </div>
 
-            </div>
+            </aside>
 
-            <div className="form4__buttonsContainer">
-                <button
-                    onClick={handleDecrease}
-                    className='form4__button'
-                >wstecz </button>
+            <Buttons
+                handleDecrease = {handleDecrease}
+                handleIncrease = {handleIncrease}
+            />
 
-
-                <button
-                    onClick={handleIncrease}
-                    className='form4__button'
-                >dalej</button>
-
-            </div>
-
-        </form>
+        </main>
 
 
 

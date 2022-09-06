@@ -1,8 +1,8 @@
 .contactForm{
-  z-index: 2;
   display: flex;
  justify-content: space-between;
   flex-wrap: wrap;
+  width: 80%;
 }
 .contactForm__label{
   width: 45%;
@@ -43,14 +43,14 @@ background-color: rgba(0,0,0,0);
 }
 
 .contactForm__button{
-  width: 20%;
-  margin-left: 80%;
-  padding: 0.2em 0;
-  font-size: clamp(0.7em, 1vw, 9em);
-  align-self: center;
-  background-color: rgba(0,0,0,0);
+
+  padding: $space-small $font-size-large;
+  font-size: $font-size-small;
   border: 1px solid $color-grey-normal;
-  cursor: pointer;
+margin-left: auto;
+  &:first-letter{
+  text-transform: uppercase;
+}
 }
 
 .contactForm__errorUnderline{

@@ -1,11 +1,9 @@
-import React from 'react';
-
 const Square = ({number, text, counter}) => {
 
     return (
         <>
             <div className={`square 
-            ${counter >= number 
+            ${ counter >= number
             &&
             'square--BacgroundColor'}`}>
 

@@ -1,3 +1,6 @@
+import OddajFormTop from "./OddajFormTop";
+import Buttons from "../../Buttons";
+
 const OddajSummary = ({
                           inputsValue, createSummary,
                           handleIncrease, handleDecrease
@@ -10,23 +13,29 @@ const OddajSummary = ({
     return (
         <div>
             <section className='summary'>
+                <OddajFormTop
+                    text={'podsumowanie twojej darowizny'}
+                />
                 <h3 className='summary__h3'>oddajesz:</h3>
 
                 <div className="summary__topContainer">
-                    <div className="summary__icon1"></div>
+                    <div className="summary__icon1"> </div>
                     <p className='summary__p'>{inputsValue.selectBags} worki,
                         <> {inputsValue.selectStuff}</>
                         {inputsValue.dzieciom === false ? null : <> dzieciom </>}
-                        {inputsValue.matkom === false ? null : <> matkom</>}
+                        {inputsValue.matkom === false ? null : <> samotnym matkom</>}
                         {inputsValue.bezdomnym === false ? null : <> bezdomnym</>}
                         {inputsValue.niepelnosprawnym === false ? null : <> niepełnosprawnym</>}
-                        {inputsValue.starszym === false ? null : <> starszym</>}
+                        {inputsValue.starszym === false ? null : <> osobom starszym</>}
                     </p>
                 </div>
 
                 <div className="summary__topContainer">
                     <div className="summary__icon2"></div>
-                    <p className='summary__p'>dla lokalizacji: {inputsValue.selectLocalisation}</p>
+                    <p className='summary__p'>
+                        dla lokalizacji: {inputsValue.selectLocalisation}
+                        <>, {inputsValue.organisationName}</>
+                    </p>
                 </div>
 
                 <div className="summary__tablesContainer">
@@ -80,16 +89,11 @@ const OddajSummary = ({
                 </table>
         </div>
 
-                <div className="summary__buttons">
-                    <button
-                        onClick={handleDecrease}
-                        className='summary__button'>wstecz
-                    </button>
-                    <button
-                        onClick={handleSummaryIncrease}
-                        className='summary__button'>potwierdzam
-                    </button>
-                </div>
+                <Buttons
+                    handleDecrease = {handleDecrease}
+                    handleIncrease = {handleSummaryIncrease}
+                />
+
             </section>
         </div>
     );

@@ -39,17 +39,17 @@
 
   .listItems {
     display: flex;
-    justify-content: space-between;
-    //padding: 0;
+    padding: 0;
   }
   .listItem{
-    font-size: clamp(0.5rem, 1.5vw, 0.7rem);
-    padding: 0 0.4em;
-
+   font-size: $font-size-superSmall;
+    padding: $space-small;
+    margin-left: 2em;
     &:hover{
       outline: 1px solid $color-grey-dark;
     }
   }
+
   .logItem {
     font-size: clamp(0.5rem, 0.8vw, 0.6rem);
     margin-left: 1em;

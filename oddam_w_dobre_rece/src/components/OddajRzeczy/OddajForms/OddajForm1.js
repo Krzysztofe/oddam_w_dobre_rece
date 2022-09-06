@@ -1,5 +1,6 @@
 import React from 'react';
 import OddajFormHeader from "./OddajFormTop";
+import Buttons from "../../Buttons";
 
 const OddajForm1 = ({
                         inputsValue, handleChange,
@@ -7,7 +8,7 @@ const OddajForm1 = ({
                     }) => {
     return (
         <>
-            <main className='oddajForm1__inputsContainer'>
+            <main className='oddajForm1__inputs'>
 
                 <label className='oddajForm1__label'>
                     <input type='radio'
@@ -55,7 +56,6 @@ const OddajForm1 = ({
                 </label>
 
                 <label className='oddajForm1__label'>
-
                     <input type='radio'
                            name="selectStuff"
                            value='inne,'
@@ -65,11 +65,14 @@ const OddajForm1 = ({
                     inne
                 </label>
 
-                <button onClick={handleIncrease}
-                        className='oddajForm1__button'
-                >
-                    dalej
-                </button>
+                <div className="formButtons">
+                    <button
+                        onClick={handleIncrease}
+                        className='formButton'
+                    >
+                        dalej
+                    </button>
+                </div>
 
             </main>
 

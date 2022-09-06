@@ -1,10 +1,12 @@
+import Buttons from "../../Buttons";
+
 const OddajForm2 = ({
                         inputsValue, handleChange,
                         handleDecrease, handleIncrease
                     }) => {
     return (
         <>
-            <form className='oddajForm2__inputsContainer'>
+            <main className='oddajForm2__inputs'>
                 <label className='oddajForm2__label'>
                     liczba 60l worków:
 
@@ -22,17 +24,11 @@ const OddajForm2 = ({
                     </select>
                 </label>
 
-                <div className="oddajForm2__buttonsContainer">
-                    <button onClick={handleDecrease}
-                        className='oddajForm2__button'>
-                        wstecz
-                    </button>
-                    <button onClick={handleIncrease}
-                        className='oddajForm2__button'>
-                        dalej
-                    </button>
-                </div>
-            </form>
+<Buttons
+    handleDecrease={handleDecrease}
+    handleIncrease = {handleIncrease}
+/>
+            </main>
         </>
     );
 };

@@ -12,7 +12,8 @@ import OddajForm1 from "./OddajForms/OddajForm1";
 import OddajForm3 from "./OddajForms/OddajForm3";
 import OddajForm4 from "./OddajForms/OddajForm4";
 import OddajSummary from "./OddajForms/OddajSummary";
-import Contact from "../MainComponent/Contact/Contact";
+import Title from "../Title";
+import Contact from "../MainComponent/Section_5/Section_5";
 
 import HeaderUnderline from "../Title";
 
@@ -223,9 +224,6 @@ const OddajRzeczyMain = () => {
                 <>
                     <main className="wrapper wrapper--oddajMain">
                         <div className='oddajMain'>
-                            <OddajFormTop
-                                text={'podsumowanie twojej darowizny'}
-                            />
                             <OddajSummary
                                 createSummary={createSummary}
                                 inputsValue={inputsValue}
@@ -241,13 +239,13 @@ const OddajRzeczyMain = () => {
             {counter === 6 &&
                 <main className="wrapper wrapper--oddajMain">
                     <div className='oddajMain'>
-                        <HeaderUnderline
+                        <Title
                             text1={'dziękujemy za przesłanie formularza'}
                             text2={'na maila prześlemy wszelkie' +
                                 'informacje o odbiorze'}
                             classContainer={'oddajThnx__container'}
                             classH2={'oddajThnx__h2'}
-                            classUnderline={'oddajThnx__underline'}
+                            classUnderline={'oddajThnx__decoration'}
                         />
 
                     </div>

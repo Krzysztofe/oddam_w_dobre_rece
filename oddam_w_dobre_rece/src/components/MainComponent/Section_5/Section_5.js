@@ -1,6 +1,5 @@
 import React from 'react';
-import Underline from "../Underline";
-import Form from './ContactForm'
+import Form from './Section_5_Form'
 import Tshirt from '../../../asets/IconTshirt.png';
 import Facebook from '../../../asets/Facebook.png';
 import Instagram from '../../../asets/Instagram.png';
@@ -9,16 +8,15 @@ import HeaderUnderline from "../../Title";
 
 const Contact = () => {
     return (
-        <section className="contact">
-            <div className="wrapper wrapper--contact" id='contact'>
-             <div className="opacityBacground">
-                <div className='contact__imageMobile'> </div>
-                <div className="contact__containerInfo">
+
+        <div className="wrapper wrapper--section-5" id='contact'>
+            <section className="section-5">
+                <div className='section-5__imageMobile'></div>
+                <aside className="section-5__right">
                     <HeaderUnderline
                         text1={'skontaktuj się z nami'}
-                        classUnderline = {'contact__headerUnderline'}
+                        classUnderline={'section-5__decoration'}
                     />
-
                     <Form/>
                     <a href='https://www.facebook.com/'>
                         <img src={Facebook} className='contact__logo' alt='Facebook_logo'/>
@@ -26,11 +24,11 @@ const Contact = () => {
                     <a href='https://www.instagram.com/'>
                         <img src={Instagram} className='contact__logo' alt='Instagram_logo'/>
                     </a>
-                </div>
-             </div>
-            </div>
-        </section>
-    );
+                </aside>
+            </section>
+        </div>
+)
+    ;
 };
 
 export default Contact;
