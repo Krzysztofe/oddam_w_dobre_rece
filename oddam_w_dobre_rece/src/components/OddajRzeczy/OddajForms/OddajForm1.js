@@ -40,7 +40,8 @@ const OddajForm1 = ({
                     <input type='radio'
                            name='selectStuff'
                            value='zabawki'
-                           checked={inputsValue.selectStuff === 'zabawki'}
+                           checked={inputsValue.selectStuff ===
+                               'zabawki'}
                            onChange={handleChange}
                            className='oddajForm1__radio'/>zabawki
                 </label>
@@ -49,7 +50,8 @@ const OddajForm1 = ({
                     <input type='radio'
                            name='selectStuff'
                            value='książki'
-                           checked={inputsValue.selectStuff === 'książki'}
+                           checked={inputsValue.selectStuff ===
+                               'książki'}
                            onChange={handleChange}
                            className='oddajForm1__radio'/>
                     książki
@@ -59,24 +61,22 @@ const OddajForm1 = ({
                     <input type='radio'
                            name="selectStuff"
                            value='inne,'
-                           checked={inputsValue.selectStuff === 'inne,'}
+                           checked={inputsValue.selectStuff ===
+                               'inne,'}
                            onChange={handleChange}
                            className='oddajForm1__radio'/>
                     inne
                 </label>
 
-                <div className="formButtons">
+                <div className = "formButtons">
                     <button
-                        onClick={handleIncrease}
-                        className='formButton'
+                        onClick = {handleIncrease}
+                        className = 'formButton'
                     >
                         dalej
                     </button>
                 </div>
-
             </main>
-
-
         </>
     );
 };

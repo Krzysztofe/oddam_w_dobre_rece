@@ -88,7 +88,7 @@ const NavLinks = ({handleCloseMenue}) => {
                         wyloguj
                     </li>
 
-                    <Link to='oddajRzeczy' className='hashLink'
+                    <Link to='oddaj' className='hashLink'
                     >
                         <li
                             className='listItem logItem'

@@ -13,15 +13,12 @@ import OddajForm3 from "./OddajForms/OddajForm3";
 import OddajForm4 from "./OddajForms/OddajForm4";
 import OddajSummary from "./OddajForms/OddajSummary";
 import Title from "../Title";
-import Contact from "../MainComponent/Section_5/Section_5";
+import Contact from "../Home/Section_5/Section_5";
 
 import HeaderUnderline from "../Title";
 
 
-
-
-
-const OddajRzeczyMain = () => {
+const OddajMain = () => {
     const [user, loading, error] = useAuthState(auth);
 
     const [inputsValue, setInputsValue] =
@@ -32,7 +29,7 @@ const OddajRzeczyMain = () => {
             niepelnosprawnym: false, starszym: false,
             organisationName: "", street: "",
             city: "", postCode: "", phone: "",
-            date: "", time: "", note: "", uid:""
+            date: "", time: "", note: "", uid: ""
         })
     // const [summary, setSummary] = useState([])
     const [counter, setCounter] = useState(1)
@@ -85,8 +82,6 @@ const OddajRzeczyMain = () => {
 // }, [])
 
     const createSummary = async () => {
-
-
         await addDoc(summaryReference, {
             selectStuff: inputsValue.selectStuff,
             selectBags: inputsValue.selectBags,
@@ -111,150 +106,143 @@ const OddajRzeczyMain = () => {
 
     return (
 
-        <>
-            {/*{user?.email &&*/}
-                <>
-            {/*<div className='navSpacer'></div>*/}
-            <OddajHeader counter={counter}/>
+            <>
+                <OddajHeader counter={counter}/>
 
-            {counter === 1 &&
-                <>
-                    <OddajBelt
-                        text={'Uzupełnij szczegóły dotyczace twoich rzeczy. ' +
-                            'Dzięki temu bedziemy wiedzieć komu najlepiej je przekazać.'}
-                    />
-                    <main className="wrapper wrapper--oddajMain">
-                        <div className='oddajMain'>
-
-                            <OddajFormTop
-                                step={'krok 1/4'}
-                                text={'zaznacz co chcesz oddać:'}
-                            />
-                            <OddajForm1
-                                inputsValue={inputsValue}
-                                handleChange={handleChange}
-                                counter={counter}
-                                handleIncrease={handleIncrease}
-                                handleDecrease={handleDecrease}
-                            />
-                        </div>
-                    </main>
-                </>
-            }
-
-            {counter === 2 &&
-                <>
-                    <OddajBelt
-                        text={'Wszytie rzeczy do oddania ' +
-                            'zapakuj w 60l worki. Dokładną' +
-                            ' instrukcję jak poprawnie spakować' +
-                            ' rzczy znajdziesz TUTAJ '}
-                    />
-                    <main className="wrapper wrapper--oddajMain">
-                        <div className='oddajMain'>
-                            <OddajFormTop
-                                step={'krok 2/4'}
-                                text={'podaj liczbę 60l worków,' +
-                                    ' w które spkowałeś/aś rzeczy:'}
-                            />
-                            <OddajForm2
-                                inputsValue={inputsValue}
-                                handleChange={handleChange}
-                                counter={counter}
-                                handleIncrease={handleIncrease}
-                                handleDecrease={handleDecrease}
-                            />
-                        </div>
-                    </main>
-                </>
-            }
-
-            {counter === 3 &&
-                <>
-                    <OddajBelt
-                        text={'Jeśli wiesz komu chcesz pomóc, możesz wpisać' +
-                            ' nazwę organizacji w wyszukiwarce. Możesz też' +
-                            'filtrować organizacje po ich lokalizacji bądź ' +
-                            'celu ich pomocy'}
-                    />
-                    <main className="wrapper wrapper--oddajMain">
-                        <div className='oddajMain'>
-                            <OddajFormTop
-                                step={'krok 3/4'}
-                                text={'lokalizacja:'}
-                            />
-                            <OddajForm3
-                                inputsValue={inputsValue}
-                                handleChange={handleChange}
-                                counter={counter}
-                                handleIncrease={handleIncrease}
-                                handleDecrease={handleDecrease}
-                            />
-                        </div>
-                    </main>
-                </>
-            }
-
-            {counter === 4 &&
-                <>
-                    <OddajBelt
-                        text={'Podaj adres oraz termin odbioru rzeczy'}
-                    />
-                    <main className="wrapper wrapper--oddajMain">
-                        <div className='oddajMain'>
-                            <OddajFormTop
-                                step={'krok 4/4'}
-                                text={'podaj adres oraz termin ' +
-                                    'odbioru rzeczy przez kuriera:'}
-                            />
-                            <OddajForm4
-                                inputsValue={inputsValue}
-                                handleChange={handleChange}
-                                counter={counter}
-                                handleIncrease={handleIncrease}
-                                handleDecrease={handleDecrease}
-                            />
-                        </div>
-                    </main>
-                </>
-            }
-
-            {counter === 5 &&
-
-                <>
-                    <main className="wrapper wrapper--oddajMain">
-                        <div className='oddajMain'>
-                            <OddajSummary
-                                createSummary={createSummary}
-                                inputsValue={inputsValue}
-                                counter={counter}
-                                handleIncrease={handleIncrease}
-                                handleDecrease={handleDecrease}
-                            />
-                        </div>
-                    </main>
-                </>
-            }
-
-            {counter === 6 &&
-                <main className="wrapper wrapper--oddajMain">
-                    <div className='oddajMain'>
-                        <Title
-                            text1={'dziękujemy za przesłanie formularza'}
-                            text2={'na maila prześlemy wszelkie' +
-                                'informacje o odbiorze'}
-                            classContainer={'oddajThnx__container'}
-                            classH2={'oddajThnx__h2'}
-                            classUnderline={'oddajThnx__decoration'}
+                {counter === 1 &&
+                    <>
+                        <OddajBelt
+                            text={'Uzupełnij szczegóły dotyczace twoich rzeczy. ' +
+                                'Dzięki temu bedziemy wiedzieć komu najlepiej je przekazać.'}
                         />
+                        <main className="wrapper wrapper--oddajMain">
+                            <div className='oddajMain'>
 
-                    </div>
-                </main>}
-            <Contact/>
-                </>
-            {/*}*/}
-        </>
+                                <OddajFormTop
+                                    step={'krok 1/4'}
+                                    text={'zaznacz co chcesz oddać:'}
+                                />
+                                <OddajForm1
+                                    inputsValue={inputsValue}
+                                    handleChange={handleChange}
+                                    counter={counter}
+                                    handleIncrease={handleIncrease}
+                                    handleDecrease={handleDecrease}
+                                />
+                            </div>
+                        </main>
+                    </>
+                }
 
+                {counter === 2 &&
+                    <>
+                        <OddajBelt
+                            text={'Wszytie rzeczy do oddania ' +
+                                'zapakuj w 60l worki. Dokładną' +
+                                ' instrukcję jak poprawnie spakować' +
+                                ' rzczy znajdziesz TUTAJ '}
+                        />
+                        <main className="wrapper wrapper--oddajMain">
+                            <div className='oddajMain'>
+                                <OddajFormTop
+                                    step={'krok 2/4'}
+                                    text={'podaj liczbę 60l worków,' +
+                                        ' w które spkowałeś/aś rzeczy:'}
+                                />
+                                <OddajForm2
+                                    inputsValue={inputsValue}
+                                    handleChange={handleChange}
+                                    counter={counter}
+                                    handleIncrease={handleIncrease}
+                                    handleDecrease={handleDecrease}
+                                />
+                            </div>
+                        </main>
+                    </>
+                }
+
+                {counter === 3 &&
+                    <>
+                        <OddajBelt
+                            text={'Jeśli wiesz komu chcesz pomóc, możesz wpisać' +
+                                ' nazwę organizacji w wyszukiwarce. Możesz też' +
+                                'filtrować organizacje po ich lokalizacji bądź ' +
+                                'celu ich pomocy'}
+                        />
+                        <main className="wrapper wrapper--oddajMain">
+                            <div className='oddajMain'>
+                                <OddajFormTop
+                                    step={'krok 3/4'}
+                                    text={'lokalizacja:'}
+                                />
+                                <OddajForm3
+                                    inputsValue={inputsValue}
+                                    handleChange={handleChange}
+                                    counter={counter}
+                                    handleIncrease={handleIncrease}
+                                    handleDecrease={handleDecrease}
+                                />
+                            </div>
+                        </main>
+                    </>
+                }
+
+                {counter === 4 &&
+                    <>
+                        <OddajBelt
+                            text={'Podaj adres oraz termin odbioru rzeczy'}
+                        />
+                        <main className="wrapper wrapper--oddajMain">
+                            <div className='oddajMain'>
+                                <OddajFormTop
+                                    step={'krok 4/4'}
+                                    text={'podaj adres oraz termin ' +
+                                        'odbioru rzeczy przez kuriera:'}
+                                />
+                                <OddajForm4
+                                    inputsValue={inputsValue}
+                                    handleChange={handleChange}
+                                    counter={counter}
+                                    handleIncrease={handleIncrease}
+                                    handleDecrease={handleDecrease}
+                                />
+                            </div>
+                        </main>
+                    </>
+                }
+
+                {counter === 5 &&
+
+                    <>
+                        <main className="wrapper wrapper--oddajMain">
+                            <div className='oddajMain'>
+                                <OddajSummary
+                                    createSummary={createSummary}
+                                    inputsValue={inputsValue}
+                                    counter={counter}
+                                    handleIncrease={handleIncrease}
+                                    handleDecrease={handleDecrease}
+                                />
+                            </div>
+                        </main>
+                    </>
+                }
+
+                {counter === 6 &&
+                    <main className="wrapper wrapper--oddajMain">
+                        <div className='oddajMain'>
+                            <Title
+                                text1={'dziękujemy za przesłanie formularza'}
+                                text2={'na maila prześlemy wszelkie' +
+                                    'informacje o odbiorze'}
+                                classContainer={'oddajThnx__container'}
+                                classH2={'oddajThnx__h2'}
+                                classUnderline={'oddajThnx__decoration'}
+                            />
+                        </div>
+                    </main>}
+                <Contact/>
+            </>
     );
 }
-export default OddajRzeczyMain;
+export default OddajMain;

@@ -1,12 +1,13 @@
 import {Link} from "react-router-dom";
-import HeaderUnderline from "../Title";
+import Title from "./Title";
+import {useAuthState} from "react-firebase-hooks/auth";
+import {auth} from "./FireBaseConfig";
 
 const Header = () => {
+
     return (
         <>
-            <div className='headerSpacer' id='start'
-        > </div>
-
+            <div className='headerSpacer' id='start'> </div>
             <header className='header'>
                 <div className="wrapper wrapper--header">
 
@@ -15,7 +16,7 @@ const Header = () => {
                     <aside className='header__right'>
 
                         <section className="header__container">
-                            <HeaderUnderline
+                            <Title
                                 text1={'zacznij pomagać!'}
                                 text2={'oddaj niechciane rzeczy' +
                                     ' w zaufane ręce'}

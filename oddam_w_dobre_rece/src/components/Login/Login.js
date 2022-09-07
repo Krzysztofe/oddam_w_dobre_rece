@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import {NavHashLink} from "react-router-hash-link";
 import {Link} from 'react-router-dom'
 import {signInWithEmailAndPassword} from 'firebase/auth'
-import {auth} from './FireBaseConfig';
+import {auth} from '../FireBaseConfig';
 import {useNavigate} from 'react-router';
 
 
@@ -11,6 +11,7 @@ const Login = () => {
     const navigate = useNavigate()
     const [inputValueLogin, setInputValueLogin] =
         useState({email: "", password: ""})
+    const [error, setError] = useState('')
 
     const handleChange = (e) => {
         setInputValueLogin({
@@ -30,7 +31,9 @@ const Login = () => {
                 navigate('/')
                 alert('sukces')
             })
-            .catch(error => alert(error.code))
+            .catch(error => {
+                setError(error.code)
+            })
     }
 
     return (
@@ -38,6 +41,7 @@ const Login = () => {
             onSubmit={handleLogin}
             className='wrapper wrapper--login'
         >
+
             <h2>zaloguj się</h2>
             <label> email</label>
             <input
@@ -59,6 +63,7 @@ const Login = () => {
                 </Link>
                 <button>zaloguj się</button>
             </div>
+            <h2>{error}</h2>
         </form>
     );
 };

@@ -1,13 +1,13 @@
-
 import {BrowserRouter, Routes, Route} from "react-router-dom";
-import NavBar from "./MainComponent/NavBar/NavBar";
-import Home from "./MainComponent/Home";
-import Login from "./Login";
-import Register from "./Register";
-import Logout from "./Logout";
-import OddajRzeczyMain from "./OddajRzeczy/OddajMain";
+import NavBar from "./Home/NavBar/NavBar";
+import Home from "./Home/Home";
+import Login from "./Login/Login";
+import Register from "./Login/Register";
+import Logout from "./Login/Logout";
+import OddajMain from "./OddajRzeczy/OddajMain";
 import {useAuthState} from "react-firebase-hooks/auth";
 import {auth} from "./FireBaseConfig";
+import ProtectedRoute from "./ProtectedRoute";
 
 function App() {
 
@@ -19,10 +19,12 @@ function App() {
                 <Route path='/rejestracja' element={<Register/>}/>
                 <Route path='/logowanie' element={<Login/>}/>
                 <Route path='/wylogowano' element={<Logout/>}/>
-                <Route path='/oddajRzeczy' element={<OddajRzeczyMain/>}/>
+                <Route path='/oddaj' element={<ProtectedRoute/>}/>
+
+
+                {/*<Route path='/oddaj' element={<OddajMain/>}/>*/}
             </Routes>
         </BrowserRouter>
-
     );
 }
 

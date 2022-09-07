@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import {NavHashLink} from "react-router-hash-link";
 import {Link} from 'react-router-dom'
 import {createUserWithEmailAndPassword} from 'firebase/auth'
-import {auth} from './FireBaseConfig'
+import {auth} from '../FireBaseConfig'
 import {useNavigate} from 'react-router'
 
 const Register = () => {
@@ -10,6 +10,8 @@ const Register = () => {
     const navigate = useNavigate()
     const [inputValuRregister, setInputValueRegister] =
         useState({email: '', password: '', passwordRepited: ''})
+
+    const [error, setError] = useState("")
 
     const handleChange = (e) => {
         e.preventDefault()
@@ -26,10 +28,12 @@ const Register = () => {
             inputValuRregister.password)
             .then(() => {
                 navigate('/')
-                alert('sukces')
+                // alert('sukces')
             })
-            .catch(error => alert(error.code))
+            .catch(error => setError(error.code))
     }
+
+    console.log(auth)
 
     return (
         <form onSubmit={handleRegister}
@@ -56,11 +60,12 @@ const Register = () => {
             />
 
             <div className="register__containerButtons">
+                <button> załóż konto</button>
                 <Link to='/logowanie'>
                     <button> zaloguj się</button>
                 </Link>
-                <button> załóż konto</button>
             </div>
+            <h2>{error}</h2>
         </form>
     );
 };
