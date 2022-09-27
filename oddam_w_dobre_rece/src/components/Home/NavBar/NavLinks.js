@@ -15,6 +15,8 @@ const NavLinks = ({handleCloseMenue}) => {
         handleCloseMenue();
     }
 
+    console.log(user)
+
     return (
         <>
             <ul className='listItems'>
@@ -28,8 +30,8 @@ const NavLinks = ({handleCloseMenue}) => {
                     >
                         start
                     </li>
-                </HashLink>
 
+                </HashLink>
                 <HashLink
                     smooth to='#simpleSteps'
                     className='hashLink'

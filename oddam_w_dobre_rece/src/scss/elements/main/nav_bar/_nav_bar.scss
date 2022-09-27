@@ -12,7 +12,14 @@
   padding: $space-large;
   background-color: $color-white;
   z-index: 1;
+  display: flex;
+  justify-content: space-between;
 }
+
+.navigationMobile--open{
+  display: block;
+}
+
 .navigationMobile__tshirt {
   width: 3em;
   background-color: white;
@@ -22,12 +29,15 @@
   border: 1px solid $color-black;
 }
 
-.iconHamburger {
-  position: absolute;
-  right: 12%;
-  top: 25px;
+.iconHamburger, .iconCross {
   font-size: 2rem;
   cursor: pointer;
+}
+.iconCross{
+position: absolute;
+  font-size: 3rem;
+  top: 0;
+  right: 0
 }
 
 @include media{
@@ -44,6 +54,9 @@
 }
 
 @include media__navbar {
+  .wrapper--navigation{
+    padding: 0;
+  }
   .navigation {
     height: 4rem;
     max-width: 1350px;
@@ -55,6 +68,7 @@
     flex-direction: column-reverse;
     align-items: end;
     z-index: 1;
+    padding: 0 $space-large;
   }
   .navigationMobile {
     display: none;

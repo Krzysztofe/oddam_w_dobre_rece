@@ -2,24 +2,17 @@
 @import "../section_1";
 
 .headerSpacer {
-  height: 5rem;
+  height: 6rem;
 }
 
-.wrapper--header {
-}
-
-.header__image{
-  display: none;
-}
 .header__right {
   font-weight: $semiBold;
-  width: 100%;
 }
 
 .header__btns {
   display: flex;
   justify-content: space-between;
-  padding: 2em $space-small;
+  margin: 2rem 0;
 }
 .header__link{
   width: 40%;
@@ -37,11 +30,11 @@
   .wrapper--header {
     display: flex;
     height: 60vh;
+    padding-left: 0;
   }
   .header__image {
     display: block;
     width: 50%;
-    //height: 70vh;
     background-image: url("/asets/Hero Image.png");
     background-position: right;
     background-size: cover;
@@ -56,10 +49,6 @@
   .header__container {
     display: flex;
     flex-direction: column;
-  }
-
-  .header__btns {
-    padding: 2em $space-large
   }
 }
 

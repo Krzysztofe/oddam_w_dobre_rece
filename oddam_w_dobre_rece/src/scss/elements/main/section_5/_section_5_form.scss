@@ -1,58 +1,62 @@
-.contactForm{
+.contactForm {
   display: flex;
- justify-content: space-between;
+  justify-content: space-between;
   flex-wrap: wrap;
-  width: 80%;
 }
-.contactForm__label{
-  width: 45%;
-  font-size: clamp(0.7em, 1vw, 1em)
+.contactForm__inputContainer{
+  width: 100%;
+  margin-top: $space-large * 2;
 }
-.contactForm__textInput{
+
+.contactForm__input {
   width: 100%;
   border: none;
-background-color: rgba(0,0,0,0);
+  background-color: rgba(0, 0, 0, 0);
   border-bottom: 1px solid $color-grey-normal;
+  margin-top: $space-small;
+  resize: none;
 }
 
-.contactForm__textInputErrors{
-  width: 45%;
-  height: 2vh;
-  padding: 0.5em 0;
+input::placeholder {
+  color: rgba(0, 0, 0, 0.4);
+}
+textarea::placeholder{
+  color: rgba(0, 0, 0, 0.4);
+  font-family: $font-family-Open-Sans;
+}
+
+.contactForm__textInputErrors {
+  padding-top: $space-small;
   color: #FF0000FF;
-  font-size: clamp(0.4em, 0.5vw, 0.7em);
-}
-
-
-.contactForm__labelTextarea{
-  font-size: clamp(0.7em, 1vw, 1em);
-  width: 100%;
-}
-.contactForm__textarea{
-  border: none;
-  background-color: rgba(0,0,0,0);
-  border-bottom: 1px solid $color-grey-normal;
-  width: 100%;
-}
-.contactForm__textareaErrors{
-  width: 100%;
-  height: 2vh;
-  color: #FF0000FF;
-  font-size: clamp(0.4em, 0.5vw, 0.7em);
-  padding: 0.5em 0;
-}
-
-.contactForm__button{
-
-  padding: $space-small $font-size-large;
   font-size: $font-size-small;
-  border: 1px solid $color-grey-normal;
-margin-left: auto;
-  &:first-letter{
-  text-transform: uppercase;
-}
+  height: 2em;
 }
 
-.contactForm__errorUnderline{
+.contactForm__errorUnderline {
   border-bottom: 1px solid #FF0000FF;
+}
+
+.contactForm__button {
+  padding: $space-small 0;
+  width: 30%;
+  font-size: $font-size-small;
+  margin-left: auto;
+  margin-bottom: $space-large;
+  &:first-letter {
+    text-transform: uppercase;
+  }
+}
+
+
+@include media{
+  .contactForm{
+    padding: 0 $space-large;
+  }
+  .contactForm__inputContainer{
+    width: 45%;
+  }
+  .contactForm__inputContainer--textarea{
+    width: 100%;
+    margin-top: $space-large;
+  }
 }

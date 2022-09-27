@@ -13,21 +13,21 @@ const handleCloseMenue = () => {
 }
 
     return (
-        <nav className='navigationMobile'>
+        <nav className={`navigationMobile ${open && 'navigationMobile--open'} `}>
             {open
                 ?
-                <GrFormClose className='iconHamburger'
+                <NavLinks handleCloseMenue = {handleCloseMenue}/>
+                :
+                <img src = {Tshirt} className= 'navigationMobile__tshirt'
+                     alt = 'T-shirt logo'/>
+            }
+            {open
+                ?
+                <GrFormClose className='iconCross'
                              onClick={() => setOpen(!open)}/>
                 :
                 <RiMenuFill className='iconHamburger'
                             onClick={() => setOpen(!open)}/>
-            }
-            {open
-                ?
-                <NavLinks handleCloseMenue = {handleCloseMenue}/>
-            :
-                <img src = {Tshirt} className= 'navigationMobile__tshirt'
-                     alt = 'T-shirt logo'/>
             }
         </nav>
     );

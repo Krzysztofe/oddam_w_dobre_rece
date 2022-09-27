@@ -31,22 +31,23 @@ const Section2 = () => {
                 </div>
                 <div className="section-2__column">
                     <img src={Glass} className="section-2__logo" alt='Glass logo'/>
-                    <h3 className='section-2__h3'>zdecyduj komu chcesz pomóc</h3>
+                    <h3 className='section-2__h3'>zdecyduj komu pomóc</h3>
                     <p className="section-2__p">
                         wybierz zaufane miejsce</p>
                 </div>
                 <div className="section-2__column">
                     <img src={Arrows} className="section-2__logo" alt='Arrows logo'/>
                     <h3 className='section-2__h3'>zamów kuriera</h3>
-                    <p className="section-2__p">
+                    <p className="section-2__p" >
                         kurier podjedzie w zaufanym terminie</p>
                 </div>
             </div>
             <Link to='/logowanie'
                       className='section-2__link'
             >
-                <button id='aboutUs'
+                <button
                         className='btnLarge btn--section-2'
+                        id='aboutUs'
                 >
                     oddaj <br/> rzeczy
                 </button>

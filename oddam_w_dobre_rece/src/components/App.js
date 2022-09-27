@@ -13,16 +13,15 @@ function App() {
 
     return (
         <BrowserRouter>
-            <NavBar/>
+            {/*<NavBar/>*/}
             <Routes>
                 <Route path='/' element={<Home/>}/>
-                <Route path='/rejestracja' element={<Register/>}/>
+                <Route path='/rejestracja' element={<Register/>}/>/
                 <Route path='/logowanie' element={<Login/>}/>
                 <Route path='/wylogowano' element={<Logout/>}/>
                 <Route path='/oddaj' element={<ProtectedRoute/>}/>
 
-
-                {/*<Route path='/oddaj' element={<OddajMain/>}/>*/}
+                <Route path='/oddaj' element={<OddajMain/>}/>
             </Routes>
         </BrowserRouter>
     );

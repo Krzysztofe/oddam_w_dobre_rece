@@ -11,7 +11,7 @@ const Section_3 = () => {
                         classH2={''}
                         classUnderline={'section-3__decoration'}
                     />
-                    <p className="section-3__p">
+                    <p className="section-3__p" id='whoWeHelp'>
                         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad facilis minima quia ullam unde?
                         Aliquid blanditiis ea esse hic libero, nobis nostrum quod reiciendis.
                     </p>
@@ -19,7 +19,7 @@ const Section_3 = () => {
                 </div>
 
             </aside>
-            <aside className="section-3__rightContainer"></aside>
+            <aside className="section-3__rightContainer" ></aside>
         </section>
     );
 };

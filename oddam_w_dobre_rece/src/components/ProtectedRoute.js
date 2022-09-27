@@ -5,22 +5,22 @@ import OddajMain from "./OddajRzeczy/OddajMain";
 
 const ProtectedRoute = () => {
     const [user, loading, error] = useAuthState(auth);
-    if (!user?.email) {
-        return (
-            <div style={{
-                display: "flex",
-                justifyContent: "center",
-                alignItems: "center",
-                height: '100vh'
-            }}>
-                <h2>zaloguj się</h2>
-
-            </div>
-
-        )
-
-
-    }
+    // if (!user?.email) {
+    //     return (
+    //         <div style={{
+    //             display: "flex",
+    //             justifyContent: "center",
+    //             alignItems: "center",
+    //             height: '100vh'
+    //         }}>
+    //             <h2>zaloguj się</h2>
+    //
+    //         </div>
+    //
+    //     )
+    //
+    //
+    // }
     return (
         <OddajMain/>
     );

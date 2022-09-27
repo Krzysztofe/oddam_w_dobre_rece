@@ -43,8 +43,8 @@ const WhoWeHelp = () => {
                     <tbody>
                     <tr>
                         <td className='section-4__td'>
-                            <p className='section-4__pBig'> {organisationTypePrinted} {item.name}</p>
-                            <p className='section-4__pSmall'>cel i misja: {item.goals}</p>
+                            <p className='section-4__pLarge'> {organisationTypePrinted} {item.name}</p>
+                            <p className='section-4__pSmall'>Cel i misja: {item.goals}</p>
                         </td>
                         <td className='td__right'>{item.stuff}</td>
                     </tr>
@@ -68,8 +68,7 @@ const WhoWeHelp = () => {
 
     return (
 
-        <div className="wrapper wrapper--section-4" id='whoWeHelp'>
-            <section className="section-4">
+        <section className="wrapper wrapper--section-4">
                 <Title
                     text1={'komu pomagamy?'}
                     classContainer={''}
@@ -97,7 +96,7 @@ const WhoWeHelp = () => {
                 {printCounter === 1 &&
                     <p className="section-4__p">
                         W naszej bazie znajdziesz listę zweryfikowanych
-                        Fundacji, z którymi współpracujemy. Możesz
+                        fundacji, z którymi współpracujemy. Możesz
                         sprawdzić czym się zajmują, komu pomagają i
                         czego potrzebują.
                     </p>}
@@ -111,7 +110,6 @@ const WhoWeHelp = () => {
                         nich trafią.
                     </p>}
 
-
                 {printCounter === 3 &&
                     <p className="section-4__p">
                         Wspieramy lokalne zbiórki organizowane
@@ -121,7 +119,7 @@ const WhoWeHelp = () => {
                         i pomóc tym, którzy są najbliżej.
                     </p>}
 
-                <div className='paginationContainer'>
+                <div className='paginationContainer'  id='contact'>
 
                     {printCounter === 1 &&
                         <>
@@ -160,7 +158,7 @@ const WhoWeHelp = () => {
                     {printCounter === 3 &&
                         <>
                             {organisationSelection(
-                                "colection", "zbiórka")}
+                                "collection", "zbiórka")}
                             <ReactPaginate
                                 previousLabel={''}
                                 nextLabel={''}
@@ -174,11 +172,8 @@ const WhoWeHelp = () => {
                             />
                         </>}
                 </div>
-            </section>
-        </div>
-
-
+        </section>
     );
-};
+}
 
 export default WhoWeHelp;

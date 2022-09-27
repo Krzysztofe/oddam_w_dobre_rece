@@ -3,7 +3,7 @@ const Section_1 = () => {
             <section className="wrapper wrapper--section-1">
                 <div className="section-1__column">
                     <div className='section-1__number'> 1</div>
-                    <div id='simpleSteps' className="section-1__subtitle">oddanych worków</div>
+                    <div  className="section-1__subtitle">oddanych worków</div>
                     <p className="section-1__p">Lorem ipsum dolor sit amet, consectetur
                         adipisicing elit. Cum delectus dolorum ducimus
                         laborum minima omnis porro quis veritatis!</p>

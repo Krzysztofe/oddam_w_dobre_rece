@@ -1,6 +1,6 @@
 .wrapper--section-3 {
-  display: flex;
-  margin: $space-large auto;
+ padding: 0;
+  margin-bottom: $space-large;
 }
 
 .section-3__leftContainer {
@@ -8,25 +8,24 @@
   flex-direction: column;
   align-items: center;
   background-color: $color-grey-normal;
+  padding: 1em;
 }
 
 .section-3__p {
   width: 60%;
   text-align: center;
-  //line-height: 1.5;
   margin: 0 auto;
   padding: $space-small;
 }
 
-.section-3__signature {
-display: none;
-}
-
-
 @include media{
+  .wrapper--section-3 {
+    display: flex;
+  }
+
   .section-3__leftContainer{
     width: 50%;
-    height: 60vh;
+    height: 70vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -40,6 +39,7 @@ width: 60%;
   .section-3__p{
     font-size: $font-size-small;
     width: 100%;
+    padding: 0;
   }
 
   .section-3__signature {
@@ -47,8 +47,8 @@ width: 60%;
     background-image: url("/asets/Signature.png");
     background-size: contain;
     background-repeat: no-repeat;
-    height: clamp(50px, 30%, 100px);
-    width: clamp(80px, 35%, 100px);
+    height: clamp(35px, 25%, 100px);
+    width: clamp(35px, 30%, 100px);
     margin-left: auto;
   }
   .section-3__rightContainer {

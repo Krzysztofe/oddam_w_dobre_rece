@@ -16,6 +16,7 @@ import Title from "../Title";
 import Contact from "../Home/Section_5/Section_5";
 
 import HeaderUnderline from "../Title";
+import NavBar from "../Home/NavBar/NavBar";
 
 
 const OddajMain = () => {
@@ -107,6 +108,7 @@ const OddajMain = () => {
     return (
 
             <>
+                <NavBar/>
                 <OddajHeader counter={counter}/>
 
                 {counter === 1 &&

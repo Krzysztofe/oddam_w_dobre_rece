@@ -2,9 +2,10 @@ import React from 'react';
 import {useState} from "react";
 
 const ContactForm = () => {
-    const [inputValue, setInputValue] =
-        useState({name: "", email: "", textarea: ""})
-    const [errors, setErrors] = useState({name: "", email: "", textarea: ""})
+    const [inputValue, setInputValue] = useState(
+        {name: "", email: "", textarea: ""})
+    const [errors, setErrors] = useState(
+        {name: "", email: "", textarea: ""})
     const [formDatas, setFormDatas] = useState([])
 
     const handleChange = (e) => {
@@ -13,6 +14,7 @@ const ContactForm = () => {
             [e.target.name]: e.target.value
         })
     }
+
     const handleSubmit = (e) => {
         e.preventDefault()
         const _errorsName = []
@@ -44,58 +46,74 @@ const ContactForm = () => {
             || _errorsTextarea.length > 0) {
             return
         }
+
         setFormDatas([...formDatas, inputValue])
-        setInputValue(
-            {
-                ...inputValue,
-                name: "",
-                email: "",
-                textarea: ""
-            })
+        setInputValue({
+            ...inputValue,
+            name: "",
+            email: "",
+            textarea: ""
+        })
     }
-// console.log(formDatas)
 
     return (
 
         <form onSubmit={handleSubmit}
               className='contactForm'>
 
-            {/*<h3>wiadomość została wysłana! wkrótce się skontaktujemy.</h3>*/}
-
-            <label className='contactForm__label'>
-                Wpisz swoje imie
+            <div className="contactForm__inputContainer">
+                <label className='contactForm__label'>
+                    Wpisz swoje imię
+                </label>
                 <input type='text' name='name'
-                       className= {`contactForm__textInput
+                       className={`contactForm__input
                           ${errors.name.length && 'contactForm__errorUnderline'}`}
                        value={inputValue.name}
-                       onChange={handleChange}/>
-            </label>
+                       onChange={handleChange}
+                       placeholder='Imię'
+                />
+                <div className="contactForm__textInputErrors">
+                    {errors.name}
+                </div>
+            </div>
 
-            <label className='contactForm__label'>
-                Wpisz swoj email
+            <div className="contactForm__inputContainer">
+                <label className='contactForm__label'>
+                    Wpisz swój email
+                </label>
                 <input type='email' name='email'
-                       className= {`contactForm__textInput
+                       className={`contactForm__input
                           ${errors.email.length && 'contactForm__errorUnderline'}`}
                        value={inputValue.email}
-                       onChange={handleChange}/>
-            </label>
+                       onChange={handleChange}
+                       placeholder='Email'
+                />
+                <div className="contactForm__textInputErrors">
+                    {errors.email}
+                </div>
+            </div>
 
-            <div className="contactForm__textInputErrors">{errors.name}</div>
-            <div className="contactForm__textInputErrors"> {errors.email}</div>
-
-            <label className='contactForm__labelTextarea'>
-                wpisz swoja wiadomość
+            <div className="contactForm__inputContainer
+            contactForm__inputContainer--textarea">
+                <label className='contactForm__label'>
+                    Wpisz swoją wiadomość
+                </label>
                 <textarea name='textarea'
-                          rows={3}
-                          className= {`contactForm__textarea
+                          rows={4}
+                          className={`contactForm__input
                           ${errors.textarea.length && 'contactForm__errorUnderline'}`}
                           value={inputValue.textarea}
-                          onChange={handleChange}/>
-            </label>
+                          onChange={handleChange}
+                          placeholder='Wiadomość'
+                />
+                <div className="contactForm__textInputErrors">
+                    {errors.textarea}
+                </div>
+            </div>
 
-            <div className="contactForm__textareaErrors">{errors.textarea}</div>
-            <button className='contactForm__button'>wyślij</button>
-
+            <button className='contactForm__button'>
+                wyślij
+            </button>
         </form>
     );
 };

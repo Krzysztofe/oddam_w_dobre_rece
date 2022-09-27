@@ -5,7 +5,7 @@ import NavigationMobile from "./NavigationMobile";
 const NavBar = () => {
     return (
         <>
-            <div className='wrapper'>
+            <div className='wrapper wrapper--navigation'>
                 <Navigation/>
             </div>
                 <NavigationMobile/>

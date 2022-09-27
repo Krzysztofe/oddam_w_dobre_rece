@@ -1,15 +1,12 @@
 import {Link} from "react-router-dom";
-import Title from "./Title";
-import {useAuthState} from "react-firebase-hooks/auth";
-import {auth} from "./FireBaseConfig";
+import Title from "../Title";
 
 const Header = () => {
 
     return (
         <>
             <div className='headerSpacer' id='start'> </div>
-            <header className='header'>
-                <div className="wrapper wrapper--header">
+                <header className="wrapper wrapper--header">
 
                     <div className="header__image"></div>
                     {/*<img className='header__image' src={HeaderImage} alt="Bambetle"/>*/}
@@ -23,7 +20,7 @@ const Header = () => {
                                 classH2 = {'header__h2'}
                             />
 
-                            <div className='header__btns'>
+                            <div className='header__btns' id='simpleSteps'>
                                 <Link to='logowanie' className = 'header__link'>
                                     <button className="btnLarge header__btn">
                                         oddaj <br/>
@@ -37,12 +34,10 @@ const Header = () => {
                                         zbiórkę
                                     </button>
                                 </Link>
-
                             </div>
                         </section>
                     </aside>
-                </div>
-            </header>
+                </header>
         </>
     )
 };

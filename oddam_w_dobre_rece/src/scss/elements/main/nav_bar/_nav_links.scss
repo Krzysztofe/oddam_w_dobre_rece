@@ -1,6 +1,22 @@
+.listItems {
+  padding: 0.5em;
+}
 
 .hashLink {
   text-decoration: none;
+  display: block;
+  width: fit-content;}
+
+.listItem {
+  color: black;
+  width: fit-content;
+  font-weight: $semiBold;
+  &:hover {
+    color: rgba(0,0,0,0.6);
+  }
+  &::first-letter {
+    text-transform: uppercase;
+  }
 }
 
 .logItems {
@@ -10,24 +26,9 @@
   display: flex;
   flex-direction: column-reverse;
 }
-
-.listItems {
-  padding: 0.5em;
+.logItem{
+  width: fit-content;
 }
-.listItem {
-  cursor: pointer;
-  color: black;
-  font-weight: $semiBold;
-
-  &:hover {
-    color: #5E5322;
-  }
-
-  &::first-letter {
-    text-transform: uppercase;
-  }
-}
-
 
 @include media__navbar {
   .logItems {
