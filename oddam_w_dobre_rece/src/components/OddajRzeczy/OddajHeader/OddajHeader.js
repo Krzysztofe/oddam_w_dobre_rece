@@ -7,7 +7,6 @@ const OddajHeader = ({counter}) => {
         <>
         <div className='headerSpacer'></div>
         <header className='wrapper wrapper--oddajHeader'>
-            <section className='oddajHeader'>
             <aside className="oddajHeader__backgroundImage"> </aside>
             <aside className="oddajHeader__rightContainer">
                 <Title
@@ -47,7 +46,6 @@ const OddajHeader = ({counter}) => {
                     />
                 </div>
             </aside>
-        </section>
         </header>
 </>
     );

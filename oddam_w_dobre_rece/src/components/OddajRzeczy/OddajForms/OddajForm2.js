@@ -6,9 +6,9 @@ const OddajForm2 = ({
                     }) => {
     return (
         <>
-            <main className='oddajForm2__inputs'>
+            <main className='oddajForm__inputs'>
                 <label className='oddajForm2__label'>
-                    liczba 60l worków:
+                    Liczba 60l worków:
 
                     <select name='selectBags'
                             value={inputsValue.selectBags}
@@ -24,10 +24,10 @@ const OddajForm2 = ({
                     </select>
                 </label>
 
-<Buttons
-    handleDecrease={handleDecrease}
-    handleIncrease = {handleIncrease}
-/>
+                <Buttons
+                    handleDecrease={handleDecrease}
+                    handleIncrease={handleIncrease}
+                />
             </main>
         </>
     );

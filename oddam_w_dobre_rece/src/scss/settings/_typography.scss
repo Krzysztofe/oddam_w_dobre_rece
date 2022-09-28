@@ -15,3 +15,7 @@ button {
   padding: $space-small 0;
   font-size: $font-size-small;
 }
+
+input, textarea{
+  cursor: pointer;
+}

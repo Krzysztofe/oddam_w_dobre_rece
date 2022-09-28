@@ -1,6 +1,3 @@
-import {useAuthState} from "react-firebase-hooks/auth";
-import {auth} from "../FireBaseConfig";
-
 const Belt = ({text}) => {
 
     return (

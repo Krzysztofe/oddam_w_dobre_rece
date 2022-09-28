@@ -1,34 +1,20 @@
-.oddajForm2__inputs{
-  margin: $space-large 0;
-  height: 60vh;
-display: flex;
-  flex-direction: column;
- //justify-content: space-between;
-}
-.oddajForm2__label{
-display: flex;
+.oddajForm2__label {
+  display: flex;
   gap: 3vw;
-  font-weight:$semiBold;
-  margin-top: 1em;
-  &:first-letter{
+  font-weight: $semiBold;
+  margin-top: 2em;
+
+  &:first-letter {
     text-transform: uppercase;
   }
 }
-.oddajForm2__select{
-width: clamp(120px, 40%, 200px)
-}
-//.oddajForm__buttons{
-//display: flex;
-//  justify-content: space-between;
-//  //margin: 2em  0;
-// }
-//.oddajForm2__button{
-//  width: 30%;
-//  padding: 0.5em 0;
-//}
 
-@include media{
-  .oddajForm2__inputs{
+.oddajForm2__select {
+  width: clamp(120px, 40%, 200px)
+}
+
+@include media {
+  .oddajForm2__inputs {
     padding-bottom: 2rem;
     margin: 0;
     height: 50vh;
@@ -40,11 +26,11 @@ width: clamp(120px, 40%, 200px)
     font-weight: $regular;
     //gap: 1vw;
   }
-  .oddajForm2__buttons{
-width: 20%;
+  .oddajForm2__buttons {
+    width: 20%;
     margin-top: auto;
   }
-  .oddajForm__button--form2{
+  .oddajForm__button--form2 {
     width: 45%;
   }
 }

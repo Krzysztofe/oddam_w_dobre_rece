@@ -8,7 +8,7 @@ import HeaderUnderline from "../../Title";
 
 const Contact = () => {
     return (
-        <section className="wrapper wrapper--section-5">
+        <section className="wrapper wrapper--section-5" id='contact'>
             <div className="section-5__opacity">
                 <div className='section-5__imageMobile'></div>
                 <aside className="section-5__right">

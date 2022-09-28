@@ -2,18 +2,16 @@
 
 .wrapper--oddajHeader {
   background-color: $color-grey-normal;
+  padding-top: $space-large * 2;
 }
-.oddajHeader{
-  padding: 0 $space-small;
-}
-.oddajHeader__backgroundImage {
-  display: none;
-}
+
+//.oddajHeader__backgroundImage {
+//  display: none;
+//}
 
 .oddajHeader__rightContainer {
   display: flex;
   flex-direction: column;
-  padding-top: 1em;
 }
 
 .oddajHeader__titleH2 {
@@ -22,7 +20,7 @@
 
 .oddajHeader__p {
   font-weight: $semiBold;
-  padding: 0.5em 0 2em 0;
+  padding: $space-large 0 3em 0;
   &:first-letter{
     text-transform: uppercase;
   }
@@ -30,7 +28,7 @@
 
 
 @include media {
-  .oddajHeader{
+  .wrapper--oddajHeader{
     display: flex;
     background-color: white;
     height: 60vh;

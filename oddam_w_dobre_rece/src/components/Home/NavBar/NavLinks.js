@@ -20,113 +20,102 @@ const NavLinks = ({handleCloseMenue}) => {
     return (
         <>
             <ul className='listItems'>
-
-                <HashLink
-                    smooth to='#start'
-                    className='hashLink'>
-                    <li
-                        className='listItem'
+                <HashLink smooth to='#start'
+                    className='hashLink'
+                >
+                    <li className='listItem'
                         onClick={handleCloseMenue}
                     >
                         start
                     </li>
-
                 </HashLink>
-                <HashLink
-                    smooth to='#simpleSteps'
+
+                <HashLink smooth to='#simpleSteps'
                     className='hashLink'
                 >
-                    <li
-                        className='listItem'
+                    <li className='listItem'
                         onClick={handleCloseMenue}
                     >
                         o co chodzi
                     </li>
                 </HashLink>
 
-                <HashLink
-                    smooth to='#aboutUs'
+                <HashLink smooth to='#aboutUs'
                     className='hashLink'
                 >
-                    <li
-                        className='listItem'
+                    <li className='listItem'
                         onClick={handleCloseMenue}
                     >
                         o nas
                     </li>
                 </HashLink>
 
-                <HashLink
-                    smooth to='#whoWeHelp'
+                <HashLink smooth to='#whoWeHelp'
                     className='hashLink'
                 >
-                    <li
-                        className='listItem'
+                    <li className='listItem'
                         onClick={handleCloseMenue}
                     >
                         fundacja i organizacje
                     </li>
                 </HashLink>
 
-                <HashLink
-                    smooth to='#contact'
+                <HashLink smooth to='#contact'
                     className='hashLink'
                 >
-                    <li
-                        className='listItem'
+                    <li className='listItem'
                         onClick={handleCloseMenue}
                     >
                         kontakt
                     </li>
                 </HashLink>
             </ul>
+
             {user?.email
                 ?
                 <ul className='logItems'>
-                    <li
-                        className='listItem logItem'
-                        onClick={handleLogout}
-                    >
-                        wyloguj
-                    </li>
+                    <Link to='' className='hashLink'>
+                        <li className='logItem'
+                        >
+                            cześć {user?.email}
+                        </li>
+                    </Link>
 
-                    <Link to='oddaj' className='hashLink'
-                    >
-                        <li
-                            className='listItem logItem'
+                    <Link to='oddaj' className='hashLink'>
+                        <li className='logItem'
                             onClick={handleCloseMenue}
                         >
                             oddaj rzeczy
                         </li>
                     </Link>
-                    <li className='listItem logItem'
-                    >
-                        cześć {user?.email}
-                    </li>
+
+                    <div className='hashLink'>
+                        <li className='logItem'
+                            onClick={handleLogout}
+                        >
+                            wyloguj
+                        </li>
+                    </div>
                 </ul>
                 :
                 <ul className='logItems'>
-                    <Link
-                        to="/rejestracja"
-                        className='hashLink'
+                    <Link to="/logowanie"
+                          className='hashLink'
                     >
-                        <li
-                            className='listItem logItem'
-                            onClick={handleCloseMenue}
-                        >
-                            załóż konto
-                        </li>
-                    </Link>
-
-                    <Link
-                        to="/logowanie"
-                        className='hashLink'
-                    >
-                        <li
-                            className='listItem logItem'
+                        <li className='logItem'
                             onClick={handleCloseMenue}
                         >
                             zaloguj się
+                        </li>
+                    </Link>
+
+                    <Link to="/rejestracja"
+                          className='hashLink'
+                    >
+                        <li className='logItem'
+                            onClick={handleCloseMenue}
+                        >
+                            załóż konto
                         </li>
                     </Link>
                 </ul>

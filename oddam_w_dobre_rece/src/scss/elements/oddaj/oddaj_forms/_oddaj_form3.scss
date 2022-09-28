@@ -1,11 +1,3 @@
-
-.oddajForm3__inputs {
-  margin: $space-large 0;
-  height: 60vh;
-  display: flex;
-  flex-direction: column;
-}
-
 .oddajForm3__select {
   width: 70%;
 }
@@ -13,16 +5,11 @@
 .oddajForm3__h3 {
   font-weight: $semiBold;
   font-size: $font-size-large;
-  width: 100%;
   margin-top: $space-large;
 
   &:first-letter {
     text-transform: uppercase;
   }
-}
-
-.oddajForm3__select {
-  width: 70%;
 }
 
 .oddajForm3__checkboxes {
@@ -37,18 +24,20 @@
   width: 40%;
 }
 
+.oddajForm3__checkbox {
+  display: none;
+}
+
 .oddajForm3__checkboxStyle {
   background-color: $color-grey-normal;
   cursor: pointer;
   text-align: center;
   padding: 0.5em 0;
 }
-.oddajForm3__checkbox {
-  display: none;}
 
 .oddajForm3__checkbox:checked + .oddajForm3__checkboxStyle {
-    background-color: $color-yellow;
-  }
+  background-color: $color-yellow;
+}
 
 
 .oddajForm3__textInput {
@@ -56,17 +45,11 @@
   width: 70%;
 }
 
-
-
 @include media {
   .oddajForm3__inputs {
     padding-bottom: 2rem;
     margin: 0;
     height: 50vh;
-  }
-
-  .oddajForm3__h3 {
-
   }
 
   .oddajForm3__select {
@@ -96,7 +79,9 @@
   }
 
   .oddajForm3__textInput {
-max-width: 400px;
+    max-width: 400px;
+    background-color: rgba(0, 0, 0, 0);
+    border: 1px solid $color-grey-normal;
   }
 
   .oddajForm3__buttonsContainer {

@@ -3,74 +3,81 @@ import OddajFormHeader from "./OddajFormTop";
 import Buttons from "../../Buttons";
 
 const OddajForm1 = ({
-                        inputsValue, handleChange,
-                        counter, handleDecrease, handleIncrease
+                        inputsValue, handleChange, handleIncrease
                     }) => {
     return (
         <>
-            <main className='oddajForm1__inputs'>
-
-                <label className='oddajForm1__label'>
-                    <input type='radio'
-                           name='selectStuff'
-                           value='ubrania, które nadają się do ponownego użycia'
-                           checked={
+            <main className = 'oddajForm__inputs'>
+                <div className = "oddajForm1__input">
+                    <input type = 'radio' name='selectStuff'
+                           value = ', ubrania, które nadają się do ponownego użycia'
+                           checked = {
                                inputsValue.selectStuff ===
-                               'ubrania, które nadają się do ponownego użycia'}
-                           onChange={handleChange}
-                           className='oddajForm1__radio'
-                    /> ubrania, które nadają się do ponownego użycia
-                </label>
+                               ', ubrania, które nadają się do ponownego użycia'}
+                           onChange = {handleChange}
+                           className = 'oddajForm1__radio'
+                    />
+                    <label className = 'oddajForm1__label'>
+                        Ubrania, które nadają się do ponownego użycia
+                    </label>
+                </div>
 
-                <label className='oddajForm1__label'>
-
-                    <input type='radio'
-                           name='selectStuff'
-                           value='ubrania do wyrzucenia'
-                           checked={
+                <div className = "oddajForm1__input">
+                    <input type = 'radio' name='selectStuff'
+                           value = ', ubrania do wyrzucenia'
+                           checked = {
                                inputsValue.selectStuff ===
-                               'ubrania do wyrzucenia'}
-                           onChange={handleChange}
-                           className='oddajForm1__radio'
-                    />ubrania, do wyrzucenia
-                </label>
+                               ', ubrania do wyrzucenia'}
+                           onChange = {handleChange}
+                           className = 'oddajForm1__radio'
+                    />
+                    <label className = 'oddajForm1__label'>
+                        Ubrania, do wyrzucenia
+                    </label>
+                </div>
 
-                <label className='oddajForm1__label'>
+                <div className = "oddajForm1__input">
+                    <input type = 'radio' name='selectStuff'
+                           value = ', zabawki'
+                           checked = {inputsValue.selectStuff ===
+                               ', zabawki'}
+                           onChange = {handleChange}
+                           className = 'oddajForm1__radio'
+                    />
+                    <label className = 'oddajForm1__label'>
+                        Zabawki
+                    </label>
+                </div>
 
-                    <input type='radio'
-                           name='selectStuff'
-                           value='zabawki'
-                           checked={inputsValue.selectStuff ===
-                               'zabawki'}
-                           onChange={handleChange}
-                           className='oddajForm1__radio'/>zabawki
-                </label>
+                <div className = "oddajForm1__input">
+                    <input type = 'radio' name='selectStuff'
+                           value =', książki'
+                           checked = {inputsValue.selectStuff ===
+                               ', książki'}
+                           onChange = {handleChange}
+                           className ='oddajForm1__radio'
+                    />
+                    <label className = 'oddajForm1__label'>
+                        Książki
+                    </label>
+                </div>
 
-                <label className='oddajForm1__label'>
-                    <input type='radio'
-                           name='selectStuff'
-                           value='książki'
-                           checked={inputsValue.selectStuff ===
-                               'książki'}
-                           onChange={handleChange}
-                           className='oddajForm1__radio'/>
-                    książki
-                </label>
-
-                <label className='oddajForm1__label'>
-                    <input type='radio'
-                           name="selectStuff"
-                           value='inne,'
-                           checked={inputsValue.selectStuff ===
-                               'inne,'}
-                           onChange={handleChange}
-                           className='oddajForm1__radio'/>
-                    inne
-                </label>
+                <div className = "oddajForm1__input">
+                    <input type = 'radio'
+                           name = "selectStuff"
+                           value = ', inne,'
+                           checked = {inputsValue.selectStuff ===
+                               ', inne,'}
+                           onChange = {handleChange}
+                           className = 'oddajForm1__radio'
+                    />
+                    <label className = 'oddajForm1__label'>
+                        Inne
+                    </label>
+                </div>
 
                 <div className = "formButtons">
-                    <button
-                        onClick = {handleIncrease}
+                    <button onClick = {handleIncrease}
                         className = 'formButton'
                     >
                         dalej

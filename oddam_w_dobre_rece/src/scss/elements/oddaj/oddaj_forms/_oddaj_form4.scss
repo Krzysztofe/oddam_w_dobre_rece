@@ -1,102 +1,40 @@
-.form4__inputsContainer{
-  margin: $space-large 0;
-  height: 60vh;
-  display: flex;
-  flex-direction: column;
-}
-
-.form4__h3{
-font-weight: $semiBold;
-  margin-bottom: $space-large;
-  &:first-letter{
-  text-transform: uppercase;
-}
-}
-
-.form4__leftContainer{
-
-}
-
-.form4__rightContainer{
-
-}
-
-.form4__inputContainer{
-display: flex;
-  justify-content: space-between;
-  margin-bottom: 0.5em;
-  background-color: rgba(0,0,0,0);
-}
-.form4__label{
-  text-align: right;
-  width: 35%;
-  :first-letter{
+.form4__h3 {
+  font-weight: $semiBold;
+  margin-top: $space-large;
+  &:first-letter {
     text-transform: uppercase;
   }
 }
 
-.form4__input{
-  width: 60%;
-  background-color: rgba(0,0,0,0);
-  height: 1.3em;
-  border: 1px solid $color-grey-normal;
-}
-.form4__textarea{
-  width: 60%;
-  background-color: rgba(0,0,0,0);
-  border: 1px solid $color-grey-normal;
-}
-
-.form4__buttons{
-  margin-top: auto;
+.form4__inputContainer {
   display: flex;
   justify-content: space-between;
+  margin-bottom: 0.5em;
+}
+
+.form4__label {
+  text-align: right;
+  width: 35%;
+}
+
+.form4__input, .form4__textarea {
+  width: 60%;
+  background-color: rgba(0, 0, 0, 0);
+  border: 1px solid $color-grey-normal;
+  padding: 0.2em;
+  resize: none;
+}
+
+.form4__textarea{
+  font-family: $font-family-Open-Sans;
 }
 
 @include media {
-  .form4__inputsContainer {
+
+  .form4__leftContainer, .form4__rightContainer {
     width: 50%;
-    height: 80%;
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
   }
-
-  .form4__h3 {
-
+  .form4__h3{
+    margin-top: 0;
   }
-
-  .form4__leftContainer {
-    width: 48%;
-  }
-
-  .form4__rightContainer {
-    width: 48%;
-  }
-
-  .form4__inputContainer {
-
-  }
-
-  .form4__label {
-    text-align: right;
-
-  }
-
-
-  .form4__input {
-    border: 1px solid $color-grey-normal;
-  }
-  .form4__textarea{
-    border: 1px solid $color-grey-normal;
-}
-  .form4__buttonsContainer{
-width: 50%;
-  }
-  .form4__button{
-    width: 35%;
-  }
-
-
-
 }

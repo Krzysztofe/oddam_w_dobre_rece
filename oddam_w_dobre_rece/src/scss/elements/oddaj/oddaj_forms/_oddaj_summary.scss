@@ -1,117 +1,77 @@
-.summary{
-  margin: 10vh 0 $space-large 0;
-  height: 65vh;
-  display: flex;
-  flex-direction: column;
+.belt__empty {
+  height: 11vh;
 }
 
-.summary__h3{
+.summary__h3 {
   font-weight: $semiBold;
-  margin-top: $space-large;
-&:first-letter{
-  text-transform: uppercase;
+
+  &:first-letter {
+    text-transform: uppercase;
+  }
 }
-}
+
 .summary__topContainer {
-  margin-top: $space-large;
+  margin-top: $space-small;
   display: flex;
   align-items: center;
 }
 
-.summary__icon1{
+.summary__icon1 {
   background-image: url("../../../../asets/IconTshirt.png");
   background-size: cover;
   width: 2em;
   height: 2em;
 }
 
-.summary__icon2{
+.summary__icon2 {
   background-image: url("../../../../asets/Icon.png");
   background-size: cover;
   width: 2em;
   height: 2em
 }
 
-.summary__p{
-width: 85%;
+.summary__p {
+  width: 85%;
   margin-left: 1em;
 }
 
-.summary__tableLeft, .summary__tableRight{
-  margin-top: $space-large;
+.summary__tableLeft, .summary__tableRight {
+  margin-top: $space-small;
 }
 
-.summary__thead{
+.summary__thead {
   font-weight: $semiBold;
-
-  //width: 100%;
 }
 
-.summary__td{
-  padding: $space-small $space-large 0 $space-large ;
+.summary__td {
+  font-size: $font-size-small;
+  padding: $space-small 0 0 $space-large;
 }
 
-.summary__buttons{
-  margin-top: auto;
-  display: flex;
-  justify-content: space-between;
+.summary__td + .summary__td{
+padding-left: 0;
 }
 
-.summary__button{
-  width: 30%;
-  padding: 0.5em 0;
-  margin: 1em 0;
-}
-
-@include media{
-  .summary{
-
+@include media {
+  .belt__empty + p {
+    color: #eeede9;
   }
 
-  .summary__h3{
-
-  }
-  .summary__topContainer{
-
-  }
-
-  .summary__icon1{
-
-  }
-
-  .summary__icon2{
-
-  }
-
-  .summary__p{
-
-  }
-
-
-  .summary__tablesContainer{
-   width: 70%;
+  .summary__tablesContainer {
+    width: 60%;
     display: flex;
     justify-content: space-between;
   }
-.summary__tableLeft, .summary__tableRight{
-  width: 45%;
-}
-
-
-  .summary__buttons{
-width: 40%;
-  }
-
-  .summary__button{
-
+  .summary__tableLeft, .summary__tableRight {
+    width: 45%;
   }
 }
 
-@include media__bigSize{
-  .summary__icon1{
-background-image: url("../../../../asets/IconTshirt@2x.png");
+@include media__bigSize {
+  .summary__icon1 {
+    background-image: url("../../../../asets/IconTshirt@2x.png");
   }
-  .summary__icon2{
-background-image: url("../../../../asets/Icon@2x.png");
+  .summary__icon2 {
+    background-image: url("../../../../asets/Icon@2x.png");
   }
 }

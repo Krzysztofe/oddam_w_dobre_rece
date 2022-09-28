@@ -119,7 +119,7 @@ const WhoWeHelp = () => {
                         i pomóc tym, którzy są najbliżej.
                     </p>}
 
-                <div className='paginationContainer'  id='contact'>
+                <div className='paginationContainer'>
 
                     {printCounter === 1 &&
                         <>

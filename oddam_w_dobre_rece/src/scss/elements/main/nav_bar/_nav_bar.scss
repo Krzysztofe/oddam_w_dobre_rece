@@ -8,16 +8,15 @@
   position: fixed;
   top: 0;
   width: 100%;
-  line-height: 1.5;
   padding: $space-large;
   background-color: $color-white;
-  z-index: 1;
-  display: flex;
-  justify-content: space-between;
+  z-index: 10;
 }
 
-.navigationMobile--open{
-  display: block;
+.navigationMobile__top{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .navigationMobile__tshirt {
@@ -33,32 +32,12 @@
   font-size: 2rem;
   cursor: pointer;
 }
-.iconCross{
-position: absolute;
-  font-size: 3rem;
-  top: 0;
-  right: 0
-}
-
-@include media{
-  .navigationMobile{
-    padding: $space-small;
-  }
-  .navigationMobile__tshirt{
-    width: 2em;
-  }
-
-  .iconHamburger{
-    top: 15px;
-  }
-}
 
 @include media__navbar {
-  .wrapper--navigation{
+  .wrapper--navigation {
     padding: 0;
   }
   .navigation {
-    height: 4rem;
     max-width: 1350px;
     width: 100%;
     background-color: $color-white;
@@ -67,8 +46,8 @@ position: absolute;
     display: flex;
     flex-direction: column-reverse;
     align-items: end;
-    z-index: 1;
     padding: 0 $space-large;
+  z-index: 10;
   }
   .navigationMobile {
     display: none;

@@ -1,60 +1,56 @@
-.listItems {
-  padding: 0.5em;
-}
-
 .hashLink {
   text-decoration: none;
   display: block;
-  width: fit-content;}
-
-.listItem {
-  color: black;
   width: fit-content;
+  padding-top: $space-large;
   font-weight: $semiBold;
+  color: black;
+
   &:hover {
-    color: rgba(0,0,0,0.6);
+    color: rgba(0, 0, 0, 0.6);
   }
+
   &::first-letter {
     text-transform: uppercase;
   }
 }
 
 .logItems {
-  padding: 0.5em;
   border-top: 1px solid black;
-  width: 50%;
-  display: flex;
-  flex-direction: column-reverse;
-}
-.logItem{
-  width: fit-content;
+  position: relative;
+  margin-top: $space-large;
 }
 
 @include media__navbar {
+  .listItems {
+    display: flex;
+    margin: $space-small 0;
+  }
+
   .logItems {
     display: flex;
     border-top: none;
-    flex-direction: row-reverse;
-    padding: 0 0.5em 0 0;
+    margin-top: $space-small;
   }
 
-  .listItems {
-    display: flex;
+  .hashLink {
     padding: 0;
+    margin-left: 1em;
   }
-  .listItem{
-   font-size: $font-size-superSmall;
-    padding: $space-small;
-    margin-left: 2em;
-    &:hover{
+
+  .listItem {
+    padding: 2px;
+
+    &:hover {
       outline: 1px solid $color-grey-dark;
     }
   }
 
   .logItem {
-    font-size: clamp(0.5rem, 0.8vw, 0.6rem);
-    margin-left: 1em;
-    &:hover{
+    font-size: $font-size-small;
+    padding: 2px;
+
+    &:hover {
       outline: 1px solid $color-yellow;
     }
   }
