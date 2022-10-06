@@ -1,0 +1,26 @@
+{
+  "files": {
+    "main.css": "/Oddam_w_dobre_rece/static/css/main.26a656d6.css",
+    "main.js": "/Oddam_w_dobre_rece/static/js/main.0276fbdf.js",
+    "static/media/Background Image@2x.png": "/Oddam_w_dobre_rece/static/media/Background Image@2x.a6dec3687eba35c68672.png",
+    "static/media/People@2x.png": "/Oddam_w_dobre_rece/static/media/People@2x.5c7d5b1366e716d4aca6.png",
+    "static/media/Hero Image@2x.png": "/Oddam_w_dobre_rece/static/media/Hero Image@2x.473c8ca5b50bc645757b.png",
+    "static/media/Header-Form-Background@2x.png": "/Oddam_w_dobre_rece/static/media/Header-Form-Background@2x.78b37767b2f07018911e.png",
+    "static/media/Background Image.png": "/Oddam_w_dobre_rece/static/media/Background Image.dd60cf4173afc9084349.png",
+    "static/media/3 Columns Background@2x.png": "/Oddam_w_dobre_rece/static/media/3 Columns Background@2x.8ac466740bf11daa893f.png",
+    "static/media/Background-Form@2x.png": "/Oddam_w_dobre_rece/static/media/Background-Form@2x.d6d5a140ca32077bc005.png",
+    "static/media/People.png": "/Oddam_w_dobre_rece/static/media/People.f5eee084a785f2d199b8.png",
+    "static/media/Header-Form-Background.png": "/Oddam_w_dobre_rece/static/media/Header-Form-Background.a2be689ce6e2a99a77cd.png",
+    "static/media/3 Columns Background.png": "/Oddam_w_dobre_rece/static/media/3 Columns Background.54dcd134c6b5241e5fbc.png",
+    "static/media/Background-Form.png": "/Oddam_w_dobre_rece/static/media/Background-Form.90999482c73ad0a630be.png",
+    "static/media/Signature@2x.png": "/Oddam_w_dobre_rece/static/media/Signature@2x.3aad9671edfdbad52699.png",
+    "static/media/Signature.png": "/Oddam_w_dobre_rece/static/media/Signature.4bc15a65bbb13d621e19.png",
+    "index.html": "/Oddam_w_dobre_rece/index.html",
+    "main.26a656d6.css.map": "/Oddam_w_dobre_rece/static/css/main.26a656d6.css.map",
+    "main.0276fbdf.js.map": "/Oddam_w_dobre_rece/static/js/main.0276fbdf.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.26a656d6.css",
+    "static/js/main.0276fbdf.js"
+  ]
+}
