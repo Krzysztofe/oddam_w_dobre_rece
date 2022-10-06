@@ -1,0 +1,26 @@
+.buttonsLogin {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.buttonLogin {
+padding: $space-large $space-large*2;
+  font-weight: $semiBold;
+  &:first-letter{
+    text-transform: uppercase;
+  }
+}
+
+.buttonLink{
+  text-decoration: none;
+  color: $color-black;
+}
+
+@include media{
+  .buttonsLogin{
+    max-width: 400px;
+    width: 60%;
+  }
+
+}

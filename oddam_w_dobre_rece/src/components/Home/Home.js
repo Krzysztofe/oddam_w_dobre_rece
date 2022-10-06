@@ -10,7 +10,7 @@ import Footer from "./Footer";
 const Home = () => {
     return (
             <>
-                <NavBar/>
+                {/*<NavBar/>*/}
                 <Header/>
                 <Section_1/>
                 <Section_2/>

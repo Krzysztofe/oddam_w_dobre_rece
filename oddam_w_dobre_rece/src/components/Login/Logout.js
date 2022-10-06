@@ -1,17 +1,25 @@
 import React from 'react';
 import {Link} from "react-router-dom";
+import Title from "../Title";
+import NavBar from "../Home/NavBar/NavBar";
 
 const Logout = () => {
     return (
-        <main className='wrapper wrapper--logout'>
-            <h2 className= 'logout__h2'>
-                wylogowanie naspapiło pomyślnie
-            </h2>
-            <Link to = '/'>
-                <button>strona główna</button>
-            </Link>
+        <>
+            {/*<NavBar/>*/}
+            <main className='wrapper wrapper--login'>
+                <Title text1={'wylogowanie nastąpiło '}
+                       text2={'pomyślnie'}
+                       classContainer={''}
+                       classH2={''}
+                       classUnderline={'login__underline'}
+                />
+                <Link to='/'>
+                    <button className='buttonLogin'>strona główna</button>
+                </Link>
 
-        </main>
+            </main>
+        </>
     );
 };
 

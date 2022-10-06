@@ -15,8 +15,6 @@ const NavLinks = ({handleCloseMenue}) => {
         handleCloseMenue();
     }
 
-    console.log(user)
-
     return (
         <>
             <ul className='listItems'>

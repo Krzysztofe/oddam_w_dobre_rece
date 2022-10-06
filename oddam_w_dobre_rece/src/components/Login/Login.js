@@ -4,6 +4,10 @@ import {Link} from 'react-router-dom'
 import {signInWithEmailAndPassword} from 'firebase/auth'
 import {auth} from '../FireBaseConfig';
 import {useNavigate} from 'react-router';
+import Buttons from "../Buttons";
+import Title from "../Title";
+import NavBar from "../Home/NavBar/NavBar";
+import ButtonsLogin from "./ButtonsLogin";
 
 
 const Login = () => {
@@ -37,34 +41,50 @@ const Login = () => {
     }
 
     return (
-        <form
-            onSubmit={handleLogin}
-            className='wrapper wrapper--login'
-        >
+        <>
+            <NavBar/>
 
-            <h2>zaloguj się</h2>
-            <label> email</label>
-            <input
-                type='email' name='email'
-                value={inputValueLogin.email}
-                onChange={handleChange}
-            />
+            <form onSubmit={handleLogin}
+                  className='wrapper wrapper--login'
+            >
 
-            <label> haslo </label>
-            <input
-                type='password' name='password'
-                value={inputValueLogin.password}
-                onChange={handleChange}
-            />
+                <Title text1={'zaloguj się'}
+                       text2={''}
+                       classContainer={''}
+                       classH2={''}
+                       classUnderline={'login__underline'}
+                />
+                <div className="login__inputs">
 
-            <div className="login__containerButtons">
-                <Link to='/rejestracja'>
-                    <button> załóż konto</button>
-                </Link>
-                <button>zaloguj się</button>
-            </div>
-            <h2>{error}</h2>
-        </form>
+                    <label className='login__label'>
+                        Email
+                        <input
+                            type='email' name='email'
+                            value={inputValueLogin.email}
+                            onChange={handleChange}
+                            className='login__input'
+                        />
+                    </label>
+
+                    <label className='login__label'>
+                        Hasło
+                        <input
+                            type='password' name='password'
+                            value={inputValueLogin.password}
+                            onChange={handleChange}
+                            className='login__input'
+                        />
+                    </label>
+                </div>
+
+                <h2>{error}</h2>
+                <ButtonsLogin
+                    link={'/rejestracja'}
+                    btnRight={'załuż konto'}
+                    btnLeft={'zaloguj się'}
+                />
+            </form>
+        </>
     );
 };
 

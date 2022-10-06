@@ -109,7 +109,7 @@ const OddajMain = () => {
 
     return (
         <>
-            <NavBar/>
+            {/*<NavBar/>*/}
             <OddajHeader counter={counter}/>
 
             {counter === 1 &&

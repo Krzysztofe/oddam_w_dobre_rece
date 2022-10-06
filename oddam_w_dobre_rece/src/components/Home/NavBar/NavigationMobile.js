@@ -15,7 +15,6 @@ const MobileNavigation = () => {
         <>
             {open
                 ?
-                <>
                     <nav className='navigationMobile'>
                         <div className="navigationMobile__top">
                             <img src={Tshirt} className='navigationMobile__tshirt'
@@ -25,7 +24,6 @@ const MobileNavigation = () => {
                         </div>
                         <NavLinks handleCloseMenue={handleCloseMenue}/>
                     </nav>
-                </>
                 :
                 <nav className='navigationMobile'>
                     <div className="navigationMobile__top">

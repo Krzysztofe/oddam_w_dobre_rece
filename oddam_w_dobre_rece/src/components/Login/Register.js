@@ -4,6 +4,10 @@ import {Link} from 'react-router-dom'
 import {createUserWithEmailAndPassword} from 'firebase/auth'
 import {auth} from '../FireBaseConfig'
 import {useNavigate} from 'react-router'
+import Title from "../Title";
+import Buttons from "../Buttons";
+import NavBar from "../Home/NavBar/NavBar";
+import ButtonsLogin from "./ButtonsLogin";
 
 const Register = () => {
 
@@ -36,37 +40,52 @@ const Register = () => {
     console.log(auth)
 
     return (
-        <form onSubmit={handleRegister}
-            className='wrapper wrapper--register'
-        >
-            <h2>załóż konto</h2>
+        <>
+            {/*<NavBar/>*/}
+            <form onSubmit={handleRegister}
+                  className='wrapper wrapper--login'
+            >
+                <Title text1={'załóż konto'}
+                       text2={''}
+                       classContainer={''}
+                       classH2={''}
+                       classUnderline={'login__underline'}
+                />
 
-            <label> email </label>
-            <input type='email' name='email'
-                value={inputValuRregister.email}
-                onChange={handleChange}
-            />
+                <div className="login__inputs">
+                    <label className='login__label'>
+                        Email
+                        <input type='email' name='email'
+                               value={inputValuRregister.email}
+                               onChange={handleChange}
+                               className='login__input'
+                        />
+                    </label>
 
-            <label> haslo </label>
-            <input type='password' name='password'
-                value={inputValuRregister.password}
-                onChange={handleChange}
-            />
+                    <label className='login__label'>
+                        Haslo
+                        <input type='password' name='password'
+                               value={inputValuRregister.password}
+                               onChange={handleChange}
+                               className='login__input'
+                        />
+                    </label>
+                    <label className='login__label'>
+                        Powtórz haslo
+                        <input type='password' name='passwordRepited'
+                               value={inputValuRregister.passwordRepited}
+                               onChange={handleChange}
+                               className='login__input'/>
+                    </label>
 
-            <label> powtórz haslo </label>
-            <input type='password' name='passwordRepited'
-                value={inputValuRregister.passwordRepited}
-                onChange={handleChange}
-            />
+                </div>
+                <h2>{error}</h2>
 
-            <div className="register__containerButtons">
-                <button> załóż konto</button>
-                <Link to='/logowanie'>
-                    <button> zaloguj się</button>
-                </Link>
-            </div>
-            <h2>{error}</h2>
-        </form>
+                <ButtonsLogin link={'/logowanie'}
+                              btnRight={'zaloguj się'}
+                              btnLeft={'załuż konto'}/>
+            </form>
+        </>
     );
 };
 
