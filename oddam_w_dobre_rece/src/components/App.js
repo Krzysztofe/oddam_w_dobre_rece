@@ -4,13 +4,9 @@ import Home from "./Home/Home";
 import Login from "./Login/Login";
 import Register from "./Login/Register";
 import Logout from "./Login/Logout";
-import OddajMain from "./OddajRzeczy/OddajMain";
-import {useAuthState} from "react-firebase-hooks/auth";
-import {auth} from "./FireBaseConfig";
-import ProtectedRoute from "./ProtectedRoute";
+import ProtectedRoute from "./OddajRzeczy/ProtectedRoute";
 
 function App() {
-
     return (
         <BrowserRouter>
             <NavBar/>

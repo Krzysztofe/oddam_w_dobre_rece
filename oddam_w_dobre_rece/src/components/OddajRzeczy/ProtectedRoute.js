@@ -1,12 +1,13 @@
-import React from 'react';
 import {useAuthState} from "react-firebase-hooks/auth";
-import {auth} from "./FireBaseConfig";
-import OddajMain from "./OddajRzeczy/OddajMain";
-import Title from "./Title";
+import {auth} from "../FireBaseConfig";
 import {Link} from "react-router-dom";
+import OddajMain from "./OddajMain";
+import Title from "../Title";
+
 
 const ProtectedRoute = () => {
-    const [user, loading, error] = useAuthState(auth);
+    const [user] = useAuthState(auth);
+
     // if (!user?.email) {
     //     return (
     //         <>
@@ -16,12 +17,10 @@ const ProtectedRoute = () => {
     //                        text2={''}
     //                        classContainer={''}
     //                        classH2={''}
-    //                        classUnderline={'login__underline'}
-    //                 />
+    //                        classUnderline={'login__underline'}/>
     //                 <Link to='/'>
     //                     <button className='buttonLogin'>strona główna</button>
     //                 </Link>
-    //
     //             </main>
     //         </>
     //     )

@@ -13,7 +13,7 @@
   z-index: 10;
 }
 
-.navigationMobile__top{
+.navigationMobile__top {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -24,7 +24,6 @@
   background-color: white;
   border-radius: 50%;
   padding: 2px;
-  outline: 2px solid $color-white;
   border: 1px solid $color-black;
 }
 
@@ -36,7 +35,7 @@
 @include media__navbar {
   .wrapper--navigation {
     padding: 0;
-     }
+  }
 
   .navigation {
     max-width: 1350px;
@@ -48,7 +47,7 @@
     flex-direction: column-reverse;
     align-items: end;
     padding: 0 $space-large;
-  z-index: 10;
+    z-index: 10;
   }
   .navigationMobile {
     display: none;

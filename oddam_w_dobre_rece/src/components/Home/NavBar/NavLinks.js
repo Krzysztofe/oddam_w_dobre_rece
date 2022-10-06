@@ -1,69 +1,63 @@
-import React from 'react';
 import {HashLink} from "react-router-hash-link";
 import {Link} from 'react-router-dom'
 import {auth} from '../../FireBaseConfig';
 import {useAuthState} from 'react-firebase-hooks/auth'
 import {useNavigate} from "react-router";
 
-const NavLinks = ({handleCloseMenue}) => {
-    const [user, loading, error] = useAuthState(auth);
+const NavLinks = ({handleCloseMenu}) => {
+    const [user] = useAuthState(auth);
     const navigate = useNavigate()
+
+    const propsCloseMenu = () => {
+        if (typeof handleCloseMenu === 'function') {
+            return handleCloseMenu()
+        }
+    }
 
     const handleLogout = () => {
         auth.signOut();
         navigate('/wylogowano');
-        handleCloseMenue();
+        propsCloseMenu();
     }
 
     return (
         <>
             <ul className='listItems'>
-                <HashLink smooth to='#start'
-                    className='hashLink'
-                >
+                <Link to='/' className='hashLink'>
                     <li className='listItem'
-                        onClick={handleCloseMenue}
-                    >
-                        start
+                        onClick={propsCloseMenu}>
+                       strona główna
                     </li>
-                </HashLink>
+                </Link>
 
                 <HashLink smooth to='#simpleSteps'
-                    className='hashLink'
-                >
+                          className='hashLink'>
                     <li className='listItem'
-                        onClick={handleCloseMenue}
-                    >
+                        onClick={propsCloseMenu}>
                         o co chodzi
                     </li>
                 </HashLink>
 
                 <HashLink smooth to='#aboutUs'
-                    className='hashLink'
-                >
+                          className='hashLink'>
                     <li className='listItem'
-                        onClick={handleCloseMenue}
-                    >
+                        onClick={propsCloseMenu}>
                         o nas
                     </li>
                 </HashLink>
 
                 <HashLink smooth to='#whoWeHelp'
-                    className='hashLink'
-                >
+                          className='hashLink'>
                     <li className='listItem'
-                        onClick={handleCloseMenue}
-                    >
+                        onClick={propsCloseMenu}>
                         fundacja i organizacje
                     </li>
                 </HashLink>
 
                 <HashLink smooth to='#contact'
-                    className='hashLink'
-                >
+                          className='hashLink'>
                     <li className='listItem'
-                        onClick={handleCloseMenue}
-                    >
+                        onClick={propsCloseMenu}>
                         kontakt
                     </li>
                 </HashLink>
@@ -73,24 +67,21 @@ const NavLinks = ({handleCloseMenue}) => {
                 ?
                 <ul className='logItems'>
                     <Link to='' className='hashLink'>
-                        <li className='logItem'
-                        >
+                        <li className='logItem'>
                             cześć {user?.email}
                         </li>
                     </Link>
 
                     <Link to='oddaj' className='hashLink'>
                         <li className='logItem'
-                            onClick={handleCloseMenue}
-                        >
+                            onClick={propsCloseMenu}>
                             oddaj rzeczy
                         </li>
                     </Link>
 
                     <div className='hashLink'>
                         <li className='logItem'
-                            onClick={handleLogout}
-                        >
+                            onClick={handleLogout}>
                             wyloguj
                         </li>
                     </div>
@@ -98,21 +89,17 @@ const NavLinks = ({handleCloseMenue}) => {
                 :
                 <ul className='logItems'>
                     <Link to="/logowanie"
-                          className='hashLink'
-                    >
+                          className='hashLink'>
                         <li className='logItem'
-                            onClick={handleCloseMenue}
-                        >
+                            onClick={propsCloseMenu}>
                             zaloguj się
                         </li>
                     </Link>
 
                     <Link to="/rejestracja"
-                          className='hashLink'
-                    >
+                          className='hashLink'>
                         <li className='logItem'
-                            onClick={handleCloseMenue}
-                        >
+                            onClick={propsCloseMenu}>
                             załóż konto
                         </li>
                     </Link>
