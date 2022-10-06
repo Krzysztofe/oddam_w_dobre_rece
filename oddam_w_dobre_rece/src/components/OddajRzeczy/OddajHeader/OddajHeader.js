@@ -1,4 +1,3 @@
-import React from 'react';
 import Title from "../../Title";
 import Square from "./Square";
 
@@ -14,36 +13,30 @@ const OddajHeader = ({counter}) => {
                     text2={'potrzebującym'}
                     classContainer={'oddajHeader__titleContainer'}
                     classH2={'oddajHeader__titleH2'}
-                    classUnderline={'oddajHeader__titleDecoration'}
-                />
+                    classUnderline={'oddajHeader__titleDecoration'}/>
                 <p className = 'oddajHeader__p'> wystarczą 4 proste kroki </p>
 
                 <div className = "squares">
                     <Square
                         number={'1'}
                         text={'wybierz rzeczy'}
-                        counter = {counter}
-                    />
+                        counter = {counter}/>
                     <Square
                         number={'2'}
-                        text={'spakuj je w worki'}
-                        counter = {counter}
-                    />
+                        text={'spakuj w worki'}
+                        counter = {counter}/>
                     <Square
                         number={'3'}
                         text={'wybierz fundację'}
-                        counter = {counter}
-                    />
+                        counter = {counter}/>
                     <Square
                         number={"4"}
                         text={'zamów kuriera'}
-                        counter = {counter}
-                    />
+                        counter = {counter}/>
                     <Square
                         number={'5'}
                         text={'zamów kuriera'}
-                        counter = {counter}
-                    />
+                        counter = {counter}/>
                 </div>
             </aside>
         </header>
