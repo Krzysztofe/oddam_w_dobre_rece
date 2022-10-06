@@ -5,13 +5,11 @@ const ButtonsLogin = ({link, btnRight, btnLeft}) => {
 
         <div className="buttonsLogin">
 
+            <Link to={link}>
                 <button className='buttonLogin'>
-                    <Link to={link}
-                          className='buttonLink'>
                     {btnRight}
-            </Link>
                 </button>
-
+            </Link>
 
             <button type='submit'
                     className='buttonLogin'>

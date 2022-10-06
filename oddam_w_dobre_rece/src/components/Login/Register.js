@@ -37,11 +37,9 @@ const Register = () => {
             .catch(error => setError(error.code))
     }
 
-    console.log(auth)
-
     return (
         <>
-            {/*<NavBar/>*/}
+            <div className='headerSpacer'></div>
             <form onSubmit={handleRegister}
                   className='wrapper wrapper--login'
             >

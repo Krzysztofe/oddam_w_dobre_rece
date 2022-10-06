@@ -12,10 +12,6 @@ padding: $space-large $space-large*2;
   }
 }
 
-.buttonLink{
-  text-decoration: none;
-  color: $color-black;
-}
 
 @include media{
   .buttonsLogin{

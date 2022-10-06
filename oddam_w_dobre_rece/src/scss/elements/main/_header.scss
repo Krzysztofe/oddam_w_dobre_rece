@@ -1,8 +1,11 @@
-@import "../../title";
-@import "../section_1";
+@import "../title";
+@import "section_1";
 
 .headerSpacer {
   height: 6rem;
+}
+.header__image{
+  display: none;
 }
 
 .header__right {
@@ -33,12 +36,10 @@
     padding-left: 0;
   }
   .header__image {
-    display: block;
     width: 50%;
-    background-image: url("/asets/Hero Image.png");
-    background-position: right;
-    background-size: cover;
-    background-repeat: no-repeat;
+    display: block;
+    object-fit: cover;
+    object-position: right;
   }
   .header__right {
     width: 50%;

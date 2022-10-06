@@ -20,8 +20,6 @@ function App() {
                 <Route path='/logowanie' element={<Login/>}/>
                 <Route path='/wylogowano' element={<Logout/>}/>
                 <Route path='/oddaj' element={<ProtectedRoute/>}/>
-
-                <Route path='/oddaj' element={<OddajMain/>}/>
             </Routes>
         </BrowserRouter>
     );

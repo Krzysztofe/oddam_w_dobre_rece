@@ -42,18 +42,15 @@ const Login = () => {
 
     return (
         <>
-            <NavBar/>
-
+            <div className='headerSpacer'></div>
             <form onSubmit={handleLogin}
-                  className='wrapper wrapper--login'
-            >
+                  className='wrapper wrapper--login'>
 
                 <Title text1={'zaloguj się'}
                        text2={''}
                        classContainer={''}
                        classH2={''}
-                       classUnderline={'login__underline'}
-                />
+                       classUnderline={'login__underline'}/>
                 <div className="login__inputs">
 
                     <label className='login__label'>
@@ -62,8 +59,7 @@ const Login = () => {
                             type='email' name='email'
                             value={inputValueLogin.email}
                             onChange={handleChange}
-                            className='login__input'
-                        />
+                            className='login__input'/>
                     </label>
 
                     <label className='login__label'>
@@ -72,8 +68,7 @@ const Login = () => {
                             type='password' name='password'
                             value={inputValueLogin.password}
                             onChange={handleChange}
-                            className='login__input'
-                        />
+                            className='login__input'/>
                     </label>
                 </div>
 
@@ -81,8 +76,7 @@ const Login = () => {
                 <ButtonsLogin
                     link={'/rejestracja'}
                     btnRight={'załuż konto'}
-                    btnLeft={'zaloguj się'}
-                />
+                    btnLeft={'zaloguj się'}/>
             </form>
         </>
     );

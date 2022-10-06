@@ -1,5 +1,5 @@
 .wrapper--section-3 {
- padding: 0;
+  padding: 0;
   margin-bottom: $space-large;
 }
 
@@ -18,54 +18,69 @@
   padding: $space-small;
 }
 
-@include media{
+.section-3__signatureLarge, .section-3__signatureSmall,
+.section-3__peopleSmall, .section-3__peopleLarge {
+  display: none;
+}
+
+@include media {
   .wrapper--section-3 {
     display: flex;
   }
 
-  .section-3__leftContainer{
+  .section-3__leftContainer {
     width: 50%;
     height: 70vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
   }
-  .section-3__mainText{
-width: 60%;
+  .section-3__mainText {
+    width: 60%;
   }
-  .section-3__decoration{
+  .section-3__decoration {
     background-size: 100%;
   }
-  .section-3__p{
+  .section-3__p {
     font-size: $font-size-small;
     width: 100%;
     padding: 0;
   }
 
-  .section-3__signature {
+  .section-3__signatureSmall {
     display: block;
-    background-image: url("/asets/Signature.png");
-    background-size: contain;
-    background-repeat: no-repeat;
     height: clamp(35px, 25%, 100px);
     width: clamp(35px, 30%, 100px);
     margin-left: auto;
   }
-  .section-3__rightContainer {
+  .section-3__peopleSmall {
     width: 50%;
-    background-image: url("../../../asets/People.png");
-    background-size: cover;
-    background-position: center;
+    display: block;
+    object-fit: cover;
+    object-position: center;
+  }
+
+  .section-3__signatureLarge, .section-3__peopleLarge {
+    display: none;
   }
 }
 
 
-
-@include media__bigSize{
-  .section-3__signature{
-    background-image: url("../../../asets/Signature@2x.png");
+@include media__bigSize {
+  .section-3__signatureSmall, .section-3__peopleSmall {
+    display: none;
   }
-  .section-3__rightContainer{
-    background-image: url("../../../asets/People@2x.png");
+  .section-3__signatureLarge {
+    display: block;
+    height: clamp(35px, 25%, 100px);
+    width: clamp(35px, 30%, 100px);
+    margin-left: auto;
+  }
+
+  .section-3__peopleLarge {
+    width: 50%;
+    display: block;
+    object-fit: cover;
+    object-position: center;
   }
 }

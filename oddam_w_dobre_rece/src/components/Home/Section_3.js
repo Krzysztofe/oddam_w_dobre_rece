@@ -1,4 +1,9 @@
 import Title from "../Title";
+import SignatureSmall from '../../asets/Signature.png'
+import SignatureLarge from '../../asets/Signature@2x.png'
+import PeopleSmall from '../../asets/People.png'
+import PeopleLarge from '../../asets/People@2x.png';
+
 
 const Section_3 = () => {
     return (
@@ -15,11 +20,21 @@ const Section_3 = () => {
                         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad facilis minima quia ullam unde?
                         Aliquid blanditiis ea esse hic libero, nobis nostrum quod reiciendis.
                     </p>
-                    <div className="section-3__signature"> </div>
+                    <img src={SignatureSmall}
+                         alt='Podpis'
+                         className="section-3__signatureSmall"/>
+                    <img src={SignatureLarge}
+                         alt='Podpis'
+                         className="section-3__signatureLarge"/>
                 </div>
-
             </aside>
-            <aside className="section-3__rightContainer" ></aside>
+
+            <img src={PeopleSmall}
+                 alt='Grupa ludzi'
+                 className='section-3__peopleSmall'/>
+            <img src={PeopleLarge}
+                 alt='Grupa ludzi'
+                 className='section-3__peopleLarge'/>
         </section>
     );
 };
