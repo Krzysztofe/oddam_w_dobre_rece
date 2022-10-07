@@ -2,7 +2,7 @@
   display: flex;
   justify-content: space-around;
   background-color: $color-white;
-  outline:  1em solid $color-white;
+  outline: 1em solid $color-white;
 }
 
 .square {
@@ -17,15 +17,9 @@
   height: 1.5em;
 }
 
-.square__rectangle {
-
-}
-
-
 .square--BacgroundColor {
   background-color: $color-yellow;
 }
-
 
 .square__p {
   display: none;
@@ -34,7 +28,7 @@
 @include media {
   .squares {
     margin: 0 auto;
-max-width: 400px;
+    max-width: 400px;
     width: 100%;
   }
 
@@ -45,6 +39,7 @@ max-width: 400px;
     height: clamp(6em, 9vw, 85px);
     font-size: $font-size-superSmall;
     position: relative;
+
     &:last-child {
       display: none;
     }
@@ -59,7 +54,6 @@ max-width: 400px;
     position: relative;
   }
 
-
   .square__h3 {
     position: absolute;
     left: 15%;
@@ -67,11 +61,13 @@ max-width: 400px;
     transform: rotate(315deg);
     text-align: center;
   }
+
   .square__p {
     display: block;
     text-align: center;
     transform: rotate(315deg);
-    &:first-letter{
+
+    &:first-letter {
       text-transform: uppercase;
     }
   }

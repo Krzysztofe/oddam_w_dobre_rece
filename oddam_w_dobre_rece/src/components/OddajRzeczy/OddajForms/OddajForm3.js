@@ -1,4 +1,5 @@
 import Buttons from "../../Buttons";
+
 const OddajForm3 = ({
                         handleChange, inputsValue,
                         handleIncrease, handleDecrease
@@ -6,11 +7,12 @@ const OddajForm3 = ({
     return (
         <>
             <main className='oddajForm__inputs'>
+
                 <select name='selectLocalisation'
                     value={inputsValue.selectLocalisation}
                     onChange={handleChange}
-                    className='oddajForm3__select'
-                >
+                    className='oddajForm3__select'>
+
                     <option value='wybierz'>wybierz</option>
                     <option value='Poznań'>poznań</option>
                     <option value='Warszawa'>warszawa</option>
@@ -73,19 +75,15 @@ const OddajForm3 = ({
                     wpisz nazwę konkretnej organizacji (opcjonalnie)
                 </h3>
 
-                {/*<div className="oddajForm3__selectContainer">*/}
-
                     <input type='text'
                            name='organisationName'
                            value={inputsValue.organisationName}
                            onChange={handleChange}
                            className='oddajForm3__textInput'/>
-                {/*</div>*/}
 
-                <Buttons
-                    handleDecrease={handleDecrease}
-                    handleIncrease = {handleIncrease}
-                    />
+                <Buttons handleDecrease={handleDecrease}
+                    handleIncrease = {handleIncrease}/>
+
             </main>
         </>
 

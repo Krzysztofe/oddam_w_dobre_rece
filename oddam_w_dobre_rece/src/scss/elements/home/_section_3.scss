@@ -49,6 +49,7 @@
 
   .section-3__signatureSmall {
     display: block;
+    object-fit: contain;
     height: clamp(35px, 25%, 100px);
     width: clamp(35px, 30%, 100px);
     margin-left: auto;
@@ -72,6 +73,7 @@
   }
   .section-3__signatureLarge {
     display: block;
+    object-fit: contain;
     height: clamp(35px, 25%, 100px);
     width: clamp(35px, 30%, 100px);
     margin-left: auto;

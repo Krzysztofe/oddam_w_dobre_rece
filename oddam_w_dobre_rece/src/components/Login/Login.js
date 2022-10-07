@@ -1,12 +1,8 @@
 import React, {useState} from 'react';
-import {NavHashLink} from "react-router-hash-link";
-import {Link} from 'react-router-dom'
+import {useNavigate} from 'react-router';
 import {signInWithEmailAndPassword} from 'firebase/auth'
 import {auth} from '../FireBaseConfig';
-import {useNavigate} from 'react-router';
-import Buttons from "../Buttons";
 import Title from "../Title";
-import NavBar from "../Home/NavBar/NavBar";
 import ButtonsLogin from "./ButtonsLogin";
 
 
@@ -31,13 +27,8 @@ const Login = () => {
             inputValueLogin.email,
             inputValueLogin.password
         )
-            .then(() => {
-                navigate('/')
-                alert('sukces')
-            })
-            .catch(error => {
-                setError(error.code)
-            })
+            .then(() => navigate('/'))
+            .catch(error => setError(error.code))
     }
 
     return (
@@ -51,8 +42,8 @@ const Login = () => {
                        classContainer={''}
                        classH2={''}
                        classUnderline={'login__underline'}/>
-                <div className="login__inputs">
 
+                <div className="login__inputs">
                     <label className='login__label'>
                         Email
                         <input
@@ -73,8 +64,8 @@ const Login = () => {
                 </div>
 
                 <h2>{error}</h2>
-                <ButtonsLogin
-                    link={'/rejestracja'}
+
+                <ButtonsLogin link={'/rejestracja'}
                     btnRight={'załuż konto'}
                     btnLeft={'zaloguj się'}/>
             </form>

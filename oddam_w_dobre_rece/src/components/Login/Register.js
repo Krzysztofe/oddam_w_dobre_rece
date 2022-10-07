@@ -1,19 +1,15 @@
 import React, {useState} from 'react';
-import {NavHashLink} from "react-router-hash-link";
-import {Link} from 'react-router-dom'
 import {createUserWithEmailAndPassword} from 'firebase/auth'
 import {auth} from '../FireBaseConfig'
 import {useNavigate} from 'react-router'
 import Title from "../Title";
-import Buttons from "../Buttons";
-import NavBar from "../Home/NavBar/NavBar";
 import ButtonsLogin from "./ButtonsLogin";
 
 const Register = () => {
 
     const navigate = useNavigate()
     const [inputValuRregister, setInputValueRegister] =
-        useState({email: '', password: '', passwordRepited: ''})
+        useState({email: '', password: '', passwordRepeated: ''})
 
     const [error, setError] = useState("")
 
@@ -30,10 +26,7 @@ const Register = () => {
         createUserWithEmailAndPassword(auth,
             inputValuRregister.email,
             inputValuRregister.password)
-            .then(() => {
-                navigate('/')
-                // alert('sukces')
-            })
+            .then(() => navigate('/'))
             .catch(error => setError(error.code))
     }
 
@@ -41,23 +34,22 @@ const Register = () => {
         <>
             <div className='headerSpacer'></div>
             <form onSubmit={handleRegister}
-                  className='wrapper wrapper--login'
-            >
+                  className='wrapper wrapper--login'>
+
                 <Title text1={'załóż konto'}
                        text2={''}
                        classContainer={''}
                        classH2={''}
-                       classUnderline={'login__underline'}
-                />
+                       classUnderline={'login__underline'}/>
 
                 <div className="login__inputs">
+
                     <label className='login__label'>
                         Email
                         <input type='email' name='email'
                                value={inputValuRregister.email}
                                onChange={handleChange}
-                               className='login__input'
-                        />
+                               className='login__input'/>
                     </label>
 
                     <label className='login__label'>
@@ -65,19 +57,20 @@ const Register = () => {
                         <input type='password' name='password'
                                value={inputValuRregister.password}
                                onChange={handleChange}
-                               className='login__input'
-                        />
+                               className='login__input'/>
                     </label>
+
                     <label className='login__label'>
                         Powtórz haslo
                         <input type='password' name='passwordRepited'
-                               value={inputValuRregister.passwordRepited}
+                               value={inputValuRregister.passwordRepeated}
                                onChange={handleChange}
                                className='login__input'/>
                     </label>
 
                 </div>
-                <h2>{error}</h2>
+
+                <p>{error}</p>
 
                 <ButtonsLogin link={'/logowanie'}
                               btnRight={'zaloguj się'}

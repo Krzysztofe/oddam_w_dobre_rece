@@ -7,15 +7,14 @@
   align-items: center;
 }
 
-.contact__logo {
-  width: 1.4em;
-}
 
 @include media {
   .wrapper--section-5 {
     display: flex;
-    background: url("../../../../asets/Background Image.png") no-repeat center;
+    background: url("../../../../asets/Background Image.png");
     background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
     height: 80vh;
     padding: 0;
   }
@@ -39,7 +38,7 @@
 }
 
 @include media__bigSize {
-  .wrapper--contact {
+  .wrapper--section-5 {
     background-image: url("../../../../asets/Background Image@2x.png");
   }
 }

@@ -1,4 +1,3 @@
-import React from 'react';
 import Facebook from "../../asets/Facebook.png";
 import Instagram from "../../asets/Instagram.png";
 
@@ -12,10 +11,7 @@ const Footer = () => {
                 <a href='https://www.instagram.com/' className='contact__logo'>
                     <img src={Instagram}  alt='Instagram_logo'/>
                 </a>
-
             </div>
-
-
         </footer>
     );
 };

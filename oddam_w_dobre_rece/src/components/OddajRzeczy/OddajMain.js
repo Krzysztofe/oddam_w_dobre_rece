@@ -12,15 +12,9 @@ import OddajForm1 from "./OddajForms/OddajForm1";
 import OddajForm3 from "./OddajForms/OddajForm3";
 import OddajForm4 from "./OddajForms/OddajForm4";
 import OddajSummary from "./OddajForms/OddajSummary";
-import Title from "../Title";
-import Contact from "../Home/Section_5/Section_5";
-
-import HeaderUnderline from "../Title";
-import NavBar from "../Home/NavBar/NavBar";
-import Footer from "../Home/Footer";
-import Buttons from "../Buttons";
 import OddajThanx from "./OddajForms/OddajThanx";
-
+import Section_5 from "../Home/Section_5/Section_5";
+import Footer from "../Home/Footer";
 
 const OddajMain = () => {
     const [user, loading, error] = useAuthState(auth);
@@ -35,13 +29,12 @@ const OddajMain = () => {
             city: "", postCode: "", phone: "",
             date: "", time: "", note: "", uid: ""
         })
-    // const [summary, setSummary] = useState([])
+
     const [counter, setCounter] = useState(1)
 
     const summaryReference = collection(db, 'summary')
 
     const handleChange = (e) => {
-        // e.preventDefault()
         const value = e.target.type === "checkbox"
             ?
             e.target.checked
@@ -109,130 +102,122 @@ const OddajMain = () => {
 
     return (
         <>
-            {/*<NavBar/>*/}
             <OddajHeader counter={counter}/>
 
             {counter === 1 &&
                 <>
-                    <OddajBelt
-                        text={'Uzupełnij szczegóły dotyczace twoich rzeczy. ' +
-                            'Dzięki temu bedziemy wiedzieć komu najlepiej je przekazać.'}
-                    />
+                    <OddajBelt text={'Uzupełnij szczegóły dotyczace' +
+                        ' twoich rzeczy. Dzięki temu bedziemy wiedzieć' +
+                        ' komu najlepiej je przekazać.'}/>
+
                     <main className="wrapper wrapper--oddajMain">
-                        <OddajFormTop
-                            step={'krok 1/4'}
-                            text={'zaznacz co chcesz oddać:'}
-                        />
+
+                        <OddajFormTop step={'krok 1/4'}
+                            text={'zaznacz co chcesz oddać:'}/>
+
                         <OddajForm1
                             inputsValue={inputsValue}
                             handleChange={handleChange}
-                            handleIncrease={handleIncrease}
-                        />
+                            handleIncrease={handleIncrease}/>
+
                     </main>
                 </>
             }
 
             {counter === 2 &&
                 <>
-                    <OddajBelt
-                        text={'Wszytie rzeczy do oddania ' +
+                    <OddajBelt text={'Wszytie rzeczy do oddania ' +
                             'zapakuj w 60l worki. Dokładną' +
                             ' instrukcję jak poprawnie spakować' +
-                            ' rzczy znajdziesz TUTAJ '}
-                    />
+                            ' rzczy znajdziesz TUTAJ '}/>
+
                     <main className="wrapper wrapper--oddajMain">
-                        <OddajFormTop
-                            step={'krok 2/4'}
+
+                        <OddajFormTop step={'krok 2/4'}
                             text={'podaj liczbę 60l worków,' +
-                                ' w które spkowałeś/aś rzeczy:'}
-                        />
-                        <OddajForm2
-                            inputsValue={inputsValue}
+                                ' w które spkowałeś/aś rzeczy:'}/>
+
+                        <OddajForm2 inputsValue={inputsValue}
                             handleChange={handleChange}
                             counter={counter}
                             handleIncrease={handleIncrease}
-                            handleDecrease={handleDecrease}
-                        />
+                            handleDecrease={handleDecrease}/>
+
                     </main>
                 </>
             }
 
             {counter === 3 &&
                 <>
-                    <OddajBelt
-                        text={'Jeśli wiesz komu chcesz pomóc, możesz wpisać' +
-                            ' nazwę organizacji w wyszukiwarce. Możesz też' +
-                            'filtrować organizacje po ich lokalizacji bądź ' +
-                            'celu ich pomocy'}
-                    />
+                    <OddajBelt text={'Jeśli wiesz komu chcesz pomóc,' +
+                        ' możesz wpisać nazwę organizacji w wyszukiwarce.' +
+                        ' Możesz też filtrować organizacje po ich lokalizacji' +
+                        ' bądź celu ich pomocy'}/>
+
                     <main className="wrapper wrapper--oddajMain">
-                        <OddajFormTop
-                            step={'krok 3/4'}
-                            text={'lokalizacja:'}
-                        />
-                        <OddajForm3
-                            inputsValue={inputsValue}
+
+                        <OddajFormTop step={'krok 3/4'}
+                            text={'lokalizacja:'}/>
+
+                        <OddajForm3 inputsValue={inputsValue}
                             handleChange={handleChange}
                             counter={counter}
                             handleIncrease={handleIncrease}
-                            handleDecrease={handleDecrease}
-                        />
+                            handleDecrease={handleDecrease}/>
+
                     </main>
                 </>
             }
 
             {counter === 4 &&
                 <>
-                    <OddajBelt
-                        text={'Podaj adres oraz termin odbioru rzeczy'}
-                    />
+                    <OddajBelt text={'Podaj adres oraz termin odbioru rzeczy'}/>
+
                     <main className="wrapper wrapper--oddajMain">
-                        <OddajFormTop
-                            step={'krok 4/4'}
+
+                        <OddajFormTop step={'krok 4/4'}
                             text={'podaj adres oraz termin ' +
-                                'odbioru rzeczy przez kuriera:'}
-                        />
-                        <OddajForm4
-                            inputsValue={inputsValue}
+                                'odbioru rzeczy przez kuriera:'}/>
+
+                        <OddajForm4 inputsValue={inputsValue}
                             handleChange={handleChange}
                             counter={counter}
                             handleIncrease={handleIncrease}
-                            handleDecrease={handleDecrease}
-                        />
+                            handleDecrease={handleDecrease}/>
+
                     </main>
                 </>
             }
 
             {counter === 5 &&
                 <>
-
                     <main className="wrapper wrapper--oddajMain">
+
                         <div className="belt__empty"> </div>
-                        <OddajFormTop
-                            step={' i '}
-                            text={'podsumowanie twojej darowizny'}
-                        />
-                        <OddajSummary
-                            createSummary={createSummary}
+
+                        <OddajFormTop step={' i '}
+                            text={'podsumowanie twojej darowizny'}/>
+
+                        <OddajSummary createSummary={createSummary}
                             inputsValue={inputsValue}
                             counter={counter}
                             handleIncrease={handleIncrease}
-                            handleDecrease={handleDecrease}
-                        />
+                            handleDecrease={handleDecrease}/>
+
                     </main>
                 </>
             }
 
             {counter === 6 &&
                 <main className="wrapper wrapper--oddajMain">
+
                     <div className="belt__empty"> </div>
-                    <OddajFormTop
-                        step={' i '}
-                        text={''}
-                    />
+
+                    <OddajFormTop step={' i '} text={''} />
+
                     <OddajThanx />
                 </main>}
-            <Contact/>
+            <Section_5/>
             <Footer/>
         </>
     );

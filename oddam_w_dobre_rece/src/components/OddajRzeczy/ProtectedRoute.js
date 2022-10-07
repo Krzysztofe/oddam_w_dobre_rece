@@ -5,7 +5,7 @@ import OddajMain from "./OddajMain";
 import Title from "../Title";
 
 
-const ProtectedRoute = () => {
+const ProtectedRouteOddajMain  = () => {
     const [user] = useAuthState(auth);
 
     // if (!user?.email) {
@@ -30,4 +30,4 @@ const ProtectedRoute = () => {
     );
 }
 
-export default ProtectedRoute;
+export default ProtectedRouteOddajMain;

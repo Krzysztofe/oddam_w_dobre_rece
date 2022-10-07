@@ -24,10 +24,9 @@ const OddajForm2 = ({
                     </select>
                 </label>
 
-                <Buttons
-                    handleDecrease={handleDecrease}
-                    handleIncrease={handleIncrease}
-                />
+                <Buttons handleDecrease={handleDecrease}
+                    handleIncrease={handleIncrease}/>
+
             </main>
         </>
     );

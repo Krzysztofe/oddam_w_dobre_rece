@@ -17,14 +17,15 @@
 .oddajHeader__p {
   font-weight: $semiBold;
   padding: $space-large 0 3em 0;
-  &:first-letter{
+
+  &:first-letter {
     text-transform: uppercase;
   }
 }
 
-
 @include media {
-  .wrapper--oddajHeader{
+
+  .wrapper--oddajHeader {
     display: flex;
     background-color: white;
     height: 60vh;
@@ -44,15 +45,15 @@
     width: 50%;
     padding: 0 2em;
     box-shadow: -40px -40px 50px 20px rgba(255, 255, 255, 0.8);
-  display: flex;
+    display: flex;
     flex-direction: column;
     justify-content: center;
   }
+
   .oddajHeader__titleH2 {
     text-align: center;
   }
-  .oddajHeader__headerUnderline {
-  }
+
   .oddajHeader__p {
     text-align: center;
 
@@ -61,13 +62,6 @@
     }
   }
 }
-
-@include media__navbar{
-  .navSpacer{
-    height: 3rem;
-  }
-}
-
 
 @include media__bigSize {
   .oddajHeader__backgroundImage {

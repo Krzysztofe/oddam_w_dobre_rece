@@ -1,11 +1,12 @@
-import React from 'react';
 import {useState} from "react";
+import {section_5_FormValidation} from '../../libraryValidations'
 
 const ContactForm = () => {
     const [inputValue, setInputValue] = useState(
         {name: "", email: "", textarea: ""})
     const [errors, setErrors] = useState(
-        {name: "", email: "", textarea: ""})
+        {name: "", email: "", textarea: ""}
+    )
     const [formDatas, setFormDatas] = useState([])
 
     const handleChange = (e) => {
@@ -17,43 +18,13 @@ const ContactForm = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault()
-        const _errorsName = []
-        const _errorsEmail = []
-        const _errorsTextarea = []
-
-        // if (inputValue.name.includes(" ")) {
-        //     _errors.push('podane imię jest nieprawidłowe')
-        // }
-        if (inputValue.name.length < 5) {
-            _errorsName.push('podane imię jest nieprawidłowe')
-        }
-        if (inputValue.email.length < 5) {
-            _errorsEmail.push('podane imię jest nieprawidłowe')
-        }
-        if (inputValue.textarea.length < 2) {
-            _errorsTextarea.push('wiadomość wymaga 5 znaków')
-        }
-
-        setErrors({
-            ...errors,
-            name: _errorsName,
-            email: _errorsEmail,
-            textarea: _errorsTextarea
-        })
-
-        if (_errorsName.length > 0
-            || _errorsEmail.length > 0
-            || _errorsTextarea.length > 0) {
+        setErrors(section_5_FormValidation(inputValue))
+        if (section_5_FormValidation(inputValue) !== '') {
             return
         }
 
         setFormDatas([...formDatas, inputValue])
-        setInputValue({
-            ...inputValue,
-            name: "",
-            email: "",
-            textarea: ""
-        })
+        setInputValue({name: "", email: "", textarea: ""})
     }
 
     return (
@@ -67,11 +38,10 @@ const ContactForm = () => {
                 </label>
                 <input type='text' name='name'
                        className={`contactForm__input
-                          ${errors.name.length && 'contactForm__errorUnderline'}`}
+                       ${errors.name && 'contactForm__errorUnderline'}`}
                        value={inputValue.name}
                        onChange={handleChange}
-                       placeholder='Imię'
-                />
+                       placeholder='Imię'/>
                 <div className="contactForm__textInputErrors">
                     {errors.name}
                 </div>
@@ -81,9 +51,9 @@ const ContactForm = () => {
                 <label className='contactForm__label'>
                     Wpisz swój email
                 </label>
-                <input type='email' name='email'
+                <input type='text' name='email'
                        className={`contactForm__input
-                          ${errors.email.length && 'contactForm__errorUnderline'}`}
+                       ${errors.email && 'contactForm__errorUnderline'}`}
                        value={inputValue.email}
                        onChange={handleChange}
                        placeholder='Email'
@@ -101,11 +71,10 @@ const ContactForm = () => {
                 <textarea name='textarea'
                           rows={4}
                           className={`contactForm__input
-                          ${errors.textarea.length && 'contactForm__errorUnderline'}`}
+                    ${errors.textarea && 'contactForm__errorUnderline'}`}
                           value={inputValue.textarea}
                           onChange={handleChange}
-                          placeholder='Wiadomość'
-                />
+                          placeholder='Wiadomość'/>
                 <div className="contactForm__textInputErrors">
                     {errors.textarea}
                 </div>

@@ -1,10 +1,8 @@
-@import "../title";
-@import "section_1";
-
 .headerSpacer {
   height: 6rem;
 }
-.header__image{
+
+.header__imageSmall, .header__imageSmallLarge{
   display: none;
 }
 
@@ -17,15 +15,16 @@
   justify-content: space-between;
   margin: 2rem 0;
 }
+
 .header__link{
   width: 40%;
 }
+
 .header__btn{
   width: 100%;
 }
 
 @include media {
-
   .headerSpacer {
     height: 4rem;
   }
@@ -35,27 +34,32 @@
     height: 60vh;
     padding-left: 0;
   }
-  .header__image {
+
+  .header__imageSmall {
     width: 50%;
     display: block;
     object-fit: cover;
     object-position: right;
   }
+
   .header__right {
     width: 50%;
     display: flex;
     flex-direction: column;
     justify-content: center;
   }
-  .header__container {
-    display: flex;
-    flex-direction: column;
-  }
 }
 
 @include media__bigSize {
-  .header__image{
-    background-image: url("/asets/Hero Image@2x.png");
+  .header__imageSmall{
+   display: none;
+  }
+
+  .header__imageSmallLarge{
+    display: block;
+    width: 50%;
+    object-fit: cover;
+    object-position: right;
   }
 }
 

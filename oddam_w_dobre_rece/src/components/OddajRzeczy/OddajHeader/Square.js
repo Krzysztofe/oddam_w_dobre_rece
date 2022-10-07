@@ -9,7 +9,8 @@ const Square = ({number, text, counter}) => {
                         {number}
                     </h3>
                     <p className='square__p'>
-                        {text}</p>
+                        {text}
+                    </p>
                 </div>
             </div>
         </>

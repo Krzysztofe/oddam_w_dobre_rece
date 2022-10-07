@@ -4,7 +4,7 @@ import Home from "./Home/Home";
 import Login from "./Login/Login";
 import Register from "./Login/Register";
 import Logout from "./Login/Logout";
-import ProtectedRoute from "./OddajRzeczy/ProtectedRoute";
+import ProtectedRouteOddajMain from "./OddajRzeczy/ProtectedRoute";
 
 function App() {
     return (
@@ -15,7 +15,7 @@ function App() {
                 <Route path='/rejestracja' element={<Register/>}/>/
                 <Route path='/logowanie' element={<Login/>}/>
                 <Route path='/wylogowano' element={<Logout/>}/>
-                <Route path='/oddaj' element={<ProtectedRoute/>}/>
+                <Route path='/oddaj' element={<ProtectedRouteOddajMain/>}/>
             </Routes>
         </BrowserRouter>
     );

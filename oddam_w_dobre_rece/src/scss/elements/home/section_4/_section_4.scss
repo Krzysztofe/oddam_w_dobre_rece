@@ -18,7 +18,6 @@
 .section-4__p {
   text-align: center;
   margin: 1em auto;
-  //line-height: 1.4;
   width: 90%;
   height: 6em;
   font-size: $font-size-small;
@@ -34,6 +33,7 @@
     width: 50%;
     margin: $space-large auto;
   }
+
   .section-4__btn {
     border-radius: 0;
     background-color: rgba(0, 0, 0, 0);
@@ -44,9 +44,9 @@
       border: 1px solid $color-grey-normal;
     }
   }
+
   .section-4__p {
     width: 60%;
     margin: 0 auto;
   }
-
 }

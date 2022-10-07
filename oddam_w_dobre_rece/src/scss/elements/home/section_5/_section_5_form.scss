@@ -30,6 +30,9 @@ textarea::placeholder{
   color: #FF0000FF;
   font-size: $font-size-small;
   height: 2em;
+  &:first-letter{
+    text-transform: uppercase;
+  }
 }
 
 .contactForm__errorUnderline {

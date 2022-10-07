@@ -54,7 +54,7 @@ padding-left: 0;
 
 @include media {
   .belt__empty + p {
-    color: #eeede9;
+    opacity: 0;
   }
 
   .summary__tablesContainer {
@@ -62,15 +62,18 @@ padding-left: 0;
     display: flex;
     justify-content: space-between;
   }
+
   .summary__tableLeft, .summary__tableRight {
     width: 45%;
   }
 }
 
 @include media__bigSize {
+
   .summary__icon1 {
     background-image: url("../../../../asets/IconTshirt@2x.png");
   }
+
   .summary__icon2 {
     background-image: url("../../../../asets/Icon@2x.png");
   }

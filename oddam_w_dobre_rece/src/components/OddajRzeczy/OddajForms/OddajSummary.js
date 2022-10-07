@@ -1,10 +1,10 @@
-import OddajFormTop from "./OddajFormTop";
 import Buttons from "../../Buttons";
 
 const OddajSummary = ({
                           inputsValue, createSummary,
                           handleIncrease, handleDecrease
                       }) => {
+
     const handleSummaryIncrease = () => {
         handleIncrease();
         createSummary()
@@ -38,11 +38,13 @@ const OddajSummary = ({
 
                 <div className="summary__tablesContainer">
                 <table className="summary__tableLeft">
+
                     <thead>
                     <tr>
                         <td className='summary__thead'>adres odbioru</td>
                     </tr>
                     </thead>
+
                     <tbody>
                     <tr>
                         <td className='summary__td'> ulica:</td>
@@ -65,11 +67,13 @@ const OddajSummary = ({
                 </table>
 
                 <table className="summary__tableRight">
+
                     <thead>
                     <tr>
                         <td className='summary__thead'>termin odbioru</td>
                     </tr>
                     </thead>
+
                     <tbody>
                     <tr>
                         <td className='summary__td'> data:</td>
@@ -84,13 +88,12 @@ const OddajSummary = ({
                         <td className='summary__td'>{inputsValue.note}</td>
                     </tr>
                     </tbody>
+
                 </table>
         </div>
 
-                <Buttons
-                    handleDecrease = {handleDecrease}
-                    handleIncrease = {handleSummaryIncrease}
-                />
+                <Buttons handleDecrease = {handleDecrease}
+                    handleIncrease = {handleSummaryIncrease}/>
 
             </section>
         </div>

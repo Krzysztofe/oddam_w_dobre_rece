@@ -1,6 +1,6 @@
 .wrapper--section-1 {
   display: flex;
-  background-image: url("/asets/3 Columns Background.png");
+  background-image: url("../../../asets/3 Columns Background.png");
 }
 
 .section-1__column {
@@ -46,7 +46,7 @@
 
 @include media__bigSize {
   .wrapper--section-1 {
-    background-image: url("/asets/3 Columns Background@2x.png");
+    background-image: url("../../../asets/3 Columns Background@2x.png");
   }
 }
 

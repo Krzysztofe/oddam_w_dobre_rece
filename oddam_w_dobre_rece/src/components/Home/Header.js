@@ -1,24 +1,26 @@
 import {Link} from "react-router-dom";
-import Title from "../Title";
 import {useAuthState} from "react-firebase-hooks/auth";
 import {auth} from "../FireBaseConfig";
-import HeaderImage from '../../asets/Hero Image@2x.png'
+import HeaderImageSmall from '../../asets/Hero Image.png'
+import HeaderImageLarge from '../../asets/Hero Image@2x.png'
+import Title from "../Title";
 
 const Header = () => {
     const [user] = useAuthState(auth);
+
     return (
         <>
             <div className='headerSpacer' id='start'></div>
             <header className="wrapper wrapper--header">
-                <img src={HeaderImage}
+                <img src={HeaderImageSmall}
                      alt="rzeczy do oddania"
-                     className='header__image'/>
+                     className='header__imageSmall'/>
+                <img src={HeaderImageLarge}
+                     alt="rzeczy do oddania"
+                     className='header__imageSmallLarge'/>
 
                 <aside className='header__right'>
-
-                    <section className="header__container">
-                        <Title
-                            text1={'zacznij pomagać!'}
+                        <Title text1={'zacznij pomagać!'}
                             text2={'oddaj niechciane rzeczy' +
                                 ' w zaufane ręce'}
                             classH2={'header__h2'}/>
@@ -56,7 +58,6 @@ const Header = () => {
                                 </Link>
                             </div>
                         }
-                    </section>
                 </aside>
             </header>
         </>

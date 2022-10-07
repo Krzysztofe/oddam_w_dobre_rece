@@ -68,10 +68,6 @@
     background-color: rgba(0, 0, 0, 0);
   }
 
-  .oddajForm3__checkbox {
-
-  }
-
   .oddajForm3__checkboxStyle {
     padding: 0.5em;
     border: 1px solid $color-grey-normal;
@@ -87,13 +83,11 @@
   .oddajForm3__buttonsContainer {
     justify-content: left;
     column-gap: 1em;
-    //align-self: center ;
     justify-self: flex-end;
   }
 
   .oddajForm3__button {
     background-color: rgba(0, 0, 0, 0);
     border: 1px solid $color-grey-normal;
-
   }
 }

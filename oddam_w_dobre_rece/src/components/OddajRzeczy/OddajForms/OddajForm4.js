@@ -50,7 +50,7 @@ const OddajForm4 = ({
 
                 <div className='form4__inputContainer'>
                     <label className='form4__label'>Data</label>
-                    <input type='number' name='date'
+                    <input type='date' name='date'
                            value={inputsValue.date}
                            onChange={handleChange}
                            className='form4__input'/>
@@ -58,7 +58,7 @@ const OddajForm4 = ({
 
                 <div className='form4__inputContainer'>
                     <label className='form4__label'>Godzina</label>
-                    <input type='number' name='time'
+                    <input type='time' name='time'
                            value={inputsValue.time}
                            onChange={handleChange}
                            className='form4__input'/>
@@ -71,13 +71,10 @@ const OddajForm4 = ({
                         onChange={handleChange}
                         className='form4__textarea'/>
                 </div>
-
             </aside>
 
-            <Buttons
-                handleDecrease = {handleDecrease}
-                handleIncrease = {handleIncrease}
-            />
+            <Buttons handleDecrease = {handleDecrease}
+                handleIncrease = {handleIncrease}/>
 
         </main>
     );
