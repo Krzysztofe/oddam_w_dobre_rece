@@ -7,12 +7,12 @@
 @import "settings/mixins";
 @import 'settings/base';
 
+@import "elements/buttons";
+@import "elements/title";
+
 @import "elements/home/index_home";
 @import "elements/oddaj/index_oddaj";
 
-
-@import "elements/buttons";
-
 @import "elements/login/login";
 @import "elements/login/buttons_login";
-@import "elements/title";
+
