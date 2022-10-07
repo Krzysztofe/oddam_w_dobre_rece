@@ -4,6 +4,7 @@ import {signInWithEmailAndPassword} from 'firebase/auth'
 import {auth} from '../FireBaseConfig';
 import Title from "../Title";
 import ButtonsLogin from "./ButtonsLogin";
+import NavBar from "../Home/NavBar/NavBar";
 
 
 const Login = () => {
@@ -33,6 +34,7 @@ const Login = () => {
 
     return (
         <>
+            <NavBar/>
             <div className='headerSpacer'></div>
             <form onSubmit={handleLogin}
                   className='wrapper wrapper--login'>
