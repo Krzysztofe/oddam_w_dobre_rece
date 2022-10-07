@@ -9,11 +9,11 @@ import ProtectedRouteOddajMain from "./OddajRzeczy/ProtectedRoute";
 function App() {
     return (
     <>
-        <BrowserRouter>
-            {/*<NavBar/>*/}
+        <BrowserRouter basename='/oddam_w_dobre_rece'>
+            <NavBar/>
             <Routes>
-                <Route path='/' element={<Home/>}/>
-                <Route path='/rejestracja' element={<Register/>}/>/
+                <Route exact path='/' element={<Home/>}/>
+                <Route path='/rejestracja' element={<Register/>}/>
                 <Route path='/logowanie' element={<Login/>}/>
                 <Route path='/wylogowano' element={<Logout/>}/>
                 <Route path='/oddaj' element={<ProtectedRouteOddajMain/>}/>
