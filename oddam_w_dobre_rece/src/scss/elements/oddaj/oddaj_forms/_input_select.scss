@@ -24,6 +24,9 @@
   justify-content: space-between;
   border: 1px solid $color-grey-normal;
   margin-bottom: $space-small;
+  &::first-letter {
+    text-transform: uppercase;
+  }
 }
 
 .select__option {

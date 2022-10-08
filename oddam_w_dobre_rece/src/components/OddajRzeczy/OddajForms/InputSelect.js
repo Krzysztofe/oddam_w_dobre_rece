@@ -22,7 +22,7 @@ const InputSelect = ({
 
                 <div onClick={handleOpen}
                      className="select__top">
-                    {inputsValueKey}
+                    {inputsValueKey[0].toUpperCase() + inputsValueKey.slice(1) }
                     <div className={open ? 'select__arrow--up' : 'select__arrow'}> </div>
                 </div>
 

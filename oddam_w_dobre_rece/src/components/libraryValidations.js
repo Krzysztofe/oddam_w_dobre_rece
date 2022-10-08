@@ -15,7 +15,8 @@ export const section_5_FormValidation = (inputValue) => {
     if (_errors.name || _errors.email || _errors.textarea) {
         return _errors
     }
-        return
+        return ""
+
 }
 
 export const registerValidation = (inputValuRregister) => {
@@ -35,7 +36,7 @@ export const registerValidation = (inputValuRregister) => {
     if (_errors.length > 0) {
         return _errors.join(' , ').concat('.')
     }
-        return
+        return ""
 }
 
 export const loginValidation = (inputValueLogin) => {
@@ -51,5 +52,5 @@ export const loginValidation = (inputValueLogin) => {
     if (_errors.length > 0) {
         return _errors.join(' , ').concat('.')
     }
-    return
+    return ""
 }
