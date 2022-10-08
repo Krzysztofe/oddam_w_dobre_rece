@@ -23,7 +23,7 @@ export const registerValidation = (inputValuRregister) => {
     const _errors = []
 
     if (!inputValuRregister.email.includes("@")) {
-        _errors.push('dodaj @')
+        _errors.push('w email dodaj @')
     }
     if (inputValuRregister.password.length < 6) {
         _errors.push('hasło musi mieć conajmniej 6 znaków')
@@ -33,7 +33,7 @@ export const registerValidation = (inputValuRregister) => {
         _errors.push("hasła muszą być takie same")
     }
     if (_errors.length > 0) {
-        return _errors.join(' , ')
+        return _errors.join(' , ').concat('.')
     }
         return
 }
@@ -43,13 +43,13 @@ export const loginValidation = (inputValueLogin) => {
     const _errors = []
 
     if (!inputValueLogin.email.includes("@")) {
-        _errors.push('dodaj @')
+        _errors.push('w email dodaj @')
     }
     if (inputValueLogin.password.length < 6) {
         _errors.push('hasło musi mieć conajmniej 6 znaków')
     }
     if (_errors.length > 0) {
-        return _errors.join(' , ')
+        return _errors.join(' , ').concat('.')
     }
     return
 }

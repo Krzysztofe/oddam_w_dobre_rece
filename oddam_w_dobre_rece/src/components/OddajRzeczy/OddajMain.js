@@ -21,8 +21,8 @@ const OddajMain = () => {
 
     const [inputsValue, setInputsValue] =
         useState({
-            selectStuff: "", selectBags: "--Wybierz--",
-            selectLocalisation: "--Wybierz--", dzieciom: false,
+            selectStuff: "", selectBags: "-- Wybierz --",
+            selectLocalisation: "-- Wybierz --", dzieciom: false,
             matkom: false, bezdomnym: false,
             niepelnosprawnym: false, starszym: false,
             organisationName: "", street: "",
