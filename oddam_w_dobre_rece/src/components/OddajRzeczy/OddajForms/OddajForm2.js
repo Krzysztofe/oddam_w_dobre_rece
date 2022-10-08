@@ -3,7 +3,8 @@ import InputSelect from "./InputSelect";
 
 const OddajForm2 = ({
                         inputsValue, setInputsValue,
-                        handleDecrease, handleIncrease
+                        handleDecrease, handleIncrease,
+                      createSummary
                     }) => {
 
     const propsHandleIncrease = (e) => {
@@ -11,9 +12,11 @@ const OddajForm2 = ({
     }
 
     const propsHandleDecrease = (e) => {
-      typeof handleDecrease === 'function' && handleDecrease(e)
+        typeof handleDecrease === 'function' && handleDecrease(e)
     }
-
+    const handleSelect = (item) => {
+        setInputsValue({...inputsValue, selectBags: item})
+    }
 
     return (
         <>
@@ -21,11 +24,11 @@ const OddajForm2 = ({
 
                 <InputSelect textLabel={'Liczba 60 l. worków:'}
                              array={[1, 2, 3, 4, 5, 6]}
-                             inputsValue={inputsValue}
-                             setInputsValue={setInputsValue}/>
+                             inputsValueKey={inputsValue.selectBags}
+                             handleSelect={handleSelect}/>
 
                 <Buttons handleDecrease={propsHandleDecrease}
-                    handleIncrease={propsHandleIncrease}/>
+                         handleIncrease={propsHandleIncrease}/>
 
             </main>
         </>

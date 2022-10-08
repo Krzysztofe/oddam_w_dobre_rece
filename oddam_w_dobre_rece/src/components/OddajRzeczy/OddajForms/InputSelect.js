@@ -2,17 +2,13 @@ import {useState} from "react";
 
 const InputSelect = ({
                          array, textLabel,
-                         inputsValue, setInputsValue
+                         inputsValueKey, handleSelect
                      }) => {
 
     const [open, setOpen] = useState(false)
 
     const handleOpen = () => {
         setOpen(state => !state)
-    }
-
-    const handleSelect = (item) => {
-        setInputsValue({...inputsValue, selectBags: item})
     }
 
     return (
@@ -26,7 +22,7 @@ const InputSelect = ({
 
                 <div onClick={handleOpen}
                      className="select__top">
-                    {inputsValue.selectBags}
+                    {inputsValueKey}
                     <div className={open ? 'select__arrow--up' : 'select__arrow'}> </div>
                 </div>
 

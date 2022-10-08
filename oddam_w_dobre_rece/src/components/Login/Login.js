@@ -4,6 +4,7 @@ import {signInWithEmailAndPassword} from 'firebase/auth'
 import {auth} from '../FireBaseConfig';
 import Title from "../Title";
 import ButtonsLogin from "./ButtonsLogin";
+import {loginValidation} from "../libraryValidations";
 
 
 const Login = () => {
@@ -11,7 +12,7 @@ const Login = () => {
     const navigate = useNavigate()
     const [inputValueLogin, setInputValueLogin] =
         useState({email: "", password: ""})
-    const [error, setError] = useState('')
+    const [errors, setErrors] = useState('')
 
     const handleChange = (e) => {
         setInputValueLogin({
@@ -22,13 +23,18 @@ const Login = () => {
 
     const handleLogin = (e) => {
         e.preventDefault()
+        setErrors(loginValidation(inputValueLogin))
+        if(loginValidation(inputValueLogin).length > 0){
+            return
+        }
+
         signInWithEmailAndPassword(
             auth,
             inputValueLogin.email,
             inputValueLogin.password
         )
             .then(() => navigate('/'))
-            .catch(error => setError(error.code))
+            .catch(error => setErrors(error.code))
     }
 
     return (
@@ -47,7 +53,7 @@ const Login = () => {
                     <label className='login__label'>
                         Email
                         <input
-                            type='email' name='email'
+                            type='text' name='email'
                             value={inputValueLogin.email}
                             onChange={handleChange}
                             className='login__input'/>
@@ -63,7 +69,7 @@ const Login = () => {
                     </label>
                 </div>
 
-                <h2>{error}</h2>
+                <p className='login__errors'>{errors}</p>
 
                 <ButtonsLogin link={'/rejestracja'}
                     btnRight={'załuż konto'}

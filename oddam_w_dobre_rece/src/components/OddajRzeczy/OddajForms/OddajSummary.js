@@ -4,22 +4,21 @@ const OddajSummary = ({
                           inputsValue, createSummary,
                           handleIncrease, handleDecrease
                       }) => {
-    const propsCreateSummary = (e) => {
-        typeof createSummary === 'function' && createSummary(e)
-    }
-
-    const propsHandleIncrease = (e) => {
-        typeof handleIncrease === 'function' && handleIncrease(e)
-    }
-
-    const propsHandleDecrease = (e) => {
-        typeof handleDecrease === 'function' && handleDecrease(e)
-    }
-
+    // const propsCreateSummary = (e) => {
+    //     typeof createSummary === 'function' && createSummary(e)
+    // }
 
     const handleSummaryIncrease = () => {
         handleIncrease();
         createSummary()
+    }
+
+    // const propsHandleIncrease = (e) => {
+    //     typeof handleIncrease === 'function' && handleIncrease(e)
+    // }
+
+    const propsHandleDecrease = (e) => {
+        typeof handleDecrease === 'function' && handleDecrease(e)
     }
 
     return (
@@ -105,8 +104,7 @@ const OddajSummary = ({
                     </div>
 
                     <Buttons handleDecrease={propsHandleDecrease}
-                             handleIncrease={propsHandleIncrease}
-                             createSummary={propsCreateSummary}/>
+                             handleIncrease={handleSummaryIncrease}/>
                 </section>
             </div>
         </>

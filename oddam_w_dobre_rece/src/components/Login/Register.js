@@ -4,32 +4,39 @@ import {auth} from '../FireBaseConfig'
 import {useNavigate} from 'react-router'
 import Title from "../Title";
 import ButtonsLogin from "./ButtonsLogin";
+import {registerValidation} from '../libraryValidations'
 
 const Register = () => {
 
     const navigate = useNavigate()
-    const [inputValuRregister, setInputValueRegister] = useState({
+    const [inputValueRregister, setInputValueRegister] = useState({
             email: '',
             password: '',
             passwordRepeated: ''
         })
-    const [error, setError] = useState("")
+    const [errors, setErrors] = useState([])
 
     const handleChange = (e) => {
         e.preventDefault()
         setInputValueRegister({
-            ...inputValuRregister,
+            ...inputValueRregister,
             [e.target.name]: e.target.value
         })
     }
 
     const handleRegister = (e) => {
         e.preventDefault()
+        setErrors(registerValidation(inputValueRregister))
+
+        if (registerValidation(inputValueRregister).length > 0){
+            return
+        }
+
         createUserWithEmailAndPassword(auth,
-            inputValuRregister.email,
-            inputValuRregister.password)
+            inputValueRregister.email,
+            inputValueRregister.password)
             .then(() => navigate('/'))
-            .catch(error => setError(error.code))
+            .catch(error => setErrors(error.code))
     }
 
     return (
@@ -49,7 +56,7 @@ const Register = () => {
                     <label className='login__label'>
                         Email
                         <input type='email' name='email'
-                               value={inputValuRregister.email}
+                               value={inputValueRregister.email}
                                onChange={handleChange}
                                className='login__input'/>
                     </label>
@@ -57,7 +64,7 @@ const Register = () => {
                     <label className='login__label'>
                         Haslo
                         <input type='password' name='password'
-                               value={inputValuRregister.password}
+                               value={inputValueRregister.password}
                                onChange={handleChange}
                                className='login__input'/>
                     </label>
@@ -65,14 +72,14 @@ const Register = () => {
                     <label className='login__label'>
                         Powtórz haslo
                         <input type='password' name='passwordRepeated'
-                               value={inputValuRregister.passwordRepeated}
+                               value={inputValueRregister.passwordRepeated}
                                onChange={handleChange}
                                className='login__input'/>
                     </label>
 
                 </div>
 
-                <p>{error}</p>
+                <p className='login__errors'>{errors}</p>
 
                 <ButtonsLogin link={'/logowanie'}
                               btnRight={'zaloguj się'}

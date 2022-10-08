@@ -139,10 +139,12 @@ const OddajMain = () => {
 
                         <OddajForm2 inputsValue={inputsValue}
                                     setInputsValue={setInputsValue}
+                                    inputsValueKey={inputsValue.selectBags}
                                     handleChange={handleChange}
                                     counter={counter}
                                     handleIncrease={handleIncrease}
-                                    handleDecrease={handleDecrease}/>
+                                    handleDecrease={handleDecrease}
+                                    createSummary={createSummary}/>
 
                     </main>
                 </>

@@ -17,7 +17,9 @@ const OddajForm3 = ({
     const propsHandleDecrease = (e) => {
         typeof handleDecrease === 'function' && handleDecrease(e)
     }
-
+    const handleSelect = (item) => {
+        setInputsValue({...inputsValue,selectLocalisation: item})
+    }
 
     return (
         <>
@@ -25,8 +27,8 @@ const OddajForm3 = ({
 
                 <InputSelect textLabel={''}
                              array={['poznań', 'warszawa', 'kraków', 'katowice']}
-                             inputsValue={inputsValue}
-                             setInputsValue={setInputsValue}/>
+                             inputsValueKey={inputsValue.selectLocalisation}
+                             handleSelect={handleSelect}/>
 
                 <h3 className='oddajForm3__h3'>komu chcesz pomóc?</h3>
 
