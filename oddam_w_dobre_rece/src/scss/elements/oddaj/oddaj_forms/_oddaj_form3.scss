@@ -33,6 +33,9 @@
   cursor: pointer;
   text-align: center;
   padding: 0.5em 0;
+  &:first-letter{
+    text-transform: uppercase;
+  }
 }
 
 .oddajForm3__checkbox:checked + .oddajForm3__checkboxStyle {

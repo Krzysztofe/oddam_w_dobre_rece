@@ -10,6 +10,9 @@ padding: $space-large $space-large*2;
   &:first-letter{
     text-transform: uppercase;
   }
+  &:hover{
+    border: 1px solid $color-yellow;
+  }
 }
 
 @include media{

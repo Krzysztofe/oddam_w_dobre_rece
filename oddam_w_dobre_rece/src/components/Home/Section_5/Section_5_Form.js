@@ -2,11 +2,16 @@ import {useState} from "react";
 import {section_5_FormValidation} from '../../libraryValidations'
 
 const ContactForm = () => {
-    const [inputValue, setInputValue] = useState(
-        {name: "", email: "", textarea: ""})
-    const [errors, setErrors] = useState(
-        {name: "", email: "", textarea: ""}
-    )
+    const [inputValue, setInputValue] = useState({
+        name: "",
+        email: "",
+        textarea: ""
+    })
+    const [errors, setErrors] = useState({
+        name: "",
+        email: "",
+        textarea: ""
+    })
     const [formDatas, setFormDatas] = useState([])
 
     const handleChange = (e) => {
@@ -18,13 +23,19 @@ const ContactForm = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault()
+
         setErrors(section_5_FormValidation(inputValue))
+
         if (section_5_FormValidation(inputValue) !== '') {
             return
         }
 
         setFormDatas([...formDatas, inputValue])
-        setInputValue({name: "", email: "", textarea: ""})
+        setInputValue({
+            name: "",
+            email: "",
+            textarea: ""
+        })
     }
 
     return (

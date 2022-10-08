@@ -1,24 +1,32 @@
 import Buttons from "../../Buttons";
+import InputSelect from "./InputSelect";
 
 const OddajForm3 = ({
-                        handleChange, inputsValue,
+                        handleChange, inputsValue, setInputsValue,
                         handleIncrease, handleDecrease
                     }) => {
+
+    const propsHandleChange = (e) => {
+        typeof handleChange === 'function' && handleChange(e)
+    }
+
+    const propsHandleIncrease = (e) => {
+        typeof handleIncrease === 'function' && handleIncrease(e)
+    }
+
+    const propsHandleDecrease = (e) => {
+        typeof handleDecrease === 'function' && handleDecrease(e)
+    }
+
+
     return (
         <>
             <main className='oddajForm__inputs'>
 
-                <select name='selectLocalisation'
-                    value={inputsValue.selectLocalisation}
-                    onChange={handleChange}
-                    className='oddajForm3__select'>
-
-                    <option value='wybierz'>wybierz</option>
-                    <option value='Poznań'>poznań</option>
-                    <option value='Warszawa'>warszawa</option>
-                    <option value='Kraków'>kraków</option>
-                    <option value='Wrocław'>wrocław</option>
-                </select>
+                <InputSelect textLabel={''}
+                             array={['poznań', 'warszawa', 'kraków', 'katowice']}
+                             inputsValue={inputsValue}
+                             setInputsValue={setInputsValue}/>
 
                 <h3 className='oddajForm3__h3'>komu chcesz pomóc?</h3>
 
@@ -28,7 +36,7 @@ const OddajForm3 = ({
                         <input type='checkbox' name='dzieciom'
                                value={inputsValue.dzieciom}
                                checked={inputsValue.dzieciom}
-                               onChange={handleChange}
+                               onChange={propsHandleChange}
                                className='oddajForm3__checkbox'/>
                         <div className='oddajForm3__checkboxStyle'> dzieciom</div>
                     </label>
@@ -37,7 +45,7 @@ const OddajForm3 = ({
                         <input type='checkbox' name='matkom'
                                value={inputsValue.matkom}
                                checked={inputsValue.matkom}
-                               onChange={handleChange}
+                               onChange={propsHandleChange}
                                className='oddajForm3__checkbox'/>
                         <div className='oddajForm3__checkboxStyle'> samotnym matkom </div>
                     </label>
@@ -46,7 +54,7 @@ const OddajForm3 = ({
                         <input type='checkbox' name='bezdomnym'
                                value={inputsValue.bezdomnym}
                                checked={inputsValue.bezdomnym}
-                               onChange={handleChange}
+                               onChange={propsHandleChange}
                                className='oddajForm3__checkbox'/>
                         <div className='oddajForm3__checkboxStyle'> bezdomnym </div>
                     </label>
@@ -55,7 +63,7 @@ const OddajForm3 = ({
                         <input type='checkbox' name='niepelnosprawnym'
                                value={inputsValue.niepelnosprawnym}
                                checked={inputsValue.niepelnosprawnym}
-                               onChange={handleChange}
+                               onChange={propsHandleChange}
                                className='oddajForm3__checkbox'/>
                         <div className='oddajForm3__checkboxStyle'> niepełnosprawnym </div>
                     </label>
@@ -64,7 +72,7 @@ const OddajForm3 = ({
                         <input type='checkbox' name='starszym'
                                value={inputsValue.starszym}
                                checked={inputsValue.starszym}
-                               onChange={handleChange}
+                               onChange={propsHandleChange}
                                className='oddajForm3__checkbox'/>
                         <div className='oddajForm3__checkboxStyle'> osobom starszym </div>
                     </label>
@@ -78,11 +86,11 @@ const OddajForm3 = ({
                     <input type='text'
                            name='organisationName'
                            value={inputsValue.organisationName}
-                           onChange={handleChange}
+                           onChange={propsHandleChange}
                            className='oddajForm3__textInput'/>
 
-                <Buttons handleDecrease={handleDecrease}
-                    handleIncrease = {handleIncrease}/>
+                <Buttons handleDecrease={propsHandleDecrease}
+                    handleIncrease = {propsHandleIncrease}/>
 
             </main>
         </>

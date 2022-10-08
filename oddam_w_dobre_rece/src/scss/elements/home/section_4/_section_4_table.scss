@@ -1,3 +1,7 @@
+.paginationContainer{
+  display: none;
+}
+
 .section-4__table {
   border-bottom: 1px solid $color-grey-normal;
   width: 100%;
@@ -53,4 +57,11 @@
 
 .paginationButton__previousNext {
   clip-path: circle(0);
+}
+
+@include media{
+
+  .paginationContainer{
+    display: block;
+  }
 }

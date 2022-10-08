@@ -1,5 +1,6 @@
 import Title from "../../Title";
 import Square from "./Square";
+import InputSelect from "../OddajForms/InputSelect";
 
 const OddajHeader = ({counter}) => {
 

@@ -44,6 +44,9 @@
 }
 .btn--section-2 {
 width: 100%;
+  &:hover{
+    border: 1px solid $color-yellow;
+  }
 }
 
 @include media {

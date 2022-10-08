@@ -3,6 +3,15 @@ const OddajForm1 = ({
                         handleChange,
                         handleIncrease
                     }) => {
+
+    const propsHandleChange = (e) => {
+      typeof handleChange === 'function' && handleChange(e)
+    }
+
+    const propsHandleIncrease = (e) => {
+      typeof handleIncrease === 'function' && handleIncrease(e)
+    }
+
     return (
         <>
             <main className='oddajForm__inputs'>
@@ -12,7 +21,7 @@ const OddajForm1 = ({
                            value=', ubrania, które nadają się do ponownego użycia'
                            checked={inputsValue.selectStuff ===
                                ', ubrania, które nadają się do ponownego użycia'}
-                           onChange={handleChange}
+                           onChange={propsHandleChange}
                            className='oddajForm1__radio'/>
                     <label className='oddajForm1__label'>
                         Ubrania, które nadają się do ponownego użycia
@@ -24,7 +33,7 @@ const OddajForm1 = ({
                            value=', ubrania do wyrzucenia'
                            checked={inputsValue.selectStuff ===
                                ', ubrania do wyrzucenia'}
-                           onChange={handleChange}
+                           onChange={propsHandleChange}
                            className='oddajForm1__radio'/>
                     <label className='oddajForm1__label'>
                         Ubrania, do wyrzucenia
@@ -36,7 +45,7 @@ const OddajForm1 = ({
                            value=', zabawki'
                            checked={inputsValue.selectStuff ===
                                ', zabawki'}
-                           onChange={handleChange}
+                           onChange={propsHandleChange}
                            className='oddajForm1__radio'/>
                     <label className='oddajForm1__label'>
                         Zabawki
@@ -48,7 +57,7 @@ const OddajForm1 = ({
                            value=', książki'
                            checked={inputsValue.selectStuff ===
                                ', książki'}
-                           onChange={handleChange}
+                           onChange={propsHandleChange}
                            className='oddajForm1__radio'/>
                     <label className='oddajForm1__label'>
                         Książki
@@ -60,7 +69,7 @@ const OddajForm1 = ({
                            value=', inne,'
                            checked={inputsValue.selectStuff ===
                                ', inne,'}
-                           onChange={handleChange}
+                           onChange={propsHandleChange}
                            className='oddajForm1__radio'/>
                     <label className='oddajForm1__label'>
                         Inne
@@ -68,7 +77,7 @@ const OddajForm1 = ({
                 </div>
 
                 <div className="formButtons">
-                    <button onClick={handleIncrease}
+                    <button onClick={propsHandleIncrease}
                             className='formButton'>
                         dalej
                     </button>

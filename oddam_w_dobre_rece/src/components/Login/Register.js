@@ -8,9 +8,11 @@ import ButtonsLogin from "./ButtonsLogin";
 const Register = () => {
 
     const navigate = useNavigate()
-    const [inputValuRregister, setInputValueRegister] =
-        useState({email: '', password: '', passwordRepeated: ''})
-
+    const [inputValuRregister, setInputValueRegister] = useState({
+            email: '',
+            password: '',
+            passwordRepeated: ''
+        })
     const [error, setError] = useState("")
 
     const handleChange = (e) => {
@@ -62,7 +64,7 @@ const Register = () => {
 
                     <label className='login__label'>
                         Powtórz haslo
-                        <input type='password' name='passwordRepited'
+                        <input type='password' name='passwordRepeated'
                                value={inputValuRregister.passwordRepeated}
                                onChange={handleChange}
                                className='login__input'/>

@@ -1,17 +1,4 @@
-.oddajForm2__label {
-  display: flex;
-  gap: 3vw;
-  font-weight: $semiBold;
-  margin-top: 2em;
 
-  &:first-letter {
-    text-transform: uppercase;
-  }
-}
-
-.oddajForm2__select {
-  width: clamp(120px, 40%, 200px)
-}
 
 @include media {
   .oddajForm2__inputs {

@@ -1,4 +1,4 @@
-const Buttons = ({handleDecrease, handleIncrease}) => {
+const Buttons = ({handleDecrease, handleIncrease, createSummary}) => {
     return (
 
             <div className="formButtons">
@@ -6,7 +6,7 @@ const Buttons = ({handleDecrease, handleIncrease}) => {
                         className='formButton'>
                     wstecz
                 </button>
-                <button onClick={handleIncrease}
+                <button onClick={e => {handleIncrease(); createSummary()}}
                         className='formButton oddajForm__button--form2'>
                     dalej
                 </button>

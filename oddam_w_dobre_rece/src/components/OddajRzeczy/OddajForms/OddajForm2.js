@@ -1,31 +1,31 @@
 import Buttons from "../../Buttons";
+import InputSelect from "./InputSelect";
 
 const OddajForm2 = ({
-                        inputsValue, handleChange,
+                        inputsValue, setInputsValue,
                         handleDecrease, handleIncrease
                     }) => {
+
+    const propsHandleIncrease = (e) => {
+        typeof handleIncrease === 'function' && handleIncrease(e)
+    }
+
+    const propsHandleDecrease = (e) => {
+      typeof handleDecrease === 'function' && handleDecrease(e)
+    }
+
+
     return (
         <>
             <main className='oddajForm__inputs'>
-                <label className='oddajForm2__label'>
-                    Liczba 60l worków:
 
-                    <select name='selectBags'
-                            value={inputsValue.selectBags}
-                            onChange={handleChange}
-                            className="oddajForm2__select">
+                <InputSelect textLabel={'Liczba 60 l. worków:'}
+                             array={[1, 2, 3, 4, 5, 6]}
+                             inputsValue={inputsValue}
+                             setInputsValue={setInputsValue}/>
 
-                        <option value=''> wybierz</option>
-                        <option value='1'> 1</option>
-                        <option value='2'> 2</option>
-                        <option value='3'> 3</option>
-                        <option value='4'> 4</option>
-                        <option value='5'> 5</option>
-                    </select>
-                </label>
-
-                <Buttons handleDecrease={handleDecrease}
-                    handleIncrease={handleIncrease}/>
+                <Buttons handleDecrease={propsHandleDecrease}
+                    handleIncrease={propsHandleIncrease}/>
 
             </main>
         </>

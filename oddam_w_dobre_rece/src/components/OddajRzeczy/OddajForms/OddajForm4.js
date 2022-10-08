@@ -4,6 +4,20 @@ const OddajForm4 = ({
                         inputsValue, handleChange,
                         handleIncrease, handleDecrease
                     }) => {
+
+    const propsHandleChange = (e) => {
+        typeof handleChange === 'function' && handleChange(e)
+    }
+
+    const propsHandleIncrease = (e) => {
+        typeof handleIncrease === 'function' && handleIncrease(e)
+    }
+
+    const propsHandleDecrease = (e) => {
+        typeof handleDecrease === 'function' && handleDecrease(e)
+    }
+
+
     return (
         <main className='oddajForm__inputs'>
 
@@ -14,7 +28,7 @@ const OddajForm4 = ({
                     <label className='form4__label'>Ulica</label>
                     <input type='text' name='street'
                            value={inputsValue.street}
-                           onChange={handleChange}
+                           onChange={propsHandleChange}
                            className='form4__input'/>
                 </div>
 
@@ -22,7 +36,7 @@ const OddajForm4 = ({
                     <label className='form4__label'>Miasto</label>
                     <input type='text' name='city'
                            value={inputsValue.city}
-                           onChange={handleChange}
+                           onChange={propsHandleChange}
                            className='form4__input'/>
                 </div>
 
@@ -30,7 +44,7 @@ const OddajForm4 = ({
                     <label className='form4__label'>Kod poczotowy</label>
                     <input type='text' name='postCode'
                            value={inputsValue.postCode}
-                           onChange={handleChange}
+                           onChange={propsHandleChange}
                            className='form4__input'/>
                 </div>
 
@@ -38,11 +52,10 @@ const OddajForm4 = ({
                     <label className='form4__label'>Numer telefonu</label>
                     <input type='number' name='phone'
                            value={inputsValue.phone}
-                           onChange={handleChange}
+                           onChange={propsHandleChange}
                            className='form4__input'/>
                 </div>
             </aside>
-
 
 
             <aside className="form4__rightContainer">
@@ -52,7 +65,7 @@ const OddajForm4 = ({
                     <label className='form4__label'>Data</label>
                     <input type='date' name='date'
                            value={inputsValue.date}
-                           onChange={handleChange}
+                           onChange={propsHandleChange}
                            className='form4__input'/>
                 </div>
 
@@ -60,21 +73,21 @@ const OddajForm4 = ({
                     <label className='form4__label'>Godzina</label>
                     <input type='time' name='time'
                            value={inputsValue.time}
-                           onChange={handleChange}
+                           onChange={propsHandleChange}
                            className='form4__input'/>
                 </div>
 
                 <div className='form4__inputContainer'>
                     <label className='form4__label'>Uwagi dla kuriera</label>
                     <textarea rows='2' name='note'
-                        value={inputsValue.note}
-                        onChange={handleChange}
-                        className='form4__textarea'/>
+                              value={inputsValue.note}
+                              onChange={propsHandleChange}
+                              className='form4__textarea'/>
                 </div>
             </aside>
 
-            <Buttons handleDecrease = {handleDecrease}
-                handleIncrease = {handleIncrease}/>
+            <Buttons handleDecrease={propsHandleDecrease}
+                     handleIncrease={propsHandleIncrease}/>
 
         </main>
     );

@@ -21,8 +21,8 @@ const OddajMain = () => {
 
     const [inputsValue, setInputsValue] =
         useState({
-            selectStuff: "", selectBags: "",
-            selectLocalisation: "", dzieciom: false,
+            selectStuff: "", selectBags: "--Wybierz--",
+            selectLocalisation: "--Wybierz--", dzieciom: false,
             matkom: false, bezdomnym: false,
             niepelnosprawnym: false, starszym: false,
             organisationName: "", street: "",
@@ -113,7 +113,7 @@ const OddajMain = () => {
                     <main className="wrapper wrapper--oddajMain">
 
                         <OddajFormTop step={'krok 1/4'}
-                            text={'zaznacz co chcesz oddać:'}/>
+                                      text={'zaznacz co chcesz oddać:'}/>
 
                         <OddajForm1
                             inputsValue={inputsValue}
@@ -127,21 +127,22 @@ const OddajMain = () => {
             {counter === 2 &&
                 <>
                     <OddajBelt text={'Wszytie rzeczy do oddania ' +
-                            'zapakuj w 60l worki. Dokładną' +
-                            ' instrukcję jak poprawnie spakować' +
-                            ' rzczy znajdziesz TUTAJ '}/>
+                        'zapakuj w 60l worki. Dokładną' +
+                        ' instrukcję jak poprawnie spakować' +
+                        ' rzczy znajdziesz TUTAJ '}/>
 
                     <main className="wrapper wrapper--oddajMain">
 
                         <OddajFormTop step={'krok 2/4'}
-                            text={'podaj liczbę 60l worków,' +
-                                ' w które spkowałeś/aś rzeczy:'}/>
+                                      text={'podaj liczbę 60 l. worków,' +
+                                          ' w które spkowałeś/aś rzeczy:'}/>
 
                         <OddajForm2 inputsValue={inputsValue}
-                            handleChange={handleChange}
-                            counter={counter}
-                            handleIncrease={handleIncrease}
-                            handleDecrease={handleDecrease}/>
+                                    setInputsValue={setInputsValue}
+                                    handleChange={handleChange}
+                                    counter={counter}
+                                    handleIncrease={handleIncrease}
+                                    handleDecrease={handleDecrease}/>
 
                     </main>
                 </>
@@ -157,13 +158,14 @@ const OddajMain = () => {
                     <main className="wrapper wrapper--oddajMain">
 
                         <OddajFormTop step={'krok 3/4'}
-                            text={'lokalizacja:'}/>
+                                      text={'lokalizacja:'}/>
 
                         <OddajForm3 inputsValue={inputsValue}
-                            handleChange={handleChange}
-                            counter={counter}
-                            handleIncrease={handleIncrease}
-                            handleDecrease={handleDecrease}/>
+                                    setInputsValue={setInputsValue}
+                                    handleChange={handleChange}
+                                    counter={counter}
+                                    handleIncrease={handleIncrease}
+                                    handleDecrease={handleDecrease}/>
 
                     </main>
                 </>
@@ -176,14 +178,14 @@ const OddajMain = () => {
                     <main className="wrapper wrapper--oddajMain">
 
                         <OddajFormTop step={'krok 4/4'}
-                            text={'podaj adres oraz termin ' +
-                                'odbioru rzeczy przez kuriera:'}/>
+                                      text={'podaj adres oraz termin ' +
+                                          'odbioru rzeczy przez kuriera:'}/>
 
                         <OddajForm4 inputsValue={inputsValue}
-                            handleChange={handleChange}
-                            counter={counter}
-                            handleIncrease={handleIncrease}
-                            handleDecrease={handleDecrease}/>
+                                    handleChange={handleChange}
+                                    counter={counter}
+                                    handleIncrease={handleIncrease}
+                                    handleDecrease={handleDecrease}/>
 
                     </main>
                 </>
@@ -193,16 +195,16 @@ const OddajMain = () => {
                 <>
                     <main className="wrapper wrapper--oddajMain">
 
-                        <div className="belt__empty"> </div>
+                        <div className="belt__empty"></div>
 
                         <OddajFormTop step={' i '}
-                            text={'podsumowanie twojej darowizny'}/>
+                                      text={'podsumowanie twojej darowizny'}/>
 
                         <OddajSummary createSummary={createSummary}
-                            inputsValue={inputsValue}
-                            counter={counter}
-                            handleIncrease={handleIncrease}
-                            handleDecrease={handleDecrease}/>
+                                      inputsValue={inputsValue}
+                                      counter={counter}
+                                      handleIncrease={handleIncrease}
+                                      handleDecrease={handleDecrease}/>
 
                     </main>
                 </>
@@ -211,11 +213,11 @@ const OddajMain = () => {
             {counter === 6 &&
                 <main className="wrapper wrapper--oddajMain">
 
-                    <div className="belt__empty"> </div>
+                    <div className="belt__empty"></div>
 
-                    <OddajFormTop step={' i '} text={''} />
+                    <OddajFormTop step={' i '} text={''}/>
 
-                    <OddajThanx />
+                    <OddajThanx/>
                 </main>}
             <Section_5/>
             <Footer/>

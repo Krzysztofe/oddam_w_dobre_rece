@@ -1,11 +1,9 @@
 import {Link} from "react-router-dom";
 import Title from "../Title";
-import NavBar from "../Home/NavBar/NavBar";
 
 const Logout = () => {
     return (
         <>
-            <NavBar/>
             <div className='headerSpacer'></div>
             <main className='wrapper wrapper--login'>
                 <Title text1={'wylogowanie nastąpiło '}

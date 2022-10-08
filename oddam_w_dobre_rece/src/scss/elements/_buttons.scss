@@ -12,6 +12,9 @@
   &:first-letter{
     text-transform: uppercase;
   }
+  &:hover{
+    border: 1px solid $color-yellow;
+  }
 }
 @include media{
   .formButtons{

@@ -12,10 +12,7 @@ export const section_5_FormValidation = (inputValue) => {
         _errors.textarea = 'wiadomość minimum dwa znaki'
     }
 
-    if (_errors.name.length > 0 ||
-        _errors.email.length > 0 ||
-        _errors.textarea.length > 0
-    ){
+    if (_errors.name || _errors.email || _errors.textarea){
         return _errors
     } else {
         return ''
