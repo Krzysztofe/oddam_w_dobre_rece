@@ -20,4 +20,4 @@
 * JSON server 
 * React: react-router, react-router-dom, react-firebase-hooks/auth, react-router-hash-link, react-paginate
 
-## See this project <a href="https://krzysztofe.github.io/oddaj_w_dobre_rece/">here<a>
+## See this project <a href="https://krzysztofe.github.io/oddam_w_dobre_rece/">here<a>
