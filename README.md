@@ -10,8 +10,7 @@
 * React Scroll 
 * Pagination 
   
-## Technologies 
-* HTML 
+## Technologies  
 * SCSS 
 * RWD 
 * JS 
