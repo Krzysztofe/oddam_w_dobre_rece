@@ -18,6 +18,7 @@
 * Firebase 
 * JSON server 
 * React: react-router, react-router-dom, react-firebase-hooks/auth, react-router-hash-link, react-paginate, framer-motion
+* Context API
 
 ## See this project <a href="https://krzysztofe.github.io/oddam_w_dobre_rece/">here -><a>
 
