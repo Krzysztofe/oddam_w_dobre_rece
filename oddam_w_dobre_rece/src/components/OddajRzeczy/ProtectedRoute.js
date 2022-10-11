@@ -3,9 +3,9 @@ import {auth} from "../FireBaseConfig";
 import {Link} from "react-router-dom";
 import OddajMain from "./OddajMain";
 import Title from "../Title";
+import GlobalContextProv from "./Context/GlobalContextProv";
 
-
-const ProtectedRouteOddajMain  = () => {
+const ProtectedRouteOddajMain = () => {
     const [user] = useAuthState(auth);
 
     if (!user?.email) {

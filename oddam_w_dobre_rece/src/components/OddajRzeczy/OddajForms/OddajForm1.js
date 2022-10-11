@@ -1,8 +1,11 @@
-const OddajForm1 = ({
-                        inputsValue,
-                        handleChange,
-                        handleIncrease
-                    }) => {
+import React, {useContext} from 'react';
+import {GlobalContext} from "../Context/GlobalContextProv";
+
+
+const OddajForm1 = () => {
+
+
+    const {inputsValue, handleChange, handleIncrease} = useContext(GlobalContext)
 
     const propsHandleChange = (e) => {
       typeof handleChange === 'function' && handleChange(e)
@@ -15,7 +18,6 @@ const OddajForm1 = ({
     return (
         <>
             <main className='oddajForm__inputs'>
-
                 <div className="oddajForm1__input">
                     <input type='radio' name='selectStuff'
                            value=', ubrania, które nadają się do ponownego użycia'
@@ -77,7 +79,7 @@ const OddajForm1 = ({
                 </div>
 
                 <div className="formButtons">
-                    <button onClick={propsHandleIncrease}
+                    <button onClick={handleIncrease}
                             className='formButton'>
                         dalej
                     </button>

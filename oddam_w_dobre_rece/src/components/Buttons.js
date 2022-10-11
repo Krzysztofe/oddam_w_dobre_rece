@@ -1,15 +1,29 @@
-const Buttons = ({handleDecrease, handleIncrease}) => {
+import {useContext} from "react";
+import {GlobalContext} from "./OddajRzeczy/Context/GlobalContextProv";
+
+const Buttons = () => {
+
+    const {handleDecrease, handleIncrease, counter, createSummary} = useContext(GlobalContext)
+
+    const increaseAndSummary = () =>{
+        createSummary()
+        handleIncrease()
+    }
+
     return (
-        <div className="formButtons">
-            <button onClick={handleDecrease}
-                    className='formButton'>
-                wstecz
-            </button>
-            <button onClick={handleIncrease}
-                    className='formButton oddajForm__button--form2'>
-                dalej
-            </button>
-        </div>
+                    <div className="formButtons">
+
+                        <button onClick={handleDecrease}
+                                className='formButton'>
+                            wstecz
+                        </button>
+
+                        <button onClick={counter === 5 ? increaseAndSummary : handleIncrease}
+                                className='formButton'>
+                         dalej
+                        </button>
+
+                    </div>
     );
 };
 

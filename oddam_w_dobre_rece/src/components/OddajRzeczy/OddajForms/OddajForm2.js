@@ -1,11 +1,12 @@
+
+import {useContext} from "react";
 import Buttons from "../../Buttons";
 import InputSelect from "./InputSelect";
+import {GlobalContext} from "../Context/GlobalContextProv";
 
-const OddajForm2 = ({
-                        inputsValue, setInputsValue,
-                        handleDecrease, handleIncrease,
-                      createSummary
-                    }) => {
+const OddajForm2 = () => {
+
+    const {inputsValue, setInputsValue, handleDecrease, handleIncrease} = useContext(GlobalContext)
 
     const propsHandleIncrease = (e) => {
         typeof handleIncrease === 'function' && handleIncrease(e)
@@ -27,8 +28,7 @@ const OddajForm2 = ({
                              inputsValueKey={inputsValue.selectBags}
                              handleSelect={handleSelect}/>
 
-                <Buttons handleDecrease={propsHandleDecrease}
-                         handleIncrease={propsHandleIncrease}/>
+                <Buttons/>
 
             </main>
         </>

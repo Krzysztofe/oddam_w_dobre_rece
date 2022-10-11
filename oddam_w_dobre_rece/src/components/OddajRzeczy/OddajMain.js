@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, {useContext, useState} from "react";
 import {collection, getDocs, addDoc} from "firebase/firestore";
 import {auth, db} from "../FireBaseConfig";
 import {useAuthState} from "react-firebase-hooks/auth";
@@ -15,46 +15,36 @@ import OddajSummary from "./OddajForms/OddajSummary";
 import OddajThanx from "./OddajForms/OddajThanx";
 import Section_5 from "../Home/Section_5/Section_5";
 import Footer from "../Home/Footer";
+import GlobalContextProv, {GlobalContext} from "./Context/GlobalContextProv";
 
 const OddajMain = () => {
-    const [user, loading, error] = useAuthState(auth);
+    // const [user, loading, error] = useAuthState(auth);
+    //
+    // const [inputsValue, setInputsValue] =
+    //     useState({
+    //         selectStuff: "", selectBags: "-- Wybierz --",
+    //         selectLocalisation: "-- Wybierz --", dzieciom: false,
+    //         matkom: false, bezdomnym: false,
+    //         niepelnosprawnym: false, starszym: false,
+    //         organisationName: "", street: "",
+    //         city: "", postCode: "", phone: "",
+    //         date: "", time: "", note: "", uid: ""
+    //     })
 
-    const [inputsValue, setInputsValue] =
-        useState({
-            selectStuff: "", selectBags: "-- Wybierz --",
-            selectLocalisation: "-- Wybierz --", dzieciom: false,
-            matkom: false, bezdomnym: false,
-            niepelnosprawnym: false, starszym: false,
-            organisationName: "", street: "",
-            city: "", postCode: "", phone: "",
-            date: "", time: "", note: "", uid: ""
-        })
 
-    const [counter, setCounter] = useState(1)
-
-    const summaryReference = collection(db, 'summary')
-
-    const handleChange = (e) => {
-        const value = e.target.type === "checkbox"
-            ?
-            e.target.checked
-            :
-            e.target.value
-        setInputsValue({
-            ...inputsValue,
-            [e.target.name]: value
-        })
-    }
-
-    const handleIncrease = () => {
-        if (counter > 0 && counter < 6)
-            setCounter(prevState => prevState + 1)
-    }
-
-    const handleDecrease = () => {
-        if (counter > -1 && counter < 6)
-            setCounter(prevState => prevState - 1)
-    }
+    // const summaryReference = collection(db, 'summary')
+    //
+    // const handleChange = (e) => {
+    //     const value = e.target.type === "checkbox"
+    //         ?
+    //         e.target.checked
+    //         :
+    //         e.target.value
+    //     setInputsValue({
+    //         ...inputsValue,
+    //         [e.target.name]: value
+    //     })
+    // }
 
     // useEffect(() => {
     //     const getSummary = async () => {
@@ -78,27 +68,29 @@ const OddajMain = () => {
 //
 // }, [])
 
-    const createSummary = async () => {
-        await addDoc(summaryReference, {
-            selectStuff: inputsValue.selectStuff,
-            selectBags: inputsValue.selectBags,
-            localisation: inputsValue.selectLocalisation,
-            dzieciom: inputsValue.dzieciom,
-            matkom: inputsValue.matkom,
-            bezdomnym: inputsValue.bezdomnym,
-            niepelnosprawnym: inputsValue.niepelnosprawnym,
-            starszym: inputsValue.starszym,
-            organisationName: inputsValue.organisationName,
-            street: inputsValue.street,
-            city: inputsValue.city,
-            postCode: inputsValue.postCode,
-            phone: inputsValue.phone,
-            date: inputsValue.date,
-            time: inputsValue.time,
-            note: inputsValue.note,
-            uid: user?.uid
-        })
-    }
+    // const createSummary = async () => {
+    //     await addDoc(summaryReference, {
+    //         selectStuff: inputsValue.selectStuff,
+    //         selectBags: inputsValue.selectBags,
+    //         localisation: inputsValue.selectLocalisation,
+    //         dzieciom: inputsValue.dzieciom,
+    //         matkom: inputsValue.matkom,
+    //         bezdomnym: inputsValue.bezdomnym,
+    //         niepelnosprawnym: inputsValue.niepelnosprawnym,
+    //         starszym: inputsValue.starszym,
+    //         organisationName: inputsValue.organisationName,
+    //         street: inputsValue.street,
+    //         city: inputsValue.city,
+    //         postCode: inputsValue.postCode,
+    //         phone: inputsValue.phone,
+    //         date: inputsValue.date,
+    //         time: inputsValue.time,
+    //         note: inputsValue.note,
+    //         uid: user?.uid
+    //     })
+    // }
+
+    const {counter} = useContext(GlobalContext)
 
     return (
         <>
@@ -111,15 +103,9 @@ const OddajMain = () => {
                         ' komu najlepiej je przekazać.'}/>
 
                     <main className="wrapper wrapper--oddajMain">
-
-                        <OddajFormTop step={'krok 1/4'}
-                                      text={'zaznacz co chcesz oddać:'}/>
-
-                        <OddajForm1
-                            inputsValue={inputsValue}
-                            handleChange={handleChange}
-                            handleIncrease={handleIncrease}/>
-
+                        <OddajFormTop
+                            text={['krok 1/4', 'zaznacz co chcesz oddać:']}/>
+                        <OddajForm1/>
                     </main>
                 </>
             }
@@ -132,20 +118,10 @@ const OddajMain = () => {
                         ' rzczy znajdziesz TUTAJ '}/>
 
                     <main className="wrapper wrapper--oddajMain">
-
-                        <OddajFormTop step={'krok 2/4'}
-                                      text={'podaj liczbę 60 l. worków,' +
-                                          ' w które spkowałeś/aś rzeczy:'}/>
-
-                        <OddajForm2 inputsValue={inputsValue}
-                                    setInputsValue={setInputsValue}
-                                    inputsValueKey={inputsValue.selectBags}
-                                    handleChange={handleChange}
-                                    counter={counter}
-                                    handleIncrease={handleIncrease}
-                                    handleDecrease={handleDecrease}
-                                    createSummary={createSummary}/>
-
+                        <OddajFormTop
+                            text={['krok 2/4', 'podaj liczbę 60 l. worków,' +
+                            ' w które spkowałeś/aś rzeczy:']}/>
+                        <OddajForm2/>
                     </main>
                 </>
             }
@@ -158,17 +134,9 @@ const OddajMain = () => {
                         ' bądź celu ich pomocy'}/>
 
                     <main className="wrapper wrapper--oddajMain">
-
-                        <OddajFormTop step={'krok 3/4'}
-                                      text={'lokalizacja:'}/>
-
-                        <OddajForm3 inputsValue={inputsValue}
-                                    setInputsValue={setInputsValue}
-                                    handleChange={handleChange}
-                                    counter={counter}
-                                    handleIncrease={handleIncrease}
-                                    handleDecrease={handleDecrease}/>
-
+                        <OddajFormTop
+                            text={['krok 3/4', 'lokalizacja:']}/>
+                        <OddajForm3/>
                     </main>
                 </>
             }
@@ -178,17 +146,10 @@ const OddajMain = () => {
                     <OddajBelt text={'Podaj adres oraz termin odbioru rzeczy'}/>
 
                     <main className="wrapper wrapper--oddajMain">
-
                         <OddajFormTop step={'krok 4/4'}
                                       text={'podaj adres oraz termin ' +
                                           'odbioru rzeczy przez kuriera:'}/>
-
-                        <OddajForm4 inputsValue={inputsValue}
-                                    handleChange={handleChange}
-                                    counter={counter}
-                                    handleIncrease={handleIncrease}
-                                    handleDecrease={handleDecrease}/>
-
+                        <OddajForm4/>
                     </main>
                 </>
             }
@@ -196,31 +157,22 @@ const OddajMain = () => {
             {counter === 5 &&
                 <>
                     <main className="wrapper wrapper--oddajMain">
-
                         <div className="belt__empty"></div>
-
-                        <OddajFormTop step={' i '}
-                                      text={'podsumowanie twojej darowizny'}/>
-
-                        <OddajSummary createSummary={createSummary}
-                                      inputsValue={inputsValue}
-                                      counter={counter}
-                                      handleIncrease={handleIncrease}
-                                      handleDecrease={handleDecrease}/>
-
+                        <OddajFormTop
+                            text={['i', 'podsumowanie twojej darowizny']}/>
+                        <OddajSummary/>
                     </main>
                 </>
             }
 
             {counter === 6 &&
                 <main className="wrapper wrapper--oddajMain">
-
                     <div className="belt__empty"></div>
-
-                    <OddajFormTop step={' i '} text={''}/>
-
+                    <OddajFormTop
+                        text={['','']}/>
                     <OddajThanx/>
-                </main>}
+                </main>
+            }
             <Section_5/>
             <Footer/>
         </>

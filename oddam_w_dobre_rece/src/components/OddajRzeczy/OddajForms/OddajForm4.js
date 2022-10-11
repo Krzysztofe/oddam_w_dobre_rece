@@ -1,9 +1,11 @@
 import Buttons from "../../Buttons";
+import {useContext} from "react";
+import {GlobalContext} from "../Context/GlobalContextProv";
 
-const OddajForm4 = ({
-                        inputsValue, handleChange,
-                        handleIncrease, handleDecrease
-                    }) => {
+const OddajForm4 = () => {
+
+    const {  inputsValue, handleChange, handleIncrease, handleDecrease} = useContext(GlobalContext)
+
 
     const propsHandleChange = (e) => {
         typeof handleChange === 'function' && handleChange(e)

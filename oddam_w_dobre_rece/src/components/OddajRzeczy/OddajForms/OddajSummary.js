@@ -1,12 +1,14 @@
 import Buttons from "../../Buttons";
+import {useContext} from "react";
+import {GlobalContext} from "../Context/GlobalContextProv";
 
-const OddajSummary = ({
-                          inputsValue, createSummary,
-                          handleIncrease, handleDecrease
-                      }) => {
+const OddajSummary = () => {
     // const propsCreateSummary = (e) => {
     //     typeof createSummary === 'function' && createSummary(e)
     // }
+
+
+    const { inputsValue, createSummary, handleIncrease, handleDecrease } = useContext(GlobalContext)
 
     const handleSummaryIncrease = () => {
         handleIncrease();
