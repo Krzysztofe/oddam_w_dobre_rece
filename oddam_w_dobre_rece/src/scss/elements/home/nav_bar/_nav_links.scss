@@ -1,13 +1,15 @@
-.hashLink {
-  text-decoration: none;
-  display: block;
-  width: fit-content;
-  padding-top: $space-large;
-  font-weight: $semiBold;
-  color: black;
+.listItems {
+  margin-top: $space-large;
+}
 
+.link {
+  display: block;
+  text-decoration: none;
+  padding: $space-large;
+  font-weight: $semiBold;
+  color: $color-black;
   &:hover {
-    color: rgba(0, 0, 0, 0.6);
+    background-color: $color-yellow;
   }
 
   &::first-letter {
@@ -17,14 +19,19 @@
 
 .logItems {
   border-top: 1px solid black;
-  position: relative;
-  margin-top: $space-large;
 }
 
 @include media__navbar {
   .listItems {
     display: flex;
-    margin: $space-small 0;
+  }
+
+  .link{
+    padding: 0 0.4em;
+    &:hover{
+      background-color: $color-white;
+      outline: 1px solid $color-black;
+    }
   }
 
   .logItems {
@@ -33,24 +40,10 @@
     margin-top: $space-small;
   }
 
-  .hashLink {
-    padding: 0;
-    margin-left: 1em;
-  }
-
-  .listItem {
-    padding: 2px;
-
-    &:hover {
-      outline: 1px solid $color-grey-dark;
-    }
-  }
-
-  .logItem {
+  .link--log{
     font-size: $font-size-small;
-    padding: 2px;
-
-    &:hover {
+    &:hover{
+      background-color: $color-white;
       outline: 1px solid $color-yellow;
     }
   }

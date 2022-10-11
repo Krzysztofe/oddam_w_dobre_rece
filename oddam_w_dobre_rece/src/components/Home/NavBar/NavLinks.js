@@ -1,10 +1,11 @@
 import {HashLink} from "react-router-hash-link";
 import {Link} from 'react-router-dom'
 import {auth} from '../../FireBaseConfig';
+import {motion} from 'framer-motion'
 import {useAuthState} from 'react-firebase-hooks/auth'
 import {useNavigate} from "react-router";
 
-const NavLinks = ({handleCloseMenu}) => {
+const NavLinks = ({handleCloseMenu, open}) => {
     const [user] = useAuthState(auth);
     const navigate = useNavigate()
 
@@ -23,88 +24,120 @@ const NavLinks = ({handleCloseMenu}) => {
     return (
         <>
             <ul className='listItems'>
-                <Link to='/' className='hashLink'>
-                    <li className='listItem'
-                        onClick={propsCloseMenu}>
-                       strona główna
-                    </li>
+
+                <Link to='/'
+                      className='link'>
+                    <motion.li onClick={propsCloseMenu}
+                               initial={{opacity: 0, y: 0}}
+                               animate={{opacity: 1, y: 0}}
+                               transition={{delay: 0.1}}>
+                        strona główna
+                    </motion.li>
                 </Link>
 
+
                 <HashLink smooth to='#simpleSteps'
-                          className='hashLink'>
-                    <li className='listItem'
-                        onClick={propsCloseMenu}>
+                          className='link'>
+                    <motion.li onClick={propsCloseMenu}
+                               initial={{opacity: 0, y: -40}}
+                               animate={{opacity: 1, y: 0}}
+                               transition={{delay: 0.2}}>
                         o co chodzi
-                    </li>
+                    </motion.li>
                 </HashLink>
+
 
                 <HashLink smooth to='#aboutUs'
-                          className='hashLink'>
-                    <li className='listItem'
-                        onClick={propsCloseMenu}>
+                          className='link'>
+                    <motion.li onClick={propsCloseMenu}
+                               initial={{opacity: 0, y: -40}}
+                               animate={{opacity: 1, y: 0}}
+                               transition={{delay: 0.3}}>
                         o nas
-                    </li>
+                    </motion.li>
                 </HashLink>
+
 
                 <HashLink smooth to='#whoWeHelp'
-                          className='hashLink'>
-                    <li className='listItem'
-                        onClick={propsCloseMenu}>
+                          className='link'>
+                    <motion.li onClick={propsCloseMenu}
+                               initial={{opacity: 0, y: -40}}
+                               animate={{opacity: 1, y: 0}}
+                               transition={{delay: 0.4}}>
                         fundacja i organizacje
-                    </li>
+                    </motion.li>
                 </HashLink>
+
 
                 <HashLink smooth to='#contact'
-                          className='hashLink'>
-                    <li className='listItem'
-                        onClick={propsCloseMenu}>
+                          className='link'>
+                    <motion.li onClick={propsCloseMenu}
+                               initial={{opacity: 0, y: -40}}
+                               animate={{opacity: 1, y: 0}}
+                               transition={{delay: 0.5}}>
                         kontakt
-                    </li>
+                    </motion.li>
                 </HashLink>
-            </ul>
 
+            </ul>
             {user?.email
                 ?
                 <ul className='logItems'>
-                    <Link to='' className='hashLink'>
-                        <li className='logItem'>
+
+                    <Link to=''
+                          className='link link--log'>
+                        <motion.li initial={{opacity: 0, y: -40}}
+                                   animate={{opacity: 1, y: 0}}
+                                   transition={{delay: 0.6}}>
                             cześć {user?.email}
-                        </li>
+                        </motion.li>
                     </Link>
 
-                    <Link to='oddaj' className='hashLink'>
-                        <li className='logItem'
-                            onClick={propsCloseMenu}>
+                    <Link to='oddaj'
+                          className='link link--log'>
+                        <motion.li onClick={propsCloseMenu}
+                                   initial={{opacity: 0, y: -40}}
+                                   animate={{opacity: 1, y: 0}}
+                                   transition={{delay: 0.7}}>
                             oddaj rzeczy
-                        </li>
+                        </motion.li>
                     </Link>
 
-                    <div className='hashLink'>
-                        <li className='logItem'
-                            onClick={handleLogout}>
-                            wyloguj
-                        </li>
-                    </div>
+                    <motion.li className='link link--log'
+                               onClick={handleLogout}
+                               initial={{opacity: 0, y: -40}}
+                               animate={{opacity: 1, y: 0}}
+                               transition={{delay: 0.8}}>
+                        wyloguj
+                    </motion.li>
+
                 </ul>
                 :
                 <ul className='logItems'>
+
                     <Link to="/logowanie"
-                          className='hashLink'>
-                        <li className='logItem'
-                            onClick={propsCloseMenu}>
+                          className='link link--log'>
+                        <motion.li onClick={propsCloseMenu}
+                                   initial={{opacity: 0, y: -40}}
+                                   animate={{opacity: 1, y: 0}}
+                                   transition={{delay: 0.6}}>
                             zaloguj się
-                        </li>
+                        </motion.li>
                     </Link>
 
                     <Link to="/rejestracja"
-                          className='hashLink'>
-                        <li className='logItem'
-                            onClick={propsCloseMenu}>
+                          className='link link--log'>
+                        <motion.li onClick={propsCloseMenu}
+                            initial={{opacity: 0, y: -40}}
+                            animate={{opacity: 1, y: 0}}
+                            transition={{delay: 0.7}}>
                             załóż konto
-                        </li>
+                        </motion.li>
                     </Link>
+
                 </ul>
             }
+
         </>
     );
 };
