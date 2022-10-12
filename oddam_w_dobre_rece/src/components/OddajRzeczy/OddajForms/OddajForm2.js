@@ -1,7 +1,7 @@
 
 import {useContext} from "react";
 import Buttons from "../../Buttons";
-import InputSelect from "./InputSelect";
+import InputSelect from "./OddajFormInputs/InputSelect";
 import {GlobalContext} from "../Context/GlobalContextProv";
 
 const OddajForm2 = () => {

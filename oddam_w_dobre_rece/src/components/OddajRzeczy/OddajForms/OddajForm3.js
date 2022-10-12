@@ -1,8 +1,9 @@
 import Buttons from "../../Buttons";
-import InputSelect from "./InputSelect";
+import InputSelect from "./OddajFormInputs/InputSelect";
 import {useContext} from "react";
 import {GlobalContext} from "../Context/GlobalContextProv";
-import InputCheckbox from "./InputCheckbox";
+import InputCheckbox from "./OddajFormInputs/InputCheckbox";
+import InputText from "./OddajFormInputs/InputText";
 
 const OddajForm3 = () => {
 
@@ -28,19 +29,19 @@ const OddajForm3 = () => {
 
             <div className="oddajForm3__checkboxes">
 
-                <InputCheckbox name={'dzieciom'}
+                <InputCheckbox value={'dzieciom'}
                                label={'dzieciom'}/>
 
-                <InputCheckbox name={'matkom'}
+                <InputCheckbox value={'matkom'}
                                label={'samotnym matkom'}/>
 
-                <InputCheckbox name={'bezdomnym'}
+                <InputCheckbox value={'bezdomnym'}
                                label={'bezdomnym'}/>
 
-                <InputCheckbox name={'niepelnosprawnym'}
+                <InputCheckbox value={'niepelnosprawnym'}
                                label={'Niepełnosprawnym'}/>
 
-                <InputCheckbox name={'starszym'}
+                <InputCheckbox value={'starszym'}
                                label={'osobom starszym'}/>
 
             </div>

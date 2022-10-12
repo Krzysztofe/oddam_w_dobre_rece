@@ -1,5 +1,5 @@
 import React, {useContext} from 'react';
-import {GlobalContext} from "../Context/GlobalContextProv";
+import {GlobalContext} from "../../Context/GlobalContextProv";
 
 const InputRadio = ({value}) => {
     const {inputsValue, handleChange} = useContext(GlobalContext)

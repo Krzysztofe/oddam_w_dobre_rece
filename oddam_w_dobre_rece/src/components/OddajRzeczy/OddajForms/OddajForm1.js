@@ -1,6 +1,6 @@
 import React, {useContext} from 'react';
 import {GlobalContext} from "../Context/GlobalContextProv";
-import InputRadio from "./InputRadio";
+import InputRadio from "./OddajFormInputs/InputRadio";
 
 
 const OddajForm1 = () => {
