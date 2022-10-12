@@ -1,6 +1,7 @@
 import Buttons from "../../Buttons";
 import {useContext} from "react";
 import {GlobalContext} from "../Context/GlobalContextProv";
+import OddajSummaryTable from "./OddajSummaryTable";
 
 const OddajSummary = () => {
 
@@ -12,8 +13,8 @@ const OddajSummary = () => {
 
             <div className="summary__topContainer">
                 <div className="summary__icon1"></div>
-                <p className='summary__p'>{inputsValue.selectBags} worki
-                    <>{inputsValue.selectStuff}</>
+                <p className='summary__p'>{inputsValue.selectBags} worków
+                    <> {inputsValue.selectStuff}</>
                     {inputsValue.dzieciom ? <>, dzieciom</> : null}
                     {inputsValue.matkom ? <>, samotnym matkom</> : null}
                     {inputsValue.bezdomnym ? <>, bezdomnym</> : null}
@@ -29,63 +30,7 @@ const OddajSummary = () => {
                     <> {inputsValue.organisationName}</>
                 </p>
             </div>
-
-            <div className="summary__tables">
-                <table className="summary__tableLeft">
-
-                    <thead>
-                    <tr>
-                        <td className='summary__thead'>adres odbioru</td>
-                    </tr>
-                    </thead>
-
-                    <tbody>
-                    <tr>
-                        <td className='summary__td'> ulica:</td>
-                        <td className='summary__td'>{inputsValue.street}</td>
-                    </tr>
-                    <tr>
-                        <td className='summary__td'> miasto:</td>
-                        <td className='summary__td'>{inputsValue.city}</td>
-                    </tr>
-                    <tr>
-                        <td className='summary__td'> kod pocztowy:</td>
-                        <td className='summary__td'>{inputsValue.postCode}</td>
-                    </tr>
-                    <tr>
-                        <td className='summary__td'> numer telefonu:</td>
-                        <td className='summary__td'>{inputsValue.phone}</td>
-                    </tr>
-                    </tbody>
-
-                </table>
-
-                <table className="summary__tableRight">
-
-                    <thead>
-                    <tr>
-                        <td className='summary__thead'>termin odbioru</td>
-                    </tr>
-                    </thead>
-
-                    <tbody>
-                    <tr>
-                        <td className='summary__td'> data:</td>
-                        <td className='summary__td'>{inputsValue.date}</td>
-                    </tr>
-                    <tr>
-                        <td className='summary__td'> godzina:</td>
-                        <td className='summary__td'>{inputsValue.time}</td>
-                    </tr>
-                    <tr>
-                        <td className='summary__td'> uwagi do kuriera:</td>
-                        <td className='summary__td'>{inputsValue.note}</td>
-                    </tr>
-                    </tbody>
-
-                </table>
-            </div>
-
+            <OddajSummaryTable/>
             <Buttons/>
         </section>
     );

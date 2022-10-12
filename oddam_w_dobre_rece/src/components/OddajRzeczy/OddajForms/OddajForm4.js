@@ -19,21 +19,24 @@ const OddajForm4 = () => {
                 <h3 className='form4__h3'>Adres odbioru:</h3>
 
                 <InputText type={'text'}
-                           value={'street'}
-                           label={'Ulica'}/>
+                           name={'street'}
+                           label={'Ulica'}
+                           value={inputsValue.street}/>
 
                 <InputText type={'text'}
-                           value={'city'}
-                           label={'Miasto'}/>
+                           name={'city'}
+                           label={'Miasto'}
+                           value={inputsValue.city}/>
 
                 <InputText type={'text'}
-                           value={'postCode'}
-                           label={'Kod pocztowy'}/>
+                           name={'postCode'}
+                           label={'Kod pocztowy'}
+                           value={inputsValue.postCode}/>
 
                 <InputText type={'number'}
-                           value={'phone'}
-                           label={'Numer telefonu'}/>
-
+                           name={'phone'}
+                           label={'Numer telefonu'}
+                           value={inputsValue.phone}/>
             </aside>
 
 
@@ -41,12 +44,14 @@ const OddajForm4 = () => {
                 <h3 className='form4__h3'>termin odbioru:</h3>
 
                 <InputText type={'date'}
-                           value={'date'}
-                           label={'Data'}/>
+                           name={'date'}
+                           label={'Data'}
+                           value={inputsValue.date}/>
 
                 <InputText type={'time'}
-                           value={'time'}
-                           label={'Godzina'}/>
+                           name={'time'}
+                           label={'Godzina'}
+                           value={inputsValue.time}/>
 
                 <div className='form4__inputContainer'>
                     <label className='form4__label'>Uwagi dla kuriera</label>

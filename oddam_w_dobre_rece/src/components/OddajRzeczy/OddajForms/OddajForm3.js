@@ -29,20 +29,37 @@ const OddajForm3 = () => {
 
             <div className="oddajForm3__checkboxes">
 
-                <InputCheckbox value={'dzieciom'}
+                <InputCheckbox value={inputsValue.dzieciom}
+                               name={'dzieciom'}
                                label={'dzieciom'}/>
 
-                <InputCheckbox value={'matkom'}
+                {/*<InputCheckbox value={'matkom'}*/}
+                {/*               label={'samotnym matkom'}/>*/}
+
+                <InputCheckbox value={inputsValue.matkom}
+                               name={'matkom'}
                                label={'samotnym matkom'}/>
 
-                <InputCheckbox value={'bezdomnym'}
+                {/*<InputCheckbox value={'bezdomnym'}*/}
+                {/*               label={'bezdomnym'}/>*/}
+
+                <InputCheckbox value={inputsValue.bezdomnym}
+                               name={'bezdomnym'}
                                label={'bezdomnym'}/>
 
-                <InputCheckbox value={'niepelnosprawnym'}
-                               label={'Niepełnosprawnym'}/>
+                {/*<InputCheckbox value={'niepelnosprawnym'}*/}
+                {/*               label={'Niepełnosprawnym'}/>*/}
 
-                <InputCheckbox value={'starszym'}
-                               label={'osobom starszym'}/>
+                <InputCheckbox value={inputsValue.niepelnosprawnym}
+                               name={'niepelnosprawnym'}
+                               label={'Niepelnosprawnym'}/>
+
+                {/*<InputCheckbox value={'starszym'}*/}
+                {/*               label={'osobom starszym'}/>*/}
+
+                <InputCheckbox value={inputsValue.starszym}
+                               name={'starszym'}
+                               label={'Osobom starszymom'}/>
 
             </div>
 
