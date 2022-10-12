@@ -28,8 +28,7 @@ const InputSelect = ({
 
                 {open &&
                     <>
-                        {
-                            array.map(item => {
+                        {array.map(item => {
                                 return <div key={item}
                                             className="select__option"
                                             onClick={e => {
@@ -42,6 +41,7 @@ const InputSelect = ({
                         }
                     </>
                 }
+
             </div>
         </div>
     );

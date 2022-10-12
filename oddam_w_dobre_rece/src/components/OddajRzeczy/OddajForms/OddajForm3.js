@@ -5,25 +5,17 @@ import {GlobalContext} from "../Context/GlobalContextProv";
 
 const OddajForm3 = () => {
 
-    const { handleChange, inputsValue, setInputsValue, handleIncrease, handleDecrease} = useContext(GlobalContext)
+    const { handleChange, inputsValue, setInputsValue} = useContext(GlobalContext)
 
     const propsHandleChange = (e) => {
         typeof handleChange === 'function' && handleChange(e)
     }
 
-    const propsHandleIncrease = (e) => {
-        typeof handleIncrease === 'function' && handleIncrease(e)
-    }
-
-    const propsHandleDecrease = (e) => {
-        typeof handleDecrease === 'function' && handleDecrease(e)
-    }
     const handleSelect = (item) => {
-        setInputsValue({...inputsValue,selectLocalisation: item})
+        setInputsValue({...inputsValue, selectLocalisation: item})
     }
 
     return (
-        <>
             <main className='oddajForm__inputs'>
 
                 <InputSelect textLabel={''}
@@ -92,12 +84,8 @@ const OddajForm3 = () => {
                            onChange={propsHandleChange}
                            className='oddajForm3__textInput'/>
 
-                <Buttons handleDecrease={propsHandleDecrease}
-                    handleIncrease = {propsHandleIncrease}/>
-
+                <Buttons/>
             </main>
-        </>
-
     );
 };
 

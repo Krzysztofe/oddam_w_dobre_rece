@@ -146,9 +146,9 @@ const OddajMain = () => {
                     <OddajBelt text={'Podaj adres oraz termin odbioru rzeczy'}/>
 
                     <main className="wrapper wrapper--oddajMain">
-                        <OddajFormTop step={'krok 4/4'}
-                                      text={'podaj adres oraz termin ' +
-                                          'odbioru rzeczy przez kuriera:'}/>
+                        <OddajFormTop
+                            text={['krok 4/4', 'podaj adres oraz termin ' +
+                            'odbioru rzeczy przez kuriera:']}/>
                         <OddajForm4/>
                     </main>
                 </>
@@ -169,7 +169,7 @@ const OddajMain = () => {
                 <main className="wrapper wrapper--oddajMain">
                     <div className="belt__empty"></div>
                     <OddajFormTop
-                        text={['','']}/>
+                        text={['', '']}/>
                     <OddajThanx/>
                 </main>
             }

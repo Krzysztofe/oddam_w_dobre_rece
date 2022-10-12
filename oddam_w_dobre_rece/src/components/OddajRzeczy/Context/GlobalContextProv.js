@@ -19,7 +19,7 @@ const GlobalContextProv = ({children}) => {
             date: "", time: "", note: "", uid: ""
         })
 
-      const handleChange = (e) => {
+    const handleChange = (e) => {
         const value = e.target.type === "checkbox"
             ?
             e.target.checked
@@ -69,7 +69,6 @@ const GlobalContextProv = ({children}) => {
 // }, [])
 
 
-
     const createSummary = async () => {
         await addDoc(summaryReference, {
             selectStuff: inputsValue.selectStuff,
@@ -94,7 +93,8 @@ const GlobalContextProv = ({children}) => {
 
     return (
         <GlobalContext.Provider value={{
-            inputsValue, setInputsValue,
+            inputsValue,
+            setInputsValue,
             counter,
             handleChange,
             handleIncrease,
