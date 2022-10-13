@@ -1,5 +1,12 @@
 @import "section_4_table";
 
+.section4__loading{
+  margin: 0 auto;
+&:first-letter{
+  text-transform: uppercase;
+}
+}
+
 .section-4__btns {
   margin: 2em 0;
   display: flex;

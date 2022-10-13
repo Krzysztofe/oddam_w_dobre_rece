@@ -13,11 +13,13 @@ const WhoWeHelp = () => {
         // fetch('https://my-json-server.typicode.com/Krzysztofe/oddaj_api/db')
         fetch('https://localhost:3000/organisations')
             .then(resp => resp.json())
-            .then(data => setOrganisations(data.organisations))
+            // .then(data => setOrganisations(data.organisations))
+            .then(data => setOrganisations(data))
+
     }, [])
 
     if (organisations === false) {
-        return <h2>loading... </h2>
+        return <h2 className='section4__loading'>loading... </h2>
     }
     const organisationsPerPage = 3
     const printedPage = pageNumber * organisationsPerPage
