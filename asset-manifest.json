@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/oddam_w_dobre_rece/static/css/main.3029ef53.css",
-    "main.js": "/oddam_w_dobre_rece/static/js/main.5d48b59d.js",
+    "main.css": "/oddam_w_dobre_rece/static/css/main.7e8ee782.css",
+    "main.js": "/oddam_w_dobre_rece/static/js/main.6bb2ae6b.js",
     "static/media/Background Image@2x.png": "/oddam_w_dobre_rece/static/media/Background Image@2x.a6dec3687eba35c68672.png",
     "static/media/People@2x.png": "/oddam_w_dobre_rece/static/media/People@2x.5c7d5b1366e716d4aca6.png",
     "static/media/Hero Image@2x.png": "/oddam_w_dobre_rece/static/media/Hero Image@2x.473c8ca5b50bc645757b.png",
@@ -17,11 +17,11 @@
     "static/media/Signature@2x.png": "/oddam_w_dobre_rece/static/media/Signature@2x.3aad9671edfdbad52699.png",
     "static/media/Signature.png": "/oddam_w_dobre_rece/static/media/Signature.4bc15a65bbb13d621e19.png",
     "index.html": "/oddam_w_dobre_rece/index.html",
-    "main.3029ef53.css.map": "/oddam_w_dobre_rece/static/css/main.3029ef53.css.map",
-    "main.5d48b59d.js.map": "/oddam_w_dobre_rece/static/js/main.5d48b59d.js.map"
+    "main.7e8ee782.css.map": "/oddam_w_dobre_rece/static/css/main.7e8ee782.css.map",
+    "main.6bb2ae6b.js.map": "/oddam_w_dobre_rece/static/js/main.6bb2ae6b.js.map"
   },
   "entrypoints": [
-    "static/css/main.3029ef53.css",
-    "static/js/main.5d48b59d.js"
+    "static/css/main.7e8ee782.css",
+    "static/js/main.6bb2ae6b.js"
   ]
 }
