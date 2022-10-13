@@ -10,11 +10,11 @@ const WhoWeHelp = () => {
 
 
     useEffect(() => {
-        // fetch('https://my-json-server.typicode.com/Krzysztofe/oddaj_api/db')
-        fetch('https://localhost:3000/organisations')
+        fetch('https://my-json-server.typicode.com/Krzysztofe/oddaj_api/db')
+        // fetch('https://localhost:3000/organisations')
             .then(resp => resp.json())
-            // .then(data => setOrganisations(data.organisations))
-            .then(data => setOrganisations(data))
+            .then(data => setOrganisations(data.organisations))
+            // .then(data => setOrganisations(data))
 
     }, [])
 
