@@ -2,7 +2,8 @@ import React, {useContext} from 'react';
 import {GlobalContext} from "../../Context/GlobalContextProv";
 
 const InputText = ({label, name, value, type}) => {
-const {handleChange, inputsValue} = useContext(GlobalContext)
+
+    const {handleChange} = useContext(GlobalContext)
 
     return (
         <div className='form4__inputContainer'>

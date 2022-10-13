@@ -1,13 +1,17 @@
 export const section_5_FormValidation = (inputValue) => {
 
     const _errors = {name: '', email: '', textarea: ''}
+    const reg = /^[a-z\d]+[\w\d.-]*@(?:[a-z\d]+[a-z\d-]+\.){1,5}[a-z]{2,6}$/i;
+
 
     if (inputValue.name.includes(' ') || !inputValue.name) {
         _errors.name = 'imię powinno być jednym wyrazem'
     }
-    if (!inputValue.email.includes("@")) {
-        _errors.email = 'dodaj @'
-    }
+    if (!inputValue.email) {
+        _errors.email = 'podaj email'
+    } else if (!reg.test(inputValue.email)) {
+        _errors.email = "email jest nieprawidłowy"}
+
     if (inputValue.textarea.length < 2) {
         _errors.textarea = 'wiadomość minimum dwa znaki'
     }
@@ -22,10 +26,16 @@ export const section_5_FormValidation = (inputValue) => {
 export const registerValidation = (inputValuRregister) => {
 
     const _errors = []
+    const reg = /^[a-z\d]+[\w\d.-]*@(?:[a-z\d]+[a-z\d-]+\.){1,5}[a-z]{2,6}$/i;
 
-    if (!inputValuRregister.email.includes("@")) {
-        _errors.push('w email dodaj @')
+
+
+    if (!inputValuRregister.email) {
+        _errors.push('podaj email')
+    } else if (!reg.test(inputValuRregister.email)){
+        _errors.push('email jest nieprawidłowy')
     }
+
     if (inputValuRregister.password.length < 6) {
         _errors.push('hasło musi mieć conajmniej 6 znaków')
     }
@@ -42,10 +52,15 @@ export const registerValidation = (inputValuRregister) => {
 export const loginValidation = (inputValueLogin) => {
 
     const _errors = []
+    const reg = /^[a-z\d]+[\w\d.-]*@(?:[a-z\d]+[a-z\d-]+\.){1,5}[a-z]{2,6}$/i;
 
-    if (!inputValueLogin.email.includes("@")) {
-        _errors.push('w email dodaj @')
+
+    if (!inputValueLogin.email) {
+        _errors.push('podaj email')
+    } else if (!reg.test(inputValueLogin.email)){
+        _errors.push('email jest nieprawidłowy')
     }
+
     if (inputValueLogin.password.length < 6) {
         _errors.push('hasło musi mieć conajmniej 6 znaków')
     }

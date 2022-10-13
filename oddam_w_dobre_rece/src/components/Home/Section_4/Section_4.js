@@ -16,7 +16,7 @@ const WhoWeHelp = () => {
     }, [])
 
     if (organisations === false) {
-        return <h2>loading </h2>
+        return <h2>loading... </h2>
     }
     const organisationsPerPage = 3
     const printedPage = pageNumber * organisationsPerPage

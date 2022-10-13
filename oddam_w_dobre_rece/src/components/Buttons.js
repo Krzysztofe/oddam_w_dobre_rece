@@ -24,6 +24,7 @@ const Buttons = () => {
                         </button>
 
                     </div>
+
     );
 };
 

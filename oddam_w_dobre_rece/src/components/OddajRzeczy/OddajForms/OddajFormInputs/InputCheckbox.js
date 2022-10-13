@@ -2,7 +2,7 @@ import React, {useContext} from 'react';
 import {GlobalContext} from "../../Context/GlobalContextProv";
 
 const InputCheckbox = ({value, name, label}) => {
-    const {inputsValue, handleChange} = useContext(GlobalContext)
+    const {handleChange} = useContext(GlobalContext)
 
     return (
         <label className='oddajForm3__label'>

@@ -55,7 +55,7 @@ const Register = () => {
 
                     <label className='login__label'>
                         Email
-                        <input type='email' name='email'
+                        <input type='text' name='email'
                                value={inputValueRregister.email}
                                onChange={handleChange}
                                className='login__input'/>
