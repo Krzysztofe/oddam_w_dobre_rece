@@ -10,9 +10,9 @@ const WhoWeHelp = () => {
 
 
     useEffect(() => {
-        fetch('http://localhost:3000/organisations')
+        fetch('https://my-json-server.typicode.com/Krzysztofe/oddaj_api/db')
             .then(resp => resp.json())
-            .then(data => setOrganisations(data))
+            .then(data => setOrganisations(data.organisations))
     }, [])
 
     if (organisations === false) {
