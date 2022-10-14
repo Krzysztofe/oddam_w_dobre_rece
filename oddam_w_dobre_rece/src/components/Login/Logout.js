@@ -6,8 +6,7 @@ const Logout = () => {
         <>
             <div className='headerSpacer'></div>
             <main className='wrapper wrapper--login'>
-                <Title text1={'wylogowanie nastąpiło '}
-                       text2={'pomyślnie'}
+                <Title text={['wylogowanie nastąpiło', 'pomyślnie']}
                        classContainer={''}
                        classH2={''}
                        classUnderline={'login__underline'}

@@ -12,7 +12,7 @@ const Section2 = () => {
 
     return (
         <section className='wrapper wrapper--section-2'>
-            <Title text1={'wystarczą 4 proste kroki'}
+            <Title text={['wystarczą 4 proste kroki']}
                    classContainer={'section-2__decoContainer'}
                    classH2={''}
                    classUnderline={'section-2__decoration'}/>

@@ -6,21 +6,35 @@ const WhoWeHelp = () => {
 
     const [printCounter, setPrintCounter] = useState(1)
     const [organisations, setOrganisations] = useState(false)
+    const [loading, setLoading] = useState(true)
+    const [error, setError] = useState(null)
     const [pageNumber, setPageNumber] = useState(0)
 
 
     useEffect(() => {
         fetch('https://my-json-server.typicode.com/Krzysztofe/oddaj_api/db')
-        // fetch('https://localhost:3000/organisations')
-            .then(resp => resp.json())
-            .then(data => setOrganisations(data.organisations))
-            // .then(data => setOrganisations(data))
-
+            .then(resp => {
+                    if (!resp.ok) {
+                        throw Error('Brak dostępu do zasobu')
+                    }
+                    return resp.json()
+                }
+            )
+            .then(data => {
+                    setOrganisations(data.organisations)
+                    setLoading(false)
+                }
+            )
+            .catch(err =>
+                setError(err.message === 'Failed to fetch' ? 'Brak połączenia z serwerem' : err.message))
     }, [])
 
-    if (organisations === false) {
-        return <h2 className='section4__loading'>loading... </h2>
+    if (loading && error) {
+        return <h2 className='section4__loading'>{error}</h2>
+    } else if (loading) {
+        return <h2 className='section4__loading'>loading...</h2>
     }
+
     const organisationsPerPage = 3
     const printedPage = pageNumber * organisationsPerPage
 
@@ -60,7 +74,8 @@ const WhoWeHelp = () => {
     return (
 
         <section className="wrapper wrapper--section-4">
-            <Title text1={'komu pomagamy?'}
+
+            <Title text={['komu pomagamy?']}
                    classContainer={''}
                    classH2={''}
                    classUnderline={'section-4__decoration'}/>
@@ -117,9 +132,7 @@ const WhoWeHelp = () => {
                     <>
                         {organisationSelection(
                             "fundacja", "fundacja")}
-                        <ReactPaginate previousLabel={''}
-                                       nextLabel={''}
-                                       pageCount={3}
+                        <ReactPaginate pageCount={3}
                                        onPageChange={changePage}
                                        containerClassName={'paginationButtonsContainer'}
                                        disabledClassName={'disabledButton'}
@@ -132,9 +145,7 @@ const WhoWeHelp = () => {
                     <>
                         {organisationSelection(
                             "ngo", "organizacja")}
-                        <ReactPaginate previousLabel={''}
-                                       nextLabel={''}
-                                       pageCount={2}
+                        <ReactPaginate pageCount={2}
                                        onPageChange={changePage}
                                        containerClassName={'paginationButtonsContainer'}
                                        disabledClassName={'disabledButton'}
@@ -147,9 +158,7 @@ const WhoWeHelp = () => {
                     <>
                         {organisationSelection(
                             "collection", "zbiórka")}
-                        <ReactPaginate previousLabel={''}
-                                       nextLabel={''}
-                                       pageCount={1}
+                        <ReactPaginate pageCount={1}
                                        onPageChange={changePage}
                                        containerClassName={'paginationButtonsContainer'}
                                        disabledClassName={'disabledButton'}

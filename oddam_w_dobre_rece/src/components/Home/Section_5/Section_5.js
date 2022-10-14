@@ -6,7 +6,7 @@ const Section_5 = () => {
         <section className="wrapper wrapper--section-5" id='contact'>
             <div className="section-5__opacity">
                 <aside className="section-5__right">
-                    <HeaderUnderline text1={'skontaktuj się z nami'}
+                    <HeaderUnderline text={['skontaktuj się z nami']}
                         classUnderline={'section-5__decoration'}/>
                     <Form/>
                 </aside>

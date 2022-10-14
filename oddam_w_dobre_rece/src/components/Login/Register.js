@@ -45,8 +45,7 @@ const Register = () => {
             <form onSubmit={handleRegister}
                   className='wrapper wrapper--login'>
 
-                <Title text1={'załóż konto'}
-                       text2={''}
+                <Title text={['załóż konto']}
                        classContainer={''}
                        classH2={''}
                        classUnderline={'login__underline'}/>

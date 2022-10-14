@@ -43,8 +43,7 @@ const Login = () => {
             <form onSubmit={handleLogin}
                   className='wrapper wrapper--login'>
 
-                <Title text1={'zaloguj się'}
-                       text2={''}
+                <Title text={['zaloguj się']}
                        classContainer={''}
                        classH2={''}
                        classUnderline={'login__underline'}/>

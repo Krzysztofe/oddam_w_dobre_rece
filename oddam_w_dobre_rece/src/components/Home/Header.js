@@ -20,9 +20,9 @@ const Header = () => {
                      className='header__imageSmallLarge'/>
 
                 <aside className='header__right'>
-                        <Title text1={'zacznij pomagać!'}
-                            text2={'oddaj niechciane rzeczy' +
-                                ' w zaufane ręce'}
+                        <Title text={['zacznij pomagać!',
+                            'oddaj niechciane rzeczy' +
+                        ' w zaufane ręce']}
                             classH2={'header__h2'}/>
 
                         {user?.email ?

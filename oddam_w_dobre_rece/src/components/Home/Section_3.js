@@ -10,7 +10,7 @@ const Section_3 = () => {
         <section className="wrapper wrapper--section-3">
             <aside className="section-3__leftContainer">
                 <div className="section-3__mainText">
-                    <Title text1={'o nas'}
+                    <Title text={['o nas']}
                            classContainer={''}
                            classH2={''}
                            classUnderline={'section-3__decoration'}/>

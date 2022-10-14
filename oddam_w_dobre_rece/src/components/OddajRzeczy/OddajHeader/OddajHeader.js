@@ -11,8 +11,7 @@ const OddajHeader = ({counter}) => {
                 <aside className="oddajHeader__backgroundImage"></aside>
                 <aside className="oddajHeader__rightContainer">
 
-                    <Title text1={'oddaj rzeczy, których nie chcesz'}
-                           text2={'potrzebującym'}
+                    <Title text={['oddaj rzeczy, których nie chcesz','potrzebującym']}
                            classContainer={'oddajHeader__titleContainer'}
                            classH2={'oddajHeader__titleH2'}
                            classUnderline={'oddajHeader__titleDecoration'}/>
