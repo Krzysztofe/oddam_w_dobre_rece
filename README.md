@@ -16,7 +16,7 @@
 * JS 
 * Firestore
 * Firebase 
-* JSON server 
+* JSON
 * React: react-router, react-router-dom, react-firebase-hooks/auth, react-router-hash-link, react-paginate, framer-motion
 * Context API
 
