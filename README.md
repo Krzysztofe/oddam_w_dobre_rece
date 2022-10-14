@@ -16,11 +16,11 @@
 * JS 
 * Firestore
 * Firebase 
-* JSON
+* JSON <a href = "https://my-json-server.typicode.com/Krzysztofe/oddaj_api/db">here -></a>
 * React: react-router, react-router-dom, react-firebase-hooks/auth, react-router-hash-link, react-paginate, framer-motion
 * Context API
 
-## See this project <a href="https://krzysztofe.github.io/oddam_w_dobre_rece/">here -><a>
+## See this project <a href="https://krzysztofe.github.io/oddam_w_dobre_rece/">here -></a>
 
 ![Zrzut ekranu (117)](https://user-images.githubusercontent.com/96065197/194778288-8a5c7078-513f-4611-8ddb-9180b94bb027.png)
 
