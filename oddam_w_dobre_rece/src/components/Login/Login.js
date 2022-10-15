@@ -71,7 +71,7 @@ const Login = () => {
                 <p className='login__errors'>{errors}</p>
 
                 <ButtonsLogin link={'/rejestracja'}
-                    btnRight={'załuż konto'}
+                    btnRight={'załóż konto'}
                     btnLeft={'zaloguj się'}/>
             </form>
         </>

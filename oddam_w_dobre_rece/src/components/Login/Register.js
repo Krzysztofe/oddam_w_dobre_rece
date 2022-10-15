@@ -82,7 +82,7 @@ const Register = () => {
 
                 <ButtonsLogin link={'/logowanie'}
                               btnRight={'zaloguj się'}
-                              btnLeft={'załuż konto'}/>
+                              btnLeft={'załóż konto'}/>
             </form>
         </>
     );

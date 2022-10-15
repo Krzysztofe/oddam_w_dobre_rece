@@ -18,7 +18,7 @@
 }
 
 .header__link{
-  width: 40%;
+  width: 45%;
 }
 
 .header__btn{
@@ -54,6 +54,7 @@
 }
 
 @include media__bigSize {
+
   .header__imageSmall{
    display: none;
   }

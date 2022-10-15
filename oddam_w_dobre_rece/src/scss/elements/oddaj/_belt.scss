@@ -1,12 +1,13 @@
-.wrapper--belt{
+.wrapper--belt {
   display: flex;
   flex-direction: column;
- justify-content: center;
-  height: 11vh;
+  justify-content: center;
+  height: 6em;
 }
 
 .belt__h2 {
   font-weight: $semiBold;
+
   &:first-letter {
     text-transform: uppercase;
   }
@@ -15,11 +16,11 @@
 .belt__p {
   padding-top: $space-small;
   font-size: $font-size-small;
-  height: 3em;
 }
 
 @include media {
   .wrapper--belt {
+    height: 4em;
     background-color: $color-yellow;
     padding: 0 $space-large * 2;
   }

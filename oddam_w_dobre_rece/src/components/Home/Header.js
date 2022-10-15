@@ -21,7 +21,7 @@ const Header = () => {
 
                 <aside className='header__right'>
                         <Title text={['zacznij pomagać!',
-                            'oddaj niechciane rzeczy' +
+                            'Oddaj niechciane rzeczy' +
                         ' w zaufane ręce']}
                             classH2={'header__h2'}/>
 

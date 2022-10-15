@@ -29,11 +29,11 @@ const ContactForm = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault()
-        //
-        // setErrors(section_5_FormValidation(inputValue))
-        // if (section_5_FormValidation(inputValue) !== '') {
-        //     return
-        // }
+
+        setErrors(section_5_FormValidation(inputValue))
+        if (section_5_FormValidation(inputValue) !== '') {
+            return
+        }
 
         setFormData(inputValue)
         postUser(formData, setFetchErrors)

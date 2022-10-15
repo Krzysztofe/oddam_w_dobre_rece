@@ -15,13 +15,14 @@
 .oddajForm3__checkboxes {
   margin-top: $space-large;
   display: flex;
+  justify-content: space-between;
   flex-wrap: wrap;
-  row-gap: 1.5em;
-  column-gap: 20%;
+  gap: $space-large;
 }
 
 .oddajForm3__label {
-  width: 40%;
+  width: 45%;
+  flex-grow: 1;
 }
 
 .oddajForm3__checkbox {
@@ -33,7 +34,8 @@
   cursor: pointer;
   text-align: center;
   padding: 0.5em 0;
-  &:first-letter{
+
+  &:first-letter {
     text-transform: uppercase;
   }
 }
