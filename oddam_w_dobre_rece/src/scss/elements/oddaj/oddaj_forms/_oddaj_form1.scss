@@ -1,9 +1,9 @@
 .oddajForm__inputs {
   padding-bottom: $space-large;
-  height: 63vh;
   display: flex;
   flex-direction: column;
-  overflow-y: scroll;
+  overflow-y: auto;
+  height: 63vh;
 }
 
 .oddajForm1__input{
