@@ -1,6 +1,6 @@
 import React, {createContext, useState} from 'react';
 import {addDoc, collection} from "firebase/firestore";
-import {auth, db} from "../../FireBaseConfig";
+import {auth, db} from "../../Libraries/FireBaseConfig";
 import {useAuthState} from "react-firebase-hooks/auth";
 
 

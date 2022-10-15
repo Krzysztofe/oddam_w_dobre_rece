@@ -1,7 +1,4 @@
-import React, {useContext, useState} from "react";
-import {collection, getDocs, addDoc} from "firebase/firestore";
-import {auth, db} from "../FireBaseConfig";
-import {useAuthState} from "react-firebase-hooks/auth";
+import {useContext} from "react";
 
 import OddajHeader from "./OddajHeader/OddajHeader";
 import OddajBelt from "./Belt";
@@ -15,7 +12,7 @@ import OddajSummary from "./OddajForms/OddajSummary";
 import OddajThanx from "./OddajForms/OddajThanx";
 import Section_5 from "../Home/Section_5/Section_5";
 import Footer from "../Home/Footer";
-import GlobalContextProv, {GlobalContext} from "./Context/GlobalContextProv";
+import {GlobalContext} from "./Context/GlobalContextProv";
 
 const OddajMain = () => {
 

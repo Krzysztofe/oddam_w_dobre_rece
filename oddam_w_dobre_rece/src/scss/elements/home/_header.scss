@@ -8,6 +8,7 @@
 
 .header__right {
   font-weight: $semiBold;
+  margin: 3rem 0;
 }
 
 .header__btns {
@@ -29,12 +30,11 @@
 
 @include media {
   .headerSpacer {
-    height: 4rem;
+    height: 5rem;
   }
 
   .wrapper--header {
     display: flex;
-    height: 60vh;
     padding-left: 0;
   }
 

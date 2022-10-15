@@ -1,10 +1,10 @@
 import React, {useState} from 'react';
 import {createUserWithEmailAndPassword} from 'firebase/auth'
-import {auth} from '../FireBaseConfig'
+import {auth} from '../Libraries/FireBaseConfig'
 import {useNavigate} from 'react-router'
 import Title from "../Title";
 import ButtonsLogin from "./ButtonsLogin";
-import {registerValidation} from '../libraryValidations'
+import {registerValidation} from '../Libraries/libraryValidations'
 
 const Register = () => {
 

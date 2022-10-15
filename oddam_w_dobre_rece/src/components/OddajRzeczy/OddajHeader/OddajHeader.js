@@ -1,6 +1,7 @@
 import Title from "../../Title";
 import Square from "./Square";
-import InputSelect from "../OddajForms/OddajFormInputs/InputSelect";
+import ImageSmall from "../../../asets/Header-Form-Background.png"
+import ImageLarge from '../../../asets/Header-Form-Background@2x.png'
 
 const OddajHeader = ({counter}) => {
 
@@ -8,10 +9,11 @@ const OddajHeader = ({counter}) => {
         <>
             <div className='headerSpacer'></div>
             <header className='wrapper wrapper--oddajHeader'>
-                <aside className="oddajHeader__backgroundImage"></aside>
+                <img src={ImageSmall} alt='sweter' className='oddajHeader__imgSmall'/>
+                <img src={ImageLarge} alt='sweter' className='oddajHeader__imgLarge'/>
                 <aside className="oddajHeader__rightContainer">
 
-                    <Title text={['oddaj rzeczy, których nie chcesz','potrzebującym']}
+                    <Title text={["oddaj rzeczy, których nie chcesz", "potrzebującym"]}
                            classContainer={'oddajHeader__titleContainer'}
                            classH2={'oddajHeader__titleH2'}
                            classUnderline={'oddajHeader__titleDecoration'}/>

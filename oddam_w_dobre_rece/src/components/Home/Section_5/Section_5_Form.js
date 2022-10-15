@@ -1,18 +1,14 @@
 import {useState} from "react";
-import {section_5_FormValidation} from '../../libraryValidations'
+import {section_5_FormValidation} from '../../Libraries/libraryValidations'
+import {postUser} from '../../FetchOperations/FetchOperations'
 
 const ContactForm = () => {
+
     const [inputValue, setInputValue] = useState({
         name: "",
         email: "",
-        textarea: ""
+        message: ""
     })
-    const [errors, setErrors] = useState({
-        name: "",
-        email: "",
-        textarea: ""
-    })
-    const [formDatas, setFormDatas] = useState([])
 
     const handleChange = (e) => {
         setInputValue({
@@ -21,80 +17,96 @@ const ContactForm = () => {
         })
     }
 
+    const [errors, setErrors] = useState({
+        name: "",
+        email: "",
+        message: ""
+    })
+
+    const [formData, setFormData] = useState([])
+    const [fetchErrors, setFetchErrors] = useState('')
+
+
     const handleSubmit = (e) => {
         e.preventDefault()
+        //
+        // setErrors(section_5_FormValidation(inputValue))
+        // if (section_5_FormValidation(inputValue) !== '') {
+        //     return
+        // }
 
-        setErrors(section_5_FormValidation(inputValue))
+        setFormData(inputValue)
+        postUser(formData, setFetchErrors)
 
-        if (section_5_FormValidation(inputValue) !== '') {
-            return
-        }
-
-        setFormDatas([...formDatas, inputValue])
         setInputValue({
             name: "",
             email: "",
-            textarea: ""
+            message: ""
         })
     }
 
     return (
+        <>
+            <form onSubmit={handleSubmit}
+                  className='contactForm'>
 
-        <form onSubmit={handleSubmit}
-              className='contactForm'>
-
-            <div className="contactForm__inputContainer">
-                <label className='contactForm__label'>
-                    Wpisz swoje imię
-                </label>
-                <input type='text' name='name'
-                       className={`contactForm__input
+                <div className="contactForm__inputContainer">
+                    <label className='contactForm__label'>
+                        Wpisz swoje imię
+                    </label>
+                    <input type='text' name='name'
+                           value={inputValue.name}
+                           onChange={handleChange}
+                           className={`contactForm__input
                        ${errors.name && 'contactForm__errorUnderline'}`}
-                       value={inputValue.name}
-                       onChange={handleChange}
-                       placeholder='Imię'/>
-                <div className="contactForm__textInputErrors">
-                    {errors.name}
+                           placeholder='Imię'/>
+                    <div className="contactForm__textInputErrors">
+                        {errors.name}
+                    </div>
                 </div>
-            </div>
 
-            <div className="contactForm__inputContainer">
-                <label className='contactForm__label'>
-                    Wpisz swój email
-                </label>
-                <input type='text' name='email'
-                       className={`contactForm__input
+                <div className="contactForm__inputContainer">
+                    <label className='contactForm__label'>
+                        Wpisz swój email
+                    </label>
+                    <input type='text' name='email'
+                           value={inputValue.email}
+                           onChange={handleChange}
+                           className={`contactForm__input
                        ${errors.email && 'contactForm__errorUnderline'}`}
-                       value={inputValue.email}
-                       onChange={handleChange}
-                       placeholder='Email'
-                />
-                <div className="contactForm__textInputErrors">
-                    {errors.email}
+                           placeholder='Email'/>
+                    <div className="contactForm__textInputErrors">
+                        {errors.email}
+                    </div>
                 </div>
-            </div>
 
-            <div className="contactForm__inputContainer
+                <div className="contactForm__inputContainer
             contactForm__inputContainer--textarea">
-                <label className='contactForm__label'>
-                    Wpisz swoją wiadomość
-                </label>
-                <textarea name='textarea'
-                          rows={4}
-                          className={`contactForm__input
-                    ${errors.textarea && 'contactForm__errorUnderline'}`}
-                          value={inputValue.textarea}
-                          onChange={handleChange}
-                          placeholder='Wiadomość'/>
-                <div className="contactForm__textInputErrors">
-                    {errors.textarea}
+                    <label className='contactForm__label'>
+                        Wpisz swoją wiadomość
+                    </label>
+                    <textarea name='message'
+                              value={inputValue.message}
+                              onChange={handleChange}
+                              className={`contactForm__input
+                    ${errors.message && 'contactForm__errorUnderline'}`}
+                              rows={4}
+                              placeholder='Wiadomość'/>
+                    <div className="contactForm__textInputErrors">
+                        {errors.message}
+                    </div>
                 </div>
-            </div>
 
-            <button className='contactForm__button'>
-                wyślij
-            </button>
-        </form>
+                <button className='btnLarge btnLarge--cntactForm'>
+                    wyślij
+                </button>
+            </form>
+
+            <h2 className='fetchErrors'>
+                <span className='fetchErrors__opacity'>r</span>
+                {fetchErrors}
+            </h2>
+        </>
     );
 };
 

@@ -1,38 +1,28 @@
 import React, {useEffect, useState} from 'react';
 import ReactPaginate from "react-paginate";
 import Title from "../../Title";
+import {fetchOrganizations} from "../../FetchOperations/FetchOperations"
 
 const WhoWeHelp = () => {
 
     const [printCounter, setPrintCounter] = useState(1)
     const [organisations, setOrganisations] = useState(false)
     const [loading, setLoading] = useState(true)
+    const [printLoading, setPrintLoading] = useState(["loading"])
     const [error, setError] = useState(null)
     const [pageNumber, setPageNumber] = useState(0)
 
 
     useEffect(() => {
-        fetch('https://my-json-server.typicode.com/Krzysztofe/oddaj_api/db')
-            .then(resp => {
-                    if (!resp.ok) {
-                        throw Error('Brak dostępu do zasobu')
-                    }
-                    return resp.json()
-                }
-            )
-            .then(data => {
-                    setOrganisations(data.organisations)
-                    setLoading(false)
-                }
-            )
-            .catch(err =>
-                setError(err.message === 'Failed to fetch' ? 'Brak połączenia z serwerem' : err.message))
+
+        fetchOrganizations(setOrganisations, setLoading, setError)
+
     }, [])
 
     if (loading && error) {
         return <h2 className='section4__loading'>{error}</h2>
     } else if (loading) {
-        return <h2 className='section4__loading'>loading...</h2>
+        return <h2 className='section4__loading'>{printLoading}</h2>
     }
 
     const organisationsPerPage = 3

@@ -17,7 +17,7 @@ const OddajForm2 = () => {
             <main className='oddajForm__inputs'>
 
                 <InputSelect textLabel={'Liczba 60 l. worków:'}
-                             array={["1", "2", "3", "4", "5", "6"]}
+                             array={[1, 2, 3, 4, 5, 6]}
                              inputsValueKey={inputsValue.selectBags}
                              handleSelect={handleSelect}/>
                 <Buttons/>

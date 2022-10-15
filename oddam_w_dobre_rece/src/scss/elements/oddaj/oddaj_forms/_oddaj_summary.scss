@@ -33,6 +33,9 @@
 .summary__p {
   width: 85%;
   margin-left: 1em;
+  &:first-letter{
+    text-transform: uppercase;
+  }
 }
 
 .summary__tableLeft, .summary__tableRight {
@@ -41,11 +44,17 @@
 
 .summary__thead {
   font-weight: $semiBold;
+  &:first-letter{
+    text-transform: uppercase;
+  }
 }
 
 .summary__td {
   font-size: $font-size-small;
   padding: $space-small 0 0 $space-large;
+  &:first-letter{
+    text-transform: uppercase;
+  }
 }
 
 .summary__td + .summary__td{
@@ -58,7 +67,6 @@ padding-left: 0;
   }
 
   .summary__tables {
-    width: 60%;
     display: flex;
     justify-content: space-between;
   }

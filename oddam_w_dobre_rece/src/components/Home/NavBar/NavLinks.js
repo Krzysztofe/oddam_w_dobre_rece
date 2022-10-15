@@ -1,6 +1,6 @@
 import {HashLink} from "react-router-hash-link";
 import {Link} from 'react-router-dom'
-import {auth} from '../../FireBaseConfig';
+import {auth} from '../../Libraries/FireBaseConfig';
 import {motion} from 'framer-motion'
 import {useAuthState} from 'react-firebase-hooks/auth'
 import {useNavigate} from "react-router";

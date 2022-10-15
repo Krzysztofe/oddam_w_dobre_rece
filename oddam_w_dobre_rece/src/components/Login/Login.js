@@ -1,10 +1,10 @@
 import React, {useState} from 'react';
 import {useNavigate} from 'react-router';
 import {signInWithEmailAndPassword} from 'firebase/auth'
-import {auth} from '../FireBaseConfig';
+import {auth} from '../Libraries/FireBaseConfig';
 import Title from "../Title";
 import ButtonsLogin from "./ButtonsLogin";
-import {loginValidation} from "../libraryValidations";
+import {loginValidation} from "../Libraries/libraryValidations";
 
 
 const Login = () => {

@@ -1,6 +1,6 @@
 export const section_5_FormValidation = (inputValue) => {
 
-    const _errors = {name: '', email: '', textarea: ''}
+    const _errors = {name: '', email: '', message: ''}
     const reg = /^[a-z\d]+[\w\d.-]*@(?:[a-z\d]+[a-z\d-]+\.){1,5}[a-z]{2,6}$/i;
 
 
@@ -12,11 +12,11 @@ export const section_5_FormValidation = (inputValue) => {
     } else if (!reg.test(inputValue.email)) {
         _errors.email = "email jest nieprawidłowy"}
 
-    if (inputValue.textarea.length < 2) {
-        _errors.textarea = 'wiadomość minimum dwa znaki'
+    if (inputValue.message.length < 2) {
+        _errors.message = 'wiadomość minimum dwa znaki'
     }
 
-    if (_errors.name || _errors.email || _errors.textarea) {
+    if (_errors.name || _errors.email || _errors.message) {
         return _errors
     }
         return ""

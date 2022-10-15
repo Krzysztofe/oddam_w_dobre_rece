@@ -1,6 +1,6 @@
 import {Link} from "react-router-dom";
 import {useAuthState} from "react-firebase-hooks/auth";
-import {auth} from "../FireBaseConfig";
+import {auth} from "../Libraries/FireBaseConfig";
 import HeaderImageSmall from '../../asets/Hero Image.png'
 import HeaderImageLarge from '../../asets/Hero Image@2x.png'
 import Title from "../Title";

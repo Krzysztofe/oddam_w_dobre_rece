@@ -5,6 +5,10 @@
   padding-top: $space-large * 2;
 }
 
+.oddajHeader__imgSmall, .oddajHeader__imgLarge{
+  display: none;
+}
+
 .oddajHeader__rightContainer {
   display: flex;
   flex-direction: column;
@@ -28,20 +32,21 @@
   .wrapper--oddajHeader {
     display: flex;
     background-color: white;
-    height: 60vh;
     padding: 0;
   }
 
-  .oddajHeader__backgroundImage {
+  .oddajHeader__imgSmall {
     display: block;
     width: 50%;
-    background-image: url("../../../../asets/Header-Form-Background.png");
-    background-position: right;
-    background-size: cover;
-    background-repeat: no-repeat;
+    object-fit: cover;
+    object-position: center;
+  }
+  .oddajHeader__imgLarge{
+    display: none;
   }
 
   .oddajHeader__rightContainer {
+    margin: 3rem 0;
     width: 50%;
     padding: 0 2em;
     box-shadow: -40px -40px 50px 20px rgba(255, 255, 255, 0.8);
@@ -64,7 +69,13 @@
 }
 
 @include media__bigSize {
-  .oddajHeader__backgroundImage {
-    background-image: url("../../../../asets/Header-Form-Background@2x.png");
+  .oddajHeader__imgLarge {
+    display: block;
+    width: 50%;
+    object-fit: cover;
+    object-position: center;
+  }
+  .oddajHeader__imgSmall{
+    display: none;
   }
 }

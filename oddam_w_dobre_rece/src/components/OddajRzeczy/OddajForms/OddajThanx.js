@@ -6,9 +6,8 @@ const OddajThanx = () => {
     return (
         <main className='oddajForm__inputs oddajForm__inputs--thnx'>
 
-            <Title text1={'dziękujemy za przesłanie formularza'}
-                   text2={'na maila prześlemy wszelkie' +
-                       ' informacje o odbiorze'}
+            <Title text={['dziękujemy za przesłanie formularza',
+                'na maila prześlemy wszelkie informacje o odbiorze']}
                    classContainer={'oddajThnx__container'}
                    classH2={'oddajThnx__h2'}
                    classUnderline={'oddajThnx__decoration'}/>
