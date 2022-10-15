@@ -2,8 +2,7 @@
   padding-bottom: $space-large;
   display: flex;
   flex-direction: column;
-  overflow-y: auto;
-  height: 63vh;
+  height: 350px;
 }
 
 .oddajForm1__input{
@@ -18,5 +17,12 @@
   -webkit-appearance: none;
   &:checked {
     background-color: $color-yellow;
+  }
+}
+
+@include media {
+
+  .oddajForm__inputs{
+    height: 430px;
   }
 }

@@ -1,5 +1,5 @@
 .select__container {
-  margin-top: 2em;
+  margin-top: $space-large;
   display: flex;
   align-items: center;
 }
@@ -64,5 +64,8 @@
 @include media {
   .select__option {
     background-color: rgb(238, 237, 233);
+  }
+  .select__container{
+    margin-top: $space-large * 2;
   }
 }
