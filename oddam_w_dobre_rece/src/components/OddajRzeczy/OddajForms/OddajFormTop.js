@@ -1,3 +1,6 @@
+import PropTypes from "prop-types";
+import InputSelect from "./OddajFormInputs/InputSelect";
+
 const OddajFormTop = ({text}) => {
     return (
         <>
@@ -7,5 +10,9 @@ const OddajFormTop = ({text}) => {
         </>
     );
 };
+
+OddajFormTop.propTypes = {
+    text: PropTypes.array.isRequired
+}
 
 export default OddajFormTop;

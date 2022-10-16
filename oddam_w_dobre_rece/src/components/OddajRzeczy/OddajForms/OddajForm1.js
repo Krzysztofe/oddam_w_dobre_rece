@@ -16,11 +16,11 @@ const OddajForm1 = () => {
         <>
             <main className='oddajForm__inputs'>
 
-                <InputRadio value={'ubrania, które nadają się do ponownego użycia'}/>
-                <InputRadio value={'ubrania, do wyrzucenia'}/>
-                <InputRadio value={'zabawki'}/>
-                <InputRadio value={'ksiązki'}/>
-                <InputRadio value={'inne'}/>
+                <InputRadio value='ubrania, które nadają się do ponownego użycia'/>
+                <InputRadio value='ubrania, do wyrzucenia'/>
+                <InputRadio value='zabawki'/>
+                <InputRadio value='ksiązki'/>
+                <InputRadio value='inne'/>
 
                 <div className="formButtons">
                     <button onClick={propsHandleIncrease}

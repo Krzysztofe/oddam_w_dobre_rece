@@ -42,18 +42,6 @@ textarea::placeholder {
   border-bottom: 1px solid #FF0000FF;
 }
 
-//.contactForm__button {
-//  padding: $space-small 0;
-//  width: 30%;
-//  margin-left: auto;
-//  margin-bottom: $space-large;
-//  }
-//
-//  &:hover {
-//    border: 1px solid $color-yellow;
-//  }
-//}
-
 .btnLarge--cntactForm{
   padding: $space-small 0;
   width: 30%;
@@ -71,14 +59,22 @@ textarea::placeholder {
 }
 
 @include media {
+
   .contactForm {
     padding: 0 $space-large;
   }
+
   .contactForm__inputContainer {
     width: 45%;
   }
+
   .contactForm__inputContainer--textarea {
     width: 100%;
     margin-top: $space-large;
+  }
+
+  .btnLarge--cntactForm{
+    max-width: 200px;
+    width: 50%;
   }
 }

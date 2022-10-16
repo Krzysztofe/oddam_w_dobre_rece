@@ -20,7 +20,8 @@ const Header = () => {
                      className='header__imageSmallLarge'/>
 
                 <aside className='header__right'>
-                        <Title text={['zacznij pomagać!',
+                        <Title
+                            text={['zacznij pomagać!',
                             'Oddaj niechciane rzeczy' +
                         ' w zaufane ręce']}
                             classH2={'header__h2'}/>

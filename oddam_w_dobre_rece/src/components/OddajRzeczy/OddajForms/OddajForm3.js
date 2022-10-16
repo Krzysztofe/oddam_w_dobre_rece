@@ -21,7 +21,7 @@ const OddajForm3 = () => {
 
             <InputSelect textLabel={''}
                          array={['poznań', 'warszawa', 'kraków', 'katowice']}
-                         inputsValueKey={inputsValue.selectLocalisation}
+                         inputsValueSelect={inputsValue.selectLocalisation}
                          handleSelect={handleSelect}/>
 
             <h3 className='oddajForm3__h3'>komu chcesz pomóc?</h3>

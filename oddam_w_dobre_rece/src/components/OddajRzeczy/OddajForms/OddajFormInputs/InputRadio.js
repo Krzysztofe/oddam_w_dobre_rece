@@ -1,5 +1,6 @@
 import React, {useContext} from 'react';
 import {GlobalContext} from "../../Context/GlobalContextProv";
+import PropTypes from "prop-types";
 
 const InputRadio = ({value}) => {
     const {inputsValue, handleChange} = useContext(GlobalContext)
@@ -17,5 +18,10 @@ const InputRadio = ({value}) => {
         </div>
     );
 };
+
+InputRadio.propTypes = {
+    value: PropTypes.string.isRequired
+}
+
 
 export default InputRadio;

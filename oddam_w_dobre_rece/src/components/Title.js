@@ -1,3 +1,5 @@
+import PropTypes from 'prop-types'
+
 const Title = ({
                    text,
                    classContainer,
@@ -11,5 +13,9 @@ const Title = ({
         </div>
     );
 };
+
+Title.propTypes = {
+    text: PropTypes.array.isRequired
+}
 
 export default Title;

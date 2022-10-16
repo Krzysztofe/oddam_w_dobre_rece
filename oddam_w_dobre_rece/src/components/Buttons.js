@@ -5,27 +5,28 @@ const Buttons = () => {
 
     const {handleDecrease, handleIncrease, counter, createSummary} = useContext(GlobalContext)
 
-    const increaseAndSummary = () =>{
+    const increaseAndSummary = () => {
         createSummary()
         handleIncrease()
     }
 
     return (
-                    <div className="formButtons">
+        <div className="formButtons">
 
-                        <button onClick={handleDecrease}
-                                className='formButton'>
-                            wstecz
-                        </button>
+            <button onClick={handleDecrease}
+                    className='formButton'>
+                wstecz
+            </button>
 
-                        <button onClick={counter === 5 ? increaseAndSummary : handleIncrease}
-                                className='formButton'>
-                         dalej
-                        </button>
+            <button onClick={counter === 5 ? increaseAndSummary : handleIncrease}
+                    className='formButton'>
+                dalej
+            </button>
 
-                    </div>
-
+        </div>
     );
 };
+
+
 
 export default Buttons;

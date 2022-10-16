@@ -1,8 +1,9 @@
 import {useState} from "react";
+import PropTypes from "prop-types";
 
 const InputSelect = ({
                          array, textLabel,
-                         inputsValueKey, handleSelect
+                         inputsValueSelect, handleSelect
                      }) => {
 
     const [open, setOpen] = useState(false)
@@ -22,7 +23,7 @@ const InputSelect = ({
 
                 <div onClick={handleOpen}
                      className="select__top">
-                    {typeof inputsValueKey === "string" ? inputsValueKey[0].toUpperCase() + inputsValueKey.slice(1): inputsValueKey}
+                    {typeof inputsValueSelect === "string" ? inputsValueSelect[0].toUpperCase() + inputsValueSelect.slice(1): inputsValueSelect}
                     <div className={open ? 'select__arrow--up' : 'select__arrow'}> </div>
                 </div>
 
@@ -46,5 +47,15 @@ const InputSelect = ({
         </div>
     );
 };
+
+InputSelect.propTypes = {
+    array: PropTypes.array.isRequired,
+    textLabel: PropTypes.string.isRequired,
+    inputsValueSelect: PropTypes.oneOfType(
+            [PropTypes.string.isRequired,
+                PropTypes.number.isRequired]),
+    handleSelect: PropTypes.func.isRequired
+}
+
 
 export default InputSelect;

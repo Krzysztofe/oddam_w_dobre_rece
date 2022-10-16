@@ -1,5 +1,6 @@
 import React, {useContext} from 'react';
 import {GlobalContext} from "../../Context/GlobalContextProv";
+import PropTypes from "prop-types";
 
 const InputText = ({label, name, value, type}) => {
 
@@ -15,5 +16,13 @@ const InputText = ({label, name, value, type}) => {
         </div>
     );
 };
+
+InputText.propType = {
+    label: PropTypes.string.isRequired,
+    name: PropTypes.string.isRequired,
+    value: PropTypes.string.isRequired,
+    type: PropTypes.string.isRequired
+}
+
 
 export default InputText;
