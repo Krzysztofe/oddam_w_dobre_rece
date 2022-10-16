@@ -5,7 +5,7 @@
 ## Features
 * Responsive design
 * Sending data to the firestore
-* Register form, login form, contact form using firebase
+* Register form, login form, form using firebase
 * Forms validations 
 * Props validations
 * React Scroll 
