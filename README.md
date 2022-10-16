@@ -7,6 +7,7 @@
 * Sending data to the firestore
 * Register form, login form, contact form using firebase
 * Forms validations 
+* Props validations
 * React Scroll 
 * Pagination 
   
