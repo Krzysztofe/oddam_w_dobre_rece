@@ -30,15 +30,13 @@ const Header = () => {
                             <div className='header__btns' id='simpleSteps'>
                                 <Link to='oddaj' className='header__link'>
                                     <button className="btnLarge header__btn">
-                                        oddaj <br/>
-                                        rzeczy
+                                        oddaj <br/> rzeczy
                                     </button>
                                 </Link>
 
                                 <Link to='oddaj' className='header__link'>
                                     <button className="btnLarge header__btn">
-                                        zorganizuj <br/>
-                                        zbiórkę
+                                        zorganizuj <br/> zbiórkę
                                     </button>
                                 </Link>
                             </div>
@@ -46,15 +44,13 @@ const Header = () => {
                             <div className='header__btns' id='simpleSteps'>
                                 <Link to='logowanie' className='header__link'>
                                     <button className="btnLarge header__btn">
-                                        oddaj <br/>
-                                        rzeczy
+                                        oddaj <br/> rzeczy
                                     </button>
                                 </Link>
 
                                 <Link to='logowanie' className='header__link'>
                                     <button className="btnLarge header__btn">
-                                        zorganizuj <br/>
-                                        zbiórkę
+                                        zorganizuj <br/> zbiórkę
                                     </button>
                                 </Link>
                             </div>

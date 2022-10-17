@@ -1,6 +1,7 @@
 import Buttons from "../../Buttons";
 import InputSelect from "./OddajFormInputs/InputSelect";
 import {useContext} from "react";
+import {motion} from "framer-motion";
 import {GlobalContext} from "../Context/GlobalContextProv";
 import InputCheckbox from "./OddajFormInputs/InputCheckbox";
 
@@ -17,9 +18,12 @@ const OddajForm3 = () => {
     }
 
     return (
-        <main className='oddajForm__inputs'>
+        <motion.main className='oddajForm__inputs'
+              initial={{opacity: 0, y: -40}}
+              animate={{opacity: 1, y: 0}}
+              transition={{delay: 0.1}}>
 
-            <InputSelect textLabel={''}
+            <InputSelect textLabel=''
                          array={['poznań', 'warszawa', 'kraków', 'katowice']}
                          inputsValueSelect={inputsValue.selectLocalisation}
                          handleSelect={handleSelect}/>
@@ -29,24 +33,24 @@ const OddajForm3 = () => {
             <div className="oddajForm3__checkboxes">
 
                 <InputCheckbox value={inputsValue.dzieciom}
-                               name={'dzieciom'}
-                               label={'dzieciom'}/>
+                               name='dzieciom'
+                               label='dzieciom'/>
 
                 <InputCheckbox value={inputsValue.matkom}
-                               name={'matkom'}
-                               label={'samotnym matkom'}/>
+                               name='matkom'
+                               label='samotnym matkom'/>
 
                 <InputCheckbox value={inputsValue.bezdomnym}
-                               name={'bezdomnym'}
-                               label={'bezdomnym'}/>
+                               name='bezdomnym'
+                               label='bezdomnym'/>
 
                 <InputCheckbox value={inputsValue.niepelnosprawnym}
-                               name={'niepelnosprawnym'}
-                               label={'Niepelnosprawnym'}/>
+                               name='niepelnosprawnym'
+                               label='Niepelnosprawnym'/>
 
                 <InputCheckbox value={inputsValue.starszym}
-                               name={'starszym'}
-                               label={'Osobom starszymom'}/>
+                               name='starszym'
+                               label='Osobom starszymom'/>
 
                 <div className='oddajForm3__label'> </div>
 
@@ -63,7 +67,7 @@ const OddajForm3 = () => {
                    className='oddajForm3__textInput'/>
 
             <Buttons/>
-        </main>
+        </motion.main>
     );
 };
 

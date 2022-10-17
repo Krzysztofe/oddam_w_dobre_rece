@@ -2,6 +2,7 @@ import Buttons from "../../Buttons";
 import {useContext} from "react";
 import {GlobalContext} from "../Context/GlobalContextProv";
 import OddajSummaryTable from "./OddajSummaryTable";
+import {motion} from "framer-motion";
 
 const OddajSummary = () => {
 
@@ -18,7 +19,10 @@ const OddajSummary = () => {
     }
 
     return (
-        <section className='oddajForm__inputs'>
+        <motion.section className='oddajForm__inputs'
+                 initial={{opacity: 0, y: -40}}
+                 animate={{opacity: 1, y: 0}}
+                 transition={{delay: 0.1}}>
             <h3 className='summary__h3'>oddajesz:</h3>
 
             <div className="summary__topContainer">
@@ -43,7 +47,7 @@ const OddajSummary = () => {
             </div>
             <OddajSummaryTable/>
             <Buttons/>
-        </section>
+        </motion.section>
     );
 };
 

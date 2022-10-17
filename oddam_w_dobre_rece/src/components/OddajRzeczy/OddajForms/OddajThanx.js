@@ -1,10 +1,14 @@
 import Title from "../../Title";
 import {Link} from 'react-router-dom'
+import {motion} from "framer-motion";
 
 const OddajThanx = () => {
 
     return (
-        <main className='oddajForm__inputs oddajForm__inputs--thnx'>
+        <motion.main className='oddajForm__inputs oddajForm__inputs--thnx'
+              initial={{opacity: 0, y: -40}}
+              animate={{opacity: 1, y: 0}}
+              transition={{delay: 0.1}}>
 
             <Title text={['dziękujemy za przesłanie formularza',
                 'na maila prześlemy wszelkie informacje o odbiorze']}
@@ -18,7 +22,7 @@ const OddajThanx = () => {
                 </button>
             </Link>
 
-        </main>
+        </motion.main>
     );
 };
 

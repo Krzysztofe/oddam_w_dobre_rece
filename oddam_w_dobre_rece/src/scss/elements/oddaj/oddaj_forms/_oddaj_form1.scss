@@ -15,7 +15,7 @@
   border: 1px solid black;
   margin-right: 2em;
   -webkit-appearance: none;
-
+transition-duration: 320ms;
   &:checked {
     background-color: $color-yellow;
   }

@@ -1,7 +1,6 @@
 import {RiMenuFill} from 'react-icons/ri';
 import {GrFormClose} from 'react-icons/gr';
 import {useState} from "react";
-import {motion} from "framer-motion"
 import Tshirt from '../../../asets/IconTshirt.png';
 import NavLinks from "./NavLinks";
 

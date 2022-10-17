@@ -22,24 +22,20 @@ const OddajHeader = ({counter}) => {
 
                     <div className="squares">
 
-                        <Square number={'1'}
-                                text={'wybierz rzeczy'}
+                        <Square number='1'
+                                text='wybierz rzeczy'
                                 counter={counter}/>
 
-                        <Square number={'2'}
-                                text={'spakuj w worki'}
+                        <Square number='2'
+                                text='spakuj w worki'
                                 counter={counter}/>
 
-                        <Square number={'3'}
-                                text={'wybierz fundację'}
+                        <Square number='3'
+                                text='wybierz fundację'
                                 counter={counter}/>
 
-                        <Square number={"4"}
-                                text={'zamów kuriera'}
-                                counter={counter}/>
-
-                        <Square number={'5'}
-                                text={'zamów kuriera'}
+                        <Square number='4'
+                                text='zamów kuriera'
                                 counter={counter}/>
 
                     </div>

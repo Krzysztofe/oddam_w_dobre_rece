@@ -81,8 +81,8 @@ const Register = () => {
                 <p className='login__errors'>{errors}</p>
 
                 <ButtonsLogin link={'/logowanie'}
-                              btnRight={'zaloguj się'}
-                              btnLeft={'załóż konto'}/>
+                              btnRight='zaloguj się'
+                              btnLeft='załóż konto'/>
             </form>
         </>
     );

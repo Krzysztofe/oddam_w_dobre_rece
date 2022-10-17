@@ -24,9 +24,9 @@ const OddajMain = () => {
 
             {counter === 1 &&
                 <>
-                    <OddajBelt text={'Uzupełnij szczegóły dotyczace' +
-                        ' twoich rzeczy. Dzięki temu bedziemy wiedzieć' +
-                        ' komu najlepiej je przekazać.'}/>
+                    <OddajBelt text='Uzupełnij szczegóły dotyczace
+                       twoich rzeczy. Dzięki temu bedziemy wiedzieć
+                       komu najlepiej je przekazać.'/>
 
                     <main className="wrapper wrapper--oddajMain">
                         <OddajFormTop
@@ -38,10 +38,10 @@ const OddajMain = () => {
 
             {counter === 2 &&
                 <>
-                    <OddajBelt text={'Wszytie rzeczy do oddania ' +
-                        'zapakuj w 60l worki. Dokładną' +
-                        ' instrukcję jak poprawnie spakować' +
-                        ' rzczy znajdziesz TUTAJ '}/>
+                    <OddajBelt text='Wszytie rzeczy do oddania
+                        zapakuj w 60l worki. Dokładną
+                        instrukcję jak poprawnie spakować
+                        rzczy znajdziesz TUTAJ '/>
 
                     <main className="wrapper wrapper--oddajMain">
                         <OddajFormTop
@@ -54,10 +54,10 @@ const OddajMain = () => {
 
             {counter === 3 &&
                 <>
-                    <OddajBelt text={'Jeśli wiesz komu chcesz pomóc,' +
-                        ' możesz wpisać nazwę organizacji w wyszukiwarce.' +
-                        ' Możesz też filtrować organizacje po ich lokalizacji' +
-                        ' bądź celu ich pomocy'}/>
+                    <OddajBelt text='Jeśli wiesz komu chcesz pomóc,
+                        możesz wpisać nazwę organizacji w wyszukiwarce.
+                        Możesz też filtrować organizacje po ich lokalizacji
+                        bądź celu ich pomocy'/>
 
                     <main className="wrapper wrapper--oddajMain">
                         <OddajFormTop
@@ -69,7 +69,7 @@ const OddajMain = () => {
 
             {counter === 4 &&
                 <>
-                    <OddajBelt text={'Podaj adres oraz termin odbioru rzeczy'}/>
+                    <OddajBelt text='Podaj adres oraz termin odbioru rzeczy'/>
 
                     <main className="wrapper wrapper--oddajMain">
                         <OddajFormTop
@@ -95,7 +95,7 @@ const OddajMain = () => {
                 <main className="wrapper wrapper--oddajMain">
                     <div className="belt__empty"></div>
                     <OddajFormTop
-                        text={['', '']}/>
+                        text={['i', '']}/>
                     <OddajThanx/>
                 </main>
             }

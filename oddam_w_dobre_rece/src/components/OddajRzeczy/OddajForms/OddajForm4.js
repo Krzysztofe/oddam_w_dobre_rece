@@ -2,6 +2,7 @@ import Buttons from "../../Buttons";
 import {useContext} from "react";
 import {GlobalContext} from "../Context/GlobalContextProv";
 import InputText from "./OddajFormInputs/InputText";
+import {motion} from "framer-motion";
 
 const OddajForm4 = () => {
 
@@ -13,29 +14,32 @@ const OddajForm4 = () => {
     }
 
     return (
-        <main className='oddajForm__inputs'>
+        <motion.main className='oddajForm__inputs'
+              initial={{opacity: 0, y: -40}}
+              animate={{opacity: 1, y: 0}}
+              transition={{delay: 0.1}}>
 
             <aside className="form4__leftContainer">
                 <h3 className='form4__h3'>Adres odbioru:</h3>
 
-                <InputText type={'text'}
-                           name={'street'}
-                           label={'Ulica'}
+                <InputText type='text'
+                           name='street'
+                           label='Ulica'
                            value={inputsValue.street}/>
 
-                <InputText type={'text'}
-                           name={'city'}
-                           label={'Miasto'}
+                <InputText type='text'
+                           name='city'
+                           label= 'Miasto'
                            value={inputsValue.city}/>
 
-                <InputText type={'text'}
-                           name={'postCode'}
-                           label={'Kod pocztowy'}
+                <InputText type='text'
+                           name='postCode'
+                           label='Kod pocztowy'
                            value={inputsValue.postCode}/>
 
-                <InputText type={'number'}
-                           name={'phone'}
-                           label={'Numer telefonu'}
+                <InputText type='number'
+                           name='phone'
+                           label='Numer telefonu'
                            value={inputsValue.phone}/>
             </aside>
 
@@ -43,14 +47,14 @@ const OddajForm4 = () => {
             <aside className="form4__rightContainer">
                 <h3 className='form4__h3'>termin odbioru:</h3>
 
-                <InputText type={'date'}
-                           name={'date'}
-                           label={'Data'}
+                <InputText type='date'
+                           name='date'
+                           label='Data'
                            value={inputsValue.date}/>
 
-                <InputText type={'time'}
-                           name={'time'}
-                           label={'Godzina'}
+                <InputText type='time'
+                           name='time'
+                           label='Godzina'
                            value={inputsValue.time}/>
 
                 <div className='form4__inputContainer'>
@@ -62,7 +66,7 @@ const OddajForm4 = () => {
                 </div>
             </aside>
             <Buttons/>
-        </main>
+        </motion.main>
     );
 };
 

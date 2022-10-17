@@ -8,6 +8,7 @@
   padding: $space-large;
   font-weight: $semiBold;
   color: $color-black;
+  transition-duration: 320ms;
   &:hover {
     background-color: $color-yellow;
   }

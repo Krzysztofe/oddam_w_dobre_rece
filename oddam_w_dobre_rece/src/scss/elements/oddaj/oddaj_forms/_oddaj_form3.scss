@@ -34,7 +34,7 @@
   cursor: pointer;
   text-align: center;
   padding: 0.5em 0;
-
+  transition-duration: 320ms;
   &:first-letter {
     text-transform: uppercase;
   }
@@ -48,6 +48,7 @@
 .oddajForm3__textInput {
   margin-top: $space-large;
   width: 70%;
+  padding: $space-small;
 }
 
 @include media {
