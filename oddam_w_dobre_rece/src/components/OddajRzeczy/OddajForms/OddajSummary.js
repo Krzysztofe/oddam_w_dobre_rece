@@ -8,15 +8,27 @@ const OddajSummary = () => {
 
     const {inputsValue} = useContext(GlobalContext)
 
-    const selectBags = () =>{
+    const selectBagsNumber = (message, inputsValue) => {
+        if (inputsValue === '-- Wybierz --'){
+            return message
+        } return inputsValue
+    }
+
+    const selectBagsDescription = () =>{
         if (inputsValue.selectBags === 1){
             return 'worek'
         }
         else if (inputsValue.selectBags > 1 && inputsValue.selectBags < 4){
             return 'worki'
+        }  else if (inputsValue.selectBags === '-- Wybierz --'){
+            return null
         }
             return 'worków'
     }
+
+
+
+
 
     return (
         <motion.section className='oddajForm__inputs'
@@ -27,8 +39,8 @@ const OddajSummary = () => {
 
             <div className="summary__topContainer">
                 <div className="summary__icon1"></div>
-                <p className='summary__p'>{inputsValue.selectBags}
-                   <> </>{selectBags()}
+                <p className='summary__p'> {selectBagsNumber('wróć do kroku 2/4', inputsValue.selectBags)}
+                   <> </>{selectBagsDescription()}
                     {inputsValue.selectStuff ? `, ${inputsValue.selectStuff}` : null }
                     {inputsValue.dzieciom ? <>, dzieciom</> : null}
                     {inputsValue.matkom ? <>, samotnym matkom</> : null}
@@ -41,8 +53,12 @@ const OddajSummary = () => {
             <div className="summary__topContainer">
                 <div className="summary__icon2"></div>
                 <p className='summary__p'>
-                    dla lokalizacji: {inputsValue.selectLocalisation[0].toUpperCase() + inputsValue.selectLocalisation.slice(1) }
-                    <> {inputsValue.organisationName}</>
+                    {inputsValue.selectLocalisation === '-- Wybierz --' ?
+                        null :
+                        'dla lokalizacji:'}
+                   <> </>
+                    {selectBagsNumber('wróć do kroku 3/4', inputsValue.selectLocalisation)}
+                    {inputsValue.organisationName ? <>, {inputsValue.organisationName}</> : null}
                 </p>
             </div>
             <OddajSummaryTable/>

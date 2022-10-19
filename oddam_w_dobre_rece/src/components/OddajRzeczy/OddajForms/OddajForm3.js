@@ -24,7 +24,7 @@ const OddajForm3 = () => {
               transition={{delay: 0.1}}>
 
             <InputSelect textLabel=''
-                         array={['poznań', 'warszawa', 'kraków', 'katowice']}
+                         array={['Poznań', 'Warszawa', 'Kraków', 'Katowice']}
                          inputsValueSelect={inputsValue.selectLocalisation}
                          handleSelect={handleSelect}/>
 
