@@ -10,6 +10,7 @@
 * Props validations
 * React Scroll 
 * Pagination 
+* Animations
   
 ## Technologies  
 * SCSS 
