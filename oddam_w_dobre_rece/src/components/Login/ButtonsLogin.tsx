@@ -1,6 +1,13 @@
+import React, {FC} from 'react'
 import {Link} from 'react-router-dom'
 
-const ButtonsLogin = ({link, btnRight, btnLeft}) => {
+interface Props{
+    link: string;
+    btnRight: string;
+    btnLeft: string
+}
+
+const ButtonsLogin:FC<Props> = ({link, btnRight, btnLeft}) => {
     return (
 
         <div className="buttonsLogin">

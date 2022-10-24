@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {ChangeEvent, FormEvent, useState} from 'react';
 import {useNavigate} from 'react-router';
 import {signInWithEmailAndPassword} from 'firebase/auth'
 import {auth} from '../Libraries/FireBaseConfig';
@@ -12,18 +12,21 @@ const Login = () => {
     const navigate = useNavigate()
     const [inputValueLogin, setInputValueLogin] =
         useState({email: "", password: ""})
-    const [errors, setErrors] = useState('')
 
-    const handleChange = (e) => {
+    const [errors, setErrors] = useState <string | string[]> ('')
+
+    const handleChange = (e: ChangeEvent<HTMLInputElement>):void => {
         setInputValueLogin({
             ...inputValueLogin,
             [e.target.name]: e.target.value
         })
     }
 
-    const handleLogin = (e) => {
+    const handleLogin = (e: FormEvent<HTMLFormElement>):void => {
         e.preventDefault()
+
         setErrors(loginValidation(inputValueLogin))
+
         if(loginValidation(inputValueLogin).length > 0){
             return
         }
@@ -71,8 +74,8 @@ const Login = () => {
                 <p className='login__errors'>{errors}</p>
 
                 <ButtonsLogin link={'/rejestracja'}
-                    btnRight='załóż konto'
-                    btnLeft='zaloguj się'/>
+                              btnRight='załóż konto'
+                              btnLeft='zaloguj się'/>
             </form>
         </>
     );
