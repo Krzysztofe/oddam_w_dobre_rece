@@ -1,14 +1,16 @@
+
+import React from 'react'
 import {Link} from "react-router-dom";
 import Title from "../Title";
-import {useAuthState} from "react-firebase-hooks/auth";
-import {auth} from "../Libraries/FireBaseConfig";
-import Tshirt from '../../asets/IconTshirt.png';
-import Bag from '../../asets/IconBag.png';
-import Glass from '../../asets/IconLupa.png'
-import Arrows from '../../asets/Icon.png'
+// import {useAuthState} from "react-firebase-hooks/auth";
+// import {auth} from "../Libraries/FireBaseConfig";
+const Tshirt =  require( '../../asets/IconTshirt.png');
+const Bag = require( '../../asets/IconBag.png');
+const Glass = require( '../../asets/IconLupa.png')
+const Arrows = require( '../../asets/Icon.png')
 
 const Section2 = () => {
-    const [user] = useAuthState(auth);
+    // const [user] = useAuthState(auth);
 
     return (
         <section className='wrapper wrapper--section-2'>
@@ -49,22 +51,22 @@ const Section2 = () => {
 
             </div>
 
-            {user?.email
-                ?
-                <Link to='/oddaj' className='section-2__link'>
-                    <button className='btnLarge btn--section-2'
-                            id='aboutUs'>
-                        oddaj <br/> rzeczy
-                    </button>
-                </Link>
-                :
-                <Link to='/logowanie' className='section-2__link'>
-                    <button className='btnLarge btn--section-2'
-                            id='aboutUs'>
-                        oddaj <br/> rzeczy
-                    </button>
-                </Link>
-            }
+            {/*{user?.email*/}
+            {/*    ?*/}
+            {/*    <Link to='/oddaj' className='section-2__link'>*/}
+            {/*        <button className='btnLarge btn--section-2'*/}
+            {/*                id='aboutUs'>*/}
+            {/*            oddaj <br/> rzeczy*/}
+            {/*        </button>*/}
+            {/*    </Link>*/}
+            {/*    :*/}
+            {/*    <Link to='/logowanie' className='section-2__link'>*/}
+            {/*        <button className='btnLarge btn--section-2'*/}
+            {/*                id='aboutUs'>*/}
+            {/*            oddaj <br/> rzeczy*/}
+            {/*        </button>*/}
+            {/*    </Link>*/}
+            {/*}*/}
         </section>
     );
 };

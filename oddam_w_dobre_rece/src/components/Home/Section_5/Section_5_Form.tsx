@@ -1,43 +1,69 @@
-import {useState} from "react";
+import React from "react";
+import {useState, ChangeEvent, FormEvent} from "react";
 import {section_5_FormValidation} from '../../Libraries/libraryValidations'
 import {postUser} from '../../FetchOperations/FetchOperations'
 
-const ContactForm = () => {
+interface IInputValue {
+    name: string;
+    email: string;
+    message: string;
+}
 
-    const [inputValue, setInputValue] = useState({
+interface IErrors {
+    name: string;
+    email: string;
+    message: string;
+}
+
+export interface IFormData{
+    name: string;
+    email: string;
+    message: string;
+}
+
+
+const Section_5 = () => {
+
+    const [inputValue, setInputValue] = useState<IInputValue>({
         name: "",
         email: "",
         message: ""
     })
 
-    const handleChange = (e) => {
+    const handleChange = (e: ChangeEvent<HTMLTextAreaElement | HTMLInputElement>): void => {
         setInputValue({
             ...inputValue,
             [e.target.name]: e.target.value
         })
     }
 
-    const [errors, setErrors] = useState({
+    const [errors, setErrors] = useState<IErrors>({
         name: "",
         email: "",
         message: ""
     })
 
-    const [formData, setFormData] = useState([])
-    const [fetchErrors, setFetchErrors] = useState('')
+    const [formData, setFormData] = useState<IFormData>({
+        name: "",
+        email: "",
+        message: ""
+    })
 
+    const [fetchErrors, setFetchErrors] = useState <null | string> (null)
 
-    const handleSubmit = (e) => {
+    const handleSubmit = (e: FormEvent<HTMLFormElement>): void => {
         e.preventDefault()
 
         setErrors(section_5_FormValidation(inputValue))
-        if (section_5_FormValidation(inputValue) !== '') {
+
+        if (section_5_FormValidation(inputValue).name !== '' ||
+            section_5_FormValidation(inputValue).message !== '' ||
+            section_5_FormValidation(inputValue).email !== '') {
             return
         }
 
         setFormData(inputValue)
         postUser(formData, setFetchErrors)
-
         setInputValue({
             name: "",
             email: "",
@@ -110,4 +136,4 @@ const ContactForm = () => {
     );
 };
 
-export default ContactForm;
+export default Section_5;

@@ -1,15 +1,17 @@
+import React from 'react'
+import NavLinks from "./NavLinks";
+import {useState} from "react";
 import {RiMenuFill} from 'react-icons/ri';
 import {GrFormClose} from 'react-icons/gr';
-import {useState} from "react";
-import Tshirt from '../../../asets/IconTshirt.png';
-import NavLinks from "./NavLinks";
+const Tshirt = require('../../../asets/IconTshirt.png');
+
 
 const MobileNavigation = () => {
-    const [open, setOpen] = useState(false)
+    const [open, setOpen] = useState<boolean>(false)
 
-    const handleCloseMenu = () => {
-        setOpen(false)
-    }
+    // const handleCloseMenu = ():any => {
+    //     setOpen(false)
+    // }
 
     return (
         <>
@@ -23,8 +25,7 @@ const MobileNavigation = () => {
                             <GrFormClose className='iconCross'
                                          onClick={() => setOpen(!open)}/>
                         </div>
-                        <NavLinks handleCloseMenu={handleCloseMenu}
-                        open = {open}/>
+                        <NavLinks setOpen = {setOpen}/>
                     </nav>
 
 

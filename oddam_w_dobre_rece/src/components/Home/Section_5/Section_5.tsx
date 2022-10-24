@@ -1,3 +1,4 @@
+import React from 'react'
 import Form from './Section_5_Form'
 import Title from "../../Title";
 
@@ -7,7 +8,7 @@ const Section_5 = () => {
             <div className="section-5__opacity">
                 <aside className="section-5__right">
                     <Title text={['skontaktuj się z nami']}
-                        classUnderline={'section-5__decoration'}/>
+                           classUnderline={'section-5__decoration'}/>
                     <Form/>
                 </aside>
             </div>

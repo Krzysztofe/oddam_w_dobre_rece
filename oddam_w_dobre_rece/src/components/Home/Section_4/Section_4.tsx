@@ -1,22 +1,38 @@
 import React, {useEffect, useState} from 'react';
 import ReactPaginate from "react-paginate";
-import Title from "../../Title";
 import {fetchOrganizations} from "../../FetchOperations/FetchOperations"
 
-const WhoWeHelp = () => {
-
-    const [printCounter, setPrintCounter] = useState(1)
-    const [organisations, setOrganisations] = useState(false)
-    const [loading, setLoading] = useState(true)
-    const [printLoading, setPrintLoading] = useState(["loading"])
-    const [error, setError] = useState(null)
-    const [pageNumber, setPageNumber] = useState(0)
+import Title from "../../Title";
 
 
-    useEffect(() => {
+interface IOrganizatiosState {
+    organization: {
+        id: number | null
+        type: string
+        name: string
+        goals: string
+        stuff: string
+    }[]
+}
 
+const Section_4 = () => {
+
+    const [printCounter, setPrintCounter] = useState <number> (1)
+    const [organisations, setOrganisations] = useState <IOrganizatiosState["organization"]> ([{
+        id: null,
+        type: '',
+        name: '',
+        goals: '',
+        stuff: ''
+    }])
+    const [loading, setLoading] = useState <boolean> (true)
+    const [printLoading, setPrintLoading] = useState <string[]> (["loading"])
+    const [error, setError] = useState <string | null> (null)
+    const [pageNumber, setPageNumber] = useState<number>(0)
+
+
+    useEffect(():void => {
         fetchOrganizations(setOrganisations, setLoading, setError)
-
     }, [])
 
     if (loading && error) {
@@ -29,33 +45,34 @@ const WhoWeHelp = () => {
     const printedPage = pageNumber * organisationsPerPage
 
 
-    const organisationSelection = (oganisationType, organisationTypePrinted) => {
+    const organisationSelection =
+        (oganisationType: string, organisationTypePrinted: string):JSX.Element[] => {
 
-        const filtered = organisations
-            .filter(item => item.type === oganisationType)
+            const filtered = organisations.filter((item) => item.type === oganisationType)
 
-        const displayOrganisations = filtered
-            .slice(printedPage, printedPage + organisationsPerPage)
-            .map((item) => {
-                return <table key={item.id} className='section-4__table'>
-                    <tbody>
-                    <tr>
-                        <td className='section-4__td'>
-                            <p className='section-4__pLarge'> {organisationTypePrinted} {item.name}</p>
-                            <p className='section-4__pSmall'>Cel i misja: {item.goals}</p>
-                        </td>
-                        <td className='td__right'>{item.stuff}</td>
-                    </tr>
-                    </tbody>
-                </table>
-            })
-        return displayOrganisations
-    }
+            const displayOrganisations:JSX.Element[] = filtered
+                .slice(printedPage, printedPage + organisationsPerPage)
+                .map((item) => {
+                    return <table key={item.id} className='section-4__table'>
+                        <tbody>
+                        <tr>
+                            <td className='section-4__td'>
+                                <p className='section-4__pLarge'> {organisationTypePrinted} {item.name}</p>
+                                <p className='section-4__pSmall'>Cel i misja: {item.goals}</p>
+                            </td>
+                            <td className='td__right'>{item.stuff}</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                })
+            return displayOrganisations
+        }
 
-    const changePage = ({selected}) => {
-        setPageNumber(selected)
-    }
-    const setPrintCounterPageNumber = (selected) => {
+    // const changePage = ({selected}) => {
+    //     setPageNumber(selected)
+    // }
+
+    const setPrintCounterPageNumber = (selected:number):void => {
         setPrintCounter(selected)
         setPageNumber(0)
     }
@@ -123,42 +140,45 @@ const WhoWeHelp = () => {
                         {organisationSelection(
                             "fundacja", "fundacja")}
                         <ReactPaginate pageCount={3}
-                                       onPageChange={changePage}
+                            // onPageChange={changePage}
                                        containerClassName={'paginationButtonsContainer'}
                                        disabledClassName={'disabledButton'}
                                        activeClassName={'paginationButton__active'}
                                        previousLinkClassName={'paginationButton__previousNext'}
                                        nextLinkClassName={'paginationButton__previousNext'}/>
-                    </>}
+                    </>
+                }
 
                 {printCounter === 2 &&
                     <>
                         {organisationSelection(
                             "ngo", "organizacja")}
                         <ReactPaginate pageCount={2}
-                                       onPageChange={changePage}
+                            // onPageChange={changePage}
                                        containerClassName={'paginationButtonsContainer'}
                                        disabledClassName={'disabledButton'}
                                        activeClassName={'paginationButton__active'}
                                        previousLinkClassName={'paginationButton__previousNext'}
                                        nextLinkClassName={'paginationButton__previousNext'}/>
-                    </>}
+                    </>
+                }
 
                 {printCounter === 3 &&
                     <>
                         {organisationSelection(
                             "collection", "zbiórka")}
                         <ReactPaginate pageCount={1}
-                                       onPageChange={changePage}
+                            // onPageChange={changePage}
                                        containerClassName={'paginationButtonsContainer'}
                                        disabledClassName={'disabledButton'}
                                        activeClassName={'paginationButton__active'}
                                        previousLinkClassName={'paginationButton__previousNext'}
                                        nextLinkClassName={'paginationButton__previousNext'}/>
-                    </>}
+                    </>
+                }
             </div>
         </section>
     );
 }
 
-export default WhoWeHelp;
+export default Section_4;

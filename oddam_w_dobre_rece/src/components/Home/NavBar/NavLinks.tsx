@@ -1,24 +1,30 @@
 import {HashLink} from "react-router-hash-link";
-import {Link} from 'react-router-dom'
+import {Link} from 'react-router-dom';
 import {auth} from '../../Libraries/FireBaseConfig';
-import {motion} from 'framer-motion'
-import {useAuthState} from 'react-firebase-hooks/auth'
+import {motion} from 'framer-motion';
+import React, {FC} from 'react'
+import {useAuthState} from 'react-firebase-hooks/auth';
 import {useNavigate} from "react-router";
 
-const NavLinks = ({handleCloseMenu, open}) => {
+interface Props{
+    setOpen?: React.Dispatch<React.SetStateAction<boolean>>
+}
+
+const NavLinks:FC<Props> = ({setOpen}) => {
+
     const [user] = useAuthState(auth);
     const navigate = useNavigate()
 
-    const propsCloseMenu = () => {
-        if (typeof handleCloseMenu === 'function') {
-            return handleCloseMenu()
+    const handleCloseMenu = ():void => {
+        if (setOpen){
+            setOpen(false)
         }
     }
 
-    const handleLogout = () => {
+    const handleLogout = ():void => {
         auth.signOut();
         navigate('/wylogowano');
-        propsCloseMenu();
+        handleCloseMenu();
     }
 
     return (
@@ -27,7 +33,7 @@ const NavLinks = ({handleCloseMenu, open}) => {
 
                 <Link to='/'
                       className='link'>
-                    <motion.li onClick={propsCloseMenu}
+                    <motion.li onClick={handleCloseMenu}
                                initial={{opacity: 0, y: 0}}
                                animate={{opacity: 1, y: 0}}
                                transition={{delay: 0.1}}>
@@ -38,7 +44,7 @@ const NavLinks = ({handleCloseMenu, open}) => {
 
                 <HashLink smooth to='#simpleSteps'
                           className='link'>
-                    <motion.li onClick={propsCloseMenu}
+                    <motion.li onClick={handleCloseMenu}
                                initial={{opacity: 0, y: -40}}
                                animate={{opacity: 1, y: 0}}
                                transition={{delay: 0.2}}>
@@ -49,7 +55,7 @@ const NavLinks = ({handleCloseMenu, open}) => {
 
                 <HashLink smooth to='#aboutUs'
                           className='link'>
-                    <motion.li onClick={propsCloseMenu}
+                    <motion.li onClick={handleCloseMenu}
                                initial={{opacity: 0, y: -40}}
                                animate={{opacity: 1, y: 0}}
                                transition={{delay: 0.3}}>
@@ -60,7 +66,7 @@ const NavLinks = ({handleCloseMenu, open}) => {
 
                 <HashLink smooth to='#whoWeHelp'
                           className='link'>
-                    <motion.li onClick={propsCloseMenu}
+                    <motion.li onClick={handleCloseMenu}
                                initial={{opacity: 0, y: -40}}
                                animate={{opacity: 1, y: 0}}
                                transition={{delay: 0.4}}>
@@ -71,7 +77,7 @@ const NavLinks = ({handleCloseMenu, open}) => {
 
                 <HashLink smooth to='#contact'
                           className='link'>
-                    <motion.li onClick={propsCloseMenu}
+                    <motion.li onClick={handleCloseMenu}
                                initial={{opacity: 0, y: -40}}
                                animate={{opacity: 1, y: 0}}
                                transition={{delay: 0.5}}>
@@ -95,7 +101,7 @@ const NavLinks = ({handleCloseMenu, open}) => {
 
                     <Link to='oddaj'
                           className='link link--log'>
-                        <motion.li onClick={propsCloseMenu}
+                        <motion.li onClick={handleCloseMenu}
                                    initial={{opacity: 0, y: -40}}
                                    animate={{opacity: 1, y: 0}}
                                    transition={{delay: 0.7}}>
@@ -117,7 +123,7 @@ const NavLinks = ({handleCloseMenu, open}) => {
 
                     <Link to="/logowanie"
                           className='link link--log'>
-                        <motion.li onClick={propsCloseMenu}
+                        <motion.li onClick={handleCloseMenu}
                                    initial={{opacity: 0, y: -40}}
                                    animate={{opacity: 1, y: 0}}
                                    transition={{delay: 0.6}}>
@@ -127,10 +133,10 @@ const NavLinks = ({handleCloseMenu, open}) => {
 
                     <Link to="/rejestracja"
                           className='link link--log'>
-                        <motion.li onClick={propsCloseMenu}
-                            initial={{opacity: 0, y: -40}}
-                            animate={{opacity: 1, y: 0}}
-                            transition={{delay: 0.7}}>
+                        <motion.li onClick={handleCloseMenu}
+                                   initial={{opacity: 0, y: -40}}
+                                   animate={{opacity: 1, y: 0}}
+                                   transition={{delay: 0.7}}>
                             załóż konto
                         </motion.li>
                     </Link>

@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {ChangeEvent, FormEvent, useState} from 'react';
 import {createUserWithEmailAndPassword} from 'firebase/auth'
 import {auth} from '../Libraries/FireBaseConfig'
 import {useNavigate} from 'react-router'
@@ -6,29 +6,36 @@ import Title from "../Title";
 import ButtonsLogin from "./ButtonsLogin";
 import {registerValidation} from '../Libraries/libraryValidations'
 
+export interface IInputValueRregister {
+    email: string,
+    password: string,
+    passwordRepeated: string
+}
+
+
 const Register = () => {
 
     const navigate = useNavigate()
-    const [inputValueRregister, setInputValueRegister] = useState({
-            email: '',
-            password: '',
-            passwordRepeated: ''
-        })
-    const [errors, setErrors] = useState([])
+    const [inputValueRregister, setInputValueRegister] = useState <IInputValueRregister> ({
+        email: '',
+        password: '',
+        passwordRepeated: ''
+    })
+    const [errors, setErrors] = useState <string[] | string> ([])
 
-    const handleChange = (e) => {
-        e.preventDefault()
+    const handleChange = (e:ChangeEvent<HTMLInputElement>):void => {
         setInputValueRegister({
             ...inputValueRregister,
             [e.target.name]: e.target.value
         })
     }
 
-    const handleRegister = (e) => {
+    const handleRegister = (e:FormEvent<HTMLFormElement>):void => {
         e.preventDefault()
+
         setErrors(registerValidation(inputValueRregister))
 
-        if (registerValidation(inputValueRregister).length > 0){
+        if (registerValidation(inputValueRregister).length > 0) {
             return
         }
 

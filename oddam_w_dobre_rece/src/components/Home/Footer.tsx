@@ -1,7 +1,10 @@
-import Facebook from "../../asets/Facebook.png";
-import Instagram from "../../asets/Instagram.png";
+import React from 'react'
+import {FC} from 'react'
 
-const Footer = () => {
+const Facebook = require("../../asets/Facebook.png")
+const Instagram = require( "../../asets/Instagram.png")
+
+const Footer: FC = () => {
     return (
         <footer className='wrapper wrapper--footer'>
             <div className="footer__container">

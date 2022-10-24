@@ -1,3 +1,4 @@
+import React from 'react'
 import NavLinks from './NavLinks'
 
 const Navigation = () => {

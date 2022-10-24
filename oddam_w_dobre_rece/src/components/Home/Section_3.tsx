@@ -1,8 +1,9 @@
+import React from 'react'
 import Title from "../Title";
-import SignatureSmall from '../../asets/Signature.png'
-import SignatureLarge from '../../asets/Signature@2x.png'
-import PeopleSmall from '../../asets/People.png'
-import PeopleLarge from '../../asets/People@2x.png';
+const SignatureSmall = require( '../../asets/Signature.png')
+const SignatureLarge = require( '../../asets/Signature@2x.png')
+const PeopleSmall = require( '../../asets/People.png')
+const PeopleLarge = require( '../../asets/People@2x.png')
 
 
 const Section_3 = () => {

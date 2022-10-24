@@ -1,13 +1,14 @@
+import React from 'react'
 import Navigation from "./Navigation";
 import NavigationMobile from "./NavigationMobile";
 
-const NavBar = () => {
+const NavBar = ()  => {
     return (
         <>
             <div className='wrapper wrapper--navigation'>
                 <Navigation/>
             </div>
-                <NavigationMobile/>
+            <NavigationMobile/>
         </>
 
     );
