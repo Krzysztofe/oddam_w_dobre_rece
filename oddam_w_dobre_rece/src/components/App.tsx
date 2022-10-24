@@ -1,3 +1,4 @@
+import React from 'react'
 import {BrowserRouter, Routes, Route} from "react-router-dom";
 import NavBar from "./Home/NavBar/NavBar";
 import Home from "./Home/Home";
@@ -6,6 +7,7 @@ import Register from "./Login/Register";
 import Logout from "./Login/Logout";
 import ProtectedRouteOddajMain from "./OddajRzeczy/ProtectedRoute";
 import GlobalContextProv from "./OddajRzeczy/Context/GlobalContextProv";
+import '../scss/index.scss'
 
 function App() {
     return (
@@ -13,7 +15,7 @@ function App() {
             <BrowserRouter basename='/oddam_w_dobre_rece'>
                 <NavBar/>
                 <Routes>
-                    <Route exact path='/' element={<Home/>}/>
+                    <Route path='/' element={<Home/>}/>
                     <Route path='/rejestracja' element={<Register/>}/>
                     <Route path='/logowanie' element={<Login/>}/>
                     <Route path='/wylogowano' element={<Logout/>}/>
