@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {FC} from 'react';
 import Title from '../Title'
 import {Link} from 'react-router-dom'
 import {useAuthState} from "react-firebase-hooks/auth";
@@ -6,9 +6,14 @@ import {auth} from '../Libraries/FireBaseConfig'
 const HeaderImageSmall = require('../../asets/Hero Image.png')
 const HeaderImageLarge = require('../../asets/Hero Image@2x.png')
 
+interface Props{
+    children: React.ReactNode
+}
 
-const Header = () => {
+const Header:FC <Props> = ({children}) => {
+
     const [user] = useAuthState(auth);
+
     return (
         <>
             <div className='headerSpacer' id='start'></div>
@@ -21,11 +26,8 @@ const Header = () => {
                      className='header__imageSmallLarge'/>
 
                 <aside className='header__right'>
-                    <Title
-                        text={['zacznij pomagać!',
-                            'Oddaj niechciane rzeczy' +
-                            ' w zaufane ręce']}
-                        classH2={'header__h2'}/>
+
+                    {children}
 
                     {user?.email ?
                         <div className='header__btns' id='simpleSteps'>

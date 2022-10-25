@@ -19,6 +19,7 @@ import Buttons from "./OddajButtons";
 import InputText from "./OddajForms/OddajFormInputs/InputText";
 import Title from "../Title";
 import {Link} from "react-router-dom";
+import Form from "../Home/Section_5/Section_5_Form";
 
 const OddajMain: FC = () => {
 
@@ -244,7 +245,11 @@ const OddajMain: FC = () => {
                     </OddajThanx>
                 </main>
             }
-            <Section_5/>
+            <Section_5>
+                <Title text={['skontaktuj się z nami']}
+                       classUnderline={'section-5__decoration'}/>
+                <Form/>
+            </Section_5>
             <Footer/>
         </>
     );

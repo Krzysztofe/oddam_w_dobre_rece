@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import React, {FC, useEffect, useState} from 'react';
 import ReactPaginate from "react-paginate";
 import {fetchOrganizations} from "../../FetchOperations/FetchOperations"
 
@@ -15,7 +15,11 @@ interface IOrganizatiosState {
     }[]
 }
 
-const Section_4 = () => {
+interface Props{
+    children: React.ReactNode
+}
+
+const Section_4:FC<Props> = ({children}) => {
 
     const [printCounter, setPrintCounter] = useState <number> (1)
     const [organisations, setOrganisations] = useState <IOrganizatiosState["organization"]> ([{
@@ -82,10 +86,8 @@ const Section_4 = () => {
 
         <section className="wrapper wrapper--section-4">
 
-            <Title text={['komu pomagamy?']}
-                   classContainer={''}
-                   classH2={''}
-                   classUnderline={'section-4__decoration'}/>
+            {children}
+
             <div className="section-4__btns">
 
                 <button onClick={() => setPrintCounterPageNumber(1)}

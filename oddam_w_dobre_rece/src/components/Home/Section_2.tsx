@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {FC} from 'react'
 import {Link} from "react-router-dom";
 import Title from "../Title";
 import {useAuthState} from "react-firebase-hooks/auth";
@@ -8,15 +8,17 @@ const Bag = require( '../../asets/IconBag.png');
 const Glass = require( '../../asets/IconLupa.png')
 const Arrows = require( '../../asets/Icon.png')
 
-const Section2 = () => {
+interface Props {
+    children: React.ReactNode
+}
+
+const Section2:FC <Props> = ({children}) => {
     const [user] = useAuthState(auth);
 
     return (
         <section className='wrapper wrapper--section-2'>
-            <Title text={['wystarczą 4 proste kroki']}
-                   classContainer={'section-2__decoContainer'}
-                   classH2={''}
-                   classUnderline={'section-2__decoration'}/>
+
+            {children}
 
             <div className="section-2__columns">
 

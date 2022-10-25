@@ -7,11 +7,7 @@ const Tshirt = require('../../../asets/IconTshirt.png');
 
 
 const MobileNavigation = () => {
-    const [open, setOpen] = useState<boolean>(false)
-
-    // const handleCloseMenu = ():any => {
-    //     setOpen(false)
-    // }
+    const [open, setOpen] = useState(false)
 
     return (
         <>
@@ -27,11 +23,7 @@ const MobileNavigation = () => {
                         </div>
                         <NavLinks setOpen = {setOpen}/>
                     </nav>
-
-
                 </>
-
-
                 :
                 <nav className='navigationMobile'>
                     <div className="navigationMobile__top">
