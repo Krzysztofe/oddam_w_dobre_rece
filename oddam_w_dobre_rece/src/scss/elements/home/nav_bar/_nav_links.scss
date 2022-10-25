@@ -25,6 +25,7 @@
 @include media__navbar {
   .listItems {
     display: flex;
+    margin-bottom: $space-small;
   }
 
   .link{
