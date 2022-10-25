@@ -1,6 +1,10 @@
-import PropTypes from "prop-types";
+import React, {FC} from 'react'
 
-const OddajFormTop = ({text}) => {
+interface Props{
+    text:string[]
+}
+
+const OddajFormTop:FC<Props> = ({text}) => {
     return (
         <>
             <p className='oddajFormTop__p'>{text[0]}</p>
@@ -9,9 +13,5 @@ const OddajFormTop = ({text}) => {
         </>
     );
 };
-
-OddajFormTop.propTypes = {
-    text: PropTypes.array.isRequired
-}
 
 export default OddajFormTop;

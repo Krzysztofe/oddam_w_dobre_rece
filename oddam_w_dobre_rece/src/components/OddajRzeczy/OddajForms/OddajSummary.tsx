@@ -1,47 +1,46 @@
-import Buttons from "../../Buttons";
-import {useContext} from "react";
-import {GlobalContext} from "../Context/GlobalContextProv";
-import OddajSummaryTable from "./OddajSummaryTable";
+import React, {useContext} from "react";
+import {GlobalContext} from "../OddajContext/GlobalContextProv";
 import {motion} from "framer-motion";
+import Buttons from "../OddajButtons";
+import OddajSummaryTable from "./OddajSummaryTable";
 
 const OddajSummary = () => {
 
     const {inputsValue} = useContext(GlobalContext)
 
-    const selectBagsNumber = (message, inputsValue) => {
-        if (inputsValue === '-- Wybierz --'){
+    const selectBagsNumber = (
+        message: string,
+        inputsValue: string | number) => {
+        if (inputsValue === '-- Wybierz --') {
             return message
-        } return inputsValue
+        }
+        return inputsValue
     }
 
-    const selectBagsDescription = () =>{
-        if (inputsValue.selectBags === 1){
+    const selectBagsDescription = (): string | null => {
+        if (inputsValue.selectBags === 1) {
             return 'worek'
-        }
-        else if (inputsValue.selectBags > 1 && inputsValue.selectBags < 4){
+        } else if (inputsValue.selectBags > 1 && inputsValue.selectBags < 4) {
             return 'worki'
-        }  else if (inputsValue.selectBags === '-- Wybierz --'){
+        } else if (inputsValue.selectBags === '-- Wybierz --') {
             return null
         }
-            return 'worków'
+        return 'worków'
     }
-
-
-
-
 
     return (
         <motion.section className='oddajForm__inputs'
-                 initial={{opacity: 0, y: -40}}
-                 animate={{opacity: 1, y: 0}}
-                 transition={{delay: 0.1}}>
+                        initial={{opacity: 0, y: -40}}
+                        animate={{opacity: 1, y: 0}}
+                        transition={{delay: 0.1}}>
             <h3 className='summary__h3'>oddajesz:</h3>
 
             <div className="summary__topContainer">
                 <div className="summary__icon1"></div>
                 <p className='summary__p'> {selectBagsNumber('wróć do kroku 2/4', inputsValue.selectBags)}
-                   <> </>{selectBagsDescription()}
-                    {inputsValue.selectStuff ? `, ${inputsValue.selectStuff}` : null }
+                    <> </>
+                    {selectBagsDescription()}
+                    {inputsValue.selectStuff ? `, ${inputsValue.selectStuff}` : null}
                     {inputsValue.dzieciom ? <>, dzieciom</> : null}
                     {inputsValue.matkom ? <>, samotnym matkom</> : null}
                     {inputsValue.bezdomnym ? <>, bezdomnym</> : null}
@@ -56,7 +55,7 @@ const OddajSummary = () => {
                     {inputsValue.selectLocalisation === '-- Wybierz --' ?
                         null :
                         'dla lokalizacji:'}
-                   <> </>
+                    <> </>
                     {selectBagsNumber('wróć do kroku 3/4', inputsValue.selectLocalisation)}
                     {inputsValue.organisationName ? <>, {inputsValue.organisationName}</> : null}
                 </p>

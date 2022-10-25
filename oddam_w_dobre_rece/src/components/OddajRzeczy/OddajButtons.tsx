@@ -1,7 +1,7 @@
-import {useContext} from "react";
-import {GlobalContext} from "./OddajRzeczy/Context/GlobalContextProv";
+import React, {useContext} from "react";
+import {GlobalContext} from "./OddajContext/GlobalContextProv";
 
-const Buttons = () => {
+const OddajButtons = () => {
 
     const {handleDecrease, handleIncrease, counter, createSummary} = useContext(GlobalContext)
 
@@ -29,4 +29,4 @@ const Buttons = () => {
 
 
 
-export default Buttons;
+export default OddajButtons;

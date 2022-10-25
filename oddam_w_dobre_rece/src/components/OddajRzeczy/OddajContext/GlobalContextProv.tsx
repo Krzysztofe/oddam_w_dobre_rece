@@ -1,15 +1,49 @@
-import React, {createContext, useState} from 'react';
+import React, {createContext, useState, FC, ChangeEvent} from 'react';
 import {addDoc, collection} from "firebase/firestore";
 import {auth, db} from "../../Libraries/FireBaseConfig";
 import {useAuthState} from "react-firebase-hooks/auth";
 
+interface Props {
+    children: React.ReactNode
+}
 
-export const GlobalContext = createContext()
+export interface IInputsValue {
+    selectStuff: string;
+    selectBags: string | number;
+    selectLocalisation: string | number;
+    dzieciom: boolean;
+    matkom: boolean;
+    bezdomnym: boolean;
+    niepelnosprawnym: boolean;
+    starszym: boolean;
+    organisationName: string;
+    street: string;
+    city: string;
+    postCode: string;
+    phone: string;
+    date: string;
+    time: string;
+    note: string;
+    uid: string
+}
 
-const GlobalContextProv = ({children}) => {
+export type ContextType = {
+    inputsValue: IInputsValue;
+    setInputsValue: React.Dispatch<React.SetStateAction<IInputsValue>>
+    counter: number;
+    handleIncrease: () => void
+    handleDecrease:() => void
+    handleChange: (e:ChangeEvent<HTMLInputElement>) => void
+    createSummary:() => void
+}
+
+
+export const GlobalContext = createContext<ContextType>({} as ContextType)
+
+const GlobalContextProv: FC<Props> = ({children}) => {
 
     const [inputsValue, setInputsValue] =
-        useState({
+        useState <IInputsValue> ({
             selectStuff: "", selectBags: "-- Wybierz --",
             selectLocalisation: "-- Wybierz --", dzieciom: false,
             matkom: false, bezdomnym: false,
@@ -19,7 +53,7 @@ const GlobalContextProv = ({children}) => {
             date: "", time: "", note: "", uid: ""
         })
 
-    const handleChange = (e) => {
+    const handleChange = (e: ChangeEvent<HTMLInputElement>): void => {
         const value = e.target.type === "checkbox"
             ?
             e.target.checked
@@ -31,14 +65,14 @@ const GlobalContextProv = ({children}) => {
         })
     }
 
-    const [counter, setCounter] = useState(1)
+    const [counter, setCounter] = useState <number> (1)
 
-    const handleIncrease = () => {
+    const handleIncrease = (): void => {
         if (counter > 0 && counter < 6)
             setCounter(prevState => prevState + 1)
     }
 
-    const handleDecrease = () => {
+    const handleDecrease = (): void => {
         if (counter > -1 && counter < 6)
             setCounter(prevState => prevState - 1)
     }
@@ -46,30 +80,30 @@ const GlobalContextProv = ({children}) => {
     const [user, loading, error] = useAuthState(auth);
     const summaryReference = collection(db, 'summary')
 
-    // useEffect(() => {
-    //     const getSummary = async () => {
-    //         const data = await getDocs(summaryReference)
-    //         // console.log(data)
-    //         setSummary(data.docs.map((doc) => (
-    //             {...doc.data(), id: doc.id})))
-    //     };
-    //     getSummary()
-    //
-    // }, [])
-
-    // useEffect(()=>{
-//     getDocs(summaryReference)
-//         .then((data)=>{
-//             setSummary(data.docs.map((doc) => (
-//                         {...doc.data(), id: doc.id})))
-//             console.log(data)
-//         })
-//         .catch(error => alert(error.code))
+//     // useEffect(() => {
+//     //     const getSummary = async () => {
+//     //         const data = await getDocs(summaryReference)
+//     //         // console.log(data)
+//     //         setSummary(data.docs.map((doc) => (
+//     //             {...doc.data(), id: doc.id})))
+//     //     };
+//     //     getSummary()
+//     //
+//     // }, [])
 //
-// }, [])
+//     // useEffect(()=>{
+// //     getDocs(summaryReference)
+// //         .then((data)=>{
+// //             setSummary(data.docs.map((doc) => (
+// //                         {...doc.data(), id: doc.id})))
+// //             console.log(data)
+// //         })
+// //         .catch(error => alert(error.code))
+// //
+// // }, [])
+//
 
-
-    const createSummary = async () => {
+    const createSummary = async (): Promise <void> => {
         await addDoc(summaryReference, {
             selectStuff: inputsValue.selectStuff,
             selectBags: inputsValue.selectBags,

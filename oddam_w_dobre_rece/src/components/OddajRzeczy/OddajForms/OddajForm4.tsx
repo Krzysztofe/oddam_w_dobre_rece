@@ -1,23 +1,18 @@
-import Buttons from "../../Buttons";
-import {useContext} from "react";
-import {GlobalContext} from "../Context/GlobalContextProv";
-import InputText from "./OddajFormInputs/InputText";
+import React, {useContext} from "react";
+import {GlobalContext} from "../OddajContext/GlobalContextProv";
 import {motion} from "framer-motion";
+import InputText from "./OddajFormInputs/InputText";
+import Buttons from "../OddajButtons";
 
 const OddajForm4 = () => {
 
-    const {inputsValue, handleChange} = useContext(GlobalContext)
-
-
-    const propsHandleChange = (e) => {
-        typeof handleChange === 'function' && handleChange(e)
-    }
+    const {inputsValue, setInputsValue} = useContext(GlobalContext)
 
     return (
         <motion.main className='oddajForm__inputs'
-              initial={{opacity: 0, y: -40}}
-              animate={{opacity: 1, y: 0}}
-              transition={{delay: 0.1}}>
+                     initial={{opacity: 0, y: -40}}
+                     animate={{opacity: 1, y: 0}}
+                     transition={{delay: 0.1}}>
 
             <aside className="form4__leftContainer">
                 <h3 className='form4__h3'>Adres odbioru:</h3>
@@ -59,9 +54,10 @@ const OddajForm4 = () => {
 
                 <div className='form4__inputContainer'>
                     <label className='form4__label'>Uwagi dla kuriera</label>
-                    <textarea rows='2' name='note'
+                    <textarea rows = {2} name='note'
                               value={inputsValue.note}
-                              onChange={propsHandleChange}
+                              onChange={(e) =>
+                                  setInputsValue({...inputsValue, note: e.target.value})}
                               className='form4__textarea'/>
                 </div>
             </aside>

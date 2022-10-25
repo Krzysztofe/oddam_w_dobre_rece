@@ -39,10 +39,6 @@
     height: clamp(6em, 9vw, 85px);
     font-size: $font-size-superSmall;
     position: relative;
-
-    &:last-child {
-      display: none;
-    }
   }
   .square__rectangle {
     display: flex;

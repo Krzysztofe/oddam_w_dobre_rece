@@ -1,5 +1,5 @@
 import React, {useContext} from 'react';
-import {GlobalContext} from "../Context/GlobalContextProv";
+import {GlobalContext} from "../OddajContext/GlobalContextProv";
 import InputRadio from "./OddajFormInputs/InputRadio";
 import {motion} from "framer-motion";
 
@@ -7,11 +7,6 @@ import {motion} from "framer-motion";
 const OddajForm1 = () => {
 
     const {handleIncrease} = useContext(GlobalContext)
-
-
-    const propsHandleIncrease = (e) => {
-      typeof handleIncrease === 'function' && handleIncrease(e)
-    }
 
     return (
         <>
@@ -28,7 +23,7 @@ const OddajForm1 = () => {
                 <InputRadio value='inne'/>
 
                 <div className="formButtons">
-                    <button onClick={propsHandleIncrease}
+                    <button onClick={handleIncrease}
                             className='formButton'>
                         dalej
                     </button>

@@ -68,9 +68,9 @@ const Section_4 = () => {
             return displayOrganisations
         }
 
-    // const changePage = ({selected}) => {
-    //     setPageNumber(selected)
-    // }
+    const changePage = ({selected}:any):void => {
+        setPageNumber(selected)
+    }
 
     const setPrintCounterPageNumber = (selected:number):void => {
         setPrintCounter(selected)
@@ -140,7 +140,7 @@ const Section_4 = () => {
                         {organisationSelection(
                             "fundacja", "fundacja")}
                         <ReactPaginate pageCount={3}
-                            // onPageChange={changePage}
+                            onPageChange={changePage}
                                        containerClassName={'paginationButtonsContainer'}
                                        disabledClassName={'disabledButton'}
                                        activeClassName={'paginationButton__active'}
@@ -154,7 +154,7 @@ const Section_4 = () => {
                         {organisationSelection(
                             "ngo", "organizacja")}
                         <ReactPaginate pageCount={2}
-                            // onPageChange={changePage}
+                            onPageChange={changePage}
                                        containerClassName={'paginationButtonsContainer'}
                                        disabledClassName={'disabledButton'}
                                        activeClassName={'paginationButton__active'}
@@ -168,7 +168,7 @@ const Section_4 = () => {
                         {organisationSelection(
                             "collection", "zbiórka")}
                         <ReactPaginate pageCount={1}
-                            // onPageChange={changePage}
+                                       onPageChange={changePage}
                                        containerClassName={'paginationButtonsContainer'}
                                        disabledClassName={'disabledButton'}
                                        activeClassName={'paginationButton__active'}

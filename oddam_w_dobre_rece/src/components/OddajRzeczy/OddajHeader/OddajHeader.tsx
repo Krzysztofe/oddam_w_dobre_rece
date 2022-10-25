@@ -1,9 +1,13 @@
+import React, {useContext} from 'react'
+import {GlobalContext} from "../OddajContext/GlobalContextProv";
 import Title from "../../Title";
 import Square from "./Square";
-import ImageSmall from "../../../asets/Header-Form-Background.png"
-import ImageLarge from '../../../asets/Header-Form-Background@2x.png'
+const ImageSmall = require( "../../../asets/Header-Form-Background.png")
+const ImageLarge = require( '../../../asets/Header-Form-Background@2x.png')
 
-const OddajHeader = ({counter}) => {
+const OddajHeader = () => {
+
+    const {counter} = useContext(GlobalContext)
 
     return (
         <>
@@ -22,19 +26,19 @@ const OddajHeader = ({counter}) => {
 
                     <div className="squares">
 
-                        <Square number='1'
+                        <Square number = {1}
                                 text='wybierz rzeczy'
                                 counter={counter}/>
 
-                        <Square number='2'
+                        <Square number= {2}
                                 text='spakuj w worki'
                                 counter={counter}/>
 
-                        <Square number='3'
+                        <Square number= {3}
                                 text='wybierz fundację'
                                 counter={counter}/>
 
-                        <Square number='4'
+                        <Square number={4}
                                 text='zamów kuriera'
                                 counter={counter}/>
 

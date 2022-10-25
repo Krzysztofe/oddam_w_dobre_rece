@@ -1,27 +1,25 @@
-import Buttons from "../../Buttons";
-import InputSelect from "./OddajFormInputs/InputSelect";
-import {useContext} from "react";
+import React, {useContext} from "react";
 import {motion} from "framer-motion";
-import {GlobalContext} from "../Context/GlobalContextProv";
+import {GlobalContext} from "../OddajContext/GlobalContextProv";
+import Buttons from "../OddajButtons";
+import InputSelect from "./OddajFormInputs/InputSelect";
 import InputCheckbox from "./OddajFormInputs/InputCheckbox";
+
+
 
 const OddajForm3 = () => {
 
     const {handleChange, inputsValue, setInputsValue} = useContext(GlobalContext)
 
-    const propsHandleChange = (e) => {
-        typeof handleChange === 'function' && handleChange(e)
-    }
-
-    const handleSelect = (item) => {
+    const handleSelect = (item: string | number):void => {
         setInputsValue({...inputsValue, selectLocalisation: item})
     }
 
     return (
         <motion.main className='oddajForm__inputs'
-              initial={{opacity: 0, y: -40}}
-              animate={{opacity: 1, y: 0}}
-              transition={{delay: 0.1}}>
+                     initial={{opacity: 0, y: -40}}
+                     animate={{opacity: 1, y: 0}}
+                     transition={{delay: 0.1}}>
 
             <InputSelect textLabel=''
                          array={['Poznań', 'Warszawa', 'Kraków', 'Katowice']}
@@ -63,7 +61,7 @@ const OddajForm3 = () => {
             <input type='text'
                    name='organisationName'
                    value={inputsValue.organisationName}
-                   onChange={propsHandleChange}
+                   onChange={handleChange}
                    className='oddajForm3__textInput'/>
 
             <Buttons/>

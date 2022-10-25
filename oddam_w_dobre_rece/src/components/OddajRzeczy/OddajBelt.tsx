@@ -1,4 +1,10 @@
-const Belt = ({text}) => {
+import React, {FC} from 'react'
+
+interface Props{
+    text: string
+}
+
+const Belt:FC<Props> = ({text}) => {
 
     return (
         <section className='wrapper wrapper--belt'>

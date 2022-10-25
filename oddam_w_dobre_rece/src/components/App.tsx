@@ -6,7 +6,7 @@ import Login from "./Login/Login";
 import Register from "./Login/Register";
 import Logout from "./Login/Logout";
 import ProtectedRouteOddajMain from "./OddajRzeczy/ProtectedRoute";
-import GlobalContextProv from "./OddajRzeczy/Context/GlobalContextProv";
+import GlobalContextProv from "./OddajRzeczy/OddajContext/GlobalContextProv";
 import '../scss/index.scss'
 
 function App() {

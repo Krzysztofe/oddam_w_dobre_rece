@@ -1,14 +1,19 @@
-import React, {useContext} from 'react';
-import {GlobalContext} from "../../Context/GlobalContextProv";
-import PropTypes from "prop-types";
+import React, {useContext, FC} from 'react';
+import {GlobalContext} from "../../OddajContext/GlobalContextProv";
 
-const InputCheckbox = ({value, name, label}) => {
+interface Props {
+    value: boolean;
+    name: string;
+    label: string
+}
+
+const InputCheckbox:FC<Props> = ({value, name, label}) => {
+
     const {handleChange} = useContext(GlobalContext)
 
     return (
         <label className='oddajForm3__label'>
             <input type='checkbox' name={name}
-                   value={value}
                    checked={value}
                    onChange={handleChange}
                    className='oddajForm3__checkbox'/>
@@ -16,11 +21,5 @@ const InputCheckbox = ({value, name, label}) => {
         </label>
     );
 };
-
-InputCheckbox.propTypes = {
-    value: PropTypes.bool.isRequired,
-    name: PropTypes.string.isRequired,
-    label: PropTypes.string.isRequired
-}
 
 export default InputCheckbox;

@@ -1,26 +1,24 @@
-import {useContext} from "react";
-
+import React, {useContext, FC} from "react";
 import OddajHeader from "./OddajHeader/OddajHeader";
-import OddajBelt from "./Belt";
-
+import OddajBelt from "./OddajBelt";
 import OddajFormTop from "./OddajForms/OddajFormTop";
-import OddajForm2 from "./OddajForms/OddajForm2";
 import OddajForm1 from "./OddajForms/OddajForm1";
+import OddajForm2 from "./OddajForms/OddajForm2";
 import OddajForm3 from "./OddajForms/OddajForm3";
 import OddajForm4 from "./OddajForms/OddajForm4";
 import OddajSummary from "./OddajForms/OddajSummary";
 import OddajThanx from "./OddajForms/OddajThanx";
 import Section_5 from "../Home/Section_5/Section_5";
 import Footer from "../Home/Footer";
-import {GlobalContext} from "./Context/GlobalContextProv";
+import {GlobalContext} from "./OddajContext/GlobalContextProv";
 
-const OddajMain = () => {
+const OddajMain: FC = () => {
 
     const {counter} = useContext(GlobalContext)
 
     return (
         <>
-            <OddajHeader counter={counter}/>
+            <OddajHeader/>
 
             {counter === 1 &&
                 <>
