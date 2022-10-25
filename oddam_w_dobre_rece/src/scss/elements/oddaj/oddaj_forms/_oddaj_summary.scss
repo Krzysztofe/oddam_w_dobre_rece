@@ -77,8 +77,7 @@
   .summary__tables {
     display: flex;
     gap: 1em;
-    min-width: 480px;
-    width: 60%;
+    width: clamp(350px, 75%, 630px);
   }
 
   .summary__tableLeft, .summary__tableRight {
