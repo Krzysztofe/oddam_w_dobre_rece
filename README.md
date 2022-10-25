@@ -16,11 +16,12 @@
 * SCSS 
 * RWD 
 * JS 
+* TypeScript
 * Firestore
 * Firebase 
 * JSON <a href = "https://my-json-server.typicode.com/Krzysztofe/oddaj_api/db">my-json-server-></a>
 * Fetch: GET, POST
-* React: react-router, react-router-dom, react-firebase-hooks/auth, react-router-hash-link, react-paginate, framer-motion, prop-types
+* React: react-router, react-router-dom, react-firebase-hooks/auth, react-router-hash-link, react-paginate, framer-motion
 * Context API
 
 ## See this project <a href="https://krzysztofe.github.io/oddam_w_dobre_rece/">here -></a>
