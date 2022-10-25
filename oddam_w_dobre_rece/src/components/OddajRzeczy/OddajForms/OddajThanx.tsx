@@ -1,9 +1,12 @@
-import React from 'react'
-import {Link} from 'react-router-dom'
+import React, {FC} from 'react'
 import {motion} from "framer-motion";
-import Title from "../../Title";
 
-const OddajThanx = () => {
+interface Props {
+    children: React.ReactNode
+}
+
+
+const OddajThanx:FC <Props> = ({children}) => {
 
     return (
         <motion.main className='oddajForm__inputs oddajForm__inputs--thnx'
@@ -11,17 +14,7 @@ const OddajThanx = () => {
                      animate={{opacity: 1, y: 0}}
                      transition={{delay: 0.1}}>
 
-            <Title text={['dziękujemy za przesłanie formularza',
-                'na maila prześlemy wszelkie informacje o odbiorze']}
-                   classContainer={'oddajThnx__container'}
-                   classH2={'oddajThnx__h2'}
-                   classUnderline={'oddajThnx__decoration'}/>
-
-            <Link to='/' className='ddajThanx__link'>
-                <button className='ddajThanx__button'>
-                    strona główna
-                </button>
-            </Link>
+            {children}
 
         </motion.main>
     );

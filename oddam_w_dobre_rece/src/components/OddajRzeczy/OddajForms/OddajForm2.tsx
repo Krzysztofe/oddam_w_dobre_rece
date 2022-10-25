@@ -1,16 +1,13 @@
-import React, {useContext} from "react";
-import InputSelect from "./OddajFormInputs/InputSelect";
-import {GlobalContext} from "../OddajContext/GlobalContextProv";
+import React, {FC} from "react";
 import {motion} from 'framer-motion'
-import OddajButtons from "../OddajButtons";
 
-const OddajForm2 = () => {
 
-    const {inputsValue, setInputsValue} = useContext(GlobalContext)
+interface Props{
+    children:React.ReactNode
+}
 
-    const handleSelect = (item: string | number):void => {
-        setInputsValue({...inputsValue, selectBags: item})
-    }
+const OddajForm2:FC<Props> = ({children}) => {
+
 
     return (
         <>
@@ -19,11 +16,7 @@ const OddajForm2 = () => {
                          animate={{opacity: 1, y: 0}}
                          transition={{delay: 0.1}}>
 
-                <InputSelect textLabel= 'Liczba 60 l. worków:'
-                             array={[1, 2, 3, 4, 5, 6]}
-                             inputsValueSelect={inputsValue.selectBags}
-                             handleSelect={handleSelect}/>
-                <OddajButtons/>
+                {children}
 
             </motion.main>
         </>
