@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/oddam_w_dobre_rece/static/css/main.d907a94c.css",
-    "main.js": "/oddam_w_dobre_rece/static/js/main.462c1c6a.js",
+    "main.js": "/oddam_w_dobre_rece/static/js/main.54f9a20f.js",
     "static/media/Background Image@2x.png": "/oddam_w_dobre_rece/static/media/Background Image@2x.a6dec3687eba35c68672.png",
     "static/media/People@2x.png": "/oddam_w_dobre_rece/static/media/People@2x.5c7d5b1366e716d4aca6.png",
     "static/media/Hero Image@2x.png": "/oddam_w_dobre_rece/static/media/Hero Image@2x.473c8ca5b50bc645757b.png",
@@ -18,10 +18,10 @@
     "static/media/Signature.png": "/oddam_w_dobre_rece/static/media/Signature.4bc15a65bbb13d621e19.png",
     "index.html": "/oddam_w_dobre_rece/index.html",
     "main.d907a94c.css.map": "/oddam_w_dobre_rece/static/css/main.d907a94c.css.map",
-    "main.462c1c6a.js.map": "/oddam_w_dobre_rece/static/js/main.462c1c6a.js.map"
+    "main.54f9a20f.js.map": "/oddam_w_dobre_rece/static/js/main.54f9a20f.js.map"
   },
   "entrypoints": [
     "static/css/main.d907a94c.css",
-    "static/js/main.462c1c6a.js"
+    "static/js/main.54f9a20f.js"
   ]
 }
