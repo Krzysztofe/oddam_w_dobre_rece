@@ -19,7 +19,7 @@
 * Firestore
 * Firebase 
 * JSON <a href = "https://my-json-server.typicode.com/Krzysztofe/oddaj_api/db">my-json-server-></a>
-* Fetch: GET, POST
+* Fetch API: GET, POST
 * React: react-router, react-router-dom, react-firebase-hooks/auth, react-router-hash-link, react-paginate, framer-motion
 * Context API
 
