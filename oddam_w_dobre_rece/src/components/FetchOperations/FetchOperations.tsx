@@ -7,31 +7,34 @@ const URL_USERS: string =
     "https://my-json-server.typicode.com/Krzysztofe/oddaj_api/user"
 
 
-export const fetchOrganizations =
+export const getOrganizations =
     (setOrganisations: React.Dispatch<React.SetStateAction<{ id: number | null, type: string, name: string, goals: string, stuff: string }[]>>,
      setLoading: React.Dispatch<SetStateAction<boolean>>,
      setError: React.Dispatch<React.SetStateAction<string | null>>)
         : void => {
 
+        setLoading(true)
+        setError(null)
+
         fetch(URL_ORGANIZATIONS)
             .then(resp => {
-                    if (!resp.ok) {
-                        throw Error('Brak dostępu do zasobu')
+                    if (resp.ok) {
+                        return resp.json()
                     }
-                    return resp.json()
+                    throw Error('Brak dostępu do zasobu')
                 }
             )
             .then(data => {
                     setOrganisations(data)
-                    setLoading(false)
                 }
             )
             .catch(err =>
                 setError(err.message === 'Failed to fetch' ?
                     'Brak połączenia z serwerem' :
                     err.message))
-    }
 
+        setLoading(false)
+    }
 
 
 export const postUser = (formData: IFormData,

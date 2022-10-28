@@ -1,6 +1,6 @@
 import React, {FC, useEffect, useState} from 'react';
 import ReactPaginate from "react-paginate";
-import {fetchOrganizations} from "../../FetchOperations/FetchOperations"
+import {getOrganizations} from "../../FetchOperations/FetchOperations"
 
 import Title from "../../Title";
 
@@ -15,46 +15,50 @@ interface IOrganizatiosState {
     }[]
 }
 
-interface Props{
+interface Props {
     children: React.ReactNode
 }
 
-const Section_4:FC<Props> = ({children}) => {
+const Section_4: FC<Props> = ({children}) => {
 
-    const [printCounter, setPrintCounter] = useState <number> (1)
-    const [organisations, setOrganisations] = useState <IOrganizatiosState["organization"]> ([{
+    const [printCounter, setPrintCounter] = useState<number>(1)
+    const [organisations, setOrganisations] = useState<IOrganizatiosState["organization"]>([{
         id: null,
         type: '',
         name: '',
         goals: '',
         stuff: ''
     }])
-    const [loading, setLoading] = useState <boolean> (true)
-    const [printLoading, setPrintLoading] = useState <string[]> (["loading"])
-    const [error, setError] = useState <string | null> (null)
+    const [loading, setLoading] = useState<boolean>(false)
+    const [error, setError] = useState<string | null>(null)
     const [pageNumber, setPageNumber] = useState<number>(0)
 
 
-    useEffect(():void => {
-        fetchOrganizations(setOrganisations, setLoading, setError)
+    useEffect((): void => {
+        getOrganizations(setOrganisations, setLoading, setError)
     }, [])
 
-    if (loading && error) {
+    if (!loading && error) {
         return <h2 className='section4__loading'>{error}</h2>
-    } else if (loading) {
-        return <h2 className='section4__loading'>{printLoading}</h2>
     }
+    if (!loading && organisations.length === 0 && !error) {
+        return <h2 className='section4__loading'>brak danych w bazie danych</h2>
+    }
+    if (loading) {
+        return <h2 className='section4__loading'>loading...</h2>
+    }
+
 
     const organisationsPerPage = 3
     const printedPage = pageNumber * organisationsPerPage
 
 
     const organisationSelection =
-        (oganisationType: string, organisationTypePrinted: string):JSX.Element[] => {
+        (oganisationType: string, organisationTypePrinted: string): JSX.Element[] => {
 
             const filtered = organisations.filter((item) => item.type === oganisationType)
 
-            const displayOrganisations:JSX.Element[] = filtered
+            const displayOrganisations: JSX.Element[] = filtered
                 .slice(printedPage, printedPage + organisationsPerPage)
                 .map((item) => {
                     return <table key={item.id} className='section-4__table'>
@@ -72,18 +76,17 @@ const Section_4:FC<Props> = ({children}) => {
             return displayOrganisations
         }
 
-    const changePage = ({selected}:any):void => {
+    const changePage = ({selected}: any): void => {
         setPageNumber(selected)
     }
 
-    const setPrintCounterPageNumber = (selected:number):void => {
+    const setPrintCounterPageNumber = (selected: number): void => {
         setPrintCounter(selected)
         setPageNumber(0)
     }
 
 
     return (
-
         <section className="wrapper wrapper--section-4">
 
             {children}
@@ -142,7 +145,7 @@ const Section_4:FC<Props> = ({children}) => {
                         {organisationSelection(
                             "fundacja", "fundacja")}
                         <ReactPaginate pageCount={3}
-                            onPageChange={changePage}
+                                       onPageChange={changePage}
                                        containerClassName={'paginationButtonsContainer'}
                                        disabledClassName={'disabledButton'}
                                        activeClassName={'paginationButton__active'}
@@ -156,7 +159,7 @@ const Section_4:FC<Props> = ({children}) => {
                         {organisationSelection(
                             "ngo", "organizacja")}
                         <ReactPaginate pageCount={2}
-                            onPageChange={changePage}
+                                       onPageChange={changePage}
                                        containerClassName={'paginationButtonsContainer'}
                                        disabledClassName={'disabledButton'}
                                        activeClassName={'paginationButton__active'}

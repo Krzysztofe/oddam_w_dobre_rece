@@ -1,4 +1,4 @@
-import React, {useContext, FC} from 'react';
+import React, {useContext} from 'react';
 import {GlobalContext} from "../../OddajContext/GlobalContextProv";
 
 interface Props {
@@ -7,7 +7,7 @@ interface Props {
     label: string
 }
 
-const InputCheckbox:FC<Props> = ({value, name, label}) => {
+const InputCheckbox:React.FC<Props> = ({value, name, label}) => {
 
     const {handleChange} = useContext(GlobalContext)
 

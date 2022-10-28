@@ -1,13 +1,11 @@
-import React, {FC} from "react";
-import {motion} from 'framer-motion'
-
+import React, {FC} from 'react';
+import {motion} from "framer-motion";
 
 interface Props{
-    children:React.ReactNode
+   children: React.ReactNode
 }
 
-const OddajForm2:FC<Props> = ({children}) => {
-
+const OddajForm:FC <Props> = ({children}) => {
 
     return (
         <>
@@ -23,4 +21,4 @@ const OddajForm2:FC<Props> = ({children}) => {
     );
 };
 
-export default OddajForm2;
+export default OddajForm;

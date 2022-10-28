@@ -10,7 +10,7 @@ const InputRadio:FC<Props> = ({value}) => {
 
     const {inputsValue, handleChange} = useContext(GlobalContext)
 
-    const checkedValue = value
+    const checkedValue:string = value
 
     return (
         <div className="oddajForm1__input">
