@@ -19,7 +19,7 @@
 * Context API
 * Firestore
 * Firebase 
-* JSON <a href = "https://my-json-server.typicode.com/Krzysztofe/oddaj_api/db">my-json-server-></a>
+* JSON <a href = "https://my-json-server.typicode.com/Krzysztofe/oddam_api/db">my-json-server-></a>
 * Fetch API: GET, POST
 
 ## See this project <a href="https://krzysztofe.github.io/oddam_w_dobre_rece/">here -></a>
