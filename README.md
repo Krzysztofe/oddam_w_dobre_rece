@@ -17,8 +17,7 @@
 * TypeScript
 * React: react-router, react-router-dom, react-firebase-hooks/auth, react-router-hash-link, react-paginate, framer-motion
 * Context API
-* Firestore
-* Firebase 
+* Firebase: authentication, firestore, database
 * JSON <a href = "https://my-json-server.typicode.com/Krzysztofe/oddam_api/db">my-json-server-></a>
 * Fetch API: GET, POST
 
