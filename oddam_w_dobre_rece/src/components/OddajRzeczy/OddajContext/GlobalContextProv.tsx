@@ -28,9 +28,9 @@ export interface IInputsValue {
 }
 
 export type ContextType = {
-    inputsValue: IInputsValue;
+    inputsValue: IInputsValue
     setInputsValue: React.Dispatch<React.SetStateAction<IInputsValue>>
-    counter: number;
+    counter: number
     handleIncrease: () => void
     handleDecrease:() => void
     handleChange: (e:ChangeEvent<HTMLInputElement>) => void

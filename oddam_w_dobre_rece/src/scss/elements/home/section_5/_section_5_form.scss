@@ -42,7 +42,7 @@ textarea::placeholder {
   border-bottom: 1px solid #FF0000FF;
 }
 
-.btnLarge--cntactForm{
+.btnLarge--cntactForm {
   padding: $space-small 0;
   width: 30%;
   margin-left: auto;
@@ -54,12 +54,12 @@ textarea::placeholder {
   color: #FF0000FF;
 }
 
-.fetchErrors__opacity{
+.fetchErrors__opacity {
   opacity: 0;
 }
 
-@include media {
 
+@include media {
   .contactForm {
     padding: 0 $space-large;
   }
@@ -73,7 +73,7 @@ textarea::placeholder {
     margin-top: $space-large;
   }
 
-  .btnLarge--cntactForm{
+  .btnLarge--cntactForm {
     max-width: 200px;
     width: 50%;
   }

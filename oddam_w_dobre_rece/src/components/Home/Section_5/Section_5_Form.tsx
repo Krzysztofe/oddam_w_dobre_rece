@@ -1,9 +1,10 @@
-import React from "react";
+import React, {useEffect} from "react";
 import {useState, ChangeEvent, FormEvent} from "react";
+import {motion} from 'framer-motion'
 import {section_5_FormValidation} from '../../Libraries/libraryValidations'
 import {postUser} from '../../FetchOperations/FetchOperations'
 
-interface IInputValue {
+export interface IInputValue {
     name: string;
     email: string;
     message: string;
@@ -15,7 +16,7 @@ interface IErrors {
     message: string;
 }
 
-export interface IFormData{
+export interface IFormData {
     name: string;
     email: string;
     message: string;
@@ -43,13 +44,7 @@ const Section_5 = () => {
         message: ""
     })
 
-    const [formData, setFormData] = useState<IFormData>({
-        name: "",
-        email: "",
-        message: ""
-    })
-
-    const [fetchErrors, setFetchErrors] = useState <null | string> (null)
+    const [fetchErrors, setFetchErrors] = useState<null | string>(null)
 
     const handleSubmit = (e: FormEvent<HTMLFormElement>): void => {
         e.preventDefault()
@@ -62,14 +57,23 @@ const Section_5 = () => {
             return
         }
 
-        setFormData(inputValue)
-        postUser(formData, setFetchErrors)
+        postUser(inputValue, setFetchErrors)
         setInputValue({
             name: "",
             email: "",
             message: ""
         })
     }
+
+    // useEffect(()=>{
+    //     const intervall = setTimeout(()=>{
+    //         setText('ee')
+    //     }, 3000)
+    //
+    //     return ()=>{
+    //         clearTimeout(intervall)
+    //     }
+    // },[])
 
     return (
         <>

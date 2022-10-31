@@ -1,96 +1,25 @@
-import React, {FC, useEffect, useState} from 'react';
-import ReactPaginate from "react-paginate";
-import {getOrganizations} from "../../FetchOperations/FetchOperations"
+import React, {useState, FC} from 'react';
+import Fundations from "./Fundations";
+import Ngo from './Ngo'
+import Collections from "./Collections";
 
-import Title from "../../Title";
-
-
-interface IOrganizatiosState {
-    organization: {
-        id: number | null
-        type: string
-        name: string
-        goals: string
-        stuff: string
-    }[]
-}
-
-interface Props {
+interface Props{
     children: React.ReactNode
 }
 
-const Section_4: FC<Props> = ({children}) => {
+const Section_4:FC <Props> = ({children}) => {
 
     const [printCounter, setPrintCounter] = useState<number>(1)
-    const [organisations, setOrganisations] = useState<IOrganizatiosState["organization"]>([{
-        id: null,
-        type: '',
-        name: '',
-        goals: '',
-        stuff: ''
-    }])
-    const [loading, setLoading] = useState<boolean>(false)
-    const [error, setError] = useState<string | null>(null)
     const [pageNumber, setPageNumber] = useState<number>(0)
-
-
-    useEffect((): void => {
-        getOrganizations(setOrganisations, setLoading, setError)
-    }, [])
-
-    if (!loading && error) {
-        return <h2 className='section4__loading'>{error}</h2>
-    }
-    if (!loading && organisations.length === 0 && !error) {
-        return <h2 className='section4__loading'>brak danych w bazie danych</h2>
-    }
-    if (loading) {
-        return <h2 className='section4__loading'>loading...</h2>
-    }
-
-
-    const organisationsPerPage = 3
-    const printedPage = pageNumber * organisationsPerPage
-
-
-    const organisationSelection =
-        (oganisationType: string, organisationTypePrinted: string): JSX.Element[] => {
-
-            const filtered = organisations.filter((item) => item.type === oganisationType)
-
-            const displayOrganisations: JSX.Element[] = filtered
-                .slice(printedPage, printedPage + organisationsPerPage)
-                .map((item) => {
-                    return <table key={item.id} className='section-4__table'>
-                        <tbody>
-                        <tr>
-                            <td className='section-4__td'>
-                                <p className='section-4__pLarge'> {organisationTypePrinted} {item.name}</p>
-                                <p className='section-4__pSmall'>Cel i misja: {item.goals}</p>
-                            </td>
-                            <td className='td__right'>{item.stuff}</td>
-                        </tr>
-                        </tbody>
-                    </table>
-                })
-            return displayOrganisations
-        }
-
-    const changePage = ({selected}: any): void => {
-        setPageNumber(selected)
-    }
 
     const setPrintCounterPageNumber = (selected: number): void => {
         setPrintCounter(selected)
         setPageNumber(0)
     }
 
-
     return (
         <section className="wrapper wrapper--section-4">
-
             {children}
-
             <div className="section-4__btns">
 
                 <button onClick={() => setPrintCounterPageNumber(1)}
@@ -109,81 +38,13 @@ const Section_4: FC<Props> = ({children}) => {
                 </button>
             </div>
 
-            {printCounter === 1 &&
-                <p className="section-4__p">
-                    W naszej bazie znajdziesz listę zweryfikowanych
-                    fundacji, z którymi współpracujemy. Możesz
-                    sprawdzić czym się zajmują, komu pomagają i
-                    czego potrzebują.
-                </p>
-            }
+            {printCounter === 1 && <Fundations/>}
+            {printCounter === 2 && <Ngo/>}
+            {printCounter === 3 && <Collections/>}
 
-            {printCounter === 2 &&
-                <p className="section-4__p">
-                    Pomagamy również wszelkim organizacjom
-                    pozarządowym i charytatywnym, które nie
-                    są Fundacjami. Są to nasi Partnerzy, który
-                    zrobią dobry pożytek z rzeczy, które do
-                    nich trafią.
-                </p>
-            }
-
-            {printCounter === 3 &&
-                <p className="section-4__p">
-                    Wspieramy lokalne zbiórki organizowane
-                    przez indywidualne osoby, którym
-                    zależy na dobru społeczności, w której żyją.
-                    Sam też możesz zorganizować taką zbiórkę
-                    i pomóc tym, którzy są najbliżej.
-                </p>
-            }
-
-            <div className='paginationContainer'>
-
-                {printCounter === 1 &&
-                    <>
-                        {organisationSelection(
-                            "fundacja", "fundacja")}
-                        <ReactPaginate pageCount={3}
-                                       onPageChange={changePage}
-                                       containerClassName={'paginationButtonsContainer'}
-                                       disabledClassName={'disabledButton'}
-                                       activeClassName={'paginationButton__active'}
-                                       previousLinkClassName={'paginationButton__previousNext'}
-                                       nextLinkClassName={'paginationButton__previousNext'}/>
-                    </>
-                }
-
-                {printCounter === 2 &&
-                    <>
-                        {organisationSelection(
-                            "ngo", "organizacja")}
-                        <ReactPaginate pageCount={2}
-                                       onPageChange={changePage}
-                                       containerClassName={'paginationButtonsContainer'}
-                                       disabledClassName={'disabledButton'}
-                                       activeClassName={'paginationButton__active'}
-                                       previousLinkClassName={'paginationButton__previousNext'}
-                                       nextLinkClassName={'paginationButton__previousNext'}/>
-                    </>
-                }
-
-                {printCounter === 3 &&
-                    <>
-                        {organisationSelection(
-                            "collection", "zbiórka")}
-                        <ReactPaginate pageCount={1}
-                                       onPageChange={changePage}
-                                       containerClassName={'paginationButtonsContainer'}
-                                       disabledClassName={'disabledButton'}
-                                       activeClassName={'paginationButton__active'}
-                                       previousLinkClassName={'paginationButton__previousNext'}
-                                       nextLinkClassName={'paginationButton__previousNext'}/>
-                    </>
-                }
-            </div>
         </section>
+
     );
-}
+};
 
 export default Section_4;
