@@ -1,8 +1,7 @@
 import React, {useEffect} from "react";
 import {useState, ChangeEvent, FormEvent} from "react";
-import {motion} from 'framer-motion'
 import {section_5_FormValidation} from '../../Libraries/libraryValidations'
-import {postUser} from '../../FetchOperations/FetchOperations'
+import {fetchPostUser} from '../../FetchOperations/FetchOperations'
 
 export interface IInputValue {
     name: string;
@@ -46,6 +45,20 @@ const Section_5 = () => {
 
     const [fetchErrors, setFetchErrors] = useState<null | string>(null)
 
+    const [postPrintInfo, setPostPrintInfo] = useState(false)
+    const [buttonClick, setButtonClick] = useState(false)
+
+    useEffect(() => {
+        const timeId = setTimeout(() => {
+            setPostPrintInfo(false)
+        }, 4000)
+
+        return () => {
+            clearTimeout(timeId)
+        }
+    }, [buttonClick])
+
+
     const handleSubmit = (e: FormEvent<HTMLFormElement>): void => {
         e.preventDefault()
 
@@ -57,23 +70,16 @@ const Section_5 = () => {
             return
         }
 
-        postUser(inputValue, setFetchErrors)
+        fetchPostUser(inputValue, setFetchErrors)
+
+        setPostPrintInfo(true)
+        setButtonClick(prevState => !prevState)
         setInputValue({
             name: "",
             email: "",
             message: ""
         })
     }
-
-    // useEffect(()=>{
-    //     const intervall = setTimeout(()=>{
-    //         setText('ee')
-    //     }, 3000)
-    //
-    //     return ()=>{
-    //         clearTimeout(intervall)
-    //     }
-    // },[])
 
     return (
         <>
@@ -134,7 +140,7 @@ const Section_5 = () => {
 
             <h2 className='fetchErrors'>
                 <span className='fetchErrors__opacity'>r</span>
-                {fetchErrors}
+                {postPrintInfo ? fetchErrors : null}
             </h2>
         </>
     );

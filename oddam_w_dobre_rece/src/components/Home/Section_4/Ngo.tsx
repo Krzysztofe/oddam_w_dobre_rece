@@ -1,7 +1,9 @@
 import React, {useEffect, useState} from 'react';
-import {jsonGetOrganizations, URL_NGO} from "../../FetchOperations/FetchOperations";
+import {fetchGetOrganizations} from "../../FetchOperations/FetchOperations";
 import {organizationTypeSelection} from "./organizationTypeSelection";
 import ReactPaginate from "react-paginate";
+
+const URL_FUNDATIONS = 'https://my-json-server.typicode.com/Krzysztofe/oddam_api/fundations'
 
 const Ngo = () => {
 
@@ -17,7 +19,11 @@ const Ngo = () => {
     const [pageNumber, setPageNumber] = useState(0)
 
     useEffect(() => {
-        jsonGetOrganizations(setOrganizations, setLoading, setError, URL_NGO)
+        fetchGetOrganizations(setOrganizations,
+            setLoading,
+            setError,
+            process.env.REACT_APP_URL_NGO
+        )
     }, [])
 
     if (!loading && error) {

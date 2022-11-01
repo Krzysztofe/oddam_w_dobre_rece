@@ -1,6 +1,6 @@
 import React, {createContext, useState, FC, ChangeEvent} from 'react';
 import {addDoc, collection} from "firebase/firestore";
-import {auth, db} from "../../Libraries/FireBaseConfig";
+import {auth, firestore} from "../../Libraries/FireBaseConfig";
 import {useAuthState} from "react-firebase-hooks/auth";
 
 interface Props {
@@ -78,30 +78,7 @@ const GlobalContextProv: FC<Props> = ({children}) => {
     }
 
     const [user, loading, error] = useAuthState(auth);
-    const summaryReference = collection(db, 'summary')
-
-//     // useEffect(() => {
-//     //     const getSummary = async () => {
-//     //         const data = await getDocs(summaryReference)
-//     //         // console.log(data)
-//     //         setSummary(data.docs.map((doc) => (
-//     //             {...doc.data(), id: doc.id})))
-//     //     };
-//     //     getSummary()
-//     //
-//     // }, [])
-//
-//     // useEffect(()=>{
-// //     getDocs(summaryReference)
-// //         .then((data)=>{
-// //             setSummary(data.docs.map((doc) => (
-// //                         {...doc.data(), id: doc.id})))
-// //             console.log(data)
-// //         })
-// //         .catch(error => alert(error.code))
-// //
-// // }, [])
-//
+    const summaryReference = collection(firestore, 'summary')
 
     const createSummary = async (): Promise <void> => {
         await addDoc(summaryReference, {
@@ -133,8 +110,7 @@ const GlobalContextProv: FC<Props> = ({children}) => {
             handleChange,
             handleIncrease,
             handleDecrease,
-            createSummary
-        }}>
+            createSummary}}>
             {children}
         </GlobalContext.Provider>
     );

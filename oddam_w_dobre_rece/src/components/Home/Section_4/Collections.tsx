@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react';
-import {jsonGetOrganizations, URL_COLLECTIONS} from "../../FetchOperations/FetchOperations";
+import {fetchGetOrganizations} from "../../FetchOperations/FetchOperations";
 import {organizationTypeSelection} from "./organizationTypeSelection";
 import ReactPaginate from "react-paginate";
 
@@ -17,7 +17,11 @@ const Ngo = () => {
     const [pageNumber, setPageNumber] = useState(0)
 
     useEffect(() => {
-        jsonGetOrganizations(setOrganizations, setLoading, setError, URL_COLLECTIONS)
+        fetchGetOrganizations(setOrganizations,
+            setLoading,
+            setError,
+            process.env.REACT_APP_URL_COLLECTIONS
+        )
     }, [])
 
     if (!loading && error) {
