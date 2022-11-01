@@ -133,7 +133,7 @@ const Section_5 = () => {
                     </div>
                 </div>
 
-                <button className='btnLarge btnLarge--cntactForm'>
+                <button type = "submit" className='btnLarge btnLarge--cntactForm'>
                     wyślij
                 </button>
             </form>

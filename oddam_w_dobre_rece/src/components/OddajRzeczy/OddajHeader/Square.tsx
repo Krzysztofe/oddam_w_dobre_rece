@@ -11,7 +11,7 @@ const Square:FC<Props>= ({number, text, counter}) => {
     return (
         <>
             <div className='square square--BacgroundColor'>
-                <div className="square__rectangle">
+                <div className="square__text">
                     <h3 className='square__h3'>
                         {number}
                     </h3>
@@ -25,16 +25,3 @@ const Square:FC<Props>= ({number, text, counter}) => {
 };
 
 export default Square;
-
-
-// <div className={`square ${counter >= number &&
-// 'square--BacgroundColor'}`}>
-//     <div className="square__rectangle">
-//         <h3 className='square__h3'>
-//             {number}
-//         </h3>
-//         <p className='square__p'>
-//             {text}
-//         </p>
-//     </div>
-// </div>
