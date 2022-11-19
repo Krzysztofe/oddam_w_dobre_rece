@@ -15,12 +15,13 @@
 * SCSS 
 * RWD 
 * TypeScript
-* React: react-router, react-router-dom, react-firebase-hooks/auth, react-router-hash-link, react-paginate, framer-motion
-* Context API
+* React: react-router, react-router-dom, react-firebase-hooks/auth, react-router-hash-link, react-paginate, react-redux, framer-motion, react-scripts
+* Redux Toolkit
 * Firebase: authentication, firestore, database
 * JSON <a href = "https://my-json-server.typicode.com/Krzysztofe/oddam_api/db">my-json-server-></a>
 * Fetch API: GET, POST
+* Firebase APi keys hidden in .env
 
-## See this project <a href="https://krzysztofe.github.io/oddam_w_dobre_rece/">here -></a>
+## Demo <a href="https://krzysztofe.github.io/oddam_w_dobre_rece/">here -></a>
 
 ![Zrzut ekranu (117)](https://user-images.githubusercontent.com/96065197/194778288-8a5c7078-513f-4611-8ddb-9180b94bb027.png)
