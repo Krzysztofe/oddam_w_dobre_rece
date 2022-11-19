@@ -1,6 +1,6 @@
 import React from 'react'
 import {useAuthState} from "react-firebase-hooks/auth";
-import {auth} from "../Libraries/FireBaseConfig";
+import {auth} from "../libraries/FireBaseConfig";
 import {Link} from "react-router-dom";
 import OddajMain from "./OddajMain";
 import Title from "../Title";

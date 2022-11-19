@@ -1,32 +1,40 @@
 import React, {useContext} from "react";
-import {GlobalContext} from "../OddajContext/GlobalContextProv";
+// import {GlobalContext} from "../oddajContext/GlobalContextProv";
 import {motion} from "framer-motion";
 import Buttons from "../OddajButtons";
 import OddajSummaryTable from "./OddajSummaryTable";
+import {useSelector} from "react-redux";
+import {RootState} from "../../../store/store";
+// import {number} from "prop-types";
 
 const OddajSummary = () => {
 
-    const {inputsValue} = useContext(GlobalContext)
+    // const {inputsValue} = useContext(GlobalContext)
+    const inputsValues = useSelector((state:RootState) => state.inputsValues.value)
+
 
     const selectBagsNumber = (
         message: string,
-        inputsValue: string | number) => {
-        if (inputsValue === '-- Wybierz --') {
+        inputsValues: string | number) => {
+        if (inputsValues === '-- Wybierz --') {
             return message
         }
-        return inputsValue
+        return inputsValues
     }
 
-    const selectBagsDescription = (): string | null => {
-        if (inputsValue.selectBags === 1) {
-            return 'worek'
-        } else if (inputsValue.selectBags > 1 && inputsValue.selectBags < 4) {
-            return 'worki'
-        } else if (inputsValue.selectBags === '-- Wybierz --') {
-            return null
-        }
-        return 'worków'
-    }
+    // const selectBags: number = inputsValues.selectBags
+    //
+    // const selectBagsDescription = (): string | null => {
+    //     if (selectBags  === 1) {
+    //         return 'worek'
+    //     }
+    //     // } else if (inputsValues.selectBags > 1 && inputsValues.selectBags < 4) {
+    //     //     return 'worki'
+    //     // } else if (inputsValues.selectBags === '-- Wybierz --') {
+    //     //     return null
+    //     // }
+    //     return 'worków'
+    // }
 
     return (
         <motion.section className='oddajForm__inputs'
@@ -37,27 +45,27 @@ const OddajSummary = () => {
 
             <div className="summary__topContainer">
                 <div className="summary__icon1"></div>
-                <p className='summary__p'> {selectBagsNumber('wróć do kroku 2/4', inputsValue.selectBags)}
+                <p className='summary__p'> {selectBagsNumber('wróć do kroku 2/4', inputsValues.selectBags)}
                     <> </>
-                    {selectBagsDescription()}
-                    {inputsValue.selectStuff ? `, ${inputsValue.selectStuff}` : null}
-                    {inputsValue.dzieciom ? <>, dzieciom</> : null}
-                    {inputsValue.matkom ? <>, samotnym matkom</> : null}
-                    {inputsValue.bezdomnym ? <>, bezdomnym</> : null}
-                    {inputsValue.niepelnosprawnym ? <>, niepełnosprawnym</> : null}
-                    {inputsValue.starszym ? <>, osobom starszym</> : null}
+                    {/*{selectBagsDescription()}*/}
+                    {inputsValues.selectStuff ? `, ${inputsValues.selectStuff}` : null}
+                    {inputsValues.dzieciom ? <>, dzieciom</> : null}
+                    {inputsValues.matkom ? <>, samotnym matkom</> : null}
+                    {inputsValues.bezdomnym ? <>, bezdomnym</> : null}
+                    {inputsValues.niepelnosprawnym ? <>, niepełnosprawnym</> : null}
+                    {inputsValues.starszym ? <>, osobom starszym</> : null}
                 </p>
             </div>
 
             <div className="summary__topContainer">
                 <div className="summary__icon2"></div>
                 <p className='summary__p'>
-                    {inputsValue.selectLocalisation === '-- Wybierz --' ?
+                    {inputsValues.selectLocalisation === '-- Wybierz --' ?
                         null :
                         'dla lokalizacji:'}
                     <> </>
-                    {selectBagsNumber('wróć do kroku 3/4', inputsValue.selectLocalisation)}
-                    {inputsValue.organisationName ? <>, {inputsValue.organisationName}</> : null}
+                    {selectBagsNumber('wróć do kroku 3/4', inputsValues.selectLocalisation)}
+                    {inputsValues.organisationName ? <>, {inputsValues.organisationName}</> : null}
                 </p>
             </div>
             <OddajSummaryTable/>

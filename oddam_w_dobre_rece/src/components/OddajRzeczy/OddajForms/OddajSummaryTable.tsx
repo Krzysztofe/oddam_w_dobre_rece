@@ -1,9 +1,13 @@
 import React, {useContext} from 'react';
-import {GlobalContext} from "../OddajContext/GlobalContextProv";
+// import {GlobalContext} from "../oddajContext/GlobalContextProv";
+import {useSelector} from "react-redux";
+import {RootState} from "../../../store/store";
 
 const OddajSummaryTable = () => {
 
-    const {inputsValue} = useContext(GlobalContext)
+    // const {inputsValue} = useContext(GlobalContext)
+    const inputsValues = useSelector((state:RootState) => state.inputsValues.value)
+
 
     return (
         <div className="summary__tables">
@@ -18,19 +22,19 @@ const OddajSummaryTable = () => {
                 <tbody>
                 <tr>
                     <td className='summary__td'> ulica:</td>
-                    <td className='summary__td'>{inputsValue.street}</td>
+                    <td className='summary__td'>{inputsValues.street}</td>
                 </tr>
                 <tr>
                     <td className='summary__td'> miasto:</td>
-                    <td className='summary__td'>{inputsValue.city}</td>
+                    <td className='summary__td'>{inputsValues.city}</td>
                 </tr>
                 <tr>
                     <td className='summary__td'> kod pocztowy:</td>
-                    <td className='summary__td'>{inputsValue.postCode}</td>
+                    <td className='summary__td'>{inputsValues.postCode}</td>
                 </tr>
                 <tr>
                     <td className='summary__td'> numer telefonu:</td>
-                    <td className='summary__td'>{inputsValue.phone}</td>
+                    <td className='summary__td'>{inputsValues.phone}</td>
                 </tr>
                 </tbody>
 
@@ -47,15 +51,15 @@ const OddajSummaryTable = () => {
                 <tbody>
                 <tr>
                     <td className='summary__td'> data:</td>
-                    <td className='summary__td'>{inputsValue.date}</td>
+                    <td className='summary__td'>{inputsValues.date}</td>
                 </tr>
                 <tr>
                     <td className='summary__td'> godzina:</td>
-                    <td className='summary__td'>{inputsValue.time}</td>
+                    <td className='summary__td'>{inputsValues.time}</td>
                 </tr>
                 <tr>
                     <td className='summary__td'> uwagi do kuriera:</td>
-                    <td className='summary__td'>{inputsValue.note}</td>
+                    <td className='summary__td'>{inputsValues.note}</td>
                 </tr>
                 </tbody>
             </table>

@@ -1,25 +1,24 @@
 import React, {useContext, FC} from "react";
-import OddajHeader from "./OddajHeader/OddajHeader";
-import OddajContainer_1 from "./OddajContainers/OddajContainer_1";
-import OddajContainer_2 from "./OddajContainers/OddajContainer_2";
-import OddajContainer_3 from "./OddajContainers/OddajContainer_3";
-import OddajContainer_4 from "./OddajContainers/OddajContainer_4";
-import OddajContainerSummary from "./OddajContainers/OddajContainerSummary";
-import OddajContainerThnx from "./OddajContainers/OddajContainerThnx";
-import Section_5 from "../Home/Section_5/Section_5";
+import OddajHeader from "./oddajHeader/OddajHeader";
+import OddajContainer_1 from "./oddajContainers/OddajContainer_1";
+import OddajContainer_2 from "./oddajContainers/OddajContainer_2";
+import OddajContainer_3 from "./oddajContainers/OddajContainer_3";
+import OddajContainer_4 from "./oddajContainers/OddajContainer_4";
+import OddajContainerSummary from "./oddajContainers/OddajContainerSummary";
+import OddajContainerThnx from "./oddajContainers/OddajContainerThnx";
+import Section_5 from "../Home/section_5/Section_5";
 import Footer from "../Home/Footer";
-import {GlobalContext} from "./OddajContext/GlobalContextProv";
+// import {GlobalContext} from "./oddajContext/GlobalContextProv";
 import Title from "../Title";
-import Form from "../Home/Section_5/Section_5_Form";
-
-
-
-
+import Form from "../Home/section_5/Section_5_Form";
+import {Provider, useSelector} from "react-redux";
+import {RootState, store} from '../../store/store'
 
 const OddajMain: FC = () => {
 
-    const {counter} = useContext(GlobalContext)
+    // const {counter} = useContext(GlobalContext)
 
+    const counter = useSelector((state: RootState) => state.btnCounter.value)
 
     return (
         <>
@@ -28,7 +27,7 @@ const OddajMain: FC = () => {
             {counter === 2 && <OddajContainer_2/>}
             {counter === 3 && <OddajContainer_3/>}
             {counter === 4 && <OddajContainer_4/>}
-            {counter === 5 && <OddajContainerSummary/> }
+            {counter === 5 && <OddajContainerSummary/>}
             {counter === 6 && <OddajContainerThnx/>}
             <Section_5>
                 <Title text={['skontaktuj się z nami']}

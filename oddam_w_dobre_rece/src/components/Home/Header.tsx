@@ -2,9 +2,10 @@ import React, {FC} from 'react';
 import Title from '../Title'
 import {Link} from 'react-router-dom'
 import {useAuthState} from "react-firebase-hooks/auth";
-import {auth} from '../Libraries/FireBaseConfig'
+import {auth} from '../libraries/FireBaseConfig';
 const HeaderImageSmall = require('../../asets/Hero Image.png')
 const HeaderImageLarge = require('../../asets/Hero Image@2x.png')
+
 
 interface Props{
     children: React.ReactNode

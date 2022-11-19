@@ -2,7 +2,7 @@ import React, {FC} from 'react'
 import {Link} from "react-router-dom";
 import Title from "../Title";
 import {useAuthState} from "react-firebase-hooks/auth";
-import {auth} from "../Libraries/FireBaseConfig";
+import {auth} from "../libraries/FireBaseConfig";
 const Tshirt =  require( '../../asets/IconTshirt.png');
 const Bag = require( '../../asets/IconBag.png');
 const Glass = require( '../../asets/IconLupa.png')
