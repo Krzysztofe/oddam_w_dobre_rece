@@ -1,23 +1,14 @@
-import React, {useContext} from 'react';
+import React from 'react';
 import OddajBelt from "../OddajBelt";
 import OddajFormTop from "../OddajForms/OddajFormTop";
-import OddajForm from "../OddajForms/OddajForm";
+import OddajFormContainer from "../OddajForms/OddajFormContainer";
 import InputRadio from "../OddajForms/oddajFormInputs/InputRadio";
-// import {GlobalContext} from "../oddajContext/GlobalContextProv";
-import {useSelector, useDispatch} from "react-redux";
-import {RootState} from "../../../store/store";
+import {useDispatch} from "react-redux";
 import {increase} from "../../../storeFeatures/counterSlice";
 
 const OddajContainer_1 = () => {
 
-    // const {handleIncrease} = useContext(GlobalContext)
-
     const dispatch = useDispatch()
-
-    const handleIncrease = () => {
-        dispatch(increase())
-    }
-
 
     return (
         <>
@@ -29,7 +20,7 @@ const OddajContainer_1 = () => {
                 <OddajFormTop
                     text={['krok 1/4', 'zaznacz co chcesz oddać:']}/>
 
-                <OddajForm>
+                <OddajFormContainer>
                     <InputRadio value='ubrania, które nadają się do ponownego użycia'/>
                     <InputRadio value='ubrania, do wyrzucenia'/>
                     <InputRadio value='zabawki'/>
@@ -37,13 +28,13 @@ const OddajContainer_1 = () => {
                     <InputRadio value='inne'/>
 
                     <div className="formButtons">
-                        <button onClick={handleIncrease}
+                        <button onClick={()=> dispatch(increase())}
                                 className='formButton'>
                             dalej
                         </button>
                     </div>
 
-                </OddajForm>
+                </OddajFormContainer>
             </main>
         </>
     );

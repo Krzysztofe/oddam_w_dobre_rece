@@ -1,5 +1,4 @@
-import React, {useContext} from "react";
-// import {GlobalContext} from "./oddajContext/GlobalContextProv";
+import React from "react";
 import {RootState} from "../../store/store";
 import {decrease, increase} from "../../storeFeatures/counterSlice";
 import {useDispatch, useSelector} from "react-redux";
@@ -10,13 +9,11 @@ import {auth} from "../libraries/FireBaseConfig";
 
 const OddajButtons = () => {
 
-    // const { createSummary} = useContext(GlobalContext)
-
     const counter = useSelector((state: RootState) => state.btnCounter.value)
     const inputsValues = useSelector((state: RootState) => state.inputsValues.value)
     const [user, loading, error] = useAuthState(auth);
-
     const dispatch = useDispatch()
+
     const handleIncrease = () => {
         dispatch(increase())
     }
@@ -66,7 +63,6 @@ const OddajButtons = () => {
             }
         ))
     }
-
 
     const increaseAndSummary = () => {
         createSummary()

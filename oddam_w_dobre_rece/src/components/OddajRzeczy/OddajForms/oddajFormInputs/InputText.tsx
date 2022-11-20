@@ -1,5 +1,4 @@
-import React, {useContext, FC} from 'react';
-// import {GlobalContext} from "../../oddajContext/GlobalContextProv";
+import React, {FC} from 'react';
 import {useDispatch, useSelector} from "react-redux";
 import {inputsValuesChange} from '../../../../storeFeatures/inputsValuesSlice'
 import {RootState} from "../../../../store/store";
@@ -18,8 +17,6 @@ const InputText: FC<Props> = ({
                                   type
                               }) => {
 
-    // const {handleChange} = useContext(GlobalContext)
-
     const inputsValues = useSelector((state: RootState) => state.inputsValues.value)
     const dispatch = useDispatch()
 
@@ -28,7 +25,7 @@ const InputText: FC<Props> = ({
             <label className='form4__label'>{label}</label>
             <input type={type} name={name}
                    value={value}
-                   onChange={(e) => dispatch(
+                   onChange={e => dispatch(
                        inputsValuesChange({...inputsValues, [name]: e.target.value})
                    )}
                    className='form4__input'/>

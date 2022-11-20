@@ -1,8 +1,5 @@
 import {createSlice} from "@reduxjs/toolkit";
 
-interface counterState{
-
-}
 
 const initialState = {
     value: 1
@@ -20,12 +17,12 @@ export const btnCounterSlice = createSlice({
             if (state.value > -1 && state.value < 6){
                 state.value -=1
             }},
-        reset: state => {
+        resetCounter: state => {
             state.value = 1
         }
 
     }
 })
 
-export const {increase, decrease, reset} = btnCounterSlice.actions
+export const {increase, decrease, resetCounter} = btnCounterSlice.actions
 export default btnCounterSlice.reducer

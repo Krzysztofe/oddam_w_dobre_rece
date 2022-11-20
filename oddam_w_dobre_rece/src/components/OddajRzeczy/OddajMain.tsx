@@ -8,15 +8,13 @@ import OddajContainerSummary from "./oddajContainers/OddajContainerSummary";
 import OddajContainerThnx from "./oddajContainers/OddajContainerThnx";
 import Section_5 from "../Home/section_5/Section_5";
 import Footer from "../Home/Footer";
-// import {GlobalContext} from "./oddajContext/GlobalContextProv";
 import Title from "../Title";
 import Form from "../Home/section_5/Section_5_Form";
-import {Provider, useSelector} from "react-redux";
-import {RootState, store} from '../../store/store'
+import {useSelector} from "react-redux";
+import {RootState} from '../../store/store'
 
 const OddajMain: FC = () => {
 
-    // const {counter} = useContext(GlobalContext)
 
     const counter = useSelector((state: RootState) => state.btnCounter.value)
 

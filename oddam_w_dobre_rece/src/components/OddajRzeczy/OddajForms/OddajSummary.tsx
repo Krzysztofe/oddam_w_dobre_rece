@@ -1,40 +1,32 @@
-import React, {useContext} from "react";
-// import {GlobalContext} from "../oddajContext/GlobalContextProv";
+import React from "react";
 import {motion} from "framer-motion";
 import Buttons from "../OddajButtons";
 import OddajSummaryTable from "./OddajSummaryTable";
 import {useSelector} from "react-redux";
 import {RootState} from "../../../store/store";
-// import {number} from "prop-types";
+
 
 const OddajSummary = () => {
 
-    // const {inputsValue} = useContext(GlobalContext)
-    const inputsValues = useSelector((state:RootState) => state.inputsValues.value)
+    const inputsValues = useSelector((state: RootState) => state.inputsValues.value)
 
-
-    const selectBagsNumber = (
+    const selectDataPrint = (
         message: string,
         inputsValues: string | number) => {
-        if (inputsValues === '-- Wybierz --') {
-            return message
-        }
-        return inputsValues
+        return inputsValues === '-- Wybierz --' ? message : inputsValues
     }
 
-    // const selectBags: number = inputsValues.selectBags
-    //
-    // const selectBagsDescription = (): string | null => {
-    //     if (selectBags  === 1) {
-    //         return 'worek'
-    //     }
-    //     // } else if (inputsValues.selectBags > 1 && inputsValues.selectBags < 4) {
-    //     //     return 'worki'
-    //     // } else if (inputsValues.selectBags === '-- Wybierz --') {
-    //     //     return null
-    //     // }
-    //     return 'worków'
-    // }
+    const bagsDescription = (): any => {
+        if (inputsValues.selectBags === 1) {
+            return 'worek'
+        } else if (inputsValues.selectBags > 1 && inputsValues.selectBags < 5)
+            return 'worki'
+
+        else if (inputsValues.selectBags === '-- Wybierz --') {
+            return null
+        }
+        return 'worków'
+    }
 
     return (
         <motion.section className='oddajForm__inputs'
@@ -45,10 +37,9 @@ const OddajSummary = () => {
 
             <div className="summary__topContainer">
                 <div className="summary__icon1"></div>
-                <p className='summary__p'> {selectBagsNumber('wróć do kroku 2/4', inputsValues.selectBags)}
-                    <> </>
-                    {/*{selectBagsDescription()}*/}
-                    {inputsValues.selectStuff ? `, ${inputsValues.selectStuff}` : null}
+                <p className='summary__p'> {selectDataPrint('wróć do kroku 2/4 i podaj ilość worków', inputsValues.selectBags)}
+                   <> </> {bagsDescription()}
+                    {inputsValues.selectStuff ? <>, {inputsValues.selectStuff}</> : null}
                     {inputsValues.dzieciom ? <>, dzieciom</> : null}
                     {inputsValues.matkom ? <>, samotnym matkom</> : null}
                     {inputsValues.bezdomnym ? <>, bezdomnym</> : null}
@@ -60,11 +51,13 @@ const OddajSummary = () => {
             <div className="summary__topContainer">
                 <div className="summary__icon2"></div>
                 <p className='summary__p'>
-                    {inputsValues.selectLocalisation === '-- Wybierz --' ?
-                        null :
+                    {inputsValues.selectLocalisation === '-- Wybierz --'
+                        ?
+                        null
+                        :
                         'dla lokalizacji:'}
                     <> </>
-                    {selectBagsNumber('wróć do kroku 3/4', inputsValues.selectLocalisation)}
+                    {selectDataPrint('wróć do kroku 3/4 i podaj lokalizację', inputsValues.selectLocalisation)}
                     {inputsValues.organisationName ? <>, {inputsValues.organisationName}</> : null}
                 </p>
             </div>

@@ -1,7 +1,6 @@
-import React, {useState, FC, useContext} from "react";
+import React, {useState, FC} from "react";
 import {useDispatch, useSelector} from "react-redux";
 import {RootState} from "../../../../store/store";
-// import {GlobalContext} from "../../oddajContext/GlobalContextProv";
 import {inputsValuesChange} from '../../../../storeFeatures/inputsValuesSlice'
 
 
@@ -18,21 +17,14 @@ const InputSelect: FC<Props> = ({
                                 }) => {
 
     const [open, setOpen] = useState(false)
-    // const {setInputsValue, inputsValue} = useContext(GlobalContext)
 
     const inputsValues = useSelector((state: RootState) => state.inputsValues.value)
     const dispatch = useDispatch()
-    const inputValuePrint: keyof typeof inputsValues = inputName
+    const inputsValuesKeyName: keyof typeof inputsValues = inputName
 
     const handleOpen = () => {
         setOpen(state => !state)
     }
-
-    // const handleSelectBags = (item: string | number): void => {
-    //     setInputsValue({...inputsValue, [inputName]: item})
-    // }
-// const selectPrint =  inputsValues.inputName
-
 
     return (
         <div className='select__container'>
@@ -45,7 +37,7 @@ const InputSelect: FC<Props> = ({
 
                 <div onClick={handleOpen}
                      className="select__top">
-                    {inputsValues[inputValuePrint]}
+                    {inputsValues[inputsValuesKeyName]}
                     <div className={open ? 'select__arrow--up' : 'select__arrow'}></div>
                 </div>
 
@@ -54,8 +46,7 @@ const InputSelect: FC<Props> = ({
                         {selectValues.map(value => {
                             return <div key={value}
                                         className="select__option"
-                                        onClick={(e) => {
-                                            dispatch(
+                                        onClick={e => {dispatch(
                                                 inputsValuesChange({...inputsValues, [inputName]: value})
                                             )
 

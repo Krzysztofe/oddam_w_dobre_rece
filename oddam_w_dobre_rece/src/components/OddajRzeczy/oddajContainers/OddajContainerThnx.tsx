@@ -3,15 +3,12 @@ import OddajFormTop from "../OddajForms/OddajFormTop";
 import OddajThanx from "../OddajForms/OddajThanx";
 import Title from "../../Title";
 import {Link} from "react-router-dom";
-import {reset} from "../../../storeFeatures/counterSlice";
+import {resetCounter} from "../../../storeFeatures/counterSlice";
 import {useDispatch} from "react-redux";
 
 const OddajContainerThnx = () => {
 
     const dispatch = useDispatch()
-    const handleReset = () => {
-        dispatch(reset())
-    }
 
     return (
         <main className="wrapper wrapper--oddajMain">
@@ -29,7 +26,7 @@ const OddajContainerThnx = () => {
 
                 <Link to='/' className='ddajThanx__link'>
                     <button className='ddajThanx__button'
-                    onClick={handleReset}>
+                    onClick={()=> dispatch(resetCounter())}>
                         strona główna
                     </button>
                 </Link>

@@ -5,7 +5,7 @@ interface Props{
    children: React.ReactNode
 }
 
-const OddajForm:FC <Props> = ({children}) => {
+const OddajFormContainer:FC <Props> = ({children}) => {
 
     return (
         <>
@@ -21,4 +21,4 @@ const OddajForm:FC <Props> = ({children}) => {
     );
 };
 
-export default OddajForm;
+export default OddajFormContainer;

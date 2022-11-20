@@ -1,11 +1,9 @@
-import React, {useContext} from 'react';
-// import {GlobalContext} from "../oddajContext/GlobalContextProv";
+import React from 'react';
 import {useSelector} from "react-redux";
 import {RootState} from "../../../store/store";
 
 const OddajSummaryTable = () => {
 
-    // const {inputsValue} = useContext(GlobalContext)
     const inputsValues = useSelector((state:RootState) => state.inputsValues.value)
 
 

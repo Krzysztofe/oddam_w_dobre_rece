@@ -1,20 +1,15 @@
-import React, {useContext} from 'react';
+import React from 'react';
 import OddajBelt from "../OddajBelt";
 import OddajFormTop from "../OddajForms/OddajFormTop";
-import OddajForm from "../OddajForms/OddajForm";
+import OddajFormContainer from "../OddajForms/OddajFormContainer";
 import InputSelect from "../OddajForms/oddajFormInputs/InputSelect";
 import InputCheckbox from "../OddajForms/oddajFormInputs/InputCheckbox";
 import OddajButtons from "../OddajButtons";
-// import {GlobalContext} from "../oddajContext/GlobalContextProv";
 import {useDispatch, useSelector} from "react-redux";
 import {RootState} from "../../../store/store";
-import InputText from "../OddajForms/oddajFormInputs/InputText";
 import {inputsValuesChange} from "../../../storeFeatures/inputsValuesSlice";
-// import {inputsValues} from '../../../storeFeatures/inputsValuesSlice'
 
 const OddajContainer_3 = () => {
-
-    // const {inputsValue, setInputsValue, handleChange} = useContext(GlobalContext)
 
     const inputsValues = useSelector((state: RootState) => state.inputsValues.value)
     const dispatch = useDispatch()
@@ -30,7 +25,7 @@ const OddajContainer_3 = () => {
                 <OddajFormTop
                     text={['krok 3/4', 'lokalizacja:']}/>
 
-                <OddajForm>
+                <OddajFormContainer>
                     <InputSelect textLabel=''
                                  selectValues={['Poznań', 'Warszawa', 'Kraków', 'Katowice']}
                                  inputName='selectLocalisation'/>
@@ -69,12 +64,12 @@ const OddajContainer_3 = () => {
                     <input type='text'
                            name='organisationName'
                            value={inputsValues.organisationName}
-                           onChange={(e) => dispatch(
+                           onChange={e => dispatch(
                                inputsValuesChange({...inputsValues, organisationName: e.target.value})
                            )}
                            className='oddajForm3__textInput'/>
                     <OddajButtons/>
-                </OddajForm>
+                </OddajFormContainer>
             </main>
         </>
     );

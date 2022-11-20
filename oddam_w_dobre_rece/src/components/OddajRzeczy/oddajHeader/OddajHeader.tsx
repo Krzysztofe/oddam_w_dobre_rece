@@ -1,15 +1,13 @@
-import React, {useContext} from 'react'
-// import {GlobalContext} from "../oddajContext/GlobalContextProv";
+import React from 'react'
 import Title from "../../Title";
 import Square from "./Square";
 import {useSelector} from "react-redux";
 import {RootState} from "../../../store/store";
-const ImageSmall = require( "../../../asets/Header-Form-Background.png")
-const ImageLarge = require( '../../../asets/Header-Form-Background@2x.png')
+
+const ImageSmall = require("../../../asets/Header-Form-Background.png")
+const ImageLarge = require('../../../asets/Header-Form-Background@2x.png')
 
 const OddajHeader = () => {
-
-    // const {counter} = useContext(GlobalContext)
 
     const counter = useSelector((state: RootState) => state.btnCounter.value)
 
@@ -30,21 +28,17 @@ const OddajHeader = () => {
 
                     <div className="squares">
 
-                        <Square number = {1}
-                                text='wybierz rzeczy'
-                                counter={counter}/>
+                        <Square number={1}
+                                text='wybierz rzeczy'/>
 
-                        <Square number= {2}
-                                text='spakuj w worki'
-                                counter={counter}/>
+                        <Square number={2}
+                                text='spakuj w worki'/>
 
-                        <Square number= {3}
-                                text='wybierz fundację'
-                                counter={counter}/>
+                        <Square number={3}
+                                text='wybierz fundację'/>
 
                         <Square number={4}
-                                text='zamów kuriera'
-                                counter={counter}/>
+                                text='zamów kuriera'/>
 
                     </div>
                 </aside>

@@ -3,10 +3,9 @@ import React, {FC} from 'react'
 interface Props{
     number:number;
     text: string
-    counter: number
 }
 
-const Square:FC<Props>= ({number, text, counter}) => {
+const Square:FC<Props>= ({number, text}) => {
 
     return (
         <>

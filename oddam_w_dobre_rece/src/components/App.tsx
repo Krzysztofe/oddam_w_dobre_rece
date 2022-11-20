@@ -2,11 +2,6 @@ import React, {lazy, Suspense} from 'react'
 import {BrowserRouter, Routes, Route} from "react-router-dom";
 import NavBar from "./Home/navBar/NavBar";
 import Home from "./Home/Home";
-// import Login from "./login/Login";
-// import Register from "./login/Register";
-// import Logout from "./login/Logout";
-// import ProtectedRouteOddajMain from "./OddajRzeczy/ProtectedRoute";
-// import GlobalContextProv from "./OddajRzeczy/oddajContext/GlobalContextProv";
 import '../scss/index.scss'
 import {Provider} from "react-redux";
 import {store} from '../store/store'
@@ -31,9 +26,7 @@ function App() {
                         <Route path='/oddaj'
                                element={
                                    <Provider store={store}>
-                                       {/*<GlobalContextProv>*/}
                                            <ProtectedRouteOddajMain/>
-                                       {/*</GlobalContextProv>*/}
                                    </Provider>
                                }/>
                     </Routes>
