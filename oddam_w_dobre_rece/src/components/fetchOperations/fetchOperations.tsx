@@ -45,7 +45,7 @@ export const fetchPostUser = (InputValue: IInputValue,
                          setFetchErrors: React.Dispatch<React.SetStateAction<string | null>>)
     : void => {
 
-    setFetchErrors(null)
+    setFetchErrors('Wysyła')
 
     fetch(URL_USERS,
         {
