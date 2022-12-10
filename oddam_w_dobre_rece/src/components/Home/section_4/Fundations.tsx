@@ -1,42 +1,30 @@
-import React, {SetStateAction, useEffect, useState} from 'react';
+import React, { useState} from 'react';
 import ReactPaginate from "react-paginate";
-import {fetchGetOrganizations} from "../../fetchOperations/fetchOperations";
 import {organizationTypeSelection} from "./organizationTypeSelection";
-
-const URL_FUNDATIONS = 'https://my-json-server.typicode.com/Krzysztofe/oddam_api/ngo'
+import useFetchGET from "../../fetchOperations/useFetchGET";
 
 const Fundations = () => {
 
-    const [organizations, setOrganizations] = useState([{
-        id: 0,
-        type: '',
-        name: '',
-        goals: '',
-        stuff: ''
-    }])
-    const [loading, setLoading] = useState(false)
-    const [error, setError] = useState<string | null>(null)
+    const {loadingGET, errorGET, data: fundations} =
+        useFetchGET(process.env.REACT_APP_URL_FUNDATIONS)
+
     const [pageNumber, setPageNumber] = useState(0)
 
-    useEffect(() => {
-        fetchGetOrganizations(setOrganizations,
-            setLoading,
-            setError,
-            process.env.REACT_APP_URL_FUNDATIONS)
-    }, [])
+    let content = <h2 className='section4__loading'>no data</h2>
 
-    if (!loading && error) {
-        return <h2 className='section4__loading'>{error}</h2>
+    if (fundations) {
+        content = <>
+            <h2>
+                {organizationTypeSelection(fundations, 3, pageNumber)}
+            </h2>
+        </>
     }
-    if (!loading && organizations.length === 0 && !error) {
-        return <h2 className='section4__loading'>brak danych w bazie danych</h2>
+    if (errorGET) {
+        content = <h2 className='section4__loading'>{errorGET}</h2>
     }
-    if (loading) {
-        return <h2 className='section4__loading'>loading...</h2>
+    if (loadingGET) {
+        content = <h2 className='section4__loading'>loading...</h2>
     }
-
-
-    // const pageCount = organizations.length / organizationPerPage
 
     const changePage = ({selected}: any) => {
         setPageNumber(selected)
@@ -50,7 +38,7 @@ const Fundations = () => {
                 sprawdzić czym się zajmują, komu pomagają i
                 czego potrzebują.
             </p>
-            {organizationTypeSelection(organizations, 3, pageNumber)}
+            {content}
             <ReactPaginate pageCount={3}
                            onPageChange={changePage}
                            containerClassName={'paginationButtonsContainer'}

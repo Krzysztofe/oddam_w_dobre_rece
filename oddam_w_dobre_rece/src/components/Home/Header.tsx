@@ -1,5 +1,4 @@
 import React, {FC} from 'react';
-import Title from '../Title'
 import {Link} from 'react-router-dom'
 import {useAuthState} from "react-firebase-hooks/auth";
 import {auth} from '../libraries/FireBaseConfig';
