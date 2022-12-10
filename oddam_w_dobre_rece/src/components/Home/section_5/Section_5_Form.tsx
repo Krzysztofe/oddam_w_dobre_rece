@@ -1,7 +1,8 @@
-import React, {useEffect} from "react";
+import React from "react";
 import {useState, ChangeEvent, FormEvent} from "react";
 import {section_5_FormValidation} from '../../libraries/libraryValidations'
 import useFetchPOST from "../../fetchOperations/useFetchPOST";
+import useErrorsPrint from "../../libraries/usePrintError";
 
 const Section_5 = () => {
 
@@ -17,21 +18,8 @@ const Section_5 = () => {
     const [errors, setErrors] = useState({name: "", email: "", message: ""})
 
     const {loadingPOST, errorPOST, createPOST} = useFetchPOST(process.env.REACT_APP_URL_USERS, inputValue)
-
-
-    const [postPrintInfo, setPostPrintInfo] = useState(false)
-    const [buttonClick, setButtonClick] = useState(false)
-
-    useEffect(() => {
-        const timeId = setTimeout(() => {
-            setPostPrintInfo(false)
-        }, 4000)
-
-        return () => {
-            clearTimeout(timeId)
-        }
-    }, [buttonClick])
-
+    const {printError, setPrintError, setButtonClick, usePrintChange } =  useErrorsPrint()
+    usePrintChange()
 
     const handleSubmit = (e: FormEvent<HTMLFormElement>): void => {
         e.preventDefault()
@@ -45,12 +33,8 @@ const Section_5 = () => {
         }
 
         createPOST()
-        setInputValue({
-            name: "",
-            email: "",
-            message: ""
-        })
-        setPostPrintInfo(true)
+        setInputValue({name: "", email: "", message: ""})
+        setPrintError(true)
         setButtonClick(prevState => !prevState)
     }
 
@@ -126,7 +110,7 @@ const Section_5 = () => {
             <h2 className='fetchErrors'>
                 <span className='fetchErrors__opacity'>r</span>
                 {loadingPrint}
-                {postPrintInfo ? content : null}
+                {printError && content}
             </h2>
         </>
     );
