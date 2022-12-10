@@ -6,7 +6,7 @@ import useFetchGET from "../../fetchOperations/useFetchGET";
 const Ngo = () => {
 
     const {loadingGET, errorGET, data: ngo} =
-        useFetchGET(process.env.REACT_APP_URL_FUNDATIONS)
+        useFetchGET(process.env.REACT_APP_URL_NGO)
 
     const [pageNumber, setPageNumber] = useState(0)
 

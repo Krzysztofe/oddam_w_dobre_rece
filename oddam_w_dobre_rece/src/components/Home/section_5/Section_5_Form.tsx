@@ -1,34 +1,11 @@
 import React, {useEffect} from "react";
 import {useState, ChangeEvent, FormEvent} from "react";
 import {section_5_FormValidation} from '../../libraries/libraryValidations'
-import {fetchPostUser} from '../../fetchOperations/fetchOperations'
-
-export interface IInputValue {
-    name: string;
-    email: string;
-    message: string;
-}
-
-interface IErrors {
-    name: string;
-    email: string;
-    message: string;
-}
-
-export interface IFormData {
-    name: string;
-    email: string;
-    message: string;
-}
-
+import useFetchPOST from "../../fetchOperations/useFetchPOST";
 
 const Section_5 = () => {
 
-    const [inputValue, setInputValue] = useState<IInputValue>({
-        name: "",
-        email: "",
-        message: ""
-    })
+    const [inputValue, setInputValue] = useState({name: "", email: "", message: ""})
 
     const handleChange = (e: ChangeEvent<HTMLTextAreaElement | HTMLInputElement>): void => {
         setInputValue({
@@ -37,13 +14,10 @@ const Section_5 = () => {
         })
     }
 
-    const [errors, setErrors] = useState<IErrors>({
-        name: "",
-        email: "",
-        message: ""
-    })
+    const [errors, setErrors] = useState({name: "", email: "", message: ""})
 
-    const [fetchErrors, setFetchErrors] = useState<null | string>(null)
+    const {loadingPOST, errorPOST, createPOST} = useFetchPOST(process.env.REACT_APP_URL_USERS, inputValue)
+
 
     const [postPrintInfo, setPostPrintInfo] = useState(false)
     const [buttonClick, setButtonClick] = useState(false)
@@ -70,16 +44,27 @@ const Section_5 = () => {
             return
         }
 
-        fetchPostUser(inputValue, setFetchErrors)
-
-        setPostPrintInfo(true)
-        setButtonClick(prevState => !prevState)
+        createPOST()
         setInputValue({
             name: "",
             email: "",
             message: ""
         })
+        setPostPrintInfo(true)
+        setButtonClick(prevState => !prevState)
     }
+
+    let content = null
+    let loadingPrint = null
+
+    if (errorPOST) {
+        content = errorPOST
+    }
+
+    if (loadingPOST) {
+        loadingPrint = 'Przesył informacji'
+    }
+
 
     return (
         <>
@@ -133,14 +118,15 @@ const Section_5 = () => {
                     </div>
                 </div>
 
-                <button type = "submit" className='btnLarge btnLarge--cntactForm'>
+                <button type="submit" className='btnLarge btnLarge--cntactForm'>
                     wyślij
                 </button>
             </form>
 
             <h2 className='fetchErrors'>
                 <span className='fetchErrors__opacity'>r</span>
-                {postPrintInfo ? fetchErrors : null}
+                {loadingPrint}
+                {postPrintInfo ? content : null}
             </h2>
         </>
     );

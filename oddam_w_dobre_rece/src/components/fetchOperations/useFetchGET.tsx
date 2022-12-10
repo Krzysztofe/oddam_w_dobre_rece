@@ -3,13 +3,13 @@ import {useEffect, useState} from "react";
 
 const useFetchGET = (url: any) => {
     const [data, setData] = useState<any | null>(null)
-    const [loadingGET, setGETLoading] = useState(false)
-    const [errorGET, setGETError] = useState<string | null>(null)
+    const [loadingGET, setLoadingGET] = useState(false)
+    const [errorGET, setErrorGET] = useState<string | null>(null)
 
     useEffect(() => {
 
-        setGETLoading(true)
-        setGETError(null)
+        setLoadingGET(true)
+        setErrorGET(null)
 
         fetch(url)
             .then(resp => {
@@ -21,14 +21,14 @@ const useFetchGET = (url: any) => {
             )
             .then(data => {
                     setData(data)
-                    setGETLoading(false)
+                    setLoadingGET(false)
                 }
             )
             .catch(err => {
-                    setGETError(err.message === 'Failed to fetch' ?
+                    setErrorGET(err.message === 'Failed to fetch' ?
                         'Brak połączenia z serwerem' :
                         err.message)
-                    setGETLoading(false)
+                    setLoadingGET(false)
                 }
             )
     }, [url])
