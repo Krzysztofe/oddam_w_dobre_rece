@@ -32,22 +32,79 @@ textarea::placeholder {
   color: #FF0000FF;
   font-size: $font-size-small;
   height: 2em;
-
+  animation-name: shake;
+  animation-duration: 0.3s;
+  animation-timing-function: ease-in;
   &:first-letter {
     text-transform: uppercase;
   }
 }
 
-.contactForm__errorUnderline {
-  border-bottom: 1px solid #FF0000FF;
+@keyframes shake {
+  0% {
+    transform: translate(0);
+  }
+  20%{
+    transform: translate(1rem);
+  }
+  40%{
+    transform: translate(-1rem);
+  }
+  60%{
+    transform: translate(0.5rem);
+  }
+  80%{
+    transform: translate(-0.5rem);
+  }
+  100% {
+    transform: translate(0);
+  }
 }
 
-.btnLarge--cntactForm {
+.contactForm__textInputErrorsEmpty{
+  padding-top: $space-small;
+  color: rgba(0,0,0,0);
+}
+
+.contactForm__errorUnderline {
+  border-bottom: 1px solid #FF0000FF;
+  animation-name: shake;
+  animation-duration: 0.3s;
+  animation-timing-function: ease-in;
+}
+
+.btnLarge--contactForm {
   padding: $space-small 0;
   width: 30%;
   margin-left: auto;
   margin-bottom: $space-large;
+  //&:active   {
+  //  animation-name: shake;
+  //  animation-duration: 0.2s;
+  //  animation-timing-function: ease-in;
+  //}
 }
+
+//@keyframes shake {
+//  0% {
+//    transform: translate(0);
+//  }
+//  20%{
+//    transform: translate(1rem);
+//  }
+//  40%{
+//    transform: translate(-1rem);
+//  }
+//  60%{
+//    transform: translate(0.5rem);
+//  }
+//  80%{
+//    transform: translate(-0.5rem);
+//  }
+//  100% {
+//    transform: translate(0);
+//  }
+//}
 
 
 .fetchErrors {

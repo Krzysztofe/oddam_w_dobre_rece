@@ -18,7 +18,7 @@ const Section_5 = () => {
     const [errors, setErrors] = useState({name: "", email: "", message: ""})
 
     const {loadingPOST, errorPOST, createPOST} = useFetchPOST(process.env.REACT_APP_URL_USERS, inputValue)
-    const {printError, setPrintError, setButtonClick, usePrintChange } =  usePrintFetchError()
+    const {printError, setPrintError, setButtonClick, usePrintChange} = usePrintFetchError()
     usePrintChange()
 
     const handleSubmit = (e: FormEvent<HTMLFormElement>): void => {
@@ -65,9 +65,16 @@ const Section_5 = () => {
                            className={`contactForm__input
                        ${errors.name && 'contactForm__errorUnderline'}`}
                            placeholder='Imię'/>
-                    <div className="contactForm__textInputErrors">
-                        {errors.name}
-                    </div>
+
+                    {errors.name
+                        ?
+                        <div className="contactForm__textInputErrors">
+                            {errors.name}
+                        </div>
+                        :
+                        <div className="contactForm__textInputErrorsEmpty"> i
+                        </div>
+                    }
                 </div>
 
                 <div className="contactForm__inputContainer">
@@ -80,13 +87,21 @@ const Section_5 = () => {
                            className={`contactForm__input
                        ${errors.email && 'contactForm__errorUnderline'}`}
                            placeholder='Email'/>
-                    <div className="contactForm__textInputErrors">
-                        {errors.email}
-                    </div>
+
+                    {errors.email
+                        ?
+                        <div className="contactForm__textInputErrors">
+                            {errors.email}
+                        </div>
+                        :
+                        <div className="contactForm__textInputErrorsEmpty"> i
+                        </div>
+                    }
+
                 </div>
 
                 <div className="contactForm__inputContainer
-            contactForm__inputContainer--textarea">
+                    contactForm__inputContainer--textarea">
                     <label className='contactForm__label'>
                         Wpisz swoją wiadomość
                     </label>
@@ -97,12 +112,19 @@ const Section_5 = () => {
                     ${errors.message && 'contactForm__errorUnderline'}`}
                               rows={4}
                               placeholder='Wiadomość'/>
-                    <div className="contactForm__textInputErrors">
-                        {errors.message}
-                    </div>
+                    {errors.message
+                        ?
+                        <div className="contactForm__textInputErrors">
+                            {errors.message}
+                        </div>
+                        :
+                        <div className="contactForm__textInputErrorsEmpty"> i
+                        </div>
+                    }
+
                 </div>
 
-                <button type="submit" className='btnLarge btnLarge--cntactForm'>
+                <button type="submit" className='btnLarge btnLarge--contactForm'>
                     wyślij
                 </button>
             </form>

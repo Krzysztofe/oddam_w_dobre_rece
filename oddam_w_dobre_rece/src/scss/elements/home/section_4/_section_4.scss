@@ -22,8 +22,36 @@
   height: 100px;
   width: 100px;
   font-weight: $semiBold;
-  font-size: $font-size-small
+  font-size: $font-size-small;
+  &:active   {
+    animation-name: shake;
+    animation-duration: 0.2s;
+    animation-timing-function: ease-in;
+  }
 }
+
+
+@keyframes shake {
+  0% {
+    transform: translate(0);
+  }
+  20%{
+    transform: translate(1rem);
+  }
+  40%{
+    transform: translate(-1rem);
+  }
+  60%{
+    transform: translate(0.5rem);
+  }
+  80%{
+    transform: translate(-0.5rem);
+  }
+  100% {
+    transform: translate(0);
+  }
+}
+
 
 .section-4__p {
   text-align: center;

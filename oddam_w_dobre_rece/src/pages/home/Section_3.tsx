@@ -1,19 +1,30 @@
-import React, {FC} from 'react'
-const SignatureSmall = require( '../../asets/Signature.png')
-const SignatureLarge = require( '../../asets/Signature@2x.png')
-const PeopleSmall = require( '../../asets/People.png')
-const PeopleLarge = require( '../../asets/People@2x.png')
+import React, {FC, useEffect} from 'react'
+import AOS from 'aos'
+import 'aos/dist/aos.css'
+
+const SignatureSmall = require('../../asets/Signature.png')
+const SignatureLarge = require('../../asets/Signature@2x.png')
+const PeopleSmall = require('../../asets/People.png')
+const PeopleLarge = require('../../asets/People@2x.png')
 
 
-
-interface Props{
+interface Props {
     children: React.ReactNode
 }
 
-const Section_3:FC<Props> = ({children}) => {
+const Section_3: FC<Props> = ({children}) => {
+
+    useEffect(() => {
+        AOS.init();
+        AOS.refresh();
+    }, []);
+
     return (
-        <section className="wrapper wrapper--section-3">
-            <aside className="section-3__leftContainer">
+        <section
+            className="wrapper wrapper--section-3">
+            <aside className="section-3__leftContainer"
+                   data-aos="fade-right"
+                   data-aos-duration='1000'>
                 <div className="section-3__mainText">
 
                     {children}
@@ -31,7 +42,7 @@ const Section_3:FC<Props> = ({children}) => {
                 </div>
             </aside>
 
-            <img src={PeopleSmall}
+            <img data-aos="fade-left" src={PeopleSmall}
                  alt='Grupa ludzi'
                  className='section-3__peopleSmall'/>
             <img src={PeopleLarge}

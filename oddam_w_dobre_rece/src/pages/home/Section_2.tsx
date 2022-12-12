@@ -1,6 +1,5 @@
 import React, {FC} from 'react'
 import {Link} from "react-router-dom";
-import TitleDecor from "../../components/TitleDecor";
 import {useAuthState} from "react-firebase-hooks/auth";
 import {auth} from "../../data/FireBaseConfig";
 const Tshirt =  require( '../../asets/IconTshirt.png');
