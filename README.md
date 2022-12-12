@@ -5,7 +5,7 @@
 ## Features
 * Responsive design
 * Sending data to the firestore
-* Register form, login form, form using firebase
+* Register form, login form using firebase
 * Forms validations 
 * React Scroll 
 * Pagination 
@@ -21,6 +21,7 @@
 * JSON <a href = "https://my-json-server.typicode.com/Krzysztofe/oddam_api/db">my-json-server-></a>
 * Fetch API: GET, POST
 * Firebase APi keys hidden in .env
+* Animate On Scroll Library
 
 ## Demo <a href="https://krzysztofe.github.io/oddam_w_dobre_rece/">here -></a>
 
