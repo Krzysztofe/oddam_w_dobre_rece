@@ -24,4 +24,4 @@ yarn-debug.log*
 yarn-error.log*
 /src/components/ProtrctedRoute.tsx
 src/components/Home/Section_4/Section_xxxx4.tsx
-src/components/OddajRzeczy/oddajContext/GlobalContextProvider.tsx
+src/pages/oddaj/oddajContext/GlobalContextProvider.tsx
