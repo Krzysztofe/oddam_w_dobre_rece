@@ -1,11 +1,11 @@
 import {useState} from "react";
 
-const useFetchPOST = (url: any, data: any) => {
+const useFetchPOST = (url: any) => {
 
     const [loadingPOST, setPOSTLoading] = useState(false)
     const [errorPOST, setPOSTError] = useState<string | null>(null)
 
-    const createPOST = () => {
+    const createPOST = (data:any) => {
         setPOSTLoading(true)
         setPOSTError(null)
 

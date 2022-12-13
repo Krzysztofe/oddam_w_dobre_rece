@@ -25,7 +25,9 @@ const TitleDecor: FC<Props> = ({
     return (
         <div className={classContainer}
              data-aos="flip-left"
+             data-aos-delay = '500'
              data-aos-duration = '1000'>
+
             <h2 className={`title__h2 ${classH2}`}>{text[0]} <br/>{text[1]}</h2>
             <div className={`title__decoration ${classUnderline}`}> </div>
         </div>

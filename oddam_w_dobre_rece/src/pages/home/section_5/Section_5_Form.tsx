@@ -1,42 +1,40 @@
-import React from "react";
-import {useState, ChangeEvent, FormEvent} from "react";
-import {section_5_FormValidation} from '../../../validations/libraryValidations'
+import {useFormik} from "formik"
 import useFetchPOST from "../../../hooks/useFetchPOST";
 import usePrintFetchError from "../../../hooks/usePrintFetchError";
+import * as Yup from 'yup'
+import { URL_user_POST} from '../../../data/URL'
+
 
 const Section_5 = () => {
 
-    const [inputValue, setInputValue] = useState({name: "", email: "", message: ""})
-
-    const handleChange = (e: ChangeEvent<HTMLTextAreaElement | HTMLInputElement>): void => {
-        setInputValue({
-            ...inputValue,
-            [e.target.name]: e.target.value
-        })
-    }
-
-    const [errors, setErrors] = useState({name: "", email: "", message: ""})
-
-    const {loadingPOST, errorPOST, createPOST} = useFetchPOST(process.env.REACT_APP_URL_USERS, inputValue)
+    const {loadingPOST, errorPOST, createPOST} = useFetchPOST(URL_user_POST)
     const {printError, setPrintError, setButtonClick, usePrintChange} = usePrintFetchError()
+
     usePrintChange()
 
-    const handleSubmit = (e: FormEvent<HTMLFormElement>): void => {
-        e.preventDefault()
 
-        setErrors(section_5_FormValidation(inputValue))
+    const formik = useFormik({
 
-        if (section_5_FormValidation(inputValue).name !== '' ||
-            section_5_FormValidation(inputValue).message !== '' ||
-            section_5_FormValidation(inputValue).email !== '') {
-            return
+            initialValues: {
+                name: "",
+                email: "",
+                message: "",
+            },
+            validationSchema: Yup.object({
+                name: Yup.string().matches(
+                    /^[a-zA-Z0-9@]+$/,"imię powinno być jednym wyrazem").required("wymagane"),
+                email: Yup.string().email("email jest nieprawidłowy").required('wymagane'),
+                message: Yup.string().min(2, "wiadomość minimum dwa znaki").required('wymagane'),
+            }),
+            onSubmit: (values, {resetForm}) => {
+                resetForm()
+                createPOST(formik.values)
+                setPrintError(true)
+                setButtonClick(prevState => !prevState)
+            }
         }
+    )
 
-        createPOST()
-        setInputValue({name: "", email: "", message: ""})
-        setPrintError(true)
-        setButtonClick(prevState => !prevState)
-    }
 
     let content = null
     let loadingPrint = null
@@ -46,34 +44,34 @@ const Section_5 = () => {
     }
 
     if (loadingPOST) {
-        loadingPrint = 'Przesył informacji'
+        loadingPrint = 'loading...'
     }
-
 
     return (
         <>
-            <form onSubmit={handleSubmit}
-                  className='contactForm'>
+            <form
+                onSubmit={formik.handleSubmit}
+                className='contactForm'>
 
                 <div className="contactForm__inputContainer">
                     <label className='contactForm__label'>
                         Wpisz swoje imię
                     </label>
                     <input type='text' name='name'
-                           value={inputValue.name}
-                           onChange={handleChange}
+                           onChange={formik.handleChange}
+                           value={formik.values.name}
+                           onBlur={formik.handleBlur}
                            className={`contactForm__input
-                       ${errors.name && 'contactForm__errorUnderline'}`}
+                       ${formik.errors.name && 'contactForm__errorUnderline'}`}
                            placeholder='Imię'/>
 
-                    {errors.name
+                    {formik.touched.name && formik.errors.name
                         ?
                         <div className="contactForm__textInputErrors">
-                            {errors.name}
+                            {formik.errors.name}
                         </div>
                         :
-                        <div className="contactForm__textInputErrorsEmpty"> i
-                        </div>
+                        <div className="contactForm__textInputErrorsEmpty">i</div>
                     }
                 </div>
 
@@ -82,22 +80,21 @@ const Section_5 = () => {
                         Wpisz swój email
                     </label>
                     <input type='text' name='email'
-                           value={inputValue.email}
-                           onChange={handleChange}
+                           value={formik.values.email}
+                           onChange={formik.handleChange}
+                           onBlur={formik.handleBlur}
                            className={`contactForm__input
-                       ${errors.email && 'contactForm__errorUnderline'}`}
+                       ${formik.errors.email && 'contactForm__errorUnderline'}`}
                            placeholder='Email'/>
 
-                    {errors.email
+                    {formik.touched.email && formik.errors.email
                         ?
                         <div className="contactForm__textInputErrors">
-                            {errors.email}
+                            {formik.errors.email}
                         </div>
                         :
-                        <div className="contactForm__textInputErrorsEmpty"> i
-                        </div>
+                        <div className="contactForm__textInputErrorsEmpty">i</div>
                     }
-
                 </div>
 
                 <div className="contactForm__inputContainer
@@ -106,32 +103,31 @@ const Section_5 = () => {
                         Wpisz swoją wiadomość
                     </label>
                     <textarea name='message'
-                              value={inputValue.message}
-                              onChange={handleChange}
+                              value={formik.values.message}
+                              onChange={formik.handleChange}
+                              onBlur={formik.handleBlur}
                               className={`contactForm__input
-                    ${errors.message && 'contactForm__errorUnderline'}`}
+                    ${formik.errors.message && 'contactForm__errorUnderline'}`}
                               rows={4}
                               placeholder='Wiadomość'/>
-                    {errors.message
+
+                    {formik.touched.message && formik.errors.message
                         ?
                         <div className="contactForm__textInputErrors">
-                            {errors.message}
+                            {formik.errors.message}
                         </div>
                         :
-                        <div className="contactForm__textInputErrorsEmpty"> i
-                        </div>
+                        <div className="contactForm__textInputErrorsEmpty">i</div>
                     }
-
                 </div>
 
                 <button type="submit" className='btnLarge btnLarge--contactForm'>
-                    wyślij
+                    {loadingPrint ? loadingPrint : 'wyślij'}
                 </button>
             </form>
 
             <h2 className='fetchErrors'>
                 <span className='fetchErrors__opacity'>r</span>
-                {loadingPrint}
                 {printError && content}
             </h2>
         </>

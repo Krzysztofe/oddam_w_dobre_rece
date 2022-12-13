@@ -75,36 +75,11 @@ textarea::placeholder {
 
 .btnLarge--contactForm {
   padding: $space-small 0;
-  width: 30%;
+  width: 45%;
   margin-left: auto;
   margin-bottom: $space-large;
-  //&:active   {
-  //  animation-name: shake;
-  //  animation-duration: 0.2s;
-  //  animation-timing-function: ease-in;
-  //}
 }
 
-//@keyframes shake {
-//  0% {
-//    transform: translate(0);
-//  }
-//  20%{
-//    transform: translate(1rem);
-//  }
-//  40%{
-//    transform: translate(-1rem);
-//  }
-//  60%{
-//    transform: translate(0.5rem);
-//  }
-//  80%{
-//    transform: translate(-0.5rem);
-//  }
-//  100% {
-//    transform: translate(0);
-//  }
-//}
 
 
 .fetchErrors {

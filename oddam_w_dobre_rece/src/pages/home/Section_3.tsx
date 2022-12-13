@@ -20,11 +20,13 @@ const Section_3: FC<Props> = ({children}) => {
     }, []);
 
     return (
-        <section
-            className="wrapper wrapper--section-3">
+        <section className="wrapper wrapper--section-3">
+
             <aside className="section-3__leftContainer"
-                   data-aos="fade-right"
-                   data-aos-duration='1000'>
+                   data-aos-duration='1000'
+                   data-aos-delay = '500'
+                   data-aos="flip-up">
+
                 <div className="section-3__mainText">
 
                     {children}
@@ -42,12 +44,17 @@ const Section_3: FC<Props> = ({children}) => {
                 </div>
             </aside>
 
-            <img data-aos="fade-left" src={PeopleSmall}
-                 alt='Grupa ludzi'
-                 className='section-3__peopleSmall'/>
+            <img src={PeopleSmall}
+                alt='Grupa ludzi'
+                className='section-3__peopleSmall'
+                data-aos-duration='1000'
+                 data-aos-delay = '500'
+                data-aos="flip-down"/>
             <img src={PeopleLarge}
-                 alt='Grupa ludzi'
-                 className='section-3__peopleLarge'/>
+                alt='Grupa ludzi'
+                className='section-3__peopleLarge'
+                data-aos-duration='1000'
+                data-aos="flip-down"/>
         </section>
     );
 };

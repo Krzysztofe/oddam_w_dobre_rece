@@ -3,13 +3,13 @@ import {getAuth} from 'firebase/auth'
 import {getFirestore} from 'firebase/firestore'
 
 const firebaseConfig = {
-    apiKey: "AIzaSyAfgq4E10mlJix8lPe6Jvfye2FTedHa0QU",
-    authDomain: "authentication-cl.firebaseapp.com",
-    projectId:"authentication-cl",
-    storageBucket: "authentication-cl.appspot.com",
-    messagingSenderId: "782250818177",
-    appId: "1:782250818177:web:2a7a5ef2b603b9fbc7ab80",
-    measurementId:"G-VXD7D7151F",
+    apiKey: process.env.REACT_APP_apiKey,
+    authDomain: process.env.REACT_APP_authDomain,
+    projectId: process.env.REACT_APP_projectId,
+    storageBucket: process.env.REACT_APP_storageBucket,
+    messagingSenderId:  process.env.REACT_APP_messagingSenderId,
+    appId: process.env.REACT_APP_appId,
+    measurementId: process.env.REACT_APP_measurementId,
 };
 // REACT_APP_apiKey = "AIzaSyAfgq4E10mlJix8lPe6Jvfye2FTedHa0QU"
 // REACT_APP_authDomain = "authentication-cl.firebaseapp.com"
@@ -19,6 +19,13 @@ const firebaseConfig = {
 // REACT_APP_appId = "1:782250818177:web:2a7a5ef2b603b9fbc7ab80"
 // REACT_APP_measurementId = "G-VXD7D7151F"
 
+// apiKey: process.env.REACT_APP_apiKey,
+//     authDomain: process.env.REACT_APP_authDomain,
+//     projectId: process.env.REACT_APP_projectId,
+//     storageBucket: process.env.REACT_APP_storageBucket,
+//     messagingSenderId: process.env.REACT_APP_messagingSenderId,
+//     appId: process.env.REACT_APP_appId,
+//     measurementId: process.env.REACT_APP_measurementId,
 
 
 const app = initializeApp(firebaseConfig)

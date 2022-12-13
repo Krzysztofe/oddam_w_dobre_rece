@@ -1,25 +1,34 @@
-import React, {FC} from 'react'
+import React, {FC, useEffect} from 'react'
 import {Link} from "react-router-dom";
 import {useAuthState} from "react-firebase-hooks/auth";
 import {auth} from "../../data/FireBaseConfig";
-const Tshirt =  require( '../../asets/IconTshirt.png');
-const Bag = require( '../../asets/IconBag.png');
-const Glass = require( '../../asets/IconLupa.png')
-const Arrows = require( '../../asets/Icon.png')
+import AOS from "aos";
+
+const Tshirt = require('../../asets/IconTshirt.png');
+const Bag = require('../../asets/IconBag.png');
+const Glass = require('../../asets/IconLupa.png')
+const Arrows = require('../../asets/Icon.png')
 
 interface Props {
     children: React.ReactNode
 }
 
-const Section2:FC <Props> = ({children}) => {
+const Section2: FC<Props> = ({children}) => {
     const [user] = useAuthState(auth);
+
+    useEffect(() => {
+        AOS.init();
+        AOS.refresh();
+    }, []);
 
     return (
         <section className='wrapper wrapper--section-2'>
 
             {children}
 
-            <div className="section-2__columns">
+            <div className="section-2__columns"
+                 data-aos="zoom-in-up"
+                 data-aos-duration='1000'>
 
                 <div className="section-2__column">
                     <img src={Tshirt} className="section-2__logo" alt='Tshirt logo'/>
