@@ -15,9 +15,11 @@
 * SCSS 
 * RWD 
 * TypeScript
-* React: react-router, react-router-dom, react-firebase-hooks/auth, react-router-hash-link, react-paginate, react-redux, framer-motion, react-scripts
+* React: react-router, react-router-dom, react-firebase-hooks/auth, react-router-hash-link, react-paginate, react-redux, framer-motion, react-scripts, formik, yup
 * Redux Toolkit
+* React hooks: useState, useEffect, useDispatch, useSelector, useFormik, custom hooks
 * Firebase: authentication, firestore, database
+* Formik / Yup 
 * JSON <a href = "https://my-json-server.typicode.com/Krzysztofe/oddam_api/db">my-json-server-></a>
 * Fetch API: GET, POST
 * Firebase APi keys hidden in .env
