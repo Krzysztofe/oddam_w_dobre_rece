@@ -17,7 +17,7 @@
 * TypeScript
 * React: react-router, react-router-dom, react-firebase-hooks/auth, react-router-hash-link, react-paginate, react-redux, framer-motion, react-scripts, formik, yup
 * Redux Toolkit
-* React hooks: useState, useEffect, useDispatch, useSelector, useFormik, custom hooks
+* React hooks: useState, useEffect, useDispatch, useSelector, useFormik, useNavigate, custom hooks
 * Firebase: authentication, firestore, database
 * Formik / Yup 
 * JSON <a href = "https://my-json-server.typicode.com/Krzysztofe/oddam_api/db">my-json-server-></a>
