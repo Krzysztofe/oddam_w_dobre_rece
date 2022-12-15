@@ -8,6 +8,7 @@
 * Register form, login form using firebase
 * Forms validations 
 * React Scroll 
+* Routing
 * Pagination 
 * Animations
   
