@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import {organizationTypeSelection} from "../../../hooks/organizationTypeSelection";
+import {organizationTypeSelection} from "../../../utilities/organizationTypeSelection";
 import ReactPaginate from "react-paginate";
 import useFetchGET from '../../../hooks/useFetchGET'
 import {URL_allOrganizatons} from "../../../data/URL"

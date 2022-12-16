@@ -5,6 +5,8 @@ import {auth} from '../../data/FireBaseConfig';
 import TitleDecor from "../../components/titleDecor/TitleDecor";
 import ButtonsLogin from "../../components/buttonsLogin/ButtonsLogin";
 import {loginValidation} from "../../validations/libraryValidations";
+import useInputRef from "../../hooks/useInputRef";
+import {Typewriter} from "react-simple-typewriter";
 
 
 const Login = () => {
@@ -14,6 +16,7 @@ const Login = () => {
         useState({email: "", password: ""})
 
     const [errors, setErrors] = useState <string | string[]> ('')
+    const {inputFocus, inputRef} = useInputRef()
 
     const handleChange = (e: ChangeEvent<HTMLInputElement>):void => {
         setInputValueLogin({
@@ -54,16 +57,21 @@ const Login = () => {
                 <div className="login__inputs">
                     <p style={{marginBottom: "1rem"}}>login:&nbsp; &nbsp; ww@wp.pl <br/> password: &nbsp; &nbsp; wwwwww</p>
                     <label className='login__label'>
-                        Email
+                        <Typewriter cursorStyle=''
+                                    typeSpeed={300}
+                                    words={[ 'Email']}/>
                         <input
                             type='text' name='email'
                             value={inputValueLogin.email}
                             onChange={handleChange}
+                            ref={inputRef}
                             className='login__input'/>
                     </label>
 
                     <label className='login__label'>
-                        Hasło
+                        <Typewriter cursorStyle=''
+                                    typeSpeed={300}
+                                    words={[ 'Hasło']}/>
                         <input
                             type='password' name='password'
                             value={inputValueLogin.password}
@@ -75,8 +83,9 @@ const Login = () => {
                 <p className='login__errors'>{errors}</p>
 
                 <ButtonsLogin link={'/rejestracja'}
-                              btnRight='załóż konto'
-                              btnLeft='zaloguj się'/>
+                              btnLeft='załuż konto'
+                              btnRight='zaloguj się'
+                              inputFocus = {inputFocus}/>
             </form>
         </>
     );

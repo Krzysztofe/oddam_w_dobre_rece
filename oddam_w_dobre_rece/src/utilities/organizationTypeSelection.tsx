@@ -1,5 +1,3 @@
-import React from "react";
-
 export const organizationTypeSelection = (organizationType:any, perpage: number, pageNumber:number) => {
 
     const organizationPerPage = perpage

@@ -1,6 +1,6 @@
 import React, { useState} from 'react';
 import ReactPaginate from "react-paginate";
-import {organizationTypeSelection} from "../../../hooks/organizationTypeSelection";
+import {organizationTypeSelection} from "../../../utilities/organizationTypeSelection";
 import {URL_allOrganizatons } from '../../../data/URL'
 import {useQuery, UseQueryResult} from 'react-query'
 import {ModelOrganizations} from './modelOrganizations'

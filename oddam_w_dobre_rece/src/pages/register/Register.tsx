@@ -1,11 +1,12 @@
-
-import React, {ChangeEvent, FormEvent, useState} from 'react';
+import React, {ChangeEvent, FormEvent, useRef, useState} from 'react';
 import {createUserWithEmailAndPassword} from 'firebase/auth'
 import {auth} from '../../data/FireBaseConfig'
 import {useNavigate} from 'react-router'
 import TitleDecor from "../../components/titleDecor/TitleDecor";
 import ButtonsLogin from "../../components/buttonsLogin/ButtonsLogin";
 import {registerValidation} from '../../validations/libraryValidations'
+import useInputRef from '../../hooks/useInputRef'
+import {Typewriter} from "react-simple-typewriter";
 
 export interface IInputValueRregister {
     email: string,
@@ -17,21 +18,23 @@ export interface IInputValueRregister {
 const Register = () => {
 
     const navigate = useNavigate()
-    const [inputValueRregister, setInputValueRegister] = useState <IInputValueRregister> ({
+    const [inputValueRregister, setInputValueRegister] = useState<IInputValueRregister>({
         email: '',
         password: '',
         passwordRepeated: ''
     })
-    const [errors, setErrors] = useState <string[] | string> ([])
+    const [errors, setErrors] = useState<string[] | string>([])
+    const {inputFocus, inputRef} = useInputRef()
 
-    const handleChange = (e:ChangeEvent<HTMLInputElement>):void => {
+    const handleChange = (e: ChangeEvent<HTMLInputElement>): void => {
         setInputValueRegister({
             ...inputValueRregister,
             [e.target.name]: e.target.value
         })
     }
 
-    const handleRegister = (e:FormEvent<HTMLFormElement>):void => {
+
+    const handleRegister = (e: FormEvent<HTMLFormElement>): void => {
         e.preventDefault()
 
         setErrors(registerValidation(inputValueRregister))
@@ -61,15 +64,20 @@ const Register = () => {
                 <div className="login__inputs">
 
                     <label className='login__label'>
-                        Email
+                        <Typewriter cursorStyle=''
+                                    typeSpeed={300}
+                                    words={[ 'Email']}/>
                         <input type='text' name='email'
                                value={inputValueRregister.email}
                                onChange={handleChange}
+                               ref={inputRef}
                                className='login__input'/>
                     </label>
 
                     <label className='login__label'>
-                        Haslo
+                        <Typewriter cursorStyle=''
+                                    typeSpeed={300}
+                                    words={['Hasło']}/>
                         <input type='password' name='password'
                                value={inputValueRregister.password}
                                onChange={handleChange}
@@ -77,7 +85,9 @@ const Register = () => {
                     </label>
 
                     <label className='login__label'>
-                        Powtórz haslo
+                        <Typewriter cursorStyle=''
+                                    typeSpeed={300}
+                                    words={['Powtórz hasło']}/>
                         <input type='password' name='passwordRepeated'
                                value={inputValueRregister.passwordRepeated}
                                onChange={handleChange}
@@ -89,8 +99,10 @@ const Register = () => {
                 <p className='login__errors'>{errors}</p>
 
                 <ButtonsLogin link={'/logowanie'}
-                              btnRight='zaloguj się'
-                              btnLeft='załóż konto'/>
+                              btnRight='załuż konto'
+                              btnLeft='zaloguj się'
+                              inputFocus = {inputFocus}
+                />
             </form>
         </>
     );

@@ -20,13 +20,12 @@ const Section_5 = () => {
     usePrintChange()
 
     const formik = useFormik({
-
             initialValues: {
                 name: "",
                 email: "",
                 message: "",
             },
-        validationSchema: validationUserForm,
+            validationSchema: validationUserForm,
             onSubmit: (values, {resetForm}) => {
                 resetForm()
                 createPOST(formik.values)
@@ -124,7 +123,7 @@ const Section_5 = () => {
                 </div>
 
                 <button type="submit" className='btnLarge btnLarge--contactForm'
-                onClick={focusOnInput}>
+                        onClick={focusOnInput}>
                     {loadingPrint ? loadingPrint : 'wyślij'}
                 </button>
             </form>
