@@ -8,22 +8,28 @@
 * Register form, login form using firebase
 * Forms validations 
 * React Scroll 
+* Routing
 * Pagination 
 * Animations
   
 ## Technologies  
-* SCSS 
-* RWD 
-* TypeScript
-* React: react-router, react-router-dom, react-firebase-hooks/auth, react-router-hash-link, react-paginate, react-redux, framer-motion, react-scripts, formik, yup
+* SCSS / RWD 
+* React / TypeScript
+* Libraries: <br/>
+react-router, react-router-dom, react-router-hash-link, <br/>
+react-firebase-hooks/auth, react-paginate,<br/>
+react-redux, react-scripts,<br/>
+react-query, <br/>
+formik, yup, <br/>
+framer-motion, animate on scroll library
+* React hooks: useState, useEffect, useDispatch, useSelector, useQuery, useFormik, useNavigate, custom hooks
 * Redux Toolkit
-* React hooks: useState, useEffect, useDispatch, useSelector, useFormik, custom hooks
+* React Query 
 * Firebase: authentication, firestore, database
 * Formik / Yup 
 * JSON <a href = "https://my-json-server.typicode.com/Krzysztofe/oddam_api/db">my-json-server-></a>
 * Fetch API: GET, POST
 * Firebase APi keys hidden in .env
-* Animate On Scroll Library
 
 ## Demo <a href="https://krzysztofe.github.io/oddam_w_dobre_rece/">here -></a>
 
