@@ -15,20 +15,24 @@
 ## Technologies  
 * SCSS / RWD 
 * React / TypeScript
+* Redux Toolkit 
+ <br/><br/>
+* React Query 
+* Fetch API: GET, POST
+* JSON <a href = "https://my-json-server.typicode.com/Krzysztofe/oddam_api/db">my-json-server-></a> 
+ <br/><br/>
+* Firebase: authentication, firestore, database
+* Formik / Yup 
+ <br/><br/>
+* React hooks: useState, useEffect, useRef, useDispatch, useSelector, useQuery, useFormik, useNavigate, custom hooks
 * Libraries: <br/>
 react-router, react-router-dom, react-router-hash-link, <br/>
 react-firebase-hooks/auth, react-paginate,<br/>
 react-redux, react-scripts,<br/>
 react-query, <br/>
 formik, yup, <br/>
-framer-motion, animate on scroll library
-* React hooks: useState, useEffect, useDispatch, useSelector, useQuery, useFormik, useNavigate, custom hooks
-* Redux Toolkit
-* React Query 
-* Firebase: authentication, firestore, database
-* Formik / Yup 
-* JSON <a href = "https://my-json-server.typicode.com/Krzysztofe/oddam_api/db">my-json-server-></a>
-* Fetch API: GET, POST
+framer-motion, animate on scroll library, typewriter-effect
+ <br/><br/>
 * Firebase APi keys hidden in .env
 
 ## Demo <a href="https://krzysztofe.github.io/oddam_w_dobre_rece/">here -></a>
