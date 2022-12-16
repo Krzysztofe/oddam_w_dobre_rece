@@ -19,10 +19,12 @@
 react-router, react-router-dom, react-router-hash-link, <br/>
 react-firebase-hooks/auth, react-paginate,<br/>
 react-redux, react-scripts,<br/>
+react-query, <br/>
 formik, yup, <br/>
 framer-motion, animate on scroll library
-* React hooks: useState, useEffect, useDispatch, useSelector, useFormik, useNavigate, custom hooks
+* React hooks: useState, useEffect, useDispatch, useSelector, useQuery, useFormik, useNavigate, custom hooks
 * Redux Toolkit
+* React Query 
 * Firebase: authentication, firestore, database
 * Formik / Yup 
 * JSON <a href = "https://my-json-server.typicode.com/Krzysztofe/oddam_api/db">my-json-server-></a>
