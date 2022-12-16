@@ -31,7 +31,7 @@ react-firebase-hooks/auth, react-paginate,<br/>
 react-redux, react-scripts,<br/>
 react-query, <br/>
 formik, yup, <br/>
-framer-motion, animate on scroll library, typewriter-effect
+framer-motion, animate on scroll library, react-simple-typewriter
  <br/><br/>
 * Firebase APi keys hidden in .env
 
