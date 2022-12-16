@@ -1,33 +1,41 @@
 import React, { useState} from 'react';
 import ReactPaginate from "react-paginate";
-import {organizationTypeSelection} from "./organizationTypeSelection";
+import {organizationTypeSelection} from "../../../hooks/organizationTypeSelection";
+import {URL_allOrganizatons } from '../../../data/URL'
+import {useQuery, UseQueryResult} from 'react-query'
+import {ModelOrganizations} from './modelOrganizations'
 import useFetchGET from "../../../hooks/useFetchGET";
-import {URL_fundations} from '../../../data/URL'
 
 const Fundations = () => {
-
-    const {loadingGET, errorGET, data: fundations} =
-        useFetchGET(URL_fundations)
-
     const [pageNumber, setPageNumber] = useState(0)
 
-    let content = <h2 className='section4__loading'>no data</h2>
+    const {fetchGet} = useFetchGET(URL_allOrganizatons)
 
-    if (fundations) {
-        content = <>
-            <h2>
-                {organizationTypeSelection(fundations, 3, pageNumber)}
-            </h2>
-        </>
-    }
-    if (errorGET) {
-        content = <h2 className='section4__loading'>{errorGET}</h2>
-    }
-    if (loadingGET) {
+    const {isError, isLoading, data, error}:UseQueryResult<ModelOrganizations, Error>
+        = useQuery('organizations', fetchGet)
+
+    let content =
+        <h2 className='section4__loading'>no data</h2>
+
+    if (isLoading) {
         content = <h2 className='section4__loading'>loading...</h2>
     }
 
-    const changePage = ({selected}: any) => {
+    if (isError) {
+        content = <h2 className='section4__loading'>
+            {error.message === 'Failed to fetch' ?
+            'Brak połączenia z serwerem' :
+            error.message}</h2>
+    }
+
+    if (data) {
+        content =
+            <h2>
+                {organizationTypeSelection(data.fundations, 3, pageNumber)}
+            </h2>
+    }
+
+    const changePage = ({selected}:any) => {
         setPageNumber(selected)
     }
 

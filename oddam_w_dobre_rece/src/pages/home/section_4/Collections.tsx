@@ -1,30 +1,38 @@
 import React, {useState} from 'react';
-import {organizationTypeSelection} from "./organizationTypeSelection";
+import {organizationTypeSelection} from "../../../hooks/organizationTypeSelection";
 import ReactPaginate from "react-paginate";
 import useFetchGET from '../../../hooks/useFetchGET'
-import {URL_collections} from "../../../data/URL"
+import {URL_allOrganizatons} from "../../../data/URL"
+import {useQuery, UseQueryResult} from "react-query";
+import {ModelOrganizations} from "./modelOrganizations";
 const Collections = () => {
 
     const [pageNumber, setPageNumber] = useState(0)
 
-    const {loadingGET, errorGET, data: organizations} =
-        useFetchGET(URL_collections)
+    const {fetchGet} = useFetchGET(URL_allOrganizatons)
+
+    const {isError, isLoading, data, error}:UseQueryResult<ModelOrganizations, Error>
+        = useQuery('organizations', fetchGet)
 
 
     let content = <h2 className='section4__loading'>no data</h2>
 
-    if (organizations) {
-        content = <>
-            <h2>
-                {organizationTypeSelection(organizations, 3, pageNumber)}
-            </h2>
-        </>
-    }
-    if (errorGET) {
-        content = <h2 className='section4__loading'>{errorGET}</h2>
-    }
-    if (loadingGET) {
+    if (isLoading) {
         content = <h2 className='section4__loading'>loading...</h2>
+    }
+
+    if (isError) {
+         content = <h2 className='section4__loading'>
+            {error.message === 'Failed to fetch' ?
+                'Brak połączenia z serwerem' :
+                error.message}</h2>
+    }
+
+    if (data) {
+        content =
+            <h2>
+                {organizationTypeSelection(data.collections, 3, pageNumber)}
+            </h2>
     }
 
 

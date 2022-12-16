@@ -1,15 +1,15 @@
 import React, {lazy, Suspense} from 'react'
 import {BrowserRouter, Routes, Route} from "react-router-dom";
 import NavBar from "./pages/home/navBar/NavBar";
-import HomeMain from "./pages/home/HomeMain";
+import HomeMain from "./pages/home/homeMain/HomeMain";
 import './scss/index.scss'
 import {Provider} from "react-redux";
 import {store} from './redux/store'
 
-const Register = lazy(() => import('./pages/Register'))
-const Login = lazy(() => import("./pages/Login"))
-const Logout = lazy(() => import("./pages/Logout"))
-const ProtectedRouteOddajMain = lazy(() => import("./pages/oddaj/ProtectedRoute"))
+const Register = lazy(() => import('./pages/register/Register'))
+const Login = lazy(() => import("./pages/login/Login"))
+const Logout = lazy(() => import("./pages/logout/Logout"))
+const ProtectedRouteOddajMain = lazy(() => import("./pages/oddaj/protectedRoute/ProtectedRoute"))
 
 
 function App() {

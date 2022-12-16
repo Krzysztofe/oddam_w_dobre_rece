@@ -1,5 +1,5 @@
 import React from 'react'
-import TitleDecor from "../../../components/TitleDecor";
+import TitleDecor from "../../../components/titleDecor/TitleDecor";
 import Square from "./Square";
 import {useSelector} from "react-redux";
 import {RootState} from "../../../redux/store";

@@ -1,4 +1,4 @@
-import {IInputValueRregister} from "../pages/Register";
+import {IInputValueRregister} from "../pages/register/Register";
 
 
 interface IInputsValue {

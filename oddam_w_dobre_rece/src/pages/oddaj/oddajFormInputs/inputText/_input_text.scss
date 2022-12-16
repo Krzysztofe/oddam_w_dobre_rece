@@ -1,0 +1,18 @@
+.inputText__Container {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.5em;
+}
+
+.inputText__label {
+   text-align: right;
+   width: 35%;
+ }
+
+.inputText {
+  width: 60%;
+  background-color: rgba(0, 0, 0, 0);
+  border: 1px solid $color-grey-normal;
+  padding: 0.2em;
+  resize: none;
+}

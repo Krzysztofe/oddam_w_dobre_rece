@@ -9,8 +9,8 @@ interface Props{
 
 const Section_4:FC <Props> = ({children}) => {
 
-    const [printCounter, setPrintCounter] = useState<number>(1)
-    const [pageNumber, setPageNumber] = useState<number>(0)
+    const [printCounter, setPrintCounter] = useState(1)
+    const [pageNumber, setPageNumber] = useState(0)
 
     const setPrintCounterPageNumber = (selected: number): void => {
         setPrintCounter(selected)

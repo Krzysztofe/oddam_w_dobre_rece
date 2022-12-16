@@ -1,8 +1,9 @@
 import {useFormik} from "formik"
 import useFetchPOST from "../../../hooks/useFetchPOST";
 import usePrintFetchError from "../../../hooks/usePrintFetchError";
-import * as Yup from 'yup'
-import { URL_user_POST} from '../../../data/URL'
+import {URL_user_POST} from '../../../data/URL'
+import {useRef} from "react";
+import {validationUserForm} from "../../../validations/validationUserForm";
 
 
 const Section_5 = () => {
@@ -10,8 +11,13 @@ const Section_5 = () => {
     const {loadingPOST, errorPOST, createPOST} = useFetchPOST(URL_user_POST)
     const {printError, setPrintError, setButtonClick, usePrintChange} = usePrintFetchError()
 
-    usePrintChange()
+    const inputRef = useRef<HTMLInputElement>(null)
 
+    const focusOnInput = () => {
+        inputRef.current?.focus()
+    }
+
+    usePrintChange()
 
     const formik = useFormik({
 
@@ -20,12 +26,7 @@ const Section_5 = () => {
                 email: "",
                 message: "",
             },
-            validationSchema: Yup.object({
-                name: Yup.string().matches(
-                    /^[a-zA-Z0-9@]+$/,"imię powinno być jednym wyrazem").required("wymagane"),
-                email: Yup.string().email("email jest nieprawidłowy").required('wymagane'),
-                message: Yup.string().min(2, "wiadomość minimum dwa znaki").required('wymagane'),
-            }),
+        validationSchema: validationUserForm,
             onSubmit: (values, {resetForm}) => {
                 resetForm()
                 createPOST(formik.values)
@@ -58,6 +59,7 @@ const Section_5 = () => {
                         Wpisz swoje imię
                     </label>
                     <input type='text' name='name'
+                           ref={inputRef}
                            onChange={formik.handleChange}
                            value={formik.values.name}
                            onBlur={formik.handleBlur}
@@ -121,7 +123,8 @@ const Section_5 = () => {
                     }
                 </div>
 
-                <button type="submit" className='btnLarge btnLarge--contactForm'>
+                <button type="submit" className='btnLarge btnLarge--contactForm'
+                onClick={focusOnInput}>
                     {loadingPrint ? loadingPrint : 'wyślij'}
                 </button>
             </form>

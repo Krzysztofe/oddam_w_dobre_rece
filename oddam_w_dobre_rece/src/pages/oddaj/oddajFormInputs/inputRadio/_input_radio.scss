@@ -1,0 +1,17 @@
+.radio__container {
+  margin-top: $space-large;
+}
+
+.radio {
+  width: 1.5em;
+  height: 1.5em;
+  border: 1px solid black;
+  margin-right: 2em;
+  -webkit-appearance: none;
+  transition-duration: 320ms;
+
+  &:checked {
+    background-color: $color-yellow;
+  }
+}
+

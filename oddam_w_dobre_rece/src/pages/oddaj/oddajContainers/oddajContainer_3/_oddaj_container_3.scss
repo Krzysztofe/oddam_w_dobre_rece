@@ -1,0 +1,38 @@
+.oddajContainer_3__h3 {
+  font-weight: $semiBold;
+  font-size: $font-size-large;
+  margin-top: $space-large;
+
+  &:first-letter {
+    text-transform: uppercase;
+  }
+}
+
+.oddajContainer_3__checkboxes {
+  margin-top: $space-large;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: $space-large;
+}
+
+.oddajContainer_3__textInput {
+  margin-top: $space-large;
+  width: 70%;
+  padding: $space-small / 2;
+}
+
+@include media {
+
+  .oddajContainer_3__checkboxes {
+    row-gap: 0.5em;
+    column-gap: 0.5em;
+    max-width: clamp(47%, 54vw, 70%) ;
+  }
+
+  .oddajContainer_3__textInput {
+    max-width: 400px;
+    background-color: rgba(0, 0, 0, 0);
+    border: 1px solid $color-grey-normal;
+  }
+}

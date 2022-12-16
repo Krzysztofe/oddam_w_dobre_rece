@@ -1,5 +1,5 @@
 import React, {FC} from 'react'
-import TitleDecor from "../../../components/TitleDecor";
+import TitleDecor from "../../../components/titleDecor/TitleDecor";
 
 interface Props{
     children: React.ReactNode

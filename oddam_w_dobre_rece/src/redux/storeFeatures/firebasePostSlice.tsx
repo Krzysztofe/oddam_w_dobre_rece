@@ -1,9 +1,7 @@
 import {createSlice} from "@reduxjs/toolkit";
 import {addDoc, collection} from "firebase/firestore";
-import {auth, firestore} from "../../data/FireBaseConfig";
-import {useAuthState} from "react-firebase-hooks/auth";
+import {firestore} from "../../data/FireBaseConfig";
 
-// const [user, loading, error] = useAuthState(auth);
 const summaryReference = collection(firestore, 'summary')
 
 const firebasePostSlice = createSlice({

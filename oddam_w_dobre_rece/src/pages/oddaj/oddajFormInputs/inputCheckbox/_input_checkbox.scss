@@ -1,0 +1,36 @@
+.checkbox__label {
+  width: 45%;
+  flex-grow: 1;
+}
+.checkbox {
+  display: none;
+}
+.checkbox__style {
+  background-color: $color-grey-normal;
+  cursor: pointer;
+  text-align: center;
+  padding: 0.5em 0;
+  transition-duration: 320ms;
+  &:first-letter {
+    text-transform: uppercase;
+  }
+}
+
+.checkbox:checked + .checkbox__style {
+   background-color: $color-yellow;
+ }
+
+@include media {
+
+  .checkbox__label {
+    width: inherit;
+    background-color: rgba(0, 0, 0, 0);
+  }
+
+  .checkbox__style {
+    padding: 0.5em;
+    border: 1px solid $color-grey-normal;
+    background-color: rgba(0, 0, 0, 0);
+  }
+
+}

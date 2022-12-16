@@ -1,39 +1,13 @@
-import {useEffect, useState} from "react";
+import {ModelOrganizations} from "../pages/home/section_4/modelOrganizations";
 
 
-const useFetchGET = (url: any) => {
-    const [data, setData] = useState<any | null>(null)
-    const [loadingGET, setLoadingGET] = useState(false)
-    const [errorGET, setErrorGET] = useState<string | null>(null)
+const useFetchGET = (url: string) => {
 
-    useEffect(() => {
-
-        setLoadingGET(true)
-        setErrorGET(null)
-
-        fetch(url)
-            .then(resp => {
-                    if (resp.ok) {
-                        return resp.json()
-                    }
-                    throw Error('Brak dostępu do zasobu')
-                }
-            )
-            .then(data => {
-                    setData(data)
-                    setLoadingGET(false)
-                }
-            )
-            .catch(err => {
-                    setErrorGET(err.message === 'Failed to fetch' ?
-                        'Brak połączenia z serwerem' :
-                        err.message)
-                    setLoadingGET(false)
-                }
-            )
-    }, [url])
-
-    return {loadingGET, errorGET, data}
+    const fetchGet = ():Promise<ModelOrganizations> => {
+        return fetch( url )
+            .then(resp => resp.json())
+    }
+    return {fetchGet}
 
 }
 
