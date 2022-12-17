@@ -28,7 +28,7 @@
 * Libraries: <br/>
 react-router, react-router-dom, react-router-hash-link, <br/>
 react-firebase-hooks/auth, react-paginate,<br/>
-react-redux, react-scripts,<br/>
+react-redux, @reduxjs/toolkit, react-scripts,<br/>
 react-query, <br/>
 formik, yup, <br/>
 framer-motion, animate on scroll library, react-simple-typewriter
