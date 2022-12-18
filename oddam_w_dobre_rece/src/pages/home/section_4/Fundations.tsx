@@ -1,18 +1,19 @@
 import React, { useState} from 'react';
 import ReactPaginate from "react-paginate";
 import {organizationTypeSelection} from "../../../utilities/organizationTypeSelection";
-import {URL_allOrganizatons } from '../../../data/URL'
+import {URL_allData } from '../../../data/URL'
 import {useQuery, UseQueryResult} from 'react-query'
-import {ModelOrganizations} from './modelOrganizations'
-import useFetchGET from "../../../hooks/useFetchGET";
+import {ModelAllData} from '../../../data/modelsTS'
+import fetchGet from "../../../utilities/fetchGET";
+
 
 const Fundations = () => {
     const [pageNumber, setPageNumber] = useState(0)
 
-    const {fetchGet} = useFetchGET(URL_allOrganizatons)
-
-    const {isError, isLoading, data, error}:UseQueryResult<ModelOrganizations, Error>
-        = useQuery('organizations', fetchGet)
+    const {isLoading, data, error}
+        :UseQueryResult<ModelAllData, Error> =
+        useQuery('organizations',
+            () => fetchGet(URL_allData))
 
     let content =
         <h2 className='section4__loading'>no data</h2>
@@ -21,7 +22,7 @@ const Fundations = () => {
         content = <h2 className='section4__loading'>loading...</h2>
     }
 
-    if (isError) {
+    if (error) {
         content = <h2 className='section4__loading'>
             {error.message === 'Failed to fetch' ?
             'Brak połączenia z serwerem' :

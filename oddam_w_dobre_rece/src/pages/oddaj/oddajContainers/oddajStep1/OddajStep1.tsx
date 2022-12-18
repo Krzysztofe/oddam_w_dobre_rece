@@ -6,7 +6,7 @@ import InputRadio from "../../oddajFormInputs/inputRadio/InputRadio";
 import {useDispatch} from "react-redux";
 import {increase} from "../../../../redux/storeFeatures/counterSlice";
 
-const OddajContainer_1 = () => {
+const OddajStep1 = () => {
 
     const dispatch = useDispatch()
 
@@ -40,4 +40,4 @@ const OddajContainer_1 = () => {
     );
 };
 
-export default OddajContainer_1;
+export default OddajStep1;

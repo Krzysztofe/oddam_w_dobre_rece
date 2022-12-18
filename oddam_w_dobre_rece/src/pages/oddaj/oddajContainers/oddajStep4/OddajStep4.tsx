@@ -8,7 +8,7 @@ import {useDispatch, useSelector} from "react-redux";
 import {RootState} from "../../../../redux/store";
 import {inputsValuesChange} from '../../../../redux/storeFeatures/inputsValuesSlice'
 
-const OddajContainer_4 = () => {
+const OddajStep4 = () => {
 
     const inputsValues = useSelector((state: RootState) => state.inputsValues.value)
     const dispatch = useDispatch()
@@ -23,8 +23,8 @@ const OddajContainer_4 = () => {
                     'odbioru rzeczy przez kuriera:']}/>
 
                 <OddajFormWrapper>
-                    <aside className="form4__leftContainer">
-                        <h3 className='form4__h3'>Adres odbioru:</h3>
+                    <aside className="step4__leftContainer">
+                        <h3 className='step4__h3'>Adres odbioru:</h3>
 
                         <InputText type='text'
                                    name='street'
@@ -48,8 +48,8 @@ const OddajContainer_4 = () => {
                     </aside>
 
 
-                    <aside className="form4__rightContainer">
-                        <h3 className='form4__h3'>termin odbioru:</h3>
+                    <aside className="step4__rightContainer">
+                        <h3 className='step4__h3'>termin odbioru:</h3>
 
                         <InputText type='date'
                                    name='date'
@@ -66,9 +66,8 @@ const OddajContainer_4 = () => {
                             <textarea rows={2} name='note'
                                       value={inputsValues.note}
                                       onChange={e => dispatch(
-                                          inputsValuesChange({...inputsValues, note: e.target.value})
-                                      )}
-                                      className='form4__textarea'/>
+                                          inputsValuesChange({...inputsValues, note: e.target.value}))}
+                                      className='step4__textarea'/>
                         </div>
                     </aside>
 
@@ -79,4 +78,4 @@ const OddajContainer_4 = () => {
     );
 };
 
-export default OddajContainer_4;
+export default OddajStep4;

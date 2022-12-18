@@ -1,9 +1,9 @@
 import React, {FC} from "react";
 import OddajHeader from "../oddajHeader/OddajHeader";
-import OddajContainer_1 from "../oddajContainers/oddajContainer_1/OddajContainer_1";
-import OddajContainer_2 from "../oddajContainers/oddajContainer_2/OddajContainer_2";
-import OddajContainer_3 from "../oddajContainers/oddajContainer_3/OddajContainer_3";
-import OddajContainer_4 from "../oddajContainers/oddajContainer_4/OddajContainer_4";
+import OddajStep1 from "../oddajContainers/oddajStep1/OddajStep1";
+import OddajStep2 from "../oddajContainers/oddajStep2/OddajStep2";
+import OddajStep3 from "../oddajContainers/oddajStep3/OddajStep3";
+import OddajStep4 from "../oddajContainers/oddajStep4/OddajStep4";
 import OddajContainerSummary from "../oddajContainers/oddajContainerSummary/OddajContainerSummary";
 import OddajContainerThnx from "../oddajContainers/oddajContainerThnx/OddajContainerThnx";
 import Section_5 from "../../home/section_5/Section_5";
@@ -21,10 +21,10 @@ const OddajMain: FC = () => {
     return (
         <>
             <OddajHeader/>
-            {counter === 1 && <OddajContainer_1/>}
-            {counter === 2 && <OddajContainer_2/>}
-            {counter === 3 && <OddajContainer_3/>}
-            {counter === 4 && <OddajContainer_4/>}
+            {counter === 1 && <OddajStep1/>}
+            {counter === 2 && <OddajStep2/>}
+            {counter === 3 && <OddajStep3/>}
+            {counter === 4 && <OddajStep4/>}
             {counter === 5 && <OddajContainerSummary/>}
             {counter === 6 && <OddajContainerThnx/>}
             <Section_5>

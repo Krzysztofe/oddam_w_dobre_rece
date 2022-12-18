@@ -1,26 +1,28 @@
 import React, {useState} from 'react';
 import {organizationTypeSelection} from "../../../utilities/organizationTypeSelection";
 import ReactPaginate from "react-paginate";
-import useFetchGET from "../../../hooks/useFetchGET";
-import {URL_allOrganizatons, URL_ngo} from '../../../data/URL'
+import fetchGet from "../../../utilities/fetchGET";
+import {URL_allData} from '../../../data/URL'
 import {useQuery, UseQueryResult} from "react-query";
-import {ModelOrganizations} from "./modelOrganizations";
+import {ModelAllData} from "../../../data/modelsTS";
 
 const Ngo = () => {
 
     const [pageNumber, setPageNumber] = useState(0)
 
-    const {fetchGet} = useFetchGET(URL_allOrganizatons)
-
-    const {isError, isLoading, data, error}:UseQueryResult<ModelOrganizations, Error>
-        = useQuery('organizations', fetchGet)
+    const {isLoading, data, error}
+        : UseQueryResult<ModelAllData, Error> =
+        useQuery(
+            'organizations',
+            () => fetchGet(URL_allData))
 
     let content = <h2 className='section4__loading'> no data</h2>
 
     if (isLoading) {
         content = <h2 className='section4__loading'>loading...</h2>
     }
-    if (isError) {
+
+    if (error) {
         content = <h2 className='section4__loading'>
             {error.message === 'Failed to fetch' ?
                 'Brak połączenia z serwerem' :
@@ -37,7 +39,7 @@ const Ngo = () => {
 
 
 
-    const changePage = ({selected}: any) => {
+    const changePage = ({selected}:any) => {
         setPageNumber(selected)
     }
 

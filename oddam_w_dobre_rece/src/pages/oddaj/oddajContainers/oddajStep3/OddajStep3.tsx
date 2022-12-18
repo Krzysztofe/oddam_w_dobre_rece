@@ -9,7 +9,7 @@ import {useDispatch, useSelector} from "react-redux";
 import {RootState} from "../../../../redux/store";
 import {inputsValuesChange} from "../../../../redux/storeFeatures/inputsValuesSlice";
 
-const OddajContainer_3 = () => {
+const OddajStep3 = () => {
 
     const inputsValues = useSelector((state: RootState) => state.inputsValues.value)
     const dispatch = useDispatch()
@@ -30,9 +30,9 @@ const OddajContainer_3 = () => {
                                  selectValues={['Poznań', 'Warszawa', 'Kraków', 'Katowice']}
                                  inputName='selectLocalisation'/>
 
-                    <h3 className='oddajContainer_3__h3'>komu chcesz pomóc?</h3>
+                    <h3 className='oddajStep3__h3'>komu chcesz pomóc?</h3>
 
-                    <div className="oddajContainer_3__checkboxes">
+                    <div className="oddajStep3__checkboxes">
 
                         <InputCheckbox value={inputsValues.dzieciom}
                                        name='dzieciom'
@@ -58,7 +58,7 @@ const OddajContainer_3 = () => {
 
                     </div>
 
-                    <h3 className='oddajContainer_3__h3'>
+                    <h3 className='oddajStep3__h3'>
                         wpisz nazwę konkretnej organizacji (opcjonalnie)
                     </h3>
                     <input type='text'
@@ -67,7 +67,7 @@ const OddajContainer_3 = () => {
                            onChange={e => dispatch(
                                inputsValuesChange({...inputsValues, organisationName: e.target.value})
                            )}
-                           className='oddajContainer_3__textInput'/>
+                           className='oddajStep3__textInput'/>
                     <OddajButtons/>
                 </OddajFormWrapper>
             </main>
@@ -75,4 +75,4 @@ const OddajContainer_3 = () => {
     );
 };
 
-export default OddajContainer_3;
+export default OddajStep3;

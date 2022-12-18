@@ -24,10 +24,8 @@ const useFetchPOST = (url: any) => {
                 throw Error('Nie znaleziono metody zapisu')
             })
             .then(data => {
-                if (data) {
                     setPOSTError('Informacje zostały wysłane')
                     setPOSTLoading(false)
-                }
             })
             .catch(err => {
                     setPOSTError(err.message === 'Failed to fetch' ?

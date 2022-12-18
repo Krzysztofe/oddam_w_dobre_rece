@@ -4,7 +4,7 @@ import OddajFormWrapper from "../../oddajFormWrapper/OddajFormWrapper";
 import InputSelect from "../../oddajFormInputs/inputSelect/InputSelect";
 import OddajButtons from "../../oddajButtons/OddajButtons";
 
-const OddajContainer_2 = () => {
+const OddajStep2 = () => {
 
     return (
         <>
@@ -28,4 +28,4 @@ const OddajContainer_2 = () => {
     );
 };
 
-export default OddajContainer_2;
+export default OddajStep2;
