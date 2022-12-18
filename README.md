@@ -13,11 +13,10 @@
 * Animations
   
 ## Technologies  
-* SCSS / RWD 
-* React / TypeScript
-* Redux Toolkit 
+* SCSS, RWD 
+* React, TypeScript
+* Redux Toolkit, RTQ Query, React Query
  <br/><br/>
-* React Query 
 * Fetch API: GET, POST
 * JSON <a href = "https://my-json-server.typicode.com/Krzysztofe/oddam_api/db">my-json-server-></a> 
  <br/><br/>
@@ -29,7 +28,7 @@
 react-router, react-router-dom, react-router-hash-link, <br/>
 react-firebase-hooks/auth, react-paginate,<br/>
 react-redux, @reduxjs/toolkit, react-scripts,<br/>
-react-query, <br/>
+react-query, @reduxjs/toolkit/query/react <br/>
 formik, yup, <br/>
 framer-motion, animate on scroll library, react-simple-typewriter
  <br/><br/>
